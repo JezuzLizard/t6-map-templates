@@ -3,8 +3,8 @@
 
 main()
 {
-	level._zombie_gamemodeprecache = ::onprecachegametype;
-	level._zombie_gamemodemain = ::onstartgametype;
+    level._zombie_gamemodeprecache = ::onprecachegametype;
+    level._zombie_gamemodemain = ::onstartgametype;
 }
 
 onprecachegametype()
