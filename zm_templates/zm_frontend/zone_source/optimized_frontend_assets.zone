@@ -109,6 +109,9 @@ techniqueset,,cinematic_f8e5zq20
 material,,cinematic
 xglobals,xGlobalsSingleton
 xanim,v_brf_holo_vtol_anim
+
+include,packages/player_characters/mason_jr_frontend
+
 techniqueset,,mc_lit_sm_r0c0n0s0o0_3z86zq2z
 techniqueset,mc_sw4_3d_viewmodel_unlit_j299w86e
 image,~~-gmtl_t6_wpn_tablet_spc-rgb~23005a78
@@ -325,6 +328,9 @@ rawfile,,rumble/defaultweapon_fire
 rawfile,,rumble/defaultweapon_fire_h.rmb
 rawfile,,rumble/defaultweapon_fire_l.rmb
 weapon,,defaultweapon
+
+include,packages/ui/frontend_ui_images
+
 fx,misc/fx_missing_fx
 techniqueset,,effect_w77q49e8
 material,,gfx_fxt_smk_light_old
@@ -487,6 +493,9 @@ material,gfx_fxt_env_cloud_cmls_pln2
 fx,maps/command_center/fx_com_vtol_clouds
 fx,maps/command_center/fx_com_vtol_green_glow
 fx,maps/command_center/fx_com_vtol_red_glow
+
+include,packages/movies/frontend_background_npcs
+
 rawfile,vision/sp_frontend_bridge.vision
 rawfile,vision/sp_frontend_vtol.vision
 rawfile,vision/sp_front_end_glasses_up.vision
@@ -1208,6 +1217,9 @@ material,mc/mtl_hologram_countries_iran
 xmodel,p6_hologram_world_map_iran
 material,mc/mtl_hologram_countries_n_korea
 xmodel,p6_hologram_world_map_n_korea
+
+include,packages/aitypes/hero_briggs_blackout
+
 image,~-gmtl_hologram_ds_bldg_01_c
 material,mc/mtl_hologram_ds_bldg_01
 image,~-gmtl_hologram_ds_bldg_02_c
@@ -1233,6 +1245,9 @@ xmodel,p6_hologram_ds_aa
 image,~-gmtl_hologram_ds_beam_01_c
 image,mtl_hologram_ds_beam_01_glow_c
 material,mc/mtl_hologram_ds_beam_01
+
+include,packages/aitypes/hero_harper_blackout
+
 xmodel,p6_hologram_ds_beam_01
 material,mc/mtl_hologram_ds_missile_01
 xmodel,p6_hologram_ds_missile
@@ -1465,4 +1480,3 @@ footsteptable,default_1st_person_quiet
 footsteptable,default_3rd_person_quiet
 footsteptable,default_3rd_person_loud
 footsteptable,default_ai
-rawfile,frontend

@@ -8,11 +8,46 @@
 >level.ipak_read,zm
 >level.ipak_read,patch_zm
 
+// templated assets for a custom zombies map
+include,template_common_zm
+
+include,packages/aitypes/tranzit_zombies
+
+include,packages/weapons/m14_zm
+include,packages/weapons/m1911_zm
+include,packages/weapons/raygun_mark2_zm
+
+include,packages/player_characters/tranzit_survival_characters
+
 // configs to play map easily
 rawfile,run_frontend_zclassic.cfg
 rawfile,run_frontend_zstandard.cfg
 rawfile,sv_run_frontend_zclassic.cfg
 rawfile,sv_run_frontend_zstandard.cfg
+
+// missing assets used only in SP or MP, but not ZM!
+image,$lineargray
+image,$blacktransparent
+
+techniqueset,mc_lit_sm_r0c0d0n0s0_qwq4q449
+image,~~-gdecal_thickrope1_s-rgb&~-~c0aef9f0
+image,decal_thickrope1_n
+image,~-gdecal_thickrope1_c
+image,peleliu_misc_cloth_rope_n
+material,mc/rope
+
+techniqueset,hdr_bloom_apply_thermal_jew216zq
+material,bloom_apply_thermal
+techniqueset,mc_sw4_3d_predator_3w0e16w8
+material,mc/mtl_predator
+
+// for zombie dogs
+rawfile,shock/dog_bite.shock
+
+// frontend specific assets
+fx,maps/command_center/fx_com_hologram_static_beam
+fx,maps/command_center/fx_com_hologram_static_missile
+fx,maps/command_center/fx_com_hologram_static_ship
 
 //include,template_common_zm
 //include,packages/aitypes/tranzit_zombies

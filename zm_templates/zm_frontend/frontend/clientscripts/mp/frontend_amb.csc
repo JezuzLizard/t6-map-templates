@@ -12,5 +12,10 @@
 
 main()
 {
-	
+	declaremusicstate( "WAVE" );
+	//musicaliasloop( "mus_nuked_underscore", 4, 2 );
+	declaremusicstate( "EGG" );
+	musicalias( "mus_egg", 1 );
+	declaremusicstate( "SILENCE" );
+	musicalias( "null", 1 );
 }

@@ -209,26 +209,6 @@
 "guid" "911758B2"
 }
 {
-"targetname" "gov"
-"count" "99"
-"classname" "actor_Ally_Navy_Blackout_Assault_Base"
-"model" "c_usa_jungmar_1_fb"
-"export" "9"
-"spawnflags" "17"
-"origin" "224 360 440"
-"guid" "074516B5"
-}
-{
-"classname" "actor_Ally_SEAL_Blackout_Assault_Base"
-"model" "c_usa_jungmar_1_fb"
-"export" "10"
-"spawnflags" "17"
-"targetname" "seal"
-"count" "99"
-"origin" "216 304 440"
-"guid" "75C174BE"
-}
-{
 "classname" "trigger_box"
 "width" "40.000000"
 "length" "88.000000"
@@ -335,17 +315,6 @@
 "guid" "398F885D"
 }
 {
-"script_animname" "briggs"
-"targetname" "briggs"
-"origin" "216 248 440"
-"spawnflags" "19"
-"export" "11"
-"model" "c_usa_cc_briggs_fb"
-"classname" "actor_Hero_Briggs_Blackout"
-"count" "99"
-"guid" "D0F7C20A"
-}
-{
 "classname" "script_struct"
 "angles" "0 270 0"
 "origin" "-42280 -1416 0"
@@ -393,60 +362,6 @@
 "targetname" "strike_force_start"
 "origin" "581 278 440"
 "guid" "A678C152"
-}
-{
-"classname" "actor_Hero_Harper_Blackout"
-"model" "c_usa_jungmar_1_fb"
-"export" "12"
-"spawnflags" "19"
-"count" "999"
-"origin" "208 192 440"
-"targetname" "harper"
-"guid" "BA1DE09E"
-}
-{
-"classname" "script_vehicle"
-"vehicletype" "heli_osprey"
-"model" "veh_t6_air_v78_vtol"
-"angles" "0 270 0"
-"origin" "-40992.8 -2964 388"
-"spawnflags" "2"
-"targetname" "frontend_osprey2"
-"script_doorstate" "0"
-"guid" "F8AC6A15"
-}
-{
-"classname" "script_vehicle"
-"vehicletype" "heli_osprey"
-"model" "veh_t6_air_v78_vtol"
-"angles" "0 270 0"
-"origin" "-43368.8 -3004 388"
-"spawnflags" "2"
-"targetname" "frontend_osprey1"
-"script_doorstate" "0"
-"guid" "F10E631F"
-}
-{
-"classname" "script_vehicle"
-"vehicletype" "heli_osprey"
-"model" "veh_t6_air_v78_vtol"
-"angles" "0 270 0"
-"origin" "-42416.8 -3708 348"
-"spawnflags" "2"
-"targetname" "frontend_osprey3"
-"script_doorstate" "0"
-"guid" "A1A31A82"
-}
-{
-"classname" "script_vehicle"
-"vehicletype" "heli_osprey"
-"model" "veh_t6_air_v78_vtol"
-"angles" "0 270 0"
-"origin" "-41880.8 -2852 44"
-"spawnflags" "2"
-"targetname" "frontend_osprey4"
-"script_doorstate" "0"
-"guid" "EF92E3D4"
 }
 {
 "model" "*6"

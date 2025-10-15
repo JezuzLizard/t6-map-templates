@@ -3,10 +3,13 @@
 #include maps\mp\_utility;
 #include maps\mp\gametypes_zm\_hud_util;
 #include common_scripts\utility;
+#include maps\mp\zombies\_zm_utility;
 #include maps\mp\gametypes_zm\_zm_gametype;
 #include maps\mp\zombies\_zm_stats;
 #include maps\mp\zombies\_zm_ai_dogs;
 #include maps\mp\zombies\_zm;
+
+#include maps\mp\zombies\_zm_magicbox;
 
 main()
 {
@@ -23,7 +26,7 @@ onprecachegametype()
 	level.canplayersuicide = ::canplayersuicide;
 	level.suicide_weapon = "death_self_zm";
 	precacheitem( "death_self_zm" );
-	maps\mp\zombies\_zm_ai_dogs::init();
+	// maps\mp\zombies\_zm_ai_dogs::init();
 	if ( isdefined( level.precachecustomcharacters ) )
 		self [[ level.precachecustomcharacters ]]();
 }
@@ -31,6 +34,7 @@ onprecachegametype()
 onstartgametype()
 {
 	maps\mp\gametypes_zm\_zm_gametype::setup_classic_gametype();
+	//level thread game_objects_allowed( get_gamemode_var( "mode" ), get_gamemode_var( "location" ) );
 	level thread zstandard_main();
 }
 
@@ -41,9 +45,10 @@ zstandard_main()
 	treasure_chest_init( "start_chest" );
 	level.dog_rounds_allowed = getgametypesetting( "allowdogs" );
 
-	if ( level.dog_rounds_allowed )
-		maps\mp\zombies\_zm_ai_dogs::enable_dog_rounds();
+	// if ( level.dog_rounds_allowed )
+	// 	maps\mp\zombies\_zm_ai_dogs::enable_dog_rounds();
 
+	flag_wait( "start_zombie_round_logic" );
 	level thread maps\mp\zombies\_zm::round_start();
 	level thread maps\mp\gametypes_zm\_zm_gametype::kill_all_zombies();
 }

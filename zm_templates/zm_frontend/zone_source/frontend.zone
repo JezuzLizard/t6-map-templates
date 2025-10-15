@@ -13,14 +13,8 @@
 >level.initial_xmodels,c_usa_cia_frnd_viewbody_vson
 >level.@00031d1f,1.0
 
-include,template_common_zm
-include,packages/aitypes/tranzit_zombies
-
-include,packages/weapons/m14_zm
-include,packages/weapons/m1911_zm
-include,packages/weapons/raygun_mark2_zm
-
-include,packages/player_characters/tranzit_survival_characters
+// original reduced map's assets
+include,optimized_frontend_assets
 
 // add new stuff here
 
@@ -45,5 +39,4 @@ stringtable,zm/include_fx.csv
 stringtable,zm/include_powerups.csv
 stringtable,zm/include_weapons.csv
 
-// original reduced map's assets
-include,optimized_frontend_assets
+rawfile,frontend

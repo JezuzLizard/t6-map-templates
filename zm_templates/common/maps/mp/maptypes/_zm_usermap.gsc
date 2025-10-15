@@ -130,31 +130,31 @@ include_weapons()
 	table = "zm/include_weapons.csv";
 	for ( index = 0; tablelookuprownum( table, 0, index ) != -1; index++ )
 	{
-		weapon_name = tablelookup( table, 0, index, 1);
-		in_box = tablelookup( table, 0, index, 2);
-		limit_count = tablelookup( table, 0, index, 3);
+		weapon_name_str = tablelookup( table, 0, index, 1 );
+		in_box_str = tablelookup( table, 0, index, 2 );
+		limit_count_str = tablelookup( table, 0, index, 3 );
 
 		in_box_value = false;
-		if ( in_box == "" || in_box == "0" || in_box == "false" )
+		if ( in_box_str == "" || in_box_str == "0" || in_box_str == "false" )
 		{
 			in_box_value = false;
 		}
-		else if ( in_box == "1" || in_box == "true" )
+		else if ( in_box_str == "1" || in_box_str == "true" )
 		{
 			in_box_value = true;
 		}
 
 		limit_count_value = undefined;
-		if ( limit_count != "" )
+		if ( limit_count_str != "" )
 		{
-			limit_count_value = int( limit_count );
+			limit_count_value = int( limit_count_str );
 		}
 
-		include_weapon( weapon_name, in_box );
+		include_weapon( weapon_name_str, in_box_value );
 
 		if ( isdefined( limit_count_value ) )
 		{
-			add_limited_weapon( weapon_name, limit_count_value );
+			add_limited_weapon( weapon_name_str, limit_count_value );
 		}
 	}
 }
@@ -202,69 +202,70 @@ add_zombie_weapons()
 	table = "zm/add_zombie_weapons.csv";
 	for ( index = 0; tablelookuprownum( table, 0, index ) != -1; index++ )
 	{
-		weapon_name = tablelookup( table, 0, index, 1 );
-		upgrade_name = tablelookup( table, 0, index, 2 );
-		hint = tablelookup( table, 0, index, 3 );
-		cost = tablelookup( table, 0, index, 4 );
-		ammo_cost = tablelookup( table, 0, index, 5 );
-		weapon_voice_over = tablelookup( table, 0, index, 6 );
-		create_vox = tablelookup( table, 0, index, 6 );
+		weapon_name_str = tablelookup( table, 0, index, 1 );
+		upgrade_name_str = tablelookup( table, 0, index, 2 );
+		hint_str = tablelookup( table, 0, index, 3 );
+		cost_str = tablelookup( table, 0, index, 4 );
+		ammo_cost_str = tablelookup( table, 0, index, 5 );
+		weapon_voice_over_str = tablelookup( table, 0, index, 6 );
+		weapon_voice_over_response_str = tablelookup( table, 0, index, 7 );
+		create_vox_str = tablelookup( table, 0, index, 8 );
 
-		if ( hint == "" )
+		if ( hint_str == "" )
 		{
-			hint == undefined;
+			hint = undefined;
 		}
 		else
 		{
-			hint = istring( hint );
+			hint = istring( hint_str );
 		}
 
-		if ( cost == "" )
+		if ( cost_str == "" )
 		{
 			cost = 50;
 		}
 		else
 		{
-			cost = int( cost );
+			cost = int( cost_str );
 		}
 
-		if ( ammo_cost == "" )
+		if ( ammo_cost_str == "" )
 		{
 			ammo_cost = undefined;
 		}
 		else
 		{
-			ammo_cost = int( ammo_cost );
+			ammo_cost = int( ammo_cost_str );
 		}
 
-		if ( weapon_voice_over == "" )
+		if ( weapon_voice_over_str == "" )
 		{
 			weapon_voice_over = "crappy";
 		}
 
-		if ( weapon_voice_over_response == "" )
+		if ( weapon_voice_over_response_str == "" )
 		{
 			weapon_voice_over_response = undefined;
 		}
 
-		create_vox = false;
-		if ( create_vox == "" )
+		create_vox = undefined;
+		if ( create_vox_str == "" )
 		{
-			create_vox = false;
+			create_vox = undefined;
 		}
-		else if ( create_vox == "1" || create_vox == "true" )
+		else if ( create_vox_str == "1" || create_vox_str == "true" )
 		{
 			create_vox = true;
 		}
 
 		add_weapon = spawnstruct();
-		add_weapon.name = weapon_name;
-		add_weapon.upgrade_name = upgrade_name;
+		add_weapon.name = weapon_name_str;
+		add_weapon.upgrade_name = upgrade_name_str;
 		add_weapon.hint = hint;
 		add_weapon.cost = cost;
 		add_weapon.ammo_cost = ammo_cost;
-		add_weapon.weaponvo = weapon_voice_over;
-		add_weapon.weaponvoresp = weapon_voice_over_response;
+		add_weapon.weaponvo = weapon_voice_over_str;
+		add_weapon.weaponvoresp = weapon_voice_over_response_str;
 		add_weapon.create_vox = create_vox;
 
 		level._usermap_add_weapons[ level._usermap_add_weapons.size ] = add_weapon;

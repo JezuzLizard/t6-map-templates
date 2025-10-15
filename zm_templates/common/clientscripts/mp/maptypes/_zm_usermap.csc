@@ -1,3 +1,8 @@
+#include clientscripts\mp\_utility;
+#include clientscripts\mp\zombies\_zm_utility;
+#include clientscripts\mp\zombies\_zm_powerups;
+#include clientscripts\mp\zombies\_zm_weapons;
+
 call_function_safe( func, threaded )
 {
 	threaded = isdefined( threaded ) ? threaded : false;
@@ -37,20 +42,20 @@ include_weapons()
 	table = "zm/include_weapons.csv";
 	for ( index = 0; tablelookuprownum( table, 0, index ) != -1; index++ )
 	{
-		weapon_name = tablelookup( table, 0, index, 1 );
-		in_box = tablelookup( table, 0, index, 2 );
+		weapon_name_str = tablelookup( table, 0, index, 1 );
+		in_box_str = tablelookup( table, 0, index, 2 );
 
 		in_box_value = false;
-		if ( in_box == "" || in_box == "0" || in_box == "false" )
+		if ( in_box_str == "" || in_box_str == "0" || in_box_str == "false" )
 		{
 			in_box_value = false;
 		}
-		else if ( in_box == "1" || in_box == "true" )
+		else if ( in_box_str == "1" || in_box_str == "true" )
 		{
 			in_box_value = true;
 		}
 
-		include_weapon( weapon_name, in_box );
+		include_weapon( weapon_name_str, in_box_value );
 	}
 }
 

@@ -24,6 +24,7 @@ main()
 	level._override_eye_fx = level._effect["blue_eyes"];
 	
 	clientscripts\mp\maptypes\_zm_usermap::start_zombie_mode();
+	thread clientscripts\mp\frontend_amb::main();
 
 	waitforclient( 0 );
 	println( "*** Client : '" + level.script + "' map running..." );

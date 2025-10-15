@@ -31,6 +31,13 @@ main()
 	level.zombiemode_using_sleightofhand_perk = 1;
 	level.zombiemode_using_tombstone_perk = 1;
 
+	// disable loading "maps/zombie/fx_zmb_tanzit_upgrade" fx
+	level.disable_fx_upgrade_aquired = true;
+	// disable loading "maps/zombie/fx_zombie_tesla_neck_spurt"
+	level.fx_exclude_tesla_head_light = true;
+	// disable loading "maps/zombie/fx_zmb_tranzit_shield_explo"
+	level.disable_fx_zmb_tranzit_shield_explo = true;
+
 	setup_characters();
 
 	level.zone_manager_init_func = ::zone_init;

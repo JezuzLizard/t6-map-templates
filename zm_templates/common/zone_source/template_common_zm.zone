@@ -86,11 +86,43 @@ xmodel,viewmodel_hands_no_model
 xanim,viewmodel_vorkuta_empty_hands
 weapon,buildable_piece_zm
 
-techniqueset,,effect_z0z25860
-techniqueset,,effect_8e1qf0qq
-material,,gfx_fxt_light_glow
-material,,gfx_fxt_env_dust_mote_add
+fx,maps/zombie/fx_zmb_tranzit_marker
+fx,maps/zombie/fx_zmb_tranzit_marker_fl
 fx,maps/zombie/fx_zmb_tranzit_marker_glow
+fx,maps/zombie/fx_zombie_eye_single_blue
+fx,misc/fx_zombie_eye_single
+fx,impacts/fx_flesh_hit_neck_fatal
+
+// sticky grenades
+techniqueset,,effect_775wj8ww
+image,,fxt_light_flare2
+material,gfx_fxt_light_flare2_eo5
+material,gfx_fxt_light_hot_add_eo5
+fx,weapon/crossbow/fx_trail_crossbow_blink_grn_os
+fx,weapon/crossbow/fx_trail_crossbow_blink_red_os
+
+// buildables
+fx,maps/zombie/fx_zmb_buildable_assemble_dust
+material,gfx_fxt_light_incandescent_sadd
+fx,maps/zombie/fx_zmb_tranzit_electrap_explo
+
+// vision
+rawfile,vision/default_night.vision
+
+// lightdef
+image,,mrt
+gfxlightdef,mrt
+
+// electric shock overlay
+image,fullscreen_electric_shock
+image,electrocution_fx_distortion_heat
+material,zombie_electric_shock_overlay
+
+// team icons
+image,team_icon_cdc
+material,faction_cdc
+image,team_icon_cia
+material,faction_cia
 
 techniqueset,effect_8f63534j
 image,tracer_friendly

@@ -1,5 +1,5 @@
 index,fx_name,asset_name
-0,eye_glow,misc/fx_zombie_eye_single_blue
+0,eye_glow,misc/fx_zombie_eye_single
 1,headshot,impacts/fx_flesh_hit
 2,headshot_nochunks,misc/fx_zombie_bloodsplat
 3,bloodspurt,misc/fx_zombie_bloodspurt
