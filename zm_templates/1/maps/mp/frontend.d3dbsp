@@ -395,24 +395,6 @@
 "guid" "A678C152"
 }
 {
-"model" "*5"
-"origin" "44 408 512"
-"classname" "info_volume"
-"targetname" "war_room_volume"
-"script_noteworthy" "player_volume"
-"target" "war_room_volume_spawners"
-"guid" "509A6581"
-}
-{
-"targetname" "war_room_volume_spawners"
-"origin" "57 432 512"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 65.4 0"
-"guid" "7A95F13B"
-}
-{
 "classname" "actor_Hero_Harper_Blackout"
 "model" "c_usa_jungmar_1_fb"
 "export" "12"
@@ -2322,14 +2304,147 @@
 "guid" "0A660B83"
 }
 {
+"model" "*5"
+"origin" "44 408 512"
+"classname" "info_volume"
+"targetname" "war_room_volume"
+"script_noteworthy" "player_volume"
+"target" "war_room_volume_spawners"
+"guid" "509A6581"
+}
+
+{
+"COMMENT" "************************ CONTROL CENTER SPAWNER 1"
+"targetname" "war_room_volume_spawners"
+"origin" "292 865 440"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "7A95F13B"
+}
+{
+"COMMENT" "************************ CONTROL CENTER SPAWNER 2"
+"targetname" "war_room_volume_spawners"
+"origin" "110 710 440"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "7A95F13B"
+}
+{
+"COMMENT" "************************ COMMAND CENTER SPAWNER"
+"targetname" "war_room_volume_spawners"
+"origin" "589 -285 440"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "7A95F13B"
+}
+{
+"COMMENT" "************************ SERVER RACK SPAWNER"
+"targetname" "war_room_volume_spawners"
+"origin" "110 80 440"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "7A95F13B"
+}
+{
+"COMMENT" "************************ QUICK REVIVE SPAWNER"
+"targetname" "war_room_volume_spawners"
+"origin" "285 315 440"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "7A95F13B"
+}
+{
+"COMMENT" "************************ M14 BUY SPAWNER"
+"targetname" "war_room_volume_spawners"
+"origin" "605 580 440"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "7A95F13B"
+}
+
+{
 "radius" "32"
 "script_noteworthy" "initial_spawn"
-"script_int" "1"
 "script_string" "zstandard_frontend"
 "_color" "1 1 0"
 "targetname" "initial_spawn_points"
-"origin" "57 432 512"
+"origin" "379 -233 440"
 "classname" "script_struct"
-"angles" "2 450 0"
+"angles" "0 90 0"
 "guid" "2B360514"
+}
+{
+"radius" "32"
+"script_noteworthy" "initial_spawn"
+"script_string" "zstandard_frontend"
+"_color" "1 1 0"
+"targetname" "initial_spawn_points"
+"origin" "380 111 440"
+"classname" "script_struct"
+"angles" "0 -90 0"
+"guid" "509A6582"
+}
+{
+"radius" "32"
+"script_noteworthy" "initial_spawn"
+"script_string" "zstandard_frontend"
+"_color" "1 1 0"
+"targetname" "initial_spawn_points"
+"origin" "179 -71 440"
+"classname" "script_struct"
+"angles" "0 0 0"
+"guid" "509A6583"
+}
+{
+"radius" "32"
+"script_noteworthy" "initial_spawn"
+"script_string" "zstandard_frontend"
+"_color" "1 1 0"
+"targetname" "initial_spawn_points"
+"origin" "588 -71 440"
+"classname" "script_struct"
+"angles" "0 180 0"
+"guid" "509A6585"
+}
+
+{
+"require_look_from" "1"
+"origin" "428 639.5 495"
+"angles" "0 180 0"
+"model" "t6_wpn_ar_m14_world"
+"classname" "script_struct"
+"targetname" "pf1897_auto37"
+"target" "pf1897_auto38"
+"guid" "7004ED06"
+}
+{
+"require_look_from" "1"
+"script_width" "40"
+"origin" "428 639.5 495"
+"angles" "0 180 0"
+"classname" "script_struct"
+"zombie_weapon_upgrade" "m14_zm"
+"targetname" "weapon_upgrade"
+"target" "pf1897_auto37"
+"guid" "C15AD568"
+}
+
+{
+"classname" "mp_global_intermission"
+"angles" "0 90 0"
+"origin" "379 -233 440"
+"script_string" "zstandard_frontend"
+"guid" "6CFCC2C7"
 }
