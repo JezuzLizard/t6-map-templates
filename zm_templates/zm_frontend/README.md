@@ -15,7 +15,7 @@ exec frontend_debug
 - [x] Load into the map with zm core
 - [x] Add spawners
 - [x] Add M14 wallbuy
-- [ ] Fix spawner angles (currently one allows them fall out of the map)
+- [x] Fix spawner angles
 - [ ] Fix game over screen being under the map (or wherever you die at)
 - [ ] Fix all conference room details
   - [ ] Globe spinning and missing fx

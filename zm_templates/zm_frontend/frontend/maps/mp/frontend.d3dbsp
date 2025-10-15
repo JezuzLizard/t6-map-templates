@@ -2213,7 +2213,7 @@
 }
 
 {
-"COMMENT" "************************ CONTROL CENTER SPAWNER 1"
+"note" "************************ CONTROL CENTER SPAWNER 1"
 "targetname" "war_room_volume_spawners"
 "origin" "292 865 440"
 "script_noteworthy" "riser_location"
@@ -2223,7 +2223,7 @@
 "guid" "7A95F13B"
 }
 {
-"COMMENT" "************************ CONTROL CENTER SPAWNER 2"
+"note" "************************ CONTROL CENTER SPAWNER 2"
 "targetname" "war_room_volume_spawners"
 "origin" "110 710 440"
 "script_noteworthy" "riser_location"
@@ -2233,17 +2233,17 @@
 "guid" "7A95F13B"
 }
 {
-"COMMENT" "************************ COMMAND CENTER SPAWNER"
+"note" "************************ COMMAND CENTER SPAWNER"
 "targetname" "war_room_volume_spawners"
-"origin" "589 -285 440"
+"origin" "585 -285 440"
 "script_noteworthy" "riser_location"
 "classname" "script_struct"
 "script_string" "find_flesh"
-"angles" "0 0 0"
+"angles" "0 90 0"
 "guid" "7A95F13B"
 }
 {
-"COMMENT" "************************ SERVER RACK SPAWNER"
+"note" "************************ SERVER RACK SPAWNER"
 "targetname" "war_room_volume_spawners"
 "origin" "110 80 440"
 "script_noteworthy" "riser_location"
@@ -2253,7 +2253,7 @@
 "guid" "7A95F13B"
 }
 {
-"COMMENT" "************************ QUICK REVIVE SPAWNER"
+"note" "************************ QUICK REVIVE SPAWNER"
 "targetname" "war_room_volume_spawners"
 "origin" "285 315 440"
 "script_noteworthy" "riser_location"
@@ -2263,17 +2263,18 @@
 "guid" "7A95F13B"
 }
 {
-"COMMENT" "************************ M14 BUY SPAWNER"
+"note" "************************ M14 WALLBUY SPAWNER"
 "targetname" "war_room_volume_spawners"
 "origin" "605 580 440"
 "script_noteworthy" "riser_location"
 "classname" "script_struct"
 "script_string" "find_flesh"
-"angles" "0 0 0"
+"angles" "0 180 0"
 "guid" "7A95F13B"
 }
 
 {
+"note" "************************ REAR SPAWN"
 "radius" "32"
 "script_noteworthy" "initial_spawn"
 "script_string" "zstandard_frontend"
@@ -2285,6 +2286,7 @@
 "guid" "2B360514"
 }
 {
+"note" "************************ FRONT SPAWN"
 "radius" "32"
 "script_noteworthy" "initial_spawn"
 "script_string" "zstandard_frontend"
@@ -2296,6 +2298,7 @@
 "guid" "509A6582"
 }
 {
+"note" "************************ LEFT SPAWN"
 "radius" "32"
 "script_noteworthy" "initial_spawn"
 "script_string" "zstandard_frontend"
@@ -2307,6 +2310,7 @@
 "guid" "509A6583"
 }
 {
+"note" "************************ RIGHT SPAWN"
 "radius" "32"
 "script_noteworthy" "initial_spawn"
 "script_string" "zstandard_frontend"
@@ -2319,6 +2323,7 @@
 }
 
 {
+"note" "************************ M14 WALLBUY"
 "require_look_from" "1"
 "origin" "428 639.5 495"
 "angles" "0 180 0"
@@ -2329,6 +2334,7 @@
 "guid" "7004ED06"
 }
 {
+"note" "************************ M14 WALLBUY"
 "require_look_from" "1"
 "script_width" "40"
 "origin" "428 639.5 495"
@@ -2341,6 +2347,7 @@
 }
 
 {
+"note" "************************ GAME OVER"
 "classname" "mp_global_intermission"
 "angles" "0 90 0"
 "origin" "379 -233 440"
