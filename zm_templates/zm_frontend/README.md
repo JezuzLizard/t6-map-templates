@@ -17,6 +17,7 @@ exec frontend_debug
   - [ ] Globe spinning and missing fx
   - [ ] Screen images
   - [x] Hologram tabletop fx
+  - [ ] Missing activate triggers
 - [ ] Add path nodes
 - [ ] Re-add sound effects
 	- Should just be weapon, zombie and player move sounds, also the money sound when you buy something
