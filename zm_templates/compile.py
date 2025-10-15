@@ -49,28 +49,26 @@ def download_oat():
     os.remove(zip_path)
 
 def has_required_files():
-    has_files = 1
-    
+    missing_files = []
+
     for req_file in REQUIRED_FILES:
         if not os.path.exists(req_file):
-            has_files = 0
-            break
-    
-    return bool(has_files)
+            missing_files.append(req_file)
 
-def print_required_files():
+    return missing_files
+
+def print_required_files(missing_files):
     print("You must place the following files in \"zm_templates\\bin\" to compile:\n")
-    
-    for file in REQUIRED_FILES:
+
+    for file in missing_files:
         print(f"- {file.replace(f"{BIN_PATH}", f"{ZONE_ALL}")}")
-        
+
     print("\nYou can obtain them from your game folder on Steam.\n")
     input("Press the Enter key to exit...")
 
 def link_zone(zone_name, zone_deps = []):
-    print(f"Compiling zone \"{zone_name}\"\n")
-    
     zone_path = f"{MOD_PATH}\\{zone_name}"
+    
     oat_command = [
         f"{OAT_PATH}\\Linker.exe",
         "--base-folder",            f"{zone_path}",
@@ -89,17 +87,19 @@ def link_zone(zone_name, zone_deps = []):
     subprocess.run(oat_command, cwd=CWD, universal_newlines=True, check=True)
 
 def create_bsp_iwd():    
-    bsp_name =      "frontend.d3dbsp"
-    bsp_path =      os.path.join(CWD, "zm_frontend", "frontend", "maps", "mp", f"{bsp_name}")
-    iwd_name =      os.path.join(ZONE_OUT_PATH, "mod.iwd")
-    internal_path = os.path.join("maps", "mp", f"{bsp_name}")
-    rel_path =      os.path.relpath(internal_path, CWD)
+    bsp_name =              "frontend.d3dbsp"
+    iwd_path =              os.path.join(ZONE_OUT_PATH, "mod.iwd")
+    source_bsp_path =       os.path.join(CWD, "zm_frontend", "frontend", "maps", "mp", f"{bsp_name}")
+    inner_bsp_path =        os.path.join("maps", "mp", f"{bsp_name}") # the path inside the iwd itself
+    rel_bsp_path =          os.path.relpath(inner_bsp_path, CWD)
     
-    print(f"Writing frontend.d3dbsp to mod.iwd.")
+    print(f"Building iwd \"mod\"")
     
     # iwds are just zip files with a special extension
-    with zipfile.ZipFile(iwd_name, "w", zipfile.ZIP_DEFLATED) as zip:
-        zip.write(bsp_path, arcname=rel_path)
+    with zipfile.ZipFile(iwd_path, "w", zipfile.ZIP_DEFLATED) as zip:
+        zip.write(source_bsp_path, arcname=rel_bsp_path)
+
+    print(f"Created iwd \"mod\"")
 
 def copy_to_pluto():
     destination_root = PLUTO_MODS_DIR
@@ -122,13 +122,16 @@ def main():
         download_oat()
         print("Done, continuing with compile.")
     
+    # the folder didnt exist so just print everything
     if not os.path.exists(BIN_PATH):
         os.mkdir(BIN_PATH)
-        print_required_files()
+        print_required_files(REQUIRED_FILES)
         return
     
-    if not has_required_files():
-        print_required_files()
+    # it exists so they might be missing a fastfile or two
+    missing_files = has_required_files()
+    if missing_files:
+        print_required_files(missing_files)
         return
         
     # remove the old zone_out
@@ -161,7 +164,7 @@ def main():
     # for convenience purposes, copy it to the mods folder automatically
     copy_to_pluto()
 
-    print(f"\nCopied zone_out to \"{PLUTO_MODS_DIR}\\{MOD_NAME}\".")
+    print(f"\nCopied \"zone_out\" to \"{PLUTO_MODS_DIR}\\{MOD_NAME}\".")
     print("Finished compiling!")
     input("Press the Enter key to exit...")
 
