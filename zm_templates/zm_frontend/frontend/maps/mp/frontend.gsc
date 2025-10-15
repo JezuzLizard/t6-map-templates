@@ -20,6 +20,8 @@ main()
 	maps\mp\_sticky_grenade::init();
 	level.givecustomloadout = ::givecustomloadout;
 	level.zombie_init_done = ::zombie_init_done;
+
+	onplayerconnect_callback( ::frontend_connected );
 	
 	// perk opt ins
 	level.zombiemode_using_pack_a_punch = 1;
@@ -38,12 +40,19 @@ main()
 	// disable loading "maps/zombie/fx_zmb_tranzit_shield_explo"
 	level.disable_fx_zmb_tranzit_shield_explo = true;
 
+	level.culldist = 5000;
+
 	setup_characters();
 
 	level.zone_manager_init_func = ::zone_init;
 
 	init_zones[0] = "war_room_volume";
 	maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
+}
+
+frontend_connected()
+{
+	self setclientdvars( "r_lodbiasskinned", "-1000", "r_lodbiasrigid", "-1000" );
 }
 
 givecustomloadout( takeallweapons, alreadyspawned )

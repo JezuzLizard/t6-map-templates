@@ -58,7 +58,10 @@ start_zombie_mode( init_zones )
 	maps\mp\zombies\_zm::init();
 	precacheitem( "death_throe_zm" );
 
-	level.culldist = 5500;
+	if ( !isdefined( level.culldist ) )
+	{
+		level.culldist = 5500;
+	}
 	setculldist( level.culldist );
 
 	level.zones = [];
@@ -282,6 +285,6 @@ table_add_weapons()
 	for ( i = 0; i < level._usermap_add_weapons.size; i++ )
 	{
 		weapon = level._usermap_add_weapons[ i ];
-		add_zombie_weapon( weapon.name, weapon.upgrade_name, weapon.hint, weapon.cost, weapon.ammo_cost, weapon.weaponvo, weapon.weaponvoresp, weapon.create_vox );
+		add_zombie_weapon( weapon.name, weapon.upgrade_name, weapon.hint, weapon.cost, weapon.weaponvo, weapon.weaponvoresp, weapon.ammo_cost, weapon.create_vox );
 	}
 }
