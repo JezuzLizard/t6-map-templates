@@ -1,0 +1,9 @@
+xmodel,,t6_wpn_grenade_frag_view
+xmodel,,t6_wpn_grenade_frag_world
+xmodel,,t6_wpn_grenade_frag_projectile
+fx,,weapon/grenade/fx_trail_grenade
+xanim,,viewmodel_m67_idle
+xanim,,viewmodel_m67_throw
+xanim,,viewmodel_m67_pullpin
+xanim,,viewmodel_m67_pickup_livenade
+weapon,,frag_grenade_sp

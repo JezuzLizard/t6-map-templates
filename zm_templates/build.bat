@@ -4,6 +4,7 @@ set "OAT_BASE=%cd%\oat"
 set "BIN_PATH=%cd%\bin"
 set "COMMON_PATH=%cd%\common"
 set "SOURCE_PATH=%cd%\%MOD_NAME%\zone_source"
+set "SOURCE_PATH_TEMPLATED=%cd%\common\zone_source"
 set "MAP_BASE=%cd%\%MOD_NAME%"
 
 if not exist "%OAT_BASE%" (
@@ -22,11 +23,16 @@ if not exist "%OAT_BASE%" (
 :: frontend.ff, have to remove the soundbank
 "%OAT_BASE%\Linker.exe" ^
 -v ^
+--load "%BIN_PATH%\common.ff" ^
+--load "%BIN_PATH%\zm_transit.ff" ^
+--load "%BIN_PATH%\zm_transit_patch.ff" ^
 --load "%BIN_PATH%\frontend.ff" ^
+--load "%BIN_PATH%\so_zsurvival_zm_transit.ff" ^
 --base-folder "%MAP_BASE%\frontend" ^
 --add-asset-search-path "%COMMON_PATH%" ^
 --add-asset-search-path "%MAP_BASE%" ^
---source-search-path "%SOURCE_PATH%" ^
+--add-source-search-path "%SOURCE_PATH%" ^
+--add-source-search-path "%SOURCE_PATH_TEMPLATED%" ^
 --output-folder "%MAP_BASE%" frontend
 
 :: en_frontend.ff, have to remove the soundbank
@@ -34,21 +40,21 @@ if not exist "%OAT_BASE%" (
 -v ^
 --base-folder "%MAP_BASE%\en_frontend" ^
 --add-asset-search-path "%COMMON_PATH%" ^
---add-asset-search-path "%MAP_BASE%" ^
---source-search-path "%SOURCE_PATH%" ^
+--add-asset-search-path "%MAP_BASE%\en_frontend" ^
+--add-source-search-path "%SOURCE_PATH%" ^
+--add-source-search-path "%SOURCE_PATH_TEMPLATED%" ^
 --output-folder "%MAP_BASE%" en_frontend
 
 :: mod.ff
 "%OAT_BASE%\Linker.exe" ^
 -v ^
---load "bin\common.ff" ^
---load "bin\common_zm.ff" ^
---load "bin\patch_zm.ff" ^
---load "bin\zm_transit.ff" ^
---load "bin\zm_transit_patch.ff" ^
---load "bin\so_zsurvival_zm_transit.ff" ^
+--load "%BIN_PATH%\common.ff" ^
+--load "%BIN_PATH%\zm_transit.ff" ^
+--load "%BIN_PATH%\zm_transit_patch.ff" ^
+--load "%BIN_PATH%\so_zsurvival_zm_transit.ff" ^
 --base-folder "%MAP_BASE%\mod" ^
 --add-asset-search-path "%COMMON_PATH%" ^
 --add-asset-search-path "%MAP_BASE%" ^
---source-search-path "%SOURCE_PATH%" ^
+--add-source-search-path "%SOURCE_PATH%" ^
+--add-source-search-path "%SOURCE_PATH_TEMPLATED%" ^
 --output-folder "%MAP_BASE%" mod
