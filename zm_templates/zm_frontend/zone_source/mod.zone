@@ -8,6 +8,12 @@
 >level.ipak_read,zm
 >level.ipak_read,patch_zm
 
+// configs to play map easily
+rawfile,run_frontend_zclassic.cfg
+rawfile,run_frontend_zstandard.cfg
+rawfile,sv_run_frontend_zclassic.cfg
+rawfile,sv_run_frontend_zstandard.cfg
+
 //include,template_common_zm
 //include,packages/aitypes/tranzit_zombies
 

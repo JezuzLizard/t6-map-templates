@@ -32,7 +32,7 @@ if not exist "%OAT_BASE%" (
 --load "%BIN_PATH%\so_zsurvival_zm_transit.ff" ^
 --base-folder "%MAP_BASE%\frontend" ^
 --add-asset-search-path "%COMMON_PATH%" ^
---add-asset-search-path "%MAP_BASE%" ^
+--add-asset-search-path "%MAP_BASE%\frontend" ^
 --add-source-search-path "%SOURCE_PATH%" ^
 --add-source-search-path "%SOURCE_PATH_TEMPLATED%" ^
 --output-folder "%ZONE_OUT%" frontend

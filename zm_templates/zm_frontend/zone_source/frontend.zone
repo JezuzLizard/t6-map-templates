@@ -24,5 +24,26 @@ include,packages/player_characters/tranzit_survival_characters
 
 // add new stuff here
 
+// custom map scripts
+script,clientscripts/mp/frontend.csc
+script,clientscripts/mp/frontend_amb.csc
+script,clientscripts/mp/frontend_fx.csc
+script,clientscripts/mp/createfx/frontend_fx.csc
+
+script,maps/mp/frontend.gsc
+script,maps/mp/frontend_amb.gsc
+script,maps/mp/frontend_fx.gsc
+script,maps/mp/createfx/frontend_fx.gsc
+script,maps/mp/createart/frontend_art.gsc
+
+// vision
+rawfile,vision/frontend.vision
+
+// precache tables
+stringtable,zm/add_zombie_weapons.csv
+stringtable,zm/include_fx.csv
+stringtable,zm/include_powerups.csv
+stringtable,zm/include_weapons.csv
+
 // original reduced map's assets
 include,optimized_frontend_assets
