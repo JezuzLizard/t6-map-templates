@@ -2347,10 +2347,21 @@
 }
 
 {
-"note" "************************ GAME OVER"
-"classname" "mp_global_intermission"
+"note" "************************ GAME OVER INTERMISSION POINT 2"
+"classname" "script_struct"
 "angles" "0 90 0"
-"origin" "379 -233 440"
-"script_string" "zstandard_frontend"
-"guid" "6CFCC2C7"
+"origin" "265 300 525"
+"targetname" "auto2390"
+"guid" "0C1213FF"
+}
+{
+"note" "************************ GAME OVER INTERMISSION POINT 2"
+"classname" "script_struct"
+"angles" "0 90 0"
+"origin" "265 -250 525"
+"target" "auto2390"
+"speed" "30"
+"targetname" "intermission"
+"script_string" "frontend"
+"guid" "B4315065"
 }
