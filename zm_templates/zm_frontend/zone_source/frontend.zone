@@ -31,9 +31,6 @@ script,maps/mp/frontend_fx.gsc
 script,maps/mp/createfx/frontend_fx.gsc
 script,maps/mp/createart/frontend_art.gsc
 
-// required to remove specific "frontend" map check!
-script,maps/mp/zombies/_zm_laststand.gsc
-
 // vision
 rawfile,vision/frontend.vision
 
