@@ -24,6 +24,7 @@ rawfile,run_frontend_zclassic.cfg
 rawfile,run_frontend_zstandard.cfg
 rawfile,sv_run_frontend_zclassic.cfg
 rawfile,sv_run_frontend_zstandard.cfg
+rawfile,frontend_debug.cfg
 
 // missing assets used only in SP or MP, but not ZM!
 image,$lineargray

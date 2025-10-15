@@ -1,3 +1,16 @@
+# Compiling
+Run `compile.py` and run this from the in-game console:
+```
+loadmod ""; loadmod zm_frontend; exec frontend_debug
+```
+
+# Debugging
+Run this from the in-game console:
+```
+loadmod ""; loadmod zm_frontend; exec frontend_debug
+```
+
+# Remaining Tasks
 - [x] Load into the map with zm core
 - [x] Add spawners
 - [x] Add M14 wallbuy
