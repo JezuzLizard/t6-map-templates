@@ -72,8 +72,8 @@ def link_zone(zone_name, zone_deps = []):
     oat_command = [
         f"{OAT_PATH}\\Linker.exe",
         "--base-folder",            f"{zone_path}",
-        "--add-asset-search-path",  f"{COMMON_PATH}",
         "--add-asset-search-path",  f"{zone_path}",
+        "--add-asset-search-path",  f"{COMMON_PATH}",
         "--add-source-search-path", f"{SOURCE_PATH}",
         "--add-source-search-path", f"{SOURCE_PATH_TEMPLATED}",
         "--output-folder",          f"{ZONE_OUT_PATH}",
