@@ -1,5 +1,5 @@
 //_createfx generated. Do not touch!!
-autoexec main()
+main()
 {
 // CreateFX entities placed: 97
 	ent = maps\mp\_utility::createOneshotEffect( "fx_com_tv_glow_green" );

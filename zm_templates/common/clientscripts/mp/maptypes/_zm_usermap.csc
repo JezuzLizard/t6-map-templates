@@ -3,6 +3,8 @@
 #include clientscripts\mp\zombies\_zm_powerups;
 #include clientscripts\mp\zombies\_zm_weapons;
 
+#include clientscripts\mp\maptypes\_zm_usermap_utility;
+
 call_function_safe( func, threaded )
 {
 	threaded = isdefined( threaded ) ? threaded : false;
@@ -28,6 +30,58 @@ setup_zombie_defaults()
 	level.riser_fx_on_client = 1;
 	level.setupcustomcharacterexerts = ::setup_personality_character_exerts;
 	level.raygun2_included = 1;
+	level._is_clienside = true; // runtime checks instead of optimizing for csc
+
+	level._alphabet_array = [];
+
+	alpha_string = "abcdefghijklmnopqrstuvwxyz";
+
+	for ( i = 0; i < alpha_string.size; i++ )
+	{
+		level._alphabet_array[ alpha_string[ i ] ] = i;
+	}
+
+	level._numeric_array = [];
+
+	numeric_string = "0123456789";
+
+	for ( i = 0; i < numeric_string.size; i++ )
+	{
+		level._numeric_array[ numeric_string[ i ] ] = i;
+	}
+
+	level._number_strings = [];
+	level._number_strings[ "float" ] = "-.0123456789";
+	level._number_strings[ "positive_float" ] = ".0123456789";
+	level._number_strings[ "int" ] = "-0123456789";
+	level._number_strings[ "positive_int" ] = "0123456789";
+	level._number_strings[ "natural_int" ] = "123456789";
+
+	level._include_fx_columns = [];
+	level._include_fx_columns[ level._include_fx_columns.size ] = "index";
+	level._include_fx_columns[ level._include_fx_columns.size ] = "fx_name";
+	level._include_fx_columns[ level._include_fx_columns.size ] = "asset_name";
+
+	level._add_zombie_weapons = [];
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "index";
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "weapon_name";
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "upgrade_name";
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "hint";
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "cost";
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "weapon_voice_over";
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "weapon_voice_over_response";
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "ammo_cost";
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "create_vox";
+
+	level._include_powerups_columns = [];
+	level._include_powerups_columns[ level._include_powerups_columns.size ] = "index";
+	level._include_powerups_columns[ level._include_powerups_columns.size ] = "powerup_name";
+
+	level._include_weapons_columns = [];
+	level._include_weapons_columns[ level._include_weapons_columns.size ] = "index";
+	level._include_weapons_columns[ level._include_weapons_columns.size ] = "weapon_name";
+	level._include_weapons_columns[ level._include_weapons_columns.size ] = "in_box";
+	level._include_weapons_columns[ level._include_weapons_columns.size ] = "limit_count";
 }
 
 start_zombie_mode()
@@ -37,42 +91,110 @@ start_zombie_mode()
 	level thread clientscripts\mp\zombies\_zm::init_perk_machines_fx();
 }
 
+assert_include_weapon_entry( weapon_res, in_box_res, limit_res )
+{
+	assert( !weapon_res.is_null );
+	assert( !weapon_res.errored );
+	assert( !in_box_res.errored );
+	assert( !limit_res.errored );
+
+	success = !weapon_res.is_null && !weapon_res.errored && !in_box_res.errored && !limit_res.errored;
+	return success;
+}
+
+assert_include_weapon_success( weapon_name )
+{
+	assert( _WEAPON_EXISTS( weapon_name ) ); // precached failed...
+}
+
+add_limited_weapon( a, b )
+{
+	// stub for csc
+}
+
 include_weapons()
 {
-	table = "zm/include_weapons.csv";
+	succeeded = set_working_table( "zm/include_weapons.csv" );
+	if ( !succeeded )
+	{
+		// no "zm/include_weapons.csv" was found to parse, user will need to define the weapons manually
+		assert( false );
+		return;
+	}
+
+	table = get_working_table();
 	for ( index = 0; tablelookuprownum( table, 0, index ) != -1; index++ )
 	{
-		weapon_name_str = tablelookup( table, 0, index, 1 );
-		in_box_str = tablelookup( table, 0, index, 2 );
+		set_working_row_num( index );
+		weapon_name_result = get_csv_str( 1 ); // required
+		in_box_result = get_csv_bool( 2 ); // optional
+		limit_count_result = get_csv_int( 3 ); // optional
 
-		in_box_value = false;
-		if ( in_box_str == "" || in_box_str == "0" || in_box_str == "false" )
+		if ( !assert_include_weapon_entry( weapon_name_result, in_box_result, limit_count_result ) )
 		{
-			in_box_value = false;
-		}
-		else if ( in_box_str == "1" || in_box_str == "true" )
-		{
-			in_box_value = true;
+			continue;
 		}
 
-		include_weapon( weapon_name_str, in_box_value );
+		if ( !in_box_result.is_null )
+		{
+			include_weapon( weapon_name_result.value, in_box_result.value );
+		}
+		else
+		{
+			include_weapon( weapon_name_result.value );
+		}
+
+		if ( !limit_count_result.is_null )
+		{
+			add_limited_weapon( weapon_name_result.value, limit_count_result.value );
+		}
+
+		assert_include_weapon_success( weapon_name_result.value );
 	}
+
+	set_working_table( undefined );
+	set_working_row_num( undefined );
+}
+
+assert_include_powerup_entry( powerup_res )
+{
+	assert( !powerup_res.is_null );
+	assert( !powerup_res.errored );
+
+	success = !powerup_res.is_null && !powerup_res.errored;
+	return success;
 }
 
 include_powerups()
 {
-	table = "zm/include_powerups.csv";
+	succeeded = set_working_table( "zm/include_powerups.csv" );
+	if ( !succeeded )
+	{
+		// no "zm/include_powerups.csv" was found to parse, user will need to define the powerups manually
+		assert( false );
+		return;
+	}
+
+	table = get_working_table();
 	for ( index = 0; tablelookuprownum( table, 0, index ) != -1; index++ )
 	{
-		powerup_name = tablelookup( table, 0, index, 1 );
+		set_working_row_num( index );
+		powerup_name_res = get_csv_str( 1 ); // required
 
-		include_powerup( powerup_name );
+		if ( !assert_include_powerup_entry( powerup_name_res ) )
+		{
+			continue;
+		}
+
+		include_powerup( powerup_name_res.value );
 	}
+
+	set_working_table( undefined );
+	set_working_row_num( undefined );
 }
 
-add_map_fx( fx_alias, asset_name )
+assert_include_fx_success( fx_alias, asset_name )
 {
-	level._effect[ fx_alias ] = loadfx( asset_name );
 	if ( !isdefined( level._effect[ fx_alias ] ) )
 	{
 		assert( false );
@@ -80,20 +202,66 @@ add_map_fx( fx_alias, asset_name )
 	}
 }
 
+add_map_fx( fx_alias, asset_name )
+{
+	level._effect[ fx_alias ] = loadfx( asset_name );
+	assert_include_fx_success( fx_alias, asset_name );
+}
+
+assert_include_fx_entry( alias_res, asset_res, override_res )
+{
+	assert( !alias_res.errored );
+	assert( !alias_res.is_null );
+	assert( !asset_res.errored );
+	assert( !asset_res.is_null );
+	assert( !override_res.errored );
+	if ( !override_res.value )
+	{
+		assert( !isdefined( level._effect[ alias_res.value ] ) );
+	}
+	
+	override_allowed = override_res.value;
+	if ( !alias_res.errored && !alias_res.is_null && isdefined( level._effect[ alias_res.value ] ) )
+	{
+		if ( !override_allowed )
+		{
+			return false;
+		}
+	}
+
+	success = !alias_res.errored && !alias_res.is_null && !asset_res.errored && !asset_res.is_null;
+	return success;
+}
+
 include_fx()
 {
-	table = "zm/include_fx.csv";
+	succeeded = set_working_table( "zm/include_fx.csv" );
+	if ( !succeeded )
+	{
+		// no "zm/include_fx.csv" was found to parse, user will need to define the fx manually
+		assert( false );
+		return;
+	}
 
+	table = get_working_table();
 	for ( index = 0; tablelookuprownum( table, 0, index ) != -1; index++ )
 	{
-		fx_alias = tablelookup( table, 0, index, 1 );
-		asset_name = tablelookup( table, 0, index, 2 );
+		set_working_row_num( index );
+		alias_res = get_csv_str( 1 ); // required
+		asset_res = get_csv_str( 2 ); // required
+		override_res = get_csv_bool( 3 ); // optional
+		override_res.value = _DEFAULT( override_res.value, false );
 
-		// TODO: assert alias is non colliding, and isdefined
-		// TODO: assert asset_name isdefined
+		if ( !assert_include_fx_entry( alias_res, asset_res, override_res ) )
+		{
+			continue;
+		}
 
-		add_map_fx( fx_alias, asset_name );
+		add_map_fx( alias_res.value, asset_res.value );
 	}
+
+	set_working_table( undefined );
+	set_working_row_num( undefined );
 }
 
 setup_personality_character_exerts()

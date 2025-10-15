@@ -1,9 +1,10 @@
 script,clientscripts/mp/gametypes/zstandard.csc
 script,clientscripts/mp/maptypes/_zm_usermap.csc
+script,clientscripts/mp/maptypes/_zm_usermap_utility.csc
 
 script,maps/mp/gametypes_zm/zstandard.gsc
 script,maps/mp/maptypes/_zm_usermap.gsc
-script,maps/mp/zombies/_zm_laststand.gsc
+script,maps/mp/maptypes/_zm_usermap_utility.gsc
 
 // stock assets requested on zm but not included in common fastfiles
 script,clientscripts/mp/_teamset_cdc.csc
