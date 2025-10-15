@@ -1,25 +1,26 @@
 # Compiling and Debugging
-Run `compile.py` and run this from the in-game console:
-```
-loadmod ""; loadmod zm_frontend
-```
+To compile, run `compile.py` and you're done.
 
-To debug, use this command:
+For debugging you can use these commands, run each separately:
 ```
+loadmod zm_frontend
 exec frontend_debug
 ```
 
 # Progress
-- [x] Load into the map with zm core
-- [x] Add spawners
-- [x] Add M14 wallbuy
 - [ ] Add path nodes
 - [ ] Re-add sound effects
 	- Should just be weapon, zombie and player move sounds, also the money sound when you buy something
 	- The player knifing & mk2 sounds are already in the map
+- [x] Load into the map with zm core
+- [x] Add spawners
+- [x] Add M14 wallbuy
 - [ ] Fix spawner angles (currently one allows them fall out of the map)
 - [ ] Fix game over screen being under the map (or wherever you die at)
-- [ ] Make it so you can't go through the door to the conference room
+- [ ] Fix all conference room details
+  - [ ] Globe spinning and missing fx
+  - [ ] Screen images
+  - [ ] Hologram tabletop fx
 - [ ] Make it so you can't get on top of the desks or metal fences
 - [ ] Make the spawn window impossible to break
 - [ ] Add quick revive to the control panel next to M14

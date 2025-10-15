@@ -74,14 +74,6 @@
 "guid" "5FD04900"
 }
 {
-"angles" "0 90 0"
-"classname" "script_model"
-"model" "p6_door_holoroom"
-"origin" "187.5 421 440"
-"targetname" "war_room_door"
-"guid" "81C6236E"
-}
-{
 "classname" "script_struct"
 "angles" "0 0 0"
 "origin" "421 185 440"
