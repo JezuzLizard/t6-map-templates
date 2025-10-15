@@ -1,13 +1,12 @@
-# Compiling
+# Compiling and Debugging
 Run `compile.py` and run this from the in-game console:
 ```
-loadmod ""; loadmod zm_frontend; exec frontend_debug
+loadmod ""; loadmod zm_frontend
 ```
 
-# Debugging
-Run this from the in-game console:
+To debug, use this command:
 ```
-loadmod ""; loadmod zm_frontend; exec frontend_debug
+exec frontend_debug
 ```
 
 # Remaining Tasks
