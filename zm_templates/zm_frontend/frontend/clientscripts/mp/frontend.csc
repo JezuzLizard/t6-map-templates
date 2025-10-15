@@ -5,13 +5,21 @@
 // setup autoexecs
 #include clientscripts\mp\frontend_fx;
 
+// Script mover flags
+#define CLIENT_FLAG_HOLO_RED		14
+#define CLIENT_FLAG_HOLO_VISIBLE	15
+
 main()
 {
 	clientscripts\mp\maptypes\_zm_usermap::setup_zombie_defaults();
+
 	// you can edit the tables or redirect these calls to your map script
 	clientscripts\mp\maptypes\_zm_usermap::include_weapons(); // zm/include_weapons.csv
 	clientscripts\mp\maptypes\_zm_usermap::include_powerups(); // zm/include_powerups.csv
 	clientscripts\mp\maptypes\_zm_usermap::include_fx(); // zm/include_fx.csv
+
+	//register_clientflag_callback( "scriptmover", CLIENT_FLAG_HOLO_RED, ::set_hologram_red );
+	//register_clientflag_callback( "scriptmover", CLIENT_FLAG_HOLO_VISIBLE, ::set_hologram_shown );
 
 	level.zombiemode_using_doubletap_perk = 1;
 	level.zombiemode_using_juggernaut_perk = 1;

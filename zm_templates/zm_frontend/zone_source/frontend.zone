@@ -25,6 +25,7 @@ script,clientscripts/mp/frontend_fx.csc
 script,clientscripts/mp/createfx/frontend_fx.csc
 
 script,maps/mp/frontend.gsc
+script,maps/mp/frontend_util.gsc
 script,maps/mp/frontend_amb.gsc
 script,maps/mp/frontend_fx.gsc
 script,maps/mp/createfx/frontend_fx.gsc

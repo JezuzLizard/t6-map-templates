@@ -6,10 +6,12 @@
 
 // setup autoexec
 #include maps\mp\frontend_fx;
+#include maps\mp\frontend_util;
 
 main()
 {
 	maps\mp\maptypes\_zm_usermap::setup_zombie_defaults();
+
 	// you can edit the tables or redirect these calls to your script
 	maps\mp\maptypes\_zm_usermap::include_weapons(); // zm/include_weapons.csv
 	maps\mp\maptypes\_zm_usermap::include_powerups(); // zm/include_powerups.csv
@@ -48,6 +50,13 @@ main()
 
 	init_zones[0] = "war_room_volume";
 	maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
+
+	globe = build_globe();
+	float_pos = GetEnt( "holo_table_floating", "targetname" );
+	globe.origin = float_pos.origin;
+
+	wait_network_frame();
+	show_globe( true, true );
 }
 
 frontend_connected()
