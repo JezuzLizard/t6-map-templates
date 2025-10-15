@@ -49,7 +49,3 @@ rawfile,shock/dog_bite.shock
 fx,maps/command_center/fx_com_hologram_static_beam
 fx,maps/command_center/fx_com_hologram_static_missile
 fx,maps/command_center/fx_com_hologram_static_ship
-
-
-// required to remove specific "frontend" map check!
-script,maps/mp/zombies/_zm_laststand.gsc
