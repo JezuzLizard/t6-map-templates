@@ -65,6 +65,8 @@ start_zombie_mode( init_zones )
 
 	level thread maps\mp\zombies\_zm_zonemgr::manage_zones( init_zones );
 
+	level.player_out_of_playable_area_monitor = false;
+
 	// adjust these if that fr is too small
 	level.zombie_ai_limit = 24;
 	setdvar( "zombiemode_path_minz_bias", 13 );

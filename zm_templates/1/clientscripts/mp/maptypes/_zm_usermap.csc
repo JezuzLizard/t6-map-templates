@@ -21,7 +21,7 @@ setup_zombie_defaults()
 	level._no_water_risers = 1;
 	level._no_navcards = true;
 	level.riser_fx_on_client = 1;
-	level.setupcustomcharacterexerts = ::setup_personality_character_exerts;
+	level.setupcustomcharacterexerts = clientscripts\mp\frontend::setup_personality_character_exerts;
 	level.raygun2_included = 1;
 }
 
