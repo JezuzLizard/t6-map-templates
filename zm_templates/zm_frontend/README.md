@@ -20,7 +20,7 @@ exec frontend_debug
 - [ ] Fix all conference room details
   - [ ] Globe spinning and missing fx
   - [ ] Screen images
-  - [ ] Hologram tabletop fx
+  - [x] Hologram tabletop fx
 - [ ] Make it so you can't get on top of the desks or metal fences
 - [ ] Make the spawn window impossible to break
 - [ ] Add quick revive to the control panel next to M14

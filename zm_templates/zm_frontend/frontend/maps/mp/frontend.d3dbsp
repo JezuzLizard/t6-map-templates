@@ -711,14 +711,6 @@
 }
 {
 "angles" "0 90 0"
-"model" "p6_hologram_static"
-"classname" "script_model"
-"targetname" "holotable_static"
-"origin" "49 489 472"
-"guid" "D240049E"
-}
-{
-"angles" "0 90 0"
 "classname" "script_origin"
 "targetname" "holo_table_floating_left"
 "origin" "80 488 504"
