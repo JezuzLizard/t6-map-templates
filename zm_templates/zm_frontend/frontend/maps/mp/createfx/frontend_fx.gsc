@@ -32,23 +32,23 @@ main()
 	ent = maps\mp\_utility::createOneshotEffect( "fx_com_light_glow_white" );
 	ent.v[ "origin" ] = ( 186.846, 192.301, 446.233 ); ent.v[ "angles" ] = ( 0.450807, 184.464, 88.5653 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_frontend_light1" );
-	ent.v[ "origin" ] = ( -64.0926, 267.082, 571.125 ); ent.v[ "angles" ] = ( 271, 270.002, 89.9982 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_frontend_light1" );
+	// ent.v[ "origin" ] = ( -64.0926, 267.082, 571.125 ); ent.v[ "angles" ] = ( 271, 270.002, 89.9982 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_frontend_light1" );
-	ent.v[ "origin" ] = ( -62.6409, 388.272, 570.17 ); ent.v[ "angles" ] = ( 270, 0, -1 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_frontend_light1" );
+	// ent.v[ "origin" ] = ( -62.6409, 388.272, 570.17 ); ent.v[ "angles" ] = ( 270, 0, -1 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_frontend_light1" );
-	ent.v[ "origin" ] = ( -61.7738, 522.738, 570.125 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_frontend_light1" );
+	// ent.v[ "origin" ] = ( -61.7738, 522.738, 570.125 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_frontend_light1" );
-	ent.v[ "origin" ] = ( 172.495, 266.698, 572.125 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_frontend_light1" );
+	// ent.v[ "origin" ] = ( 172.495, 266.698, 572.125 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_frontend_light1" );
-	ent.v[ "origin" ] = ( 166.188, 389.409, 571.125 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_frontend_light1" );
+	// ent.v[ "origin" ] = ( 166.188, 389.409, 571.125 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_frontend_light1" );
-	ent.v[ "origin" ] = ( 166.171, 523.7, 570.125 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_frontend_light1" );
+	// ent.v[ "origin" ] = ( 166.171, 523.7, 570.125 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
 	ent = maps\mp\_utility::createOneshotEffect( "fx_com_glow_sml_blue" );
 	ent.v[ "origin" ] = ( -53.4712, 496.679, 465.799 ); ent.v[ "angles" ] = ( 284, 180, 180 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
@@ -119,59 +119,59 @@ main()
 	ent = maps\mp\_utility::createOneshotEffect( "fx_com_glow_sml_blue" );
 	ent.v[ "origin" ] = ( 45.7629, 447.948, 466.265 ); ent.v[ "angles" ] = ( 287, 270, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 227.943, 95.2597, 571.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 227.943, 95.2597, 571.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 349.725, 96.7029, 571.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 349.725, 96.7029, 571.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 479.482, 97.9055, 571.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 479.482, 97.9055, 571.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 629.051, 97.4639, 552.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 629.051, 97.4639, 552.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 481.576, -157.025, 570.624 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 481.576, -157.025, 570.624 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 350.983, -155.179, 568.624 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 350.983, -155.179, 568.624 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 370.652, -322.324, 550.375 ); ent.v[ "angles" ] = ( 270, 349.469, -81.469 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 370.652, -322.324, 550.375 ); ent.v[ "angles" ] = ( 270, 349.469, -81.469 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 227.72, -321.523, 551.375 ); ent.v[ "angles" ] = ( 270, 349.469, -81.469 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 227.72, -321.523, 551.375 ); ent.v[ "angles" ] = ( 270, 349.469, -81.469 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 349.426, 328.28, 566.585 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 349.426, 328.28, 566.585 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 479.46, 326.496, 563.585 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 479.46, 326.496, 563.585 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 630.399, 348.741, 552.585 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 630.399, 348.741, 552.585 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 110.389, 97.8951, 571.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 110.389, 97.8951, 571.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 627.565, 228.016, 552.5 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 627.565, 228.016, 552.5 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 609.176, 467.829, 566.332 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 609.176, 467.829, 566.332 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 606.068, 650.505, 571.418 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 606.068, 650.505, 571.418 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 256.007, 655.897, 571.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 256.007, 655.897, 571.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 272.936, 472.436, 565.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 272.936, 472.436, 565.375 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 429.237, 586.05, 569.375 ); ent.v[ "angles" ] = ( 270, 349.469, -81.469 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 429.237, 586.05, 569.375 ); ent.v[ "angles" ] = ( 270, 349.469, -81.469 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -15;
 	
 	ent = maps\mp\_utility::createExploder( "fx_com_hologram_model_godray" );
 	ent.v[ "origin" ] = ( 4.89663, 513.399, 468.596 ); ent.v[ "angles" ] = ( 271.504, 96.721, 79.0447 ); ent.v[ "type" ] = "exploder"; ent.v[ "delay" ] = 0; ent.v[ "exploder" ] = 113;
@@ -245,17 +245,17 @@ main()
 	ent = maps\mp\_utility::createOneshotEffect( "fx_com_vtol_red_glow" );
 	ent.v[ "origin" ] = ( -42269.6, -1729.2, 52.5951 ); ent.v[ "angles" ] = ( 346.896, 92.0624, -7.16806 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = 0.1;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 432.809, 1031.49, 568.877 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -43;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 432.809, 1031.49, 568.877 ); ent.v[ "angles" ] = ( 270, 0, 0 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -43;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 515.589, -322.402, 550.875 ); ent.v[ "angles" ] = ( 270, 349.469, -81.469 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -17;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 515.589, -322.402, 550.875 ); ent.v[ "angles" ] = ( 270, 349.469, -81.469 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -17;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 98.7306, 716.851, 569.57 ); ent.v[ "angles" ] = ( 270, 349.469, -81.469 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -30;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 98.7306, 716.851, 569.57 ); ent.v[ "angles" ] = ( 270, 349.469, -81.469 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -30;
 	
-	ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
-	ent.v[ "origin" ] = ( 252.605, 842.241, 561.511 ); ent.v[ "angles" ] = ( 270, 349.469, -81.469 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -22;
+	// ent = maps\mp\_utility::createOneshotEffect( "fx_lf_commandcenter_light1" );
+	// ent.v[ "origin" ] = ( 252.605, 842.241, 561.511 ); ent.v[ "angles" ] = ( 270, 349.469, -81.469 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -22;
 	
 	ent = maps\mp\_utility::createOneshotEffect( "fx_com_button_glows_2" );
 	ent.v[ "origin" ] = ( -103.156, 397.262, 461.808 ); ent.v[ "angles" ] = ( 0.235576, 358.402, 0.412009 ); ent.v[ "type" ] = "oneshotfx"; ent.v[ "delay" ] = -47;
