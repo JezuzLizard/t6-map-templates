@@ -22,4 +22,3 @@ exec frontend_debug
 - [ ] Add semtex wallbuy on the outside of the conference room wall
 - [ ] Add the Ray Gun Mk2 as a reward for getting to 30
 - [ ] Make the spawn window impossible to break
-- [ ] Make it so you can't get on top of the desks or metal fences
