@@ -21,10 +21,12 @@ PLUTO_MODS_DIR = os.path.join(LOCALAPPDATA, "Plutonium", "storage", "t6", "mods"
 ZONE_ALL = "zone\\all"
 REQUIRED_FILES = [
     f"{BIN_PATH}\\frontend.ff",
+    
     f"{BIN_PATH}\\frontend_gump_sf_a.ff",
     f"{BIN_PATH}\\code_post_gfx.ff",
     f"{BIN_PATH}\\common.ff",
     f"{BIN_PATH}\\common_zm.ff",
+    f"{BIN_PATH}\\zm_nuked.ff",
     f"{BIN_PATH}\\zm_tomb.ff",
     f"{BIN_PATH}\\zm_transit.ff",
     f"{BIN_PATH}\\zm_transit_patch.ff",
@@ -143,16 +145,8 @@ def main():
     link_zone("en_frontend")
     
     # mod.ff
-    mod_zones = [
-        f"{BIN_PATH}\\code_post_gfx.ff",
-        f"{BIN_PATH}\\frontend_gump_sf_a.ff",
-        f"{BIN_PATH}\\common.ff",
-        f"{BIN_PATH}\\common_zm.ff",
-        f"{BIN_PATH}\\zm_tomb.ff",
-        f"{BIN_PATH}\\zm_transit.ff",
-        f"{BIN_PATH}\\zm_transit_patch.ff",
-        f"{BIN_PATH}\\so_zsurvival_zm_transit.ff",
-    ]
+    mod_zones = REQUIRED_FILES
+    mod_zones.remove(f"{BIN_PATH}\\frontend.ff")
     link_zone("mod", mod_zones)
     
     # we have to override the bsp, otherwise the map doesnt load

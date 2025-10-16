@@ -1,8 +1,9 @@
 # Compiling and Debugging
-To compile, run `mod_name/compile.py` and you're done.
+To compile, run the `compile.py` script in your desired map's folder.
 
-For debugging you can use these commands, run each separately:
+For debugging, you can use these commands, but must be ran separately:
 ```
-loadmod [mod_name]
-exec [mod_name]
+loadmod "" 			// for unloading the map's mod
+loadmod [mod_name] 	// for loading the map's mod
+exec [mod_name] 	// each map will come with a config that runs the map with the correct gametype
 ```
