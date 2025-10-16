@@ -1,0 +1,49 @@
+// Call Of Duty: Black Ops II
+>game,T6
+
+>level.@00012d3c,0
+>level.ipak_read,karma
+>level.ipak_read,base
+>level.ipak_read,lowmip
+>level.ipak_read,code_post_gfx
+>level.ipak_read,common
+>level.ipak_write,karma
+>level.@00031d1f,0.75
+
+// original reduced map's assets
+include,optimized_karma_assets
+
+// add new stuff here
+
+// custom map scripts
+script,clientscripts/mp/karma.csc
+script,clientscripts/mp/karma_amb.csc
+script,clientscripts/mp/karma_fx.csc
+script,clientscripts/mp/createfx/karma_fx.csc
+
+script,maps/mp/karma.gsc
+script,maps/mp/karma_amb.gsc
+script,maps/mp/karma_fx.gsc
+script,maps/mp/createfx/karma_fx.gsc
+script,maps/mp/createart/karma_art.gsc
+
+// animscripts specific to karma map
+script,animscripts/aitype/aitype_pistol.gsc
+script,animscripts/traverse/generic.gsc
+script,animscripts/traverse/mantle_over_36.gsc
+script,animscripts/traverse/mantle_over_40_down_80.gsc
+script,animscripts/traverse/mantle_window_dive_36.gsc
+script,animscripts/traverse/stairs_down_8x12.gsc
+script,animscripts/traverse/stairs_up_8x12.gsc
+script,animscripts/traverse/stairs_util.gsc
+
+// vision
+rawfile,vision/karma.vision
+
+// precache tables
+stringtable,zm/add_zombie_weapons.csv
+stringtable,zm/include_fx.csv
+stringtable,zm/include_powerups.csv
+stringtable,zm/include_weapons.csv
+
+rawfile,karma
