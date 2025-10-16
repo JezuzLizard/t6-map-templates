@@ -4,24 +4,24 @@ import shutil
 import urllib.request
 import zipfile
 
-MOD_NAME = "zm_karma"
+MOD_NAME = "zm_frontend"
 CWD = os.path.dirname(os.path.abspath(__file__))
 
-OAT_PATH = os.path.join(CWD, "oat")
-BIN_PATH = os.path.join(CWD, "bin")
-MOD_PATH = os.path.join(CWD, MOD_NAME)
+OAT_PATH = os.path.join(CWD, "..", "oat")
+BIN_PATH = os.path.join(CWD, "..", "bin")
+COMMON_PATH = os.path.join(CWD, "..", "common")
 
-COMMON_PATH = os.path.join(CWD, "common")
-SOURCE_PATH = os.path.join(MOD_PATH, "zone_source")
+SOURCE_PATH = os.path.join(CWD, "zone_source")
+ZONE_OUT_PATH = os.path.join(CWD, "zone_out")
 SOURCE_PATH_TEMPLATED = os.path.join(COMMON_PATH, "zone_source")
-ZONE_OUT_PATH = os.path.join(MOD_PATH, "zone_out")
 
 LOCALAPPDATA = os.environ.get("LOCALAPPDATA") or ""
 PLUTO_MODS_DIR = os.path.join(LOCALAPPDATA, "Plutonium", "storage", "t6", "mods")
 
 ZONE_ALL = "zone\\all"
 REQUIRED_FILES = [
-    f"{BIN_PATH}\\karma.ff",
+    f"{BIN_PATH}\\frontend.ff",
+    f"{BIN_PATH}\\frontend_gump_sf_a.ff",
     f"{BIN_PATH}\\code_post_gfx.ff",
     f"{BIN_PATH}\\common.ff",
     f"{BIN_PATH}\\common_zm.ff",
@@ -36,7 +36,7 @@ def download_oat():
     
     # sticking with a set version because newer ones might introduce build problems later
     url = "https://github.com/Laupetin/OpenAssetTools/releases/download/v0.24.1/oat-windows.zip"
-    zip_path = os.path.join(CWD, "oat.zip")    
+    zip_path = os.path.join(CWD, "..", "oat.zip")    
     urllib.request.urlretrieve(url, zip_path)
     
     # we have to extract it now
@@ -66,17 +66,15 @@ def print_required_files(missing_files):
     input("Press the Enter key to exit...")
 
 def link_zone(zone_name, zone_deps = []):
-    zone_path = f"{MOD_PATH}\\{zone_name}"
-    
     oat_command = [
         f"{OAT_PATH}\\Linker.exe",
-        "--base-folder",            f"{zone_path}",
-        "--add-asset-search-path",  f"{zone_path}",
-        "--add-asset-search-path",  f"{COMMON_PATH}",
-        "--add-source-search-path", f"{SOURCE_PATH}",
-        "--add-source-search-path", f"{SOURCE_PATH_TEMPLATED}",
-        "--output-folder",          f"{ZONE_OUT_PATH}",
-        f"{zone_name}"
+        "--base-folder",            zone_name,
+        "--add-asset-search-path",  zone_name,
+        "--add-asset-search-path",  COMMON_PATH,
+        "--add-source-search-path", SOURCE_PATH,
+        "--add-source-search-path", SOURCE_PATH_TEMPLATED,
+        "--output-folder",          ZONE_OUT_PATH,
+        zone_name
     ]
     
     # each of the zones being loaded needs to be added to the command
@@ -86,9 +84,9 @@ def link_zone(zone_name, zone_deps = []):
     subprocess.run(oat_command, cwd=CWD, universal_newlines=True, check=True)
 
 def create_bsp_iwd():    
-    bsp_name =              "karma.d3dbsp"
+    bsp_name =              "frontend.d3dbsp"
     iwd_path =              os.path.join(ZONE_OUT_PATH, "mod.iwd")
-    source_bsp_path =       os.path.join(CWD, "zm_karma", "karma", "maps", "mp", f"{bsp_name}")
+    source_bsp_path =       os.path.join(CWD, "frontend", "maps", "mp", f"{bsp_name}")
     inner_bsp_path =        os.path.join("maps", "mp", f"{bsp_name}") # the path inside the iwd itself
     rel_bsp_path =          os.path.relpath(inner_bsp_path, CWD)
     
@@ -137,16 +135,17 @@ def main():
     if os.path.exists(ZONE_OUT_PATH):
         shutil.rmtree(ZONE_OUT_PATH)
         
-    # karma.ff, removes the soundbank
-    karma_zones = [ f"{BIN_PATH}\\karma.ff" ]
-    link_zone("karma", karma_zones)
+    # frontend.ff, removes the soundbank
+    frontend_zones = [ f"{BIN_PATH}\\frontend.ff" ]
+    link_zone("frontend", frontend_zones)
     
-    # en_karma.ff, removes the soundbank
-    link_zone("en_karma")
+    # en_frontend.ff, removes the soundbank
+    link_zone("en_frontend")
     
     # mod.ff
     mod_zones = [
         f"{BIN_PATH}\\code_post_gfx.ff",
+        f"{BIN_PATH}\\frontend_gump_sf_a.ff",
         f"{BIN_PATH}\\common.ff",
         f"{BIN_PATH}\\common_zm.ff",
         f"{BIN_PATH}\\zm_tomb.ff",
