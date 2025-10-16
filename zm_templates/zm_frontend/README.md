@@ -4,7 +4,7 @@ To compile, run `compile.py` and you're done.
 For debugging you can use these commands, run each separately:
 ```
 loadmod zm_frontend
-exec frontend_debug
+exec zm_frontend
 ```
 
 # Progress

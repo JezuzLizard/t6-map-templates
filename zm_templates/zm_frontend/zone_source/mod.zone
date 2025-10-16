@@ -20,11 +20,11 @@ include,packages/weapons/raygun_mark2_zm
 include,packages/player_characters/tranzit_survival_characters
 
 // configs to play map easily
-rawfile,run_frontend_zclassic.cfg
-rawfile,run_frontend_zstandard.cfg
-rawfile,sv_run_frontend_zclassic.cfg
-rawfile,sv_run_frontend_zstandard.cfg
-rawfile,frontend_debug.cfg
+rawfile,zm_frontend_zclassic.cfg
+rawfile,zm_frontend_zstandard.cfg
+rawfile,sv_zm_frontend_zclassic.cfg
+rawfile,sv_zm_frontend_zstandard.cfg
+rawfile,zm_frontend.cfg
 
 // missing assets used only in SP or MP, but not ZM!
 image,$lineargray
