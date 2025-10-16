@@ -1,8 +1,8 @@
 index,fx_name,asset_name,override
-0,eye_glow,misc/fx_zombie_eye_single,
-1,headshot,impacts/fx_flesh_hit,
-2,headshot_nochunks,misc/fx_zombie_bloodsplat,
-3,bloodspurt,misc/fx_zombie_bloodspurt,
+0,eye_glow,misc/fx_zombie_eye_single,TRUE
+1,headshot,impacts/fx_flesh_hit,TRUE
+2,headshot_nochunks,misc/fx_zombie_bloodsplat,TRUE
+3,bloodspurt,misc/fx_zombie_bloodspurt,TRUE
 4,animscript_gib_fx,weapon/bullet/fx_flesh_gib_fatal_01,
 5,animscript_gibtrail_fx,trail/fx_trail_blood_streak,
 6,blue_eyes,maps/zombie/fx_zombie_eye_single_blue,
