@@ -201,16 +201,6 @@
 "guid" "911758B2"
 }
 {
-"classname" "trigger_box"
-"width" "40.000000"
-"length" "88.000000"
-"height" "104.000000"
-"angles" "0 0 0"
-"origin" "164 388 492"
-"targetname" "war_room_trigger"
-"guid" "43049D3D"
-}
-{
 "classname" "script_struct"
 "angles" "0 300 0"
 "targetname" "player_start_02"
@@ -230,13 +220,6 @@
 "targetname" "player_start_04"
 "origin" "384 -240 440"
 "guid" "F17F3335"
-}
-{
-"model" "*3"
-"origin" "-12 556 488"
-"classname" "trigger_use"
-"targetname" "table_interact_trigger"
-"guid" "FD54E045"
 }
 {
 "model" "*4"

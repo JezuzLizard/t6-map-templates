@@ -13,11 +13,7 @@ exec frontend_debug
 - [x] Add M14 wallbuy
 - [x] Fix spawner angles
 - [x] Fix game over intermission
-- [ ] Fix all conference room details
-  - [x] Hologram tabletop fx
-  - [x] Globe spinning and missing fx
-  - [ ] Screen images
-  - [ ] Remove the "missing activate" triggers
+- [x] Fix all conference room details
 - [ ] Add path nodes
 - [ ] Re-add sound effects
 	- Should just be weapon, zombie and player move sounds, also the money sound when you buy something
