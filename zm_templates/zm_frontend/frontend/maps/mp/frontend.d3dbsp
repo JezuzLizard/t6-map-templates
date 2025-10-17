@@ -2343,4 +2343,63 @@
 "targetname" "intermission"
 "script_string" "frontend"
 "guid" "B4315065"
+
+{
+"model" "*1"
+"origin" "447 935 475"
+"angles" "0 -90 90"
+"script_noteworthy" "clip"
+"spawnflags" "1"
+"targetname" "frontend_power_blocker"
+"classname" "script_brushmodel"
+"guid" "C1EA032E"
+}
+
+{
+"classname" "script_struct"
+"origin" "445 955 625"
+"angles" "111 270 180"
+"script_linkname" "1"
+"guid" "CF18B34D"
+}
+{
+"note" "************************ POWER DEBRIS TRIGGER"
+"model" "*46"
+"origin" "448 900 440"
+"classname" "trigger_use_touch"
+"targetname" "zombie_debris"
+"target" "frontend_power_blocker"
+"zombie_cost" "1000"
+"script_flag" "openhouse2_f1_2_openhouse2_f2"
+"guid" "0DC11749"
+}
+{
+"note" "************************ POWER DEBRIS LEFT"
+"targetname" "frontend_power_blocker"
+"script_string" "zombie_spawner_door"
+"script_firefx" "poltergeist"
+"script_fxid" "large_ceiling_dust"
+"script_noteworthy" "jiggle"
+"script_linkto" "1"
+"spawnflags" "1"
+"angles" "0 55 0"
+"model" "p6_zm_nuked_couch_02"
+"origin" "430 935 440"
+"classname" "script_model"
+"guid" "7FD7A4BD"
+}
+{
+"note" "************************ POWER DEBRIS RIGHT"
+"targetname" "frontend_power_blocker"
+"script_string" "zombie_spawner_door"
+"script_firefx" "poltergeist"
+"script_fxid" "large_ceiling_dust"
+"script_noteworthy" "jiggle"
+"script_linkto" "1"
+"spawnflags" "1"
+"angles" "21 0 0"
+"model" "p6_zm_nuked_couch_02"
+"origin" "460 935 452"
+"classname" "script_model"
+"guid" "7FD7A4BF"
 }

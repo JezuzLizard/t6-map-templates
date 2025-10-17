@@ -52,3 +52,19 @@ fx,maps/command_center/fx_com_hologram_static_ship
 
 // required to remove specific "frontend" map check!
 script,maps/mp/zombies/_zm_laststand.gsc
+
+// debris
+image,p6_zm_nuked_couch_02_n
+image,~~-gp6_zm_nuked_couch_02_c-rg~432108cb
+material,mlv/mtl_p6_zm_nuked_couch_02
+image,p_us_chair03_n
+image,~~-gp_us_couch02_c-rgb&~-rp_u~46532ccf
+material,mlv/mtl_p_us_couch02
+xmodel,mlv/p6_zm_nuked_couch_02
+
+material,mc/mtl_p6_zm_nuked_couch_02
+material,mc/mtl_p_us_couch02
+xmodel,p6_zm_nuked_couch_02
+
+// perks
+include,revive

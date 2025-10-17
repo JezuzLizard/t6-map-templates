@@ -8,3 +8,5 @@ index,fx_name,asset_name,override
 6,blue_eyes,maps/zombie/fx_zombie_eye_single_blue,
 7,lght_marker,maps/zombie/fx_zmb_tranzit_marker,
 8,lght_marker_flare,maps/zombie/fx_zmb_tranzit_marker_fl,
+9,poltergeist,misc/fx_zombie_couch_effect
+10,large_ceiling_dust,maps/zombie/fx_dust_ceiling_impact_lg_mdbrown

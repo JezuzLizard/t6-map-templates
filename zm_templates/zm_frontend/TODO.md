@@ -1,22 +1,21 @@
 # zm_frontend
+- [ ] Add path nodes
+- [ ] Re-add sound effects
 - [x] Load into the map with zm core
 - [x] Add spawners
 - [x] Add M14 wallbuy
 - [x] Fix spawner angles
 - [x] Fix game over intermission
 - [x] Fix all conference room details
-- [ ] Add path nodes
-- [ ] Re-add sound effects
-- [ ] Add debris at `448 935 440` and make it cost `1000`
-- [ ] Add power trigger at `660 1002 440`
-- [ ] Add quick revive at `427 375 440`
-- [ ] Add juggernog at `163 -347 440`
-- [ ] Add double tap at `142 208 440`
-- [ ] Add speed cola at `282 1055 440`
+- [ ] Re-add upgraded m1911
+- [ ] Power Area
+  - [x] Add debris at `448 935 440` and make it cost `1000`
+  - [ ] Add power trigger at `660 1002 440`
+  - [ ] Add wunderfizz at `282 1055 440`
+- [ ] Conference Room
+  - [ ] Add debris at `188 391 440` and make it cost `750`
+  - [ ] Add MP5 wallbuy at `161 624 440`
+  - [ ] Place semtex wallbuy at `203 282 482`
+  - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
 - [ ] Place mystery box at `275 805 440`
   - Will require us to add all the stock weapon files back
-- [ ] Place semtex wallbuy at `203 282 482`
-- [ ] Make `66 -4 509` impossible to break
-- [ ] Add debris at `188 391 440` and make it cost `750`
-- [ ] Add MP5 wallbuy at `161 624 440`
-- [ ] Fix globe glow being based off the host's camera position (leftover from SP)
