@@ -20,3 +20,4 @@
   - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
 - [ ] Place mystery box at `275 805 440`
   - Will require us to add all the stock weapon files back
+- [x] Make `66 -4 509` impossible to break

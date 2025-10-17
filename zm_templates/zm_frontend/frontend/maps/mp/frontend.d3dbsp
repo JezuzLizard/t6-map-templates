@@ -38,6 +38,15 @@
 "guid" "A5D46665"
 }
 {
+"model" "*2"
+"origin" "66 -3 509"
+"angles" "180 0 0"
+"script_noteworthy" "clip"
+"spawnflags" "1"
+"classname" "script_brushmodel"
+"guid" "C1EA032A"
+}
+{
 "classname" "script_model"
 "model" "p6_monitor_large_radar_02"
 "origin" "495 -376 542"

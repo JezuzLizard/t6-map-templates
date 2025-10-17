@@ -59,7 +59,7 @@ show_globe( do_show = true, ambient_spin = false )
     if ( !isdefined( globe.glow_ring ) )
     {
         globe.glow_ring = GetEnt( "world_globe_ring", "targetname" );
-        globe.glow_ring thread process_globe_glow();
+        //globe.glow_ring thread process_globe_glow();
     }
 
     if ( !ambient_spin )
