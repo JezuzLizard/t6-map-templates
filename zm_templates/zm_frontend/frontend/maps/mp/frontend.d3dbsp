@@ -2426,3 +2426,7 @@
 "classname" "script_model"
 "guid" "7FD7A4BF"
 }
+
+{
+"note" "************************ ZOMBIE PATH NODES"
+}
