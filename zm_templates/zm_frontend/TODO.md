@@ -9,7 +9,7 @@
   - [x] M1911 sounds
   - [x] M1911 sounds
   - [x] Remove all NPC sound references to reduce file size
-  - [ ] Perk drinking sounds
+  - [x] Perk drinking sounds
   - [ ] Add frontend ambience, pick something
   - [ ] M14 sounds
   - [ ] Grenade sounds
