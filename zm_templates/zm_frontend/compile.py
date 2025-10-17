@@ -16,7 +16,7 @@ ZONE_OUT_PATH = os.path.join(CWD, "zone_out")
 SOURCE_PATH_TEMPLATED = os.path.join(COMMON_PATH, "zone_source")
 
 LOCALAPPDATA = os.environ.get("LOCALAPPDATA") or ""
-PLUTO_MODS_DIR = os.path.join(LOCALAPPDATA, "Plutonium", "storage", "t6", "mods")
+PLUTO_MODS_DIR = os.path.join(LOCALAPPDATA, "Plutonium-staging", "storage", "t6", "mods")
 
 ZONE_ALL = "zone\\all"
 REQUIRED_FILES = [
