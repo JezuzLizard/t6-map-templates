@@ -1,7 +1,21 @@
 # zm_frontend
 - [ ] Add path nodes
-- [ ] Add zone volumes using trigger boxes
 - [ ] Re-add sound effects
+  - [x] Get a soundbank working
+  - [x] Zombie sounds
+  - [x] Round sounds
+  - [x] Footstep sounds
+  - [x] Purchase sounds
+  - [x] M1911 sounds
+  - [x] M1911 sounds
+  - [ ] Remove all NPC sound references to reduce file size
+  - [ ] Perk drinking sounds
+  - [ ] Add frontend ambience, pick something
+  - [ ] M14 sounds
+  - [ ] Grenade sounds
+  - [ ] Debris clear sounds
+  - [ ] Powerup sounds
+- [ ] Add zone volumes using trigger boxes
 - [x] Load into the map with zm core
 - [x] Add spawners
 - [x] Add M14 wallbuy
@@ -20,3 +34,4 @@
   - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
 - [ ] Place mystery box at `275 805 440`
   - Will require us to add all the stock weapon files back
+- [ ] Music easter egg
