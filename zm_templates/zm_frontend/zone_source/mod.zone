@@ -8,6 +8,9 @@
 >level.ipak_read,zm
 >level.ipak_read,patch_zm
 
+// sounds
+soundbank,zm_frontend.all
+
 // templated assets for a custom zombies map
 include,template_common_zm
 
