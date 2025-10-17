@@ -10,15 +10,13 @@
 - [x] Fix all conference room details
 - [x] Add quick revive at `427 375 440`
 - [x] Re-add upgraded m1911
-- [ ] Power Area
+- [x] Make `66 -4 509` impossible to break
+- [ ] Make the initial spawns be in the conference room
+- [ ] Backrooms Area
   - [x] Add debris at `448 935 440` and make it cost `1000`
-  - [ ] Add power trigger at `660 1002 440`
   - [ ] Add wunderfizz at `282 1055 440`
 - [ ] Conference Room
-  - [ ] Add debris at `188 391 440` and make it cost `750`
-  - [ ] Add MP5 wallbuy at `161 624 440`
   - [ ] Place semtex wallbuy at `203 282 482`
   - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
 - [ ] Place mystery box at `275 805 440`
   - Will require us to add all the stock weapon files back
-- [x] Make `66 -4 509` impossible to break
