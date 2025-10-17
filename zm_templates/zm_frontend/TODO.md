@@ -8,7 +8,7 @@
   - [x] Purchase sounds
   - [x] M1911 sounds
   - [x] M1911 sounds
-  - [ ] Remove all NPC sound references to reduce file size
+  - [x] Remove all NPC sound references to reduce file size
   - [ ] Perk drinking sounds
   - [ ] Add frontend ambience, pick something
   - [ ] M14 sounds
