@@ -15,6 +15,7 @@ include,packages/aitypes/tranzit_zombies
 
 include,packages/weapons/m14_zm
 include,packages/weapons/m1911_zm
+include,packages/weapons/m1911_upgraded_zm
 include,packages/weapons/raygun_mark2_zm
 
 include,packages/player_characters/tranzit_survival_characters
