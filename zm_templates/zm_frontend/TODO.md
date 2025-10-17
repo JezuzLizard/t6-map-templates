@@ -7,6 +7,7 @@
 - [x] Fix spawner angles
 - [x] Fix game over intermission
 - [x] Fix all conference room details
+- [x] Add quick revive at `427 375 440`
 - [ ] Re-add upgraded m1911
 - [ ] Power Area
   - [x] Add debris at `448 935 440` and make it cost `1000`

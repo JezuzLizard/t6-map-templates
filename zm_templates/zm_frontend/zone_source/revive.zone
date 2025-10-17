@@ -1,0 +1,35 @@
+// Perk Light
+fx,misc/fx_zombie_cola_revive_on
+material,,gfx_fxt_light_flare_phosphorous
+fx,destructibles/fx_dest_elec_shower_sm
+fx,maps/zombie/fx_zmb_cola_revive_flicker
+
+// Perk Bottle
+image,~-gmtl_t6_zmb_perk_bottle_revi_col
+material,mc/mtl_t6_wpn_zmb_perk_bottle_revive
+material,mc/mtl_t6_wpn_zmb_perk_bottle_revive_alpha
+xmodel,t6_wpn_zmb_perk_bottle_revive_view
+xmodel,t6_wpn_zmb_perk_bottle_revive_world
+weapon,zombie_perk_bottle_revive
+
+// Powered Off Machine
+image,~~-gzombie_vending_revsign_s-~6838c6ca
+image,zombie_vending_revsign_n
+image,~-gzombie_vending_revsign_c
+material,mc/mtl_zombie_vending_revsign
+image,~~-gzombie_vending_revive_s-r~e35ec634
+image,zombie_vending_revive_n
+image,~-gzombie_vending_revive_c
+material,mc/mtl_zombie_vending_revive
+material,mc/mtl_zombie_vending_revsign_off
+xmodel,zombie_vending_revive
+
+// Powered On Machine
+material,mc/mtl_zombie_vending_revsign_on
+xmodel,zombie_vending_revive_on
+
+// 2d Icon
+image,specialty_quickrevive_zombies
+material,specialty_quickrevive_zombies
+image,specialty_quickrevive_zombies_pro
+material,specialty_quickrevive_zombies_pro
