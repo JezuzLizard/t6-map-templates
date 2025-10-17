@@ -1,5 +1,6 @@
 # zm_frontend
 - [ ] Add path nodes
+- [ ] Add zone volumes using trigger boxes
 - [ ] Re-add sound effects
 - [x] Load into the map with zm core
 - [x] Add spawners
