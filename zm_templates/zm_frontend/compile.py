@@ -5,6 +5,7 @@ import urllib.request
 import zipfile
 
 MOD_NAME = "zm_frontend"
+MAP_NAME = "frontend"
 CWD = os.path.dirname(os.path.abspath(__file__))
 
 OAT_PATH = os.path.join(CWD, "..", "oat")
@@ -85,18 +86,21 @@ def link_zone(zone_name, zone_deps = []):
     
     subprocess.run(oat_command, cwd=CWD, universal_newlines=True, check=True)
 
-def create_bsp_iwd():    
-    bsp_name =              "frontend.d3dbsp"
-    iwd_path =              os.path.join(ZONE_OUT_PATH, "mod.iwd")
-    source_bsp_path =       os.path.join(CWD, "frontend", "maps", "mp", f"{bsp_name}")
-    inner_bsp_path =        os.path.join("maps", "mp", f"{bsp_name}") # the path inside the iwd itself
-    rel_bsp_path =          os.path.relpath(inner_bsp_path, CWD)
-    
+def create_mod_iwd(files):
     print(f"Building iwd \"mod\"")
+    iwd_path = os.path.join(ZONE_OUT_PATH, "mod.iwd")
     
-    # iwds are just zip files with a special extension
     with zipfile.ZipFile(iwd_path, "w", zipfile.ZIP_DEFLATED) as zip:
-        zip.write(source_bsp_path, arcname=rel_bsp_path)
+        for file_name, inner_dir in files.items():
+            source_path = os.path.join(CWD, MAP_NAME, inner_dir, f"{file_name}")
+            inner_path  = os.path.join(inner_dir, file_name) # the path inside the iwd itself
+            rel_path    = os.path.relpath(inner_path, CWD)
+            
+            if not os.path.exists(source_path):
+                print(f"Warning: file for mod.iwd was not found: \"{file_name}\"")
+                continue
+            
+            zip.write(source_path, arcname=rel_path)    
 
     print(f"Created iwd \"mod\"")
 
@@ -149,8 +153,11 @@ def main():
     mod_zones.remove(f"{BIN_PATH}\\frontend.ff")
     link_zone("mod", mod_zones)
     
-    # we have to override the bsp, otherwise the map doesnt load
-    create_bsp_iwd()
+    # we have to override the mapents and pathnodes, otherwise the map doesnt load
+    create_mod_iwd({
+        "frontend.d3dbsp":          "maps/mp",
+        "frontend.d3dbsp.paths":    "maps/mp",
+    })
     
     # for convenience purposes, copy it to the mods folder automatically
     copy_to_pluto()

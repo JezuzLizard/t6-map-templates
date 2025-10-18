@@ -1,7 +1,7 @@
 # zm_frontend
 
 ## General
-- [ ] Make compile script copy the pathnodes file into the iwd if it exists, same path as the mapents
+- [x] Make compile script copy the pathnodes file into mod.iwd
 - [ ] Add path nodes
 - [ ] Music easter egg
 
