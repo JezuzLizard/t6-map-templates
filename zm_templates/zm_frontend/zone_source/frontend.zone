@@ -23,6 +23,7 @@ script,clientscripts/mp/frontend.csc
 script,clientscripts/mp/frontend_amb.csc
 script,clientscripts/mp/frontend_fx.csc
 script,clientscripts/mp/createfx/frontend_fx.csc
+script,clientscripts/mp/zombies/_zm_weap_slipgun.csc
 
 script,maps/mp/frontend.gsc
 script,maps/mp/frontend_util.gsc
@@ -30,6 +31,7 @@ script,maps/mp/frontend_amb.gsc
 script,maps/mp/frontend_fx.gsc
 script,maps/mp/createfx/frontend_fx.gsc
 script,maps/mp/createart/frontend_art.gsc
+script,maps/mp/zombies/_zm_weap_slipgun.gsc
 
 // vision
 rawfile,vision/frontend.vision

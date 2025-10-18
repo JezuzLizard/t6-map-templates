@@ -3,11 +3,13 @@
 ## General
 - [ ] Add path nodes
 - [ ] Music easter egg
-- [ ] Add the pre-patch Sliqifier to the box
+- [x] Add the pre-patch Sliqifier to the box
+- [ ] Loadscreen
+- [ ] Main Menu "Play" button which brings you to zsurvival
+- [ ] Add all box weapons
 
 ## Sound effects
 - [x] Grenade/EMP sounds
-- [ ] All box weapon sounds (and other assets)
 - [ ] Add frontend ambience
   - [ ] Computers in the main area
   - [ ] Air vents in the backrooms

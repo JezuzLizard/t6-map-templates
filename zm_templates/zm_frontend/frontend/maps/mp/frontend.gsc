@@ -20,41 +20,44 @@ main()
 
 	// map specific setup here
 	level.enable_magic = getgametypesetting( "magic" );
+
 	frontend_magicbox_init();
 	maps\mp\_sticky_grenade::init();
-	
+
 	level.givecustomloadout = ::givecustomloadout;
 	level.zombie_init_done = ::zombie_init_done;
-
 	onplayerconnect_callback( ::frontend_connected );
 	
 	// perk opt ins
 	level.zombiemode_using_pack_a_punch = 0;
 	level.zombiemode_reusing_pack_a_punch = 0;
-	level.zombiemode_using_doubletap_perk = 1;
+	level.zombiemode_using_tombstone_perk = 0;
+	level.zombiemode_using_revive_perk = 1;
 	level.zombiemode_using_juggernaut_perk = 1;
 	level.zombiemode_using_marathon_perk = 1;
-	level.zombiemode_using_revive_perk = 1;
+	level.zombiemode_using_doubletap_perk = 1;
 	level.zombiemode_using_sleightofhand_perk = 1;
-	level.zombiemode_using_tombstone_perk = 0;
 
-	// disable loading "maps/zombie/fx_zmb_tanzit_upgrade" fx
+	// disable loading random tranzit fx
 	level.disable_fx_upgrade_aquired = true;
-	// disable loading "maps/zombie/fx_zombie_tesla_neck_spurt"
 	level.fx_exclude_tesla_head_light = true;
-	// disable loading "maps/zombie/fx_zmb_tranzit_shield_explo"
 	level.disable_fx_zmb_tranzit_shield_explo = true;
 
 	level.culldist = 5000;
 	setup_characters();
-
-	level.zone_manager_init_func = ::zone_init;
-
 	level thread electric_switch();
 
+	level.zone_manager_init_func = ::zone_init;
 	init_zones[0] = "war_room_volume";
 	maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
 
+	// this has to be done after zm initializes
+	// level.zombie_vars gets reset inside of zm::init but the sliqifier sets zombie vars
+	maps\mp\zombies\_zm_weap_slipgun::init();
+}
+
+init_globe()
+{
 	globe = build_globe();
 	float_pos = GetEnt( "holo_table_floating", "targetname" );
 	globe.origin = float_pos.origin;

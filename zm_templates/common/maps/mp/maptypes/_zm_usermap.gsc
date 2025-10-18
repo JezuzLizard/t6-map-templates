@@ -109,7 +109,6 @@ setup_zombie_defaults()
 
 start_zombie_mode( init_zones )
 {
-	// intentionally after includes
 	maps\mp\zombies\_zm::init();
 	precacheitem( "death_throe_zm" );
 
@@ -125,7 +124,7 @@ start_zombie_mode( init_zones )
 
 	level.player_out_of_playable_area_monitor = false;
 
-	// adjust these if that fr is too small
+	// adjust these if the map is too small
 	level.zombie_ai_limit = 24;
 	setdvar( "zombiemode_path_minz_bias", 13 );
 }

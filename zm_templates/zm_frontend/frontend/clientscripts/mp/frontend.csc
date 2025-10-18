@@ -1,6 +1,7 @@
 #include clientscripts\mp\_utility;
 #include clientscripts\mp\zombies\_zm_weapons;
 #include clientscripts\mp\zombies\_zm_utility;
+#include clientscripts\mp\zombies\_zm_weap_slipgun;
 
 // setup autoexecs
 #include clientscripts\mp\frontend_fx;
@@ -27,6 +28,8 @@ main()
 	level.zombiemode_using_revive_perk = 1;
 	level.zombiemode_using_sleightofhand_perk = 1;
 	level.zombiemode_using_tombstone_perk = 0;
+
+	clientscripts\mp\zombies\_zm_weap_slipgun::init();
 
 	// blue
 	level._override_eye_fx = level._effect["blue_eyes"];

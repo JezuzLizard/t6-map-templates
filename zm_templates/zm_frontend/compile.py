@@ -28,6 +28,8 @@ REQUIRED_FILES = [
     f"{BIN_PATH}\\common.ff",
     f"{BIN_PATH}\\common_zm.ff",
     f"{BIN_PATH}\\zm_nuked.ff",
+    f"{BIN_PATH}\\zm_highrise.ff",
+    f"{BIN_PATH}\\zm_highrise_patch.ff",
     f"{BIN_PATH}\\zm_tomb.ff",
     f"{BIN_PATH}\\zm_transit.ff",
     f"{BIN_PATH}\\zm_transit_patch.ff",
@@ -71,8 +73,8 @@ def print_required_files(missing_files):
 def link_zone(zone_name, zone_deps = []):
     oat_command = [
         f"{OAT_PATH}\\Linker.exe",
-        "--base-folder",            zone_name,
-        "--add-asset-search-path",  zone_name,
+        "--base-folder",            os.path.join(CWD, zone_name),
+        "--add-asset-search-path",  os.path.join(CWD, zone_name),
         "--add-asset-search-path",  COMMON_PATH,
         "--add-source-search-path", SOURCE_PATH,
         "--add-source-search-path", SOURCE_PATH_TEMPLATED,
