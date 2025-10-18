@@ -125,7 +125,10 @@ start_zombie_mode( init_zones )
 	level.player_out_of_playable_area_monitor = false;
 
 	// adjust these if the map is too small
-	level.zombie_ai_limit = 24;
+	if ( !isdefined( level.zombie_ai_limit ) )
+	{
+		level.zombie_ai_limit = 24;
+	}
 	setdvar( "zombiemode_path_minz_bias", 13 );
 }
 

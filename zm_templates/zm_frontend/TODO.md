@@ -1,7 +1,7 @@
 # zm_frontend
 
 ## General
-- [ ] Add path nodes
+- [x] Add path nodes
 - [ ] Music easter egg
 - [x] Add the pre-patch Sliqifier to the box
 - [ ] Loadscreen

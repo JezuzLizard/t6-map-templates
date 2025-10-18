@@ -45,6 +45,9 @@ main()
 	setup_characters();
 	level thread electric_switch();
 
+	// lower horde count since the map is so small
+	level.zombie_ai_limit = 18;
+
 	level.zone_manager_init_func = ::zone_init;
 	init_zones[0] = "war_room_volume";
 	maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
@@ -52,6 +55,7 @@ main()
 	// stuff that has to be after zm::init
 	frontend_magicbox_init();
 	maps\mp\zombies\_zm_weap_slipgun::init();
+	init_globe();
 }
 
 init_globe()
