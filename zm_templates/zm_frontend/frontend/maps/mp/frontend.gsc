@@ -22,6 +22,7 @@ main()
 	level.enable_magic = getgametypesetting( "magic" );
 	frontend_magicbox_init();
 	maps\mp\_sticky_grenade::init();
+	
 	level.givecustomloadout = ::givecustomloadout;
 	level.zombie_init_done = ::zombie_init_done;
 
@@ -45,10 +46,11 @@ main()
 	level.disable_fx_zmb_tranzit_shield_explo = true;
 
 	level.culldist = 5000;
-
 	setup_characters();
 
 	level.zone_manager_init_func = ::zone_init;
+
+	level thread electric_switch();
 
 	init_zones[0] = "war_room_volume";
 	maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
@@ -59,6 +61,23 @@ main()
 
 	wait_network_frame();
 	show_globe( true, true );
+}
+
+electric_switch()
+{
+    power_trigger = GetEnt( "use_elec_switch", "targetname" );
+    power_trigger SetHintString( &"ZOMBIE_ELECTRIC_SWITCH" );
+    power_trigger SetVisibleToAll();
+    power_trigger waittill( "trigger", user );
+
+    power_trigger SetInvisibleToAll();
+    power_trigger PlaySound( "evt_poweron_front" );
+
+    level thread maps\mp\zombies\_zm_perks::perk_unpause_all_perks();
+    
+	level notify( "electric_door" );
+    ClientNotify( "power_on" );
+    flag_set( "power_on" );
 }
 
 frontend_magicbox_init()

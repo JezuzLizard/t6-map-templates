@@ -2355,6 +2355,13 @@
 }
 
 {
+"model" "*8"
+"classname" "trigger_use_touch"
+"targetname" "use_elec_switch"
+"origin" "671 992 439"
+"guid" "187254A6"
+}
+{
 "note" "************************ QUICK REVIVE MACHINE"
 "origin" "430 385 440"
 "model" "zombie_vending_revive"
