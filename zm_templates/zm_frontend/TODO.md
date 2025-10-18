@@ -1,37 +1,30 @@
 # zm_frontend
+
+## General
 - [ ] Add path nodes
-- [ ] Re-add sound effects
-  - [x] Get a soundbank working
-  - [x] Zombie sounds
-  - [x] Round sounds
-  - [x] Footstep sounds
-  - [x] Purchase sounds
-  - [x] M1911 sounds
-  - [x] M1911 sounds
-  - [x] Remove all NPC sound references to reduce file size
-  - [x] Perk drinking sounds
-  - [ ] Add frontend ambience, pick something
-  - [ ] M14 sounds
-  - [ ] Grenade sounds
-  - [ ] Debris clear sounds
-  - [ ] Powerup sounds
-- [ ] Add zone volumes using trigger boxes
-- [x] Load into the map with zm core
-- [x] Add spawners
-- [x] Add M14 wallbuy
-- [x] Fix spawner angles
-- [x] Fix game over intermission
-- [x] Fix all conference room details
-- [x] Add quick revive at `427 375 440`
-- [x] Re-add upgraded m1911
-- [x] Make `66 -4 509` impossible to break
-- [ ] Make the initial spawns be in the conference room
-- [ ] Backrooms Area
-  - [x] Add debris at `448 935 440` and make it cost `1000`
-  - [ ] Add wunderfizz at `282 1055 440`
-- [ ] Conference Room
-  - [ ] Place semtex wallbuy at `203 282 482`
-  - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
-- [ ] Place mystery box at `275 805 440`
-  - Will require us to add all the stock weapon files back
 - [ ] Music easter egg
+
+## Zones
+- [ ] Add zone volumes using trigger boxes
+- [ ] Make the box area and back room its own zone
+- [ ] Make the main area its own zone
+
+- [ ] Backrooms Area
+  - [ ] Add wunderfizz at `282 1055 440`
+  - [ ] Add AK74u wallbuy at `495 870 440`
+  - [ ] Place mystery box at `275 805 440`
+- [ ] Conference Room
+  - [ ] Make initial player spawns be next to the hologram table, just like in the campaign
+  - [ ] Add semtex wallbuy at `203 282 482`
+  - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
+
+## Sound effects
+  - [ ] Add frontend ambience
+    - [ ] Computers in the main area
+    - [ ] Air vents in the backrooms
+    - [ ] Humming on the server racks
+  - [ ] M14 sounds
+  - [ ] AK74u sounds
+  - [ ] Grenade sounds
+  - [ ] EMP sounds
+  - [ ] All box weapon sounds (and other assets)
