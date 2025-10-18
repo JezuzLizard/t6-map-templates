@@ -2554,3 +2554,699 @@
 {
 "note" "************************ ZOMBIE PATH NODES"
 }
+{
+"classname" "node_pathnode"
+"origin" "164.138 -64.3714 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "110.473 81.9228 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "254.874 155.226 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "247.542 239.261 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "259.969 439.682 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "265.845 620.194 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "134.548 701.328 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "85.5825 794.471 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "75.2119 911.474 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "136.823 906.787 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "357.541 865.762 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "243.903 819.377 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "298.954 804.778 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "290.77 859.022 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "446.34 863.715 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "443.881 792.447 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "446.683 694.14 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "525.55 697.019 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "612.478 711.847 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "612.631 644.931 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "583.433 595.118 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "492.599 575.745 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "255.408 596.891 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "327.11 512.65 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "475.803 468.614 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "588.912 549.036 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "580.573 368.857 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "565.424 226.224 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "590.69 134.512 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "605.576 -59.9549 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "497.248 -59.3665 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "481.555 -151.359 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "374.986 -205.792 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "303.773 -135.384 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "271.579 -64.5795 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "353.967 -5.82338 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "389.391 56.2053 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "353.918 179.52 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "310.159 269.774 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "248.65 318.141 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "187.267 395.412 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "136.403 395.068 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "158.055 289.765 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "149.862 226.732 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "76.4469 225.528 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "-50.0735 225.203 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "-75.9672 324.805 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "-74.3111 398.107 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "17.8382 399.977 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "-75.7255 472.848 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "-74.4855 574.061 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "-4.72141 583.606 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "76.4023 582.095 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "148.242 579.544 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "156.2 539.877 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "158.626 467.507 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "152.924 347.401 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "83.9335 310.029 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "13.6957 310.477 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "6.21019 220.922 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "319.837 339.853 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "424.354 277.156 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "532.17 311.161 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "603.359 282.743 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "460.445 331.544 439.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "368.008 591.603 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "542.664 492.853 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "597.481 446.092 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "341.098 704.46 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "245.255 706.506 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "78.4102 726.19 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "167.531 824.043 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "245.316 890.399 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "448.822 948.229 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "448.868 1119.64 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "450.855 1029.84 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "364.574 1017.87 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "279.878 1013.74 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "313.357 1122.36 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "347.635 1060.65 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "515.945 1068.58 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "587.718 1098.24 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "647.792 1106.01 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "668.826 1060.34 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "630.087 1014.85 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "565.963 1002.95 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "598.266 1046.68 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "510.226 1009.08 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "389.449 993.734 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "460.264 977.594 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "482.996 899.25 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "415.353 910.729 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "488.713 798.392 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "495.196 765.368 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "590.02 737.523 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "628.816 583.465 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "550.442 683.782 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "418.087 515.083 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "373.757 478.222 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "313.883 424.672 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "378.205 328.543 439.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "544.792 434.345 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "533.927 162.91 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "454.616 163.088 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "404.999 174.047 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "301.85 156.914 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "163.145 140.426 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "147.801 39.6385 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "214.49 -106.852 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "388.126 -125.907 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "416.607 -121.339 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "334.85 -144.948 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "288.438 25.4067 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "447.81 11.4055 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "544.266 -59.0767 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "595.838 -147.03 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "595.681 -225.113 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "598.892 -297.46 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "540.398 -284.065 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "472.432 -276.844 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "398.469 -274.148 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "339.967 -307.337 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "269.414 -311.773 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "222.445 -267.417 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "159.987 -291.504 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "157.574 -348.396 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "169.214 -228.95 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "167.431 -174.444 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "169.426 -116.519 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "233.468 -51.6622 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "373.728 116.419 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "607.059 8.32282 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "588.024 78.4507 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "510.326 253.778 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "515.534 -100.895 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "396.688 -174.343 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "454.785 -164.772 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "346.06 -223.951 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "412.507 -236.85 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "324.361 -268.615 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "279.933 -265.693 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "186.803 -296.356 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "88.6256 30.5669 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "32.4173 16.2454 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "233.639 199.279 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "334.222 296.242 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "263.141 375.928 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "220.116 385.085 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "217.602 287.355 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "85.0655 403.014 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "-25.9654 570.736 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "36.399 550.703 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "111.904 555.122 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "167.939 622.101 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "-36.8034 613.474 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "28.4767 614.275 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "104.532 617.359 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "144.618 617.359 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "106.502 428.359 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "33.7828 428.359 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "-40.1507 428.359 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "-66.1171 364.654 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "-69.8249 280.475 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "134.641 278.584 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "134.95 328.698 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "149.641 483.113 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "172.359 483.61 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "269.692 521.246 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "312.49 577.631 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "215.456 556.937 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "231.575 640.085 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "111.475 848.682 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "407.882 1078.23 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "565.886 1060.25 440.125"
+}
