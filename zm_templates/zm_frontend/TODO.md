@@ -1,14 +1,11 @@
 # zm_frontend
 
 ## General
-- [x] Make compile script copy the pathnodes file into mod.iwd
 - [ ] Add path nodes
 - [ ] Music easter egg
 
 ## Sound effects
-- [x] M14 sounds
-- [x] AK74u sounds
-- [ ] Grenade sounds
+- [x] Grenade/EMP sounds
 - [ ] All box weapon sounds (and other assets)
 - [ ] Add frontend ambience
   - [ ] Computers in the main area
@@ -21,7 +18,6 @@
 - [ ] Make the main area its own zone
 
 - [ ] Backrooms Area
-  - [x] Add AK74u wallbuy at `495 870 440`
   - [ ] Move debris further back towards the main area, add debris to cut off the box area completely
   - [ ] Add wunderfizz at `282 1055 440`
   - [ ] Place mystery box at `275 805 440`
