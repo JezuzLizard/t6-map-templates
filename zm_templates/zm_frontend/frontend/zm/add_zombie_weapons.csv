@@ -1,5 +1,6 @@
 index,weapon_name,upgrade_name,hint,cost,weapon_voice_over,weapon_voice_over_response,ammo_cost,create_vox,
 0,m1911_zm,,ZOMBIE_WEAPON_M1911,50,,,,,
 1,m14_zm,,ZOMBIE_WEAPON_M14,500,rifle,,250,,
-2,raygun_mark2_zm,,ZOMBIE_WEAPON_RAYGUN_MARK2,10000,raygun_mark2,,,,
-3,frag_grenade_zm,,ZOMBIE_WEAPON_FRAG_GRENADE,250,grenade,,,,
+2,ak74u_zm,,ZOMBIE_WEAPON_AK74U,1200,smg,,500,,
+3,raygun_mark2_zm,,ZOMBIE_WEAPON_RAYGUN_MARK2,10000,raygun_mark2,,,,
+4,frag_grenade_zm,,ZOMBIE_WEAPON_FRAG_GRENADE,250,grenade,,,,

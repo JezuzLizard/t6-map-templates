@@ -17,6 +17,7 @@ include,template_common_zm
 include,packages/aitypes/tranzit_zombies
 
 include,packages/weapons/m14_zm
+include,packages/weapons/ak74u_zm
 include,packages/weapons/m1911_zm
 include,packages/weapons/m1911_upgraded_zm
 include,packages/weapons/raygun_mark2_zm
