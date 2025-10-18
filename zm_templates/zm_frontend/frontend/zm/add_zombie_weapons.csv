@@ -4,4 +4,4 @@ index,weapon_name,upgrade_name,hint,cost,weapon_voice_over,weapon_voice_over_res
 2,ak74u_zm,,ZOMBIE_WEAPON_AK74U,1200,smg,,500,,
 3,raygun_mark2_zm,,ZOMBIE_WEAPON_RAYGUN_MARK2,10000,raygun_mark2,,,,
 4,frag_grenade_zm,,ZOMBIE_WEAPON_FRAG_GRENADE,250,grenade,,,,
-5,slipgun_zm,,ZOMBIE_WEAPON_SLIPGUN,,,,,,
+5,slipgun_zm,,ZOMBIE_WEAPON_SLIPGUN,10,,,,,
