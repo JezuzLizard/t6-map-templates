@@ -2245,16 +2245,6 @@
 "guid" "7A95F13B"
 }
 {
-"note" "************************ QUICK REVIVE SPAWNER"
-"targetname" "war_room_volume_spawners"
-"origin" "285 315 440"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 0 0"
-"guid" "7A95F13B"
-}
-{
 "note" "************************ M14 WALLBUY SPAWNER"
 "targetname" "war_room_volume_spawners"
 "origin" "605 580 440"
