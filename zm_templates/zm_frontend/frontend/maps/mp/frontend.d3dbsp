@@ -2453,5 +2453,54 @@
 }
 
 {
+"note" "************************ MYSTERY BOX CLIP"
+"model" "*1"
+"origin" "39 840 468"
+"angles" "0 -180 90"
+"script_noteworthy" "clip"
+"spawnflags" "1"
+"classname" "script_brushmodel"
+"guid" "C1EA032B"
+}
+{
+"note" "************************ MYSTERY BOX MODEL"
+"classname" "zbarrier_zmcore_MagicBox"
+"zbarrierboardanim5" "o_zombie_magic_box_teddy_rise"
+"zbarriertearanim5" "o_zombie_magic_box_weapon_dual_rise"
+"zbarrierboardmodel5" "tag_origin"
+"zbarrierboardanim4" "o_zombie_magic_box_teddy_rise"
+"zbarriertearanim4" "o_zombie_magic_box_weapon_rise"
+"zbarrierboardmodel4" "tag_origin"
+"zbarrierboardanim3" "o_zombie_magic_box_close"
+"zbarriertearanim3" "o_zombie_magic_box_open"
+"zbarrierboardmodel3" "p6_anim_zm_magic_box"
+"zbarrierboardanim2" "o_zombie_magic_box_leave"
+"zbarriertearanim2" "o_zombie_magic_box_arrive"
+"zbarrierboardmodel2" "p6_anim_zm_magic_box"
+"zbarrierboardanim1" "o_zombie_magic_box_fake_idle_twitch_a"
+"zbarriertearanim1" "o_zombie_magic_box_fake_idle_twitch_b"
+"zbarrierboardmodel1" "p6_anim_zm_magic_box_fake"
+"zbarriernumboards" "5"
+"showupgradedmodel" "0"
+"showalternatemodel" "0"
+"barrieranimtime" "0"
+"angles" "0 -90 0"
+"type" "zmcore_MagicBox"
+"origin" "30 840 440"
+"script_noteworthy" "frontend_chest_zbarrier"
+"guid" "C82823B0"
+}
+{
+"note" "************************ MYSTERY BOX TRIGGER"
+"classname" "script_struct"
+"zombie_cost" "950"
+"script_noteworthy" "frontend_chest"
+"targetname" "treasure_chest_use"
+"angles" "0 0 0"
+"origin" "30 820 440"
+"guid" "0B2ECA3D"
+}
+
+{
 "note" "************************ ZOMBIE PATH NODES"
 }

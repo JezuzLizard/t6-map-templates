@@ -26,7 +26,7 @@ main()
 	level.zombiemode_using_marathon_perk = 1;
 	level.zombiemode_using_revive_perk = 1;
 	level.zombiemode_using_sleightofhand_perk = 1;
-	level.zombiemode_using_tombstone_perk = 1;
+	level.zombiemode_using_tombstone_perk = 0;
 
 	// blue
 	level._override_eye_fx = level._effect["blue_eyes"];

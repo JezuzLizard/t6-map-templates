@@ -11,6 +11,9 @@
 // sounds
 soundbank,zm_frontend.all
 
+// mystery box
+include,packages/mystery_box
+
 // templated assets for a custom zombies map
 include,template_common_zm
 

@@ -19,6 +19,8 @@ main()
 	maps\mp\maptypes\_zm_usermap::add_zombie_weapons(); // zm/add_zombie_weapons.csv
 
 	// map specific setup here
+	level.enable_magic = getgametypesetting( "magic" );
+	frontend_magicbox_init();
 	maps\mp\_sticky_grenade::init();
 	level.givecustomloadout = ::givecustomloadout;
 	level.zombie_init_done = ::zombie_init_done;
@@ -26,14 +28,14 @@ main()
 	onplayerconnect_callback( ::frontend_connected );
 	
 	// perk opt ins
-	level.zombiemode_using_pack_a_punch = 1;
-	level.zombiemode_reusing_pack_a_punch = 1;
+	level.zombiemode_using_pack_a_punch = 0;
+	level.zombiemode_reusing_pack_a_punch = 0;
 	level.zombiemode_using_doubletap_perk = 1;
 	level.zombiemode_using_juggernaut_perk = 1;
 	level.zombiemode_using_marathon_perk = 1;
 	level.zombiemode_using_revive_perk = 1;
 	level.zombiemode_using_sleightofhand_perk = 1;
-	level.zombiemode_using_tombstone_perk = 1;
+	level.zombiemode_using_tombstone_perk = 0;
 
 	// disable loading "maps/zombie/fx_zmb_tanzit_upgrade" fx
 	level.disable_fx_upgrade_aquired = true;
@@ -57,6 +59,15 @@ main()
 
 	wait_network_frame();
 	show_globe( true, true );
+}
+
+frontend_magicbox_init()
+{
+    chest = GetStruct( "frontend_chest", "script_noteworthy" );
+    level.chests = [];
+    level.chests[level.chests.size] = chest;
+	
+    maps\mp\zombies\_zm_magicbox::treasure_chest_init( "frontend_chest" );
 }
 
 frontend_connected()
