@@ -1,0 +1,29 @@
+// Perk Bottle
+image,~-gmtl_t6_zmb_perk_bottle_mara_col
+material,mc/mtl_t6_wpn_zmb_perk_bottle_marathon
+material,mc/mtl_t6_wpn_zmb_perk_bottle_marathon_alpha
+xmodel,t6_wpn_zmb_perk_bottle_marathon_view
+xmodel,t6_wpn_zmb_perk_bottle_marathon_world
+weapon,zombie_perk_bottle_marathon
+
+// Powered Off Machine
+image,~~-gzombie_vending_marathon_s~26747f4f
+image,zombie_vending_marathon_n
+image,~-gzombie_vending_marathon_c
+material,mc/mtl_zombie_vending_marathon
+material,mc/mtl_zombie_vending_marathon_off
+image,~~-gglobal_grey_c-rgb&~-rblac~10c0bb94
+image,~-gwindow_glass_c
+material,mc/mtl_zombie_vending_marathon_glass
+xmodel,zombie_vending_marathon
+
+// Powered On Machine
+material,mc/mtl_zombie_vending_marathon_on
+xmodel,zombie_vending_marathon_on
+
+// Perk Light
+fx,maps/zombie/fx_zmb_cola_staminup_on
+
+// 2d Icon
+image,specialty_marathon_zombies
+material,specialty_marathon_zombies

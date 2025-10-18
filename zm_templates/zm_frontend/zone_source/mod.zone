@@ -27,6 +27,13 @@ include,packages/weapons/raygun_mark2_zm
 
 include,packages/player_characters/tranzit_survival_characters
 
+// perks
+include,packages/perks/revive
+include,packages/perks/jugg
+include,packages/perks/speed
+include,packages/perks/doubletap
+include,packages/perks/staminup
+
 // configs to play map easily
 rawfile,zm_frontend_zclassic.cfg
 rawfile,zm_frontend_zstandard.cfg
@@ -73,9 +80,6 @@ xmodel,mlv/p6_zm_nuked_couch_02
 material,mc/mtl_p6_zm_nuked_couch_02
 material,mc/mtl_p_us_couch02
 xmodel,p6_zm_nuked_couch_02
-
-// perks
-include,revive
 
 // max ammo fix
 image,~~-gmetal_gold_s-rgb&~-rmetal~39bd028a

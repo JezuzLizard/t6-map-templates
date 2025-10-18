@@ -2356,15 +2356,58 @@
 
 {
 "note" "************************ QUICK REVIVE MACHINE"
-"origin" "427 385 440"
+"origin" "430 385 440"
 "model" "zombie_vending_revive"
 "classname" "script_struct"
-"modelscale" "0.5"
 "angles" "0 0 0"
 "script_noteworthy" "specialty_quickrevive"
 "targetname" "zm_perk_machine"
 "script_string" "zstandard_perks_frontend zclassic_perks_frontend"
-"guid" "5FD9D4E9"
+"guid" "5FD9D5E9"
+}
+{
+"note" "************************ JUGG MACHINE"
+"origin" "347.1 811 440"
+"model" "zombie_vending_jugg"
+"classname" "script_struct"
+"angles" "0 180 0"
+"script_noteworthy" "specialty_armorvest"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_frontend zclassic_perks_frontend"
+"guid" "5FD9D5E3"
+}
+{
+"note" "************************ SPEED COLA MACHINE"
+"origin" "532 1116.3 440"
+"model" "zombie_vending_sleight"
+"classname" "script_struct"
+"angles" "0 0 5.24537e-008"
+"script_noteworthy" "specialty_fastreload"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_frontend zclassic_perks_frontend"
+"guid" "5FD9D5E1"
+}
+{
+"note" "************************ DOUBLE TAP MACHINE"
+"origin" "86 157 440"
+"model" "zombie_vending_doubletap2"
+"classname" "script_struct"
+"angles" "0 0 0"
+"script_noteworthy" "specialty_rof"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_frontend zclassic_perks_frontend"
+"guid" "5FD9D5E1"
+}
+{
+"note" "************************ STAMINUP MACHINE"
+"origin" "269.3 1057.3 440"
+"model" "zombie_vending_marathon"
+"classname" "script_struct"
+"angles" "0 90 0"
+"script_noteworthy" "specialty_longersprint"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_frontend zclassic_perks_frontend"
+"guid" "5FD9D5E5"
 }
 
 {

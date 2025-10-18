@@ -1,0 +1,36 @@
+// Perk Light
+fx,misc/fx_zombie_cola_dtap_on
+
+// 2d Icon
+image,specialty_doubletap_zombies
+material,specialty_doubletap_zombies
+
+// Perk Bottle
+techniqueset,mc_sw4_3d_viewmodel_transparent_z9z0z75f
+image,~~-gmtl_t6_zmb_perk_bottle_ju~f1df4990
+image,mtl_t6_zmb_perk_bottle_jugg_nml
+image,~-gmtl_t6_zmb_perk_bottle_dtap_col
+material,mc/mtl_t6_wpn_zmb_perk_bottle_doubletap
+image,~~-gmtl_t6_zmb_perk_bottle_ju~4d75583f
+material,mc/mtl_t6_wpn_zmb_perk_bottle_doubletap_alpha
+xmodel,t6_wpn_zmb_perk_bottle_doubletap_view
+xmodel,t6_wpn_zmb_perk_bottle_doubletap_world
+xanim,viewmodel_zombie_perksacola_drink
+weapon,zombie_perk_bottle_doubletap
+
+// Powered Off Machine
+xanim,p_zombie_perkacola_drink
+image,~~-gzombie_vending_doubletap2~3b8ca4d9
+image,zombie_vending_doubletap2_n
+image,~-gzombie_vending_doubletap2_c
+material,mc/mtl_zombie_vending_doubletap2
+material,mc/mtl_zombie_vending_doubletap2_off
+image,~-gzombie_vending_doubletap2_vent_off
+material,mc/mtl_zombie_vending_doubletap2_vent_off
+xmodel,zombie_vending_doubletap2
+
+// Powered On Machine
+material,mc/mtl_zombie_vending_doubletap2_on
+image,~-gzombie_vending_doubletap2_vent_on
+material,mc/mtl_zombie_vending_doubletap2_vent_on
+xmodel,zombie_vending_doubletap2_on

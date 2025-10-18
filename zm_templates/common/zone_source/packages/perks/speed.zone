@@ -1,0 +1,34 @@
+// Powered Off Machine
+image,~~-gzombie_vending_sleight_s-~57361cbe
+image,zombie_vending_sleight_n
+image,~-gzombie_vending_sleight_c
+material,mc/mtl_zombie_vending_sleight
+material,mc/mtl_zombie_vending_sleight_glass
+image,~~-gzombie_vending_sleight_lo~5333b5e2
+image,~-gzombie_vending_sleight_logo_c
+material,mc/mtl_zombie_vending_sleight_sign
+material,mc/mtl_zombie_vending_sleight_sign_off
+material,mc/mtl_zombie_vending_sleight_off
+xmodel,zombie_vending_sleight
+
+// Powered On Machine
+material,mc/mtl_zombie_vending_sleight_sign_on
+material,mc/mtl_zombie_vending_sleight_on
+xmodel,zombie_vending_sleight_on
+
+// 2d Icon
+image,specialty_fastreload_zombies
+material,specialty_fastreload_zombies
+image,specialty_fastreload_zombies_pro
+material,specialty_fastreload_zombies_pro
+
+// Perk Bottle
+image,~-gmtl_t6_zmb_perk_bottle_hand_col
+material,mc/mtl_t6_wpn_zmb_perk_bottle_sleight
+material,mc/mtl_t6_wpn_zmb_perk_bottle_sleight_alpha
+xmodel,t6_wpn_zmb_perk_bottle_sleight_view
+xmodel,t6_wpn_zmb_perk_bottle_sleight_world
+weapon,zombie_perk_bottle_sleight
+
+// Perk Light
+fx,misc/fx_zombie_cola_on
