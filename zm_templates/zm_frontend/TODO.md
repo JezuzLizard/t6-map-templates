@@ -4,6 +4,16 @@
 - [ ] Add path nodes
 - [ ] Music easter egg
 
+## Sound effects
+- [x] M14 sounds
+- [ ] AK74u sounds
+- [ ] Grenade sounds
+- [ ] All box weapon sounds (and other assets)
+- [ ] Add frontend ambience
+  - [ ] Computers in the main area
+  - [ ] Air vents in the backrooms
+  - [ ] Humming on the server racks
+
 ## Zones
 - [ ] Add zone volumes using trigger boxes
 - [ ] Make the box area and back room its own zone
@@ -17,14 +27,3 @@
   - [ ] Make initial player spawns be next to the hologram table, just like in the campaign
   - [ ] Add semtex wallbuy at `203 282 482`
   - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
-
-## Sound effects
-  - [ ] Add frontend ambience
-    - [ ] Computers in the main area
-    - [ ] Air vents in the backrooms
-    - [ ] Humming on the server racks
-  - [ ] M14 sounds
-  - [ ] AK74u sounds
-  - [ ] Grenade sounds
-  - [ ] EMP sounds
-  - [ ] All box weapon sounds (and other assets)
