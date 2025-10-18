@@ -41,8 +41,8 @@ onstartgametype()
 zstandard_main()
 {
 	maps\mp\gametypes_zm\_zm_gametype::setup_standard_objects( level.default_start_location );
-	level.chests = getstructarray( "treasure_chest_use", "targetname" );
-	treasure_chest_init( "start_chest" );
+	//level.chests = getstructarray( "treasure_chest_use", "targetname" );
+	//treasure_chest_init( "start_chest" );
 	level.dog_rounds_allowed = getgametypesetting( "allowdogs" );
 
 	// if ( level.dog_rounds_allowed )

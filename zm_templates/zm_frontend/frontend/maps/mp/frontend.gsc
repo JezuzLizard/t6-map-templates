@@ -20,8 +20,6 @@ main()
 
 	// map specific setup here
 	level.enable_magic = getgametypesetting( "magic" );
-
-	frontend_magicbox_init();
 	maps\mp\_sticky_grenade::init();
 
 	level.givecustomloadout = ::givecustomloadout;
@@ -51,8 +49,8 @@ main()
 	init_zones[0] = "war_room_volume";
 	maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
 
-	// this has to be done after zm initializes
-	// level.zombie_vars gets reset inside of zm::init but the sliqifier sets zombie vars
+	// stuff that has to be after zm::init
+	frontend_magicbox_init();
 	maps\mp\zombies\_zm_weap_slipgun::init();
 }
 
