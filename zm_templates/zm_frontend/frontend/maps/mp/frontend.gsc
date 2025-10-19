@@ -21,6 +21,7 @@ main()
 	level.enable_magic = getgametypesetting( "magic" );
 	maps\mp\_sticky_grenade::init();
 
+	level._post_zm_overrides_func = ::frontend_post_zm_init;
 	level.givecustomloadout = ::givecustomloadout;
 	level.zombie_init_done = ::zombie_init_done;
 	onplayerconnect_callback( ::frontend_connected );
@@ -92,6 +93,18 @@ frontend_magicbox_init()
     level.chests[level.chests.size] = chest;
 	
     maps\mp\zombies\_zm_magicbox::treasure_chest_init( "frontend_chest" );
+}
+
+frontend_post_zm_init()
+{
+	level.player_out_of_playable_area_monitor = false;
+	level.player_too_many_weapons_monitor = true;
+	level._use_choke_weapon_hints = true;
+	level._use_choke_blockers = true;
+	level.calc_closest_player_using_paths = false;
+	level.zombie_melee_in_water = true;
+	level.put_timed_out_zombies_back_in_queue = true;
+	level.use_alternate_poi_positioning = true;
 }
 
 frontend_connected()
