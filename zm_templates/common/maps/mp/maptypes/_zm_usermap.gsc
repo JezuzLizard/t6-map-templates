@@ -301,7 +301,7 @@ enemy_location_override( zombie, enemy )
 
 assert_include_weapon_entry( in_box_res, limit_res )
 {
-	assert( !in_box.null );
+	assert( !in_box_res.null );
 	assert( !in_box_res.errored );
 	assert( !limit_res.errored );
 
