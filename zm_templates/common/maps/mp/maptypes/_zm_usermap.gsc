@@ -50,6 +50,7 @@ setup_zombie_defaults()
 	level.special_weapon_magicbox_check = ::special_weapon_magicbox_check;
 	level._allow_melee_weapon_switching = 1;
 	level.raygun2_included = 1;
+	// level.zombiemode_reusing_pack_a_punch = true;
 
 	level._zombie_custom_add_weapons = ::table_add_weapons;
 	level._is_clienside = false;
@@ -214,6 +215,12 @@ start_zombie_mode( init_zones )
 
 	assert_zone_entities_validity();
 
+	// fix possible script error if map has no limited weapons
+	if ( !isdefined( level.limited_weapons ) )
+	{
+		level.limited_weapons = [];
+	}
+
 	maps\mp\zombies\_zm::init();
 	precacheitem( "death_throe_zm" );
 
@@ -294,10 +301,11 @@ enemy_location_override( zombie, enemy )
 
 assert_include_weapon_entry( in_box_res, limit_res )
 {
+	assert( !in_box.null );
 	assert( !in_box_res.errored );
 	assert( !limit_res.errored );
 
-	success = !in_box_res.errored && !limit_res.errored;
+	success = !in_box.null && !in_box_res.errored && !limit_res.errored;
 	return success;
 }
 
@@ -487,6 +495,73 @@ assert_add_zombie_weapon_entry( weapon_res, upgrade_name_res, hint_res, cost_res
 	return true;
 }
 
+assert_zm_weapons_table_parse_type_correctness( add_weapon, hint )
+{
+	assert( isstring( hint ) );
+	assert( isstring( add_weapon.name ) );
+	assert( !isdefined( add_weapon.upgrade_name ) || isstring( add_weapon.upgrade_name ) );
+	assert( isint( add_weapon.cost ) );
+	assert( !isdefined( add_weapon.ammo_cost ) || isint( add_weapon.ammo_cost ) );
+	assert( !isdefined( add_weapon.weapon_voice_over ) || isstring( add_weapon.weapon_voice_over ) );
+	assert( !isdefined( add_weapon.weaponvoresp ) || isstring( add_weapon.weaponvoresp ) );
+	assert( !isdefined( add_weapon.create_vox ) || isint( add_weapon.create_vox ) );
+}
+
+add_zombie_weapon2( weapon_name, upgrade_name, hint, cost, weaponvo, weaponvoresp, ammo_cost, create_vox )
+{
+	if ( isdefined( level.zombie_include_weapons ) && !isdefined( level.zombie_include_weapons[weapon_name] ) )
+		return;
+
+	cost = round_up_to_ten( cost );
+
+	precachestring( hint );
+	struct = spawnstruct();
+
+	if ( !isdefined( level.zombie_weapons ) )
+		level.zombie_weapons = [];
+
+	if ( !isdefined( level.zombie_weapons_upgraded ) )
+		level.zombie_weapons_upgraded = [];
+
+	if ( isdefined( upgrade_name ) )
+		level.zombie_weapons_upgraded[upgrade_name] = weapon_name;
+
+	struct.weapon_name = weapon_name;
+	struct.upgrade_name = upgrade_name;
+	struct.weapon_classname = "weapon_" + weapon_name;
+	struct.hint = hint;
+	struct.cost = cost;
+	struct.vox = weaponvo;
+	struct.vox_response = weaponvoresp;
+/#
+	println( "ZM >> Looking for weapon - " + weapon_name );
+#/
+	struct.is_in_box = level.zombie_include_weapons[weapon_name];
+
+	if ( isdefined( ammo_cost ) )
+	{
+		ammo_cost = round_up_to_ten( ammo_cost );
+	}
+	else
+	{
+		ammo_cost = round_up_to_ten( int( cost * 0.5 ) );
+	}
+
+	struct.ammo_cost = ammo_cost;
+	level.zombie_weapons[weapon_name] = struct;
+
+	if ( isdefined( level.zombiemode_reusing_pack_a_punch ) && level.zombiemode_reusing_pack_a_punch && isdefined( upgrade_name ) )
+		add_attachments( weapon_name, upgrade_name );
+
+	if ( isdefined( create_vox ) )
+		level.vox maps\mp\zombies\_zm_audio::zmbvoxadd( "player", "weapon_pickup", weapon_name, weaponvo, undefined );
+
+/#
+	if ( isdefined( level.devgui_add_weapon ) )
+		[[ level.devgui_add_weapon ]]( weapon_name, upgrade_name, hint, cost, weaponvo, weaponvoresp, ammo_cost );
+#/
+}
+
 add_zombie_weapons()
 {
 	succeeded = set_working_table( "zm/zm_weapons.csv" );
@@ -512,7 +587,7 @@ add_zombie_weapons()
 		create_vox_res = get_csv_bool( 8 ); // optional
 
 		// box logic section, formerly include_weapons.csv
-		in_box_res = get_csv_bool( 9 ); // optional
+		in_box_res = get_csv_bool( 9 ); // required
 		limit_count_res = get_csv_int( 10 ); // optional
 
 		if ( !assert_add_zombie_weapon_entry( weapon_name_res, upgrade_name_res, hint_res, cost_res, weapon_voice_over_res, weapon_voice_over_response_res, ammo_cost_res, create_vox_res ) )
@@ -525,14 +600,7 @@ add_zombie_weapons()
 			continue;
 		}
 
-		if ( !in_box_res.is_null )
-		{
-			include_weapon( weapon_name_res.value, in_box_res.value );
-		}
-		else
-		{
-			include_weapon( weapon_name_res.value );
-		}
+		include_weapon( weapon_name_res.value, in_box_res.value );
 
 		if ( !limit_count_res.is_null )
 		{
@@ -558,6 +626,7 @@ add_zombie_weapons()
 		add_weapon.weaponvoresp = weapon_voice_over_response;
 		add_weapon.create_vox = create_vox;
 
+		assert_zm_weapons_table_parse_type_correctness( add_weapon, hint_res );
 		level._usermap_add_weapons[ level._usermap_add_weapons.size ] = add_weapon;
 	}
 
@@ -576,7 +645,7 @@ table_add_weapons()
 	{
 		weapon = level._usermap_add_weapons[ i ];
 		assert( level.zombie_include_weapons[weapon.name] );
-		add_zombie_weapon( weapon.name, weapon.upgrade_name, weapon.hint, weapon.cost, weapon.weaponvo, weapon.weaponvoresp, weapon.ammo_cost, weapon.create_vox );
+		add_zombie_weapon2( weapon.name, weapon.upgrade_name, weapon.hint, weapon.cost, weapon.weaponvo, weapon.weaponvoresp, weapon.ammo_cost, weapon.create_vox );
 	}
 
 	// kill the array to save some vars
