@@ -45,7 +45,8 @@ main()
 	setup_characters();
 	level thread electric_switch();
 
-	// lower horde count since the map is so small
+	// adjust these if the map is too small
+	// custom maps must do this before _zm_usermap::start_zombie_mode
 	level.zombie_ai_limit = 18;
 
 	level.zone_manager_init_func = ::zone_init;
