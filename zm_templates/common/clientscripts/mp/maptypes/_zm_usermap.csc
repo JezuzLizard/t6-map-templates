@@ -109,7 +109,7 @@ include_weapons()
 		set_working_row_num( index );
 		weapon_name_res = get_csv_str( 1 ); // required
 		// box logic section, formerly include_weapons.csv
-		in_box_res = get_csv_str( 9 ); // optional
+		in_box_res = get_csv_bool( 9 ); // optional
 
 		if ( !in_box_res.is_null )
 		{

@@ -512,7 +512,7 @@ add_zombie_weapons()
 		create_vox_res = get_csv_bool( 8 ); // optional
 
 		// box logic section, formerly include_weapons.csv
-		in_box_res = get_csv_str( 9 ); // optional
+		in_box_res = get_csv_bool( 9 ); // optional
 		limit_count_res = get_csv_int( 10 ); // optional
 
 		if ( !assert_add_zombie_weapon_entry( weapon_name_res, upgrade_name_res, hint_res, cost_res, weapon_voice_over_res, weapon_voice_over_response_res, ammo_cost_res, create_vox_res ) )
