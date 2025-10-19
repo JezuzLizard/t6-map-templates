@@ -33,10 +33,10 @@ setup_zombie_defaults()
 	maps\mp\zombies\_zm::init_fx();
 	maps\mp\animscripts\zm_death::precache_gib_fx();
 
-	level.zombiemode = 1;
 	level._no_water_risers = 1;
 	level._no_navcards = true;
 	level.riser_fx_on_client = 1;
+	level._usermap = true;
 
 	maps\mp\teams\_teamset_cdc::register();
 	maps\mp\teams\_teamset_cdc::level_init();
@@ -94,42 +94,149 @@ setup_zombie_defaults()
 	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "weapon_voice_over_response";
 	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "ammo_cost";
 	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "create_vox";
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "in_box";
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "box_limit";
 
 	level._include_powerups_columns = [];
 	level._include_powerups_columns[ level._include_powerups_columns.size ] = "index";
 	level._include_powerups_columns[ level._include_powerups_columns.size ] = "powerup_name";
 	level._include_powerups_columns[ level._include_powerups_columns.size ] = "override";
 
-	level._include_weapons_columns = [];
-	level._include_weapons_columns[ level._include_weapons_columns.size ] = "index";
-	level._include_weapons_columns[ level._include_weapons_columns.size ] = "weapon_name";
-	level._include_weapons_columns[ level._include_weapons_columns.size ] = "in_box";
-	level._include_weapons_columns[ level._include_weapons_columns.size ] = "limit_count";
-}
+	setdvar( "zombiemode_path_minz_bias", 13 );
 
-start_zombie_mode( init_zones )
-{
-	maps\mp\zombies\_zm::init();
-	precacheitem( "death_throe_zm" );
-
-	if ( !isdefined( level.culldist ) )
-	{
-		level.culldist = 5500;
-	}
-	setculldist( level.culldist );
-
-	level.zones = [];
-
-	level thread maps\mp\zombies\_zm_zonemgr::manage_zones( init_zones );
-
-	level.player_out_of_playable_area_monitor = false;
+	level.culldist = 5500;
 
 	// adjust these if the map is too small
 	if ( !isdefined( level.zombie_ai_limit ) )
 	{
 		level.zombie_ai_limit = 24;
 	}
-	setdvar( "zombiemode_path_minz_bias", 13 );
+
+	level._post_zm_overrides_func = ::post_zm_init_overrides;
+}
+
+assert_zone_spawn_locations_validity( spawn_locations )
+{
+	for ( i = 0; i < spawn_locations.size; i++ )
+	{
+		loc = spawn_locations[ i ];
+
+		assert( loc.classname == "script_struct" );
+		assert( isdefined( loc.origin ) );
+		assert( isvec( loc.origin ) );
+		assert( isdefined( loc.angles ) );
+		assert( isvec( loc.angles ) );
+		assert( isdefined( loc.script_noteworthy ) );
+
+		tokens = strtok( loc.script_noteworthy, " " );
+		for ( j = 0; j < tokens.size; j++ )
+		{
+			tok = tokens[ j ];
+			switch ( tok )
+			{
+				case "riser_location":
+					break;
+				case "dog_location":
+					break;
+				case "screecher_location":
+					break;
+				case "avogadro_location":
+					break;
+				case "inert_location":
+					break;
+				case "quad_location":
+					break;
+				case "leaper_location":
+					break;
+				case "brutus_location":
+					break;
+				case "mechz_location":
+					break;
+				case "astro_location":
+					break;
+				case "napalm_location":
+					break;
+				default:
+					assert( false );
+			}
+
+			if ( tok != "brutus_location" && tok != "mechz_location" )
+			{
+				assert( isdefined( loc.script_string ) );
+				assert( loc.script_string == "find_flesh" );
+			}
+		}
+	}
+}
+
+assert_zone_entities_validity()
+{
+	zone_volumes = getentarray( "player_volume", "script_noteworthy" );
+	assert( zone_volumes.size > 0 );
+
+	for ( i = 0; i < zone_volumes.size; i++ )
+	{
+		volume = zone_volumes[ i ];
+		assert( volume.classname == "info_volume" );
+		targetname = volume.targetname;
+		assert( isdefined( targetname ) );
+		target = volume.target;
+		assert( isdefined( target ) );
+
+		spawn_locations = getentarray( volume.target, "targetname" );
+		assert( spawn_locations.size );
+		assert_zone_spawn_locations_validity ( spawn_locations );
+	}
+}
+
+assert_spawner_entities_validity()
+{
+	spawners = getspawnerarray();
+	assert( spawners.size > 0 );
+
+	
+}
+
+start_zombie_mode( init_zones )
+{
+	if ( isarray( init_zones ) )
+	{
+		assert( init_zones.size > 0 );
+	}
+	else if ( isstring( init_zones ) )
+	{
+		assert( init_zones != "" );
+	}
+	else
+	{
+		assert( false );
+	}
+
+	assert_zone_entities_validity();
+
+	maps\mp\zombies\_zm::init();
+	precacheitem( "death_throe_zm" );
+
+	setculldist( level.culldist );
+
+	level thread maps\mp\zombies\_zm_zonemgr::manage_zones( init_zones );
+
+	if ( isdefined( level._post_zm_overrides_func ) )
+	{
+		level thread [[ level._post_zm_overrides_func ]]();
+	}
+}
+
+post_zm_init_overrides()
+{
+	level.player_out_of_playable_area_monitor = true;
+	level.player_too_many_weapons_monitor = true;
+	level._use_choke_weapon_hints = true;
+	level._use_choke_blockers = true;
+	level.calc_closest_player_using_paths = false;
+	level.zombie_melee_in_water = true;
+	level.put_timed_out_zombies_back_in_queue = true;
+	level.use_alternate_poi_positioning = true;
 }
 
 givecustomloadout( takeallweapons, alreadyspawned )
@@ -185,64 +292,18 @@ enemy_location_override( zombie, enemy )
 	return location;
 }
 
-assert_include_weapon_entry( weapon_res, in_box_res, limit_res )
+assert_include_weapon_entry( in_box_res, limit_res )
 {
-	assert( !weapon_res.is_null );
-	assert( !weapon_res.errored );
 	assert( !in_box_res.errored );
 	assert( !limit_res.errored );
 
-	success = !weapon_res.is_null && !weapon_res.errored && !in_box_res.errored && !limit_res.errored;
+	success = !in_box_res.errored && !limit_res.errored;
 	return success;
 }
 
 assert_include_weapon_success( weapon_name )
 {
 	assert( _WEAPON_EXISTS( weapon_name ) ); // precached failed...
-}
-
-include_weapons()
-{
-	succeeded = set_working_table( "zm/include_weapons.csv" );
-	if ( !succeeded )
-	{
-		// no "zm/include_weapons.csv" was found to parse, user will need to define the weapons manually
-		assert( false );
-		return;
-	}
-
-	table = get_working_table();
-	for ( index = 0; tablelookuprownum( table, 0, index ) != -1; index++ )
-	{
-		set_working_row_num( index );
-		weapon_name_result = get_csv_str( 1 ); // required
-		in_box_result = get_csv_bool( 2 ); // optional
-		limit_count_result = get_csv_int( 3 ); // optional
-
-		if ( !assert_include_weapon_entry( weapon_name_result, in_box_result, limit_count_result ) )
-		{
-			continue;
-		}
-
-		if ( !in_box_result.is_null )
-		{
-			include_weapon( weapon_name_result.value, in_box_result.value );
-		}
-		else
-		{
-			include_weapon( weapon_name_result.value );
-		}
-
-		if ( !limit_count_result.is_null )
-		{
-			add_limited_weapon( weapon_name_result.value, limit_count_result.value );
-		}
-
-		assert_include_weapon_success( weapon_name_result.value );
-	}
-
-	set_working_table( undefined );
-	set_working_row_num( undefined );
 }
 
 assert_include_powerup_entry( powerup_res )
@@ -428,10 +489,10 @@ assert_add_zombie_weapon_entry( weapon_res, upgrade_name_res, hint_res, cost_res
 
 add_zombie_weapons()
 {
-	succeeded = set_working_table( "zm/add_zombie_weapons.csv" );
+	succeeded = set_working_table( "zm/zm_weapons.csv" );
 	if ( !succeeded )
 	{
-		// no "zm/add_zombie_weapons.csv" was found to parse, user will need to define the add weapons manually
+		// no "zm/zm_weapons.csv" was found to parse, user will need to define the add weapons manually
 		assert( false );
 		return;
 	}
@@ -450,14 +511,39 @@ add_zombie_weapons()
 		ammo_cost_res = get_csv_int( 7 ); // optional
 		create_vox_res = get_csv_bool( 8 ); // optional
 
+		// box logic section, formerly include_weapons.csv
+		in_box_res = get_csv_str( 9 ); // optional
+		limit_count_res = get_csv_int( 10 ); // optional
+
 		if ( !assert_add_zombie_weapon_entry( weapon_name_res, upgrade_name_res, hint_res, cost_res, weapon_voice_over_res, weapon_voice_over_response_res, ammo_cost_res, create_vox_res ) )
 		{
 			continue;
 		}
 
+		if ( !assert_include_weapon_entry( in_box_res, limit_count_res ) )
+		{
+			continue;
+		}
+
+		if ( !in_box_res.is_null )
+		{
+			include_weapon( weapon_name_res.value, in_box_res.value );
+		}
+		else
+		{
+			include_weapon( weapon_name_res.value );
+		}
+
+		if ( !limit_count_res.is_null )
+		{
+			add_limited_weapon( weapon_name_res.value, limit_count_res.value );
+		}
+
+		assert_include_weapon_success( weapon_name_res.value );
+
 		hint = istring( hint_res.value );
 		cost = cost_res.value;
-		ammo_cost = ammo_cost.value;
+		ammo_cost = ammo_cost_res.value;
 		weapon_voice_over = isdefined( weapon_voice_over_res.value ) ? weapon_voice_over_res.value : "";
 		weapon_voice_over_response = isdefined( weapon_voice_over_response_res.value ) ? weapon_voice_over_response_res.value : "";
 		create_vox = is_true( create_vox_res.value ) ? true : undefined;
@@ -489,6 +575,7 @@ table_add_weapons()
 	for ( i = 0; i < level._usermap_add_weapons.size; i++ )
 	{
 		weapon = level._usermap_add_weapons[ i ];
+		assert( level.zombie_include_weapons[weapon.name] );
 		add_zombie_weapon( weapon.name, weapon.upgrade_name, weapon.hint, weapon.cost, weapon.weaponvo, weapon.weaponvoresp, weapon.ammo_cost, weapon.create_vox );
 	}
 

@@ -222,6 +222,7 @@ cast_str_to_bool( str )
 {
 	lower_str = tolower( str );
 	result_obj = generic_obj_t_new( "boolean" );
+	result_obj.str = str;
 	if ( lower_str == "true" )
 	{
 		return set_cast_success( result_obj, true, "boolean==true" );

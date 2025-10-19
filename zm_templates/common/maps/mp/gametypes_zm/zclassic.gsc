@@ -3,13 +3,8 @@
 #include maps\mp\_utility;
 #include maps\mp\gametypes_zm\_hud_util;
 #include common_scripts\utility;
-#include maps\mp\zombies\_zm_utility;
 #include maps\mp\gametypes_zm\_zm_gametype;
 #include maps\mp\zombies\_zm_stats;
-#include maps\mp\zombies\_zm_ai_dogs;
-#include maps\mp\zombies\_zm;
-
-#include maps\mp\zombies\_zm_magicbox;
 
 main()
 {
@@ -18,6 +13,10 @@ main()
 	level.onstartgametype = ::onstartgametype;
 	level._game_module_custom_spawn_init_func = maps\mp\gametypes_zm\_zm_gametype::custom_spawn_init_func;
 	level._game_module_stat_update_func = maps\mp\zombies\_zm_stats::survival_classic_custom_stat_update;
+	if ( !is_true( level._usermap ) )
+	{
+		maps\mp\gametypes_zm\_zm_gametype::post_gametype_main( "zclassic" );
+	}
 }
 
 onprecachegametype()
@@ -26,19 +25,29 @@ onprecachegametype()
 	level.canplayersuicide = ::canplayersuicide;
 	level.suicide_weapon = "death_self_zm";
 	precacheitem( "death_self_zm" );
-	if ( isdefined( level.precachecustomcharacters ) )
-		level [[ level.precachecustomcharacters ]]();
+	
+	if ( is_true( level._usermap ) )
+	{
+		if ( isdefined( level.precachecustomcharacters ) )
+			level [[ level.precachecustomcharacters ]]();
+	}
+	else
+	{
+		maps\mp\gametypes_zm\_zm_gametype::rungametypeprecache( "zclassic" );
+	}
 }
 
 onstartgametype()
 {
-	maps\mp\gametypes_zm\_zm_gametype::setup_standard_objects( level.default_start_location );
-	maps\mp\gametypes_zm\_zm_gametype::setup_classic_gametype();
-	level thread zstandard_main();
-}
-
-zstandard_main()
-{
-	flag_wait( "start_zombie_round_logic" );
-	level thread maps\mp\zombies\_zm::round_start();
+	if ( is_true( level._usermap ) )
+	{
+		maps\mp\gametypes_zm\_zm_gametype::setup_standard_objects( level.default_start_location );
+		level thread setup_classic_gametype();
+		flag_wait( "start_zombie_round_logic" );
+		level thread maps\mp\zombies\_zm::round_start();
+	}
+	else
+	{
+		maps\mp\gametypes_zm\_zm_gametype::rungametypemain( "zclassic", maps\mp\gametypes_zm\_zm_gametype::zclassic_main );
+	}
 }

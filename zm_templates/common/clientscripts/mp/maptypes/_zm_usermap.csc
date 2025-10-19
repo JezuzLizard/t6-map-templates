@@ -72,16 +72,12 @@ setup_zombie_defaults()
 	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "weapon_voice_over_response";
 	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "ammo_cost";
 	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "create_vox";
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "in_box";
+	level._add_zombie_weapons[ level._add_zombie_weapons.size ] = "box_limit";
 
 	level._include_powerups_columns = [];
 	level._include_powerups_columns[ level._include_powerups_columns.size ] = "index";
 	level._include_powerups_columns[ level._include_powerups_columns.size ] = "powerup_name";
-
-	level._include_weapons_columns = [];
-	level._include_weapons_columns[ level._include_weapons_columns.size ] = "index";
-	level._include_weapons_columns[ level._include_weapons_columns.size ] = "weapon_name";
-	level._include_weapons_columns[ level._include_weapons_columns.size ] = "in_box";
-	level._include_weapons_columns[ level._include_weapons_columns.size ] = "limit_count";
 }
 
 start_zombie_mode()
@@ -91,14 +87,13 @@ start_zombie_mode()
 	level thread clientscripts\mp\zombies\_zm::init_perk_machines_fx();
 }
 
-assert_include_weapon_entry( weapon_res, in_box_res, limit_res )
+assert_include_weapon_entry( weapon_res, in_box_res )
 {
 	assert( !weapon_res.is_null );
 	assert( !weapon_res.errored );
 	assert( !in_box_res.errored );
-	assert( !limit_res.errored );
 
-	success = !weapon_res.is_null && !weapon_res.errored && !in_box_res.errored && !limit_res.errored;
+	success = !weapon_res.is_null && !weapon_res.errored && !in_box_res.errored;
 	return success;
 }
 
@@ -107,49 +102,40 @@ assert_include_weapon_success( weapon_name )
 	assert( _WEAPON_EXISTS( weapon_name ) ); // precached failed...
 }
 
-add_limited_weapon( a, b )
-{
-	// stub for csc
-}
-
 include_weapons()
 {
-	succeeded = set_working_table( "zm/include_weapons.csv" );
+	succeeded = set_working_table( "zm/zm_weapons.csv" );
 	if ( !succeeded )
 	{
-		// no "zm/include_weapons.csv" was found to parse, user will need to define the weapons manually
+		// no "zm/zm_weapons.csv" was found to parse, user will need to define the add weapons manually
 		assert( false );
 		return;
 	}
 
 	table = get_working_table();
+	level._usermap_add_weapons = [];
 	for ( index = 0; tablelookuprownum( table, 0, index ) != -1; index++ )
 	{
 		set_working_row_num( index );
-		weapon_name_result = get_csv_str( 1 ); // required
-		in_box_result = get_csv_bool( 2 ); // optional
-		limit_count_result = get_csv_int( 3 ); // optional
+		weapon_name_res = get_csv_str( 1 ); // required
+		// box logic section, formerly include_weapons.csv
+		in_box_res = get_csv_str( 9 ); // optional
 
-		if ( !assert_include_weapon_entry( weapon_name_result, in_box_result, limit_count_result ) )
+		if ( !assert_include_weapon_entry( in_box_res, in_box_upgrade_res, limit_count_res ) )
 		{
 			continue;
 		}
 
-		if ( !in_box_result.is_null )
+		if ( !in_box_res.is_null )
 		{
-			include_weapon( weapon_name_result.value, in_box_result.value );
+			include_weapon( weapon_name_res.value, in_box_res.value );
 		}
 		else
 		{
-			include_weapon( weapon_name_result.value );
+			include_weapon( weapon_name_res.value );
 		}
 
-		if ( !limit_count_result.is_null )
-		{
-			add_limited_weapon( weapon_name_result.value, limit_count_result.value );
-		}
-
-		assert_include_weapon_success( weapon_name_result.value );
+		assert_include_weapon_success( weapon_name_res.value );
 	}
 
 	set_working_table( undefined );
