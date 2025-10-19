@@ -13,7 +13,6 @@ main()
 	maps\mp\maptypes\_zm_usermap::setup_zombie_defaults();
 
 	// you can edit the tables or redirect these calls to your script
-	maps\mp\maptypes\_zm_usermap::include_weapons(); // zm/include_weapons.csv
 	maps\mp\maptypes\_zm_usermap::include_powerups(); // zm/include_powerups.csv
 	maps\mp\maptypes\_zm_usermap::include_fx(); // zm/include_fx.csv
 	maps\mp\maptypes\_zm_usermap::add_zombie_weapons(); // zm/add_zombie_weapons.csv
