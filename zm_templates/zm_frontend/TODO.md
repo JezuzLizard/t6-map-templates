@@ -3,10 +3,10 @@
 ## General
 - [x] Add path nodes
 - [x] Add the pre-patch Sliqifier to the box
-- [ ] Music easter egg
-- [ ] Loadscreen
-- [ ] Main Menu "Play" button which brings you to zsurvival
 - [ ] Add all box weapons
+- [ ] Loadscreen
+- [ ] Music easter egg
+- [ ] Main Menu "Play" button which brings you to zsurvival
 
 ## Sound effects
 - [x] Grenade/EMP sounds
@@ -23,7 +23,7 @@
 - [ ] Backrooms Area
   - [ ] Move debris further back towards the main area, add debris to cut off the box area completely
 
-- [ ] Conference Room
+- [ ] War Room
   - [ ] Make initial player spawns be next to the hologram table, just like in the campaign
   - [ ] Add semtex wallbuy at `612 -296 440`
   - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
