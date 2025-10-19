@@ -3,6 +3,10 @@
 #include maps\mp\gametypes_zm\_zm_gametype;
 #include maps\mp\zombies\_zm_utility;
 #include maps\mp\zombies\_zm_weapons;
+#include maps\mp\zombies\_zm_score;
+#include maps\mp\_demo;
+#include maps\mp\zombies\_zm_stats;
+#include maps\mp\zombies\_zm_audio;
 
 // setup autoexec
 #include maps\mp\frontend_fx;
@@ -11,6 +15,9 @@
 main()
 {
 	maps\mp\maptypes\_zm_usermap::setup_zombie_defaults();
+
+	func = GetFunction( "maps/mp/zombies/_zm_blockers", "debris_think" );
+	replaceFunc( func, ::frontend_debris_think );
 
 	// you can edit the tables or redirect these calls to your script
 	maps\mp\maptypes\_zm_usermap::include_powerups(); // zm/include_powerups.csv
@@ -57,6 +64,7 @@ main()
 	frontend_magicbox_init();
 	maps\mp\zombies\_zm_weap_slipgun::init();
 	init_globe();
+	level thread open_junk();
 }
 
 init_globe()
@@ -84,6 +92,23 @@ electric_switch()
 	level notify( "electric_door" );
     ClientNotify( "power_on" );
     flag_set( "power_on" );
+}
+
+// once open is opened, open the rest
+open_junk()
+{
+	level waittill( "junk purchased 2", which_debris );
+	debris_array = GetEntArray( "zombie_debris", "targetname" );
+
+	foreach ( debris in debris_array )
+	{
+		if ( debris == which_debris )
+		{
+			continue;
+		}
+
+		debris notify( "trigger", self, true );
+	}
 }
 
 frontend_magicbox_init()
@@ -160,4 +185,112 @@ give_team_characters()
 	self setmovespeedscale( 1 );
 	self setsprintduration( 4 );
 	self setsprintcooldown( 0 );
+}
+
+// edits:
+// - support for multiple debris clips
+// - when the force variable is set, the trigger will not take additional points
+frontend_debris_think()
+{
+    if ( isdefined( level.custom_debris_function ) )
+        self [[ level.custom_debris_function ]]();
+
+    while ( true )
+    {
+        self waittill( "trigger", who, force );
+
+        if ( getdvarint( #"zombie_unlock_all" ) > 0 || isdefined( force ) && force )
+        {
+
+        }
+        else
+        {
+            if ( !who usebuttonpressed() )
+                continue;
+
+            if ( who in_revive_trigger() )
+                continue;
+        }
+
+        if ( is_player_valid( who ) )
+        {
+            players = get_players();
+
+            if ( getdvarint( #"zombie_unlock_all" ) > 0 )
+            {
+
+            }
+            else if ( who.score >= self.zombie_cost )
+            {
+                // only take points if its not forced
+                if ( !isdefined( force ) || !force )
+                {
+                    who maps\mp\zombies\_zm_score::minus_to_player_score( self.zombie_cost );
+                }
+                
+                maps\mp\_demo::bookmark( "zm_player_door", gettime(), who );
+                who maps\mp\zombies\_zm_stats::increment_client_stat( "doors_purchased" );
+                who maps\mp\zombies\_zm_stats::increment_player_stat( "doors_purchased" );
+            }
+            else
+            {
+                play_sound_at_pos( "no_purchase", self.origin );
+                who maps\mp\zombies\_zm_audio::create_and_play_dialog( "general", "door_deny" );
+                continue;
+            }
+
+            bbprint( "zombie_uses", "playername %s playerscore %d round %d cost %d name %s x %f y %f z %f type %s", who.name, who.score, level.round_number, self.zombie_cost, self.script_flag, self.origin, "door" );
+            junk = getentarray( self.target, "targetname" );
+            clips = getentarray( self.target + "_clip", "targetname" );
+
+            if ( isdefined( self.script_flag ) )
+            {
+                tokens = strtok( self.script_flag, "," );
+
+                for ( i = 0; i < tokens.size; i++ )
+                    flag_set( tokens[i] );
+            }
+
+            play_sound_at_pos( "purchase", self.origin );
+            level notify( "junk purchased" );
+            level notify( "junk purchased 2", self );
+            move_ent = undefined;
+
+            for ( i = 0; i < junk.size; i++ )
+            {
+                junk[i] connectpaths();
+                struct = undefined;
+
+                if ( isdefined( junk[i].script_linkto ) )
+                {
+                    struct = getstruct( junk[i].script_linkto, "script_linkname" );
+
+                    if ( isdefined( struct ) )
+                    {
+                        move_ent = junk[i];
+                        junk[i] thread maps\mp\zombies\_zm_blockers::debris_move( struct );
+                    }
+                    else
+                        junk[i] delete();
+
+                    continue;
+                }
+
+                junk[i] delete();
+            }
+
+            all_trigs = getentarray( self.target, "target" );
+
+            for ( i = 0; i < all_trigs.size; i++ )
+                all_trigs[i] delete();
+
+            if ( isdefined( move_ent ) )
+                move_ent waittill( "movedone" );
+
+            for ( i = 0; i < clips.size; i++ )
+                clips[i] delete();
+
+            break;
+        }
+    }
 }

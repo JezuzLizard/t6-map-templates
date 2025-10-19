@@ -16,17 +16,14 @@
   - [ ] Humming on the server racks
 
 ## Zones
-- [ ] Add zone volumes using trigger boxes
-- [ ] Make the box area and back room its own zone
-- [ ] Make the main area its own zone
-
-- [ ] Backrooms Area
-  - [ ] Move debris further back towards the main area, add debris to cut off the box area completely
+- [ ] Add zone volumes
+  - [ ] Make the box area and back room its own zone
+  - [ ] Split the main area outside the spawn room two zones, further back disabling the power spawns
+  - [ ] Make the spawn room its own zone, with 3 total spawns active
 
 - [ ] War Room
   - [ ] Make initial player spawns be next to the hologram table, just like in the campaign
-  - [ ] Add semtex wallbuy at `612 -296 440`
   - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
-
-- [ ] Main Area
-  - [ ] Make it so you cant get on top of the desks and tables
+  - [ ] Add two spawns in the corners
+  - [ ] Fix pathing between the chairs
+  - [ ] Make it so you cant get on top of things

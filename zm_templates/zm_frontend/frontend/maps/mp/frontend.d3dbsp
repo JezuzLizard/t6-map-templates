@@ -2410,11 +2410,11 @@
 {
 "note" "************************ BACKROOMS DEBRIS 1 CLIP"
 "model" "*1"
-"origin" "447 901 480"
+"origin" "447 773 480"
 "angles" "0 -90 90"
 "script_noteworthy" "clip"
 "spawnflags" "1"
-"targetname" "frontend_power_blocker"
+"targetname" "frontend_power_blocker_clip"
 "classname" "script_brushmodel"
 "guid" "C1EA032E"
 }
@@ -2422,7 +2422,7 @@
 {
 "note" "************************ BACKROOMS DEBRIS 1 TRIGGER"
 "classname" "script_struct"
-"origin" "445 955 625"
+"origin" "448 805 625"
 "angles" "111 270 180"
 "script_linkname" "1"
 "guid" "CF18B34D"
@@ -2430,7 +2430,7 @@
 {
 "note" "************************ BACKROOMS DEBRIS 1 TRIGGER"
 "model" "*46"
-"origin" "448 900 440"
+"origin" "448 773 440"
 "classname" "trigger_use_touch"
 "targetname" "zombie_debris"
 "target" "frontend_power_blocker"
@@ -2449,7 +2449,7 @@
 "spawnflags" "1"
 "angles" "0 55 0"
 "model" "p6_zm_nuked_couch_02"
-"origin" "430 935 440"
+"origin" "430 812 440"
 "classname" "script_model"
 "guid" "7FD7A4BD"
 }
@@ -2464,9 +2464,55 @@
 "spawnflags" "1"
 "angles" "21 0 0"
 "model" "p6_zm_nuked_couch_02"
-"origin" "460 935 452"
+"origin" "460 819 452"
 "classname" "script_model"
 "guid" "7FD7A4BF"
+}
+
+{
+"note" "************************ BACKROOMS DEBRIS 2 CLIP"
+"model" "*1"
+"origin" "185 701 483"
+"angles" "0 180 0"
+"script_noteworthy" "clip"
+"spawnflags" "1"
+"targetname" "frontend_power_blocker_clip"
+"classname" "script_brushmodel"
+"guid" "C1EA032E"
+}
+{
+"note" "************************ BACKROOMS DEBRIS 2 TRIGGER"
+"model" "*46"
+"origin" "180 700 440"
+"classname" "trigger_use_touch"
+"targetname" "zombie_debris"
+"target" "frontend_power_blocker"
+"zombie_cost" "1000"
+"script_flag" "openhouse2_f1_2_openhouse2_f2"
+"guid" "0DC11749"
+}
+{
+"note" "************************ BACKROOMS DEBRIS 2 TRIGGER"
+"classname" "script_struct"
+"origin" "166 715 625"
+"angles" "-90 152 0"
+"script_linkname" "2"
+"guid" "CF18B34D"
+}
+{
+"note" "************************ BACKROOMS DEBRIS 2 COUCH"
+"targetname" "frontend_power_blocker"
+"script_string" "zombie_spawner_door"
+"script_firefx" "poltergeist"
+"script_fxid" "large_ceiling_dust"
+"script_noteworthy" "jiggle"
+"script_linkto" "2"
+"spawnflags" "1"
+"angles" "-90 152 0"
+"model" "p6_zm_nuked_couch_02"
+"origin" "166 715 478"
+"classname" "script_model"
+"guid" "7FD7A4BD"
 }
 
 {
