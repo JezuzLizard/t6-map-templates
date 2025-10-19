@@ -80,7 +80,6 @@ zm_move_run : notify move_anim
 	ai_zombie_walk_fast_v3
 	ai_zombie_run_v2
 	ai_zombie_run_v4
-	ai_zombie_run_v3
 }
 
 zm_move_run_crawl : missing_legs notify move_anim

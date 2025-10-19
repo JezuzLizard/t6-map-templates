@@ -23,7 +23,6 @@ body
 	ai_zombie_walk_fast_v3
 	ai_zombie_run_v2
 	ai_zombie_run_v4
-	ai_zombie_run_v3
 
 	ai_zombie_sprint_v1
 	ai_zombie_sprint_v2

@@ -17,7 +17,7 @@ include,packages/mystery_box
 // templated assets for a custom zombies map
 include,template_common_zm
 
-include,packages/aitypes/tranzit_zombies
+include,frontend_zombies
 
 // weapons
 include,packages/weapons/m14_zm

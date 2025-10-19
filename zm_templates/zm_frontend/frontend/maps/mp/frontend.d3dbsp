@@ -2148,7 +2148,7 @@
 }
 {
 "angles" "0 5.39998 0"
-"classname" "actor_zm_transit_basic_01"
+"classname" "actor_zm_frontend_basic_01"
 "model" "char_ger_honorgd_fullbody"
 "export" "2"
 "spawnflags" "3"
@@ -2161,7 +2161,7 @@
 }
 {
 "angles" "0 5.39998 0"
-"classname" "actor_zm_transit_basic_05"
+"classname" "actor_zm_frontend_basic_05"
 "model" "char_ger_honorgd_fullbody"
 "export" "3"
 "spawnflags" "3"
@@ -2174,7 +2174,7 @@
 }
 {
 "angles" "0 5.39998 0"
-"classname" "actor_zm_transit_basic_08"
+"classname" "actor_zm_frontend_basic_08"
 "model" "char_ger_honorgd_fullbody"
 "export" "4"
 "spawnflags" "3"

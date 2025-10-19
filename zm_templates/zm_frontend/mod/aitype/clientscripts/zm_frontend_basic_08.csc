@@ -19,10 +19,10 @@ main()
             break;
     }
 
-    self._aitype = "zm_transit_basic_08";
+    self._aitype = "zm_frontend_basic_08";
 }
 
-#using_animtree("zm_transit_basic");
+#using_animtree("zm_frontend_basic");
 
 precache( ai_index )
 {
@@ -30,6 +30,6 @@ precache( ai_index )
     character\clientscripts\c_zom_zombie8_02::precache();
     character\clientscripts\c_zom_zombie8_03::precache();
     usefootsteptable( ai_index, "default_ai" );
-    precacheanimstatedef( ai_index, #animtree, "zm_transit_basic" );
+    precacheanimstatedef( ai_index, #animtree, "zm_frontend_basic" );
     setdemolockonvalues( ai_index, 100, 60, -15, 60, 30, -5, 60 );
 }
