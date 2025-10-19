@@ -35,6 +35,7 @@ _DEFAULT( value, default_value )
 	result_obj.value = undefined;
 	result_obj.type = _DEFAULT( expected_value_type, undefined );
 	result_obj.msg = error_msg;
+	result_obj.is_null = false;
 
 	return result_obj;
 }
@@ -44,6 +45,7 @@ _DEFAULT( value, default_value )
 	result_obj.value = new_value;
 	result_obj.msg = success_msg;
 	result_obj.type = _DEFAULT( expected_value_type, undefined );
+	result_obj.is_null = false;
 
 	return result_obj;
 }
