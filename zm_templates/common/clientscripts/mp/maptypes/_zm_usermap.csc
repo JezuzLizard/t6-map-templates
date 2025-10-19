@@ -87,16 +87,6 @@ start_zombie_mode()
 	level thread clientscripts\mp\zombies\_zm::init_perk_machines_fx();
 }
 
-assert_include_weapon_entry( weapon_res, in_box_res )
-{
-	assert( !weapon_res.is_null );
-	assert( !weapon_res.errored );
-	assert( !in_box_res.errored );
-
-	success = !weapon_res.is_null && !weapon_res.errored && !in_box_res.errored;
-	return success;
-}
-
 assert_include_weapon_success( weapon_name )
 {
 	assert( _WEAPON_EXISTS( weapon_name ) ); // precached failed...
@@ -120,11 +110,6 @@ include_weapons()
 		weapon_name_res = get_csv_str( 1 ); // required
 		// box logic section, formerly include_weapons.csv
 		in_box_res = get_csv_str( 9 ); // optional
-
-		if ( !assert_include_weapon_entry( in_box_res, in_box_upgrade_res, limit_count_res ) )
-		{
-			continue;
-		}
 
 		if ( !in_box_res.is_null )
 		{
