@@ -17,9 +17,9 @@
 
 ## Zones
 - [ ] Add zone volumes
-  - [ ] Make the box area and back room its own zone
-  - [ ] Split the main area outside the spawn room two zones, further back disabling the power spawns
-  - [ ] Make the spawn room its own zone, with 3 total spawns active
+  - [x] Make war room its own zone
+  - [x] Make the spawn room its own zone, with 3 total spawns active
+  - [ ] Make power/box room its own zone
 
 - [ ] War Room
   - [ ] Make initial player spawns be next to the hologram table, just like in the campaign
@@ -27,3 +27,4 @@
   - [ ] Add two spawns in the corners
   - [ ] Fix pathing between the chairs
   - [ ] Make it so you cant get on top of things
+  - [ ] Add wunderfizz, remove all perk machines completely

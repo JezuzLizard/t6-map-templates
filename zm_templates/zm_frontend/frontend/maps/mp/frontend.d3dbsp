@@ -2198,10 +2198,100 @@
 "model" "*5"
 "origin" "44 408 512"
 "classname" "info_volume"
+"targetname" "spawn_room_volume"
+"script_noteworthy" "player_volume"
+"target" "spawn_room_volume_spawners"
+"guid" "509A6581"
+}
+{
+"model" "*5"
+"origin" "327 408 512"
+"classname" "info_volume"
 "targetname" "war_room_volume"
 "script_noteworthy" "player_volume"
 "target" "war_room_volume_spawners"
-"guid" "509A6581"
+"guid" "509A6582"
+}
+{
+"model" "*5"
+"origin" "610 408 512"
+"classname" "info_volume"
+"targetname" "war_room_volume"
+"script_noteworthy" "player_volume"
+"target" "war_room_volume_spawners"
+"guid" "509A6583"
+}
+{
+"model" "*5"
+"origin" "530 548 512"
+"classname" "info_volume"
+"targetname" "war_room_volume"
+"script_noteworthy" "player_volume"
+"target" "war_room_volume_spawners"
+"guid" "509A6583"
+}
+{
+"model" "*5"
+"origin" "335 548 512"
+"classname" "info_volume"
+"targetname" "war_room_volume"
+"script_noteworthy" "player_volume"
+"target" "war_room_volume_spawners"
+"guid" "509A6583"
+}
+{
+"model" "*5"
+"origin" "556 -28 512"
+"classname" "info_volume"
+"targetname" "war_room_volume"
+"script_noteworthy" "player_volume"
+"target" "war_room_volume_spawners"
+"guid" "509A6583"
+}
+{
+"model" "*5"
+"origin" "272 -28 512"
+"classname" "info_volume"
+"targetname" "war_room_volume"
+"script_noteworthy" "player_volume"
+"target" "war_room_volume_spawners"
+"guid" "509A6583"
+}
+{
+"model" "*5"
+"origin" "122 -28 512"
+"classname" "info_volume"
+"targetname" "war_room_volume"
+"script_noteworthy" "player_volume"
+"target" "war_room_volume_spawners"
+"guid" "509A6583"
+}
+{
+"model" "*5"
+"origin" "122 -464 512"
+"classname" "info_volume"
+"targetname" "war_room_volume"
+"script_noteworthy" "player_volume"
+"target" "war_room_volume_spawners"
+"guid" "509A6583"
+}
+{
+"model" "*5"
+"origin" "406 -464 512"
+"classname" "info_volume"
+"targetname" "war_room_volume"
+"script_noteworthy" "player_volume"
+"target" "war_room_volume_spawners"
+"guid" "509A6583"
+}
+{
+"model" "*5"
+"origin" "580 -464 512"
+"classname" "info_volume"
+"targetname" "war_room_volume"
+"script_noteworthy" "player_volume"
+"target" "war_room_volume_spawners"
+"guid" "509A6583"
 }
 
 {
@@ -2235,8 +2325,28 @@
 "guid" "7A95F13B"
 }
 {
+"note" "************************ COMMAND CENTER SPAWNER"
+"targetname" "spawn_room_volume_spawners"
+"origin" "585 -285 440"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "7A95F13B"
+}
+{
 "note" "************************ SERVER RACK SPAWNER"
 "targetname" "war_room_volume_spawners"
+"origin" "110 80 440"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ SERVER RACK SPAWNER"
+"targetname" "spawn_room_volume_spawners"
 "origin" "110 80 440"
 "script_noteworthy" "riser_location"
 "classname" "script_struct"
@@ -2254,50 +2364,27 @@
 "angles" "0 180 0"
 "guid" "7A95F13B"
 }
+{
+"note" "************************ M14 WALLBUY SPAWNER"
+"targetname" "spawn_room_volume_spawners"
+"origin" "605 580 440"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 180 0"
+"guid" "7A95F13B"
+}
 
 {
-"note" "************************ REAR SPAWN"
+"note" "************************ PLAYER SPAWN 1"
 "radius" "32"
 "script_noteworthy" "initial_spawn"
 "script_string" "zstandard_frontend"
 "targetname" "initial_spawn_points"
-"origin" "379 -233 440"
-"classname" "script_struct"
-"angles" "0 90 0"
-"guid" "2B360514"
-}
-{
-"note" "************************ FRONT SPAWN"
-"radius" "32"
-"script_noteworthy" "initial_spawn"
-"script_string" "zstandard_frontend"
-"targetname" "initial_spawn_points"
-"origin" "380 111 440"
-"classname" "script_struct"
-"angles" "0 -90 0"
-"guid" "509A6582"
-}
-{
-"note" "************************ LEFT SPAWN"
-"radius" "32"
-"script_noteworthy" "initial_spawn"
-"script_string" "zstandard_frontend"
-"targetname" "initial_spawn_points"
-"origin" "179 -71 440"
+"origin" "-48 568 448"
 "classname" "script_struct"
 "angles" "0 0 0"
-"guid" "509A6583"
-}
-{
-"note" "************************ RIGHT SPAWN"
-"radius" "32"
-"script_noteworthy" "initial_spawn"
-"script_string" "zstandard_frontend"
-"targetname" "initial_spawn_points"
-"origin" "588 -71 440"
-"classname" "script_struct"
-"angles" "0 180 0"
-"guid" "509A6585"
+"guid" "2B360514"
 }
 
 {

@@ -58,6 +58,7 @@ main()
 
 	level.zone_manager_init_func = ::zone_init;
 	init_zones[0] = "war_room_volume";
+	init_zones[1] = "spawn_room_volume";
 	maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
 
 	// stuff that has to be after zm::init
@@ -122,7 +123,7 @@ frontend_magicbox_init()
 
 frontend_post_zm_init()
 {
-	level.player_out_of_playable_area_monitor = false;
+	level.player_out_of_playable_area_monitor = true;
 	level.player_too_many_weapons_monitor = true;
 	level._use_choke_weapon_hints = true;
 	level._use_choke_blockers = true;
