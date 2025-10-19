@@ -41,9 +41,8 @@ script,animscripts/traverse/stairs_util.gsc
 rawfile,vision/karma.vision
 
 // precache tables
-stringtable,zm/add_zombie_weapons.csv
+stringtable,zm/zm_weapons.csv
 stringtable,zm/include_fx.csv
 stringtable,zm/include_powerups.csv
-stringtable,zm/include_weapons.csv
 
 rawfile,karma

@@ -345,6 +345,18 @@ body
 	ai_zombie_crawl_barricade_enter_sprint_l
 	ai_zombie_crawl_barricade_enter_sprint_r
 
+	ai_zombie_slipslide_collapse
+	ai_zombie_walk_slipslide
+	ai_zombie_walk_slipslide_a
+	ai_zombie_run_slipslide
+	ai_zombie_run_slipslide_a
+	ai_zombie_sprint_slipslide
+	ai_zombie_sprint_slipslide_a
+	ai_zombie_stand_slipslide_recover
+	ai_zombie_crawl_slipslide_slow
+	ai_zombie_crawl_slipslide_fast
+	ai_zombie_crawl_slipslide_recover
+
 	ai_zombie_walk_bus_v1
 	ai_zombie_walk_bus_v2
 	ai_zombie_walk_bus_v3

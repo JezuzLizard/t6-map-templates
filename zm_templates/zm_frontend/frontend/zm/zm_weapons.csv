@@ -1,0 +1,8 @@
+index,weapon_name,upgrade_name,hint,cost,weapon_voice_over,weapon_voice_over_response,ammo_cost,create_vox,base_in_box,upgrade_in_box,box_limit_count
+0,m1911_zm,,ZOMBIE_WEAPON_M1911,50,,,,,false,false,,
+1,m1911_upgraded_zm,,ZOMBIE_WEAPON_M1911,50,,,,,,false,,
+2,m14_zm,,ZOMBIE_WEAPON_M14,500,rifle,,250,,false,false,,
+3,ak74u_zm,,ZOMBIE_WEAPON_AK74U,1200,smg,,500,,true,false,,
+4,raygun_mark2_zm,,ZOMBIE_WEAPON_RAYGUN_MARK2,10000,raygun_mark2,,,,true,false,1,
+5,frag_grenade_zm,,ZOMBIE_WEAPON_FRAG_GRENADE,250,grenade,,,,false,false,,
+6,slipgun_zm,,ZOMBIE_WEAPON_SLIPGUN,10,,,,,true,false,1,

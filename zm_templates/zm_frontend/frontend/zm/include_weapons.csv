@@ -1,9 +1,0 @@
-index,weapon_name,in_box,limit_count,
-0,knife_zm,false,,
-1,frag_grenade_zm,false,,
-2,m1911_zm,false,,
-3,ak74u_zm,false,,
-4,m1911_upgraded_zm,false,,
-5,m14_zm,false,,
-6,raygun_mark2_zm,true,1,
-7,slipgun_zm,true,1

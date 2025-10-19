@@ -37,9 +37,8 @@ script,maps/mp/zombies/_zm_weap_slipgun.gsc
 rawfile,vision/frontend.vision
 
 // precache tables
-stringtable,zm/add_zombie_weapons.csv
+stringtable,zm/zm_weapons.csv
 stringtable,zm/include_fx.csv
 stringtable,zm/include_powerups.csv
-stringtable,zm/include_weapons.csv
 
 rawfile,frontend
