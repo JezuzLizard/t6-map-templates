@@ -305,7 +305,7 @@ assert_include_weapon_entry( in_box_res, limit_res )
 	assert( !in_box_res.errored );
 	assert( !limit_res.errored );
 
-	success = !in_box.null && !in_box_res.errored && !limit_res.errored;
+	success = !in_box_res.null && !in_box_res.errored && !limit_res.errored;
 	return success;
 }
 
