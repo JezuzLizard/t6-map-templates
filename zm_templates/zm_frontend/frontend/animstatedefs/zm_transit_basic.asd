@@ -125,6 +125,54 @@ zm_move_stumpy : missing_legs notify move_anim
 	ai_zombie_walk_on_hands_b
 }
 
+zm_move_slide_fall : restart notify slide_fall_anim
+{
+	ai_zombie_slipslide_collapse
+}
+
+zm_move_walk_slide : notify move_anim
+{
+	ai_zombie_walk_slipslide
+	ai_zombie_walk_slipslide_a
+}
+
+zm_move_walk_slide_crawl : missing_legs notify move_anim
+{
+	ai_zombie_crawl_slipslide_slow
+}
+
+zm_move_run_slide : notify move_anim
+{
+	ai_zombie_run_slipslide
+	ai_zombie_run_slipslide_a
+}
+
+zm_move_run_slide_crawl : missing_legs notify move_anim
+{
+	ai_zombie_crawl_slipslide_slow
+}
+
+zm_move_sprint_slide : notify move_anim
+{
+	ai_zombie_sprint_slipslide
+	ai_zombie_sprint_slipslide_a
+}
+
+zm_move_sprint_slide_crawl : missing_legs notify move_anim
+{
+	ai_zombie_crawl_slipslide_fast
+}
+
+zm_move_slide_recover : restart notify slide_recover_anim
+{
+	ai_zombie_stand_slipslide_recover
+}
+
+zm_move_slide_recover_crawl : restart missing_legs notify slide_recover_anim
+{
+	ai_zombie_crawl_slipslide_recover
+}
+
 zm_step_left : restart notify step_anim
 {
 	ai_zombie_spets_sidestep_left_a
