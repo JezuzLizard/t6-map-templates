@@ -2353,16 +2353,6 @@
 "guid" "7A95F13B"
 }
 {
-"note" "************************ WAR ROOM BACK CORNER SPAWNER"
-"targetname" "spawn_room_volume_spawners"
-"origin" "585 -285 440"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 90 0"
-"guid" "7A95F13B"
-}
-{
 "note" "************************ SERVER RACK SPAWNER"
 "targetname" "war_room_volume_spawners"
 "origin" "110 80 440"
@@ -2373,28 +2363,8 @@
 "guid" "7A95F13B"
 }
 {
-"note" "************************ SERVER RACK SPAWNER"
-"targetname" "spawn_room_volume_spawners"
-"origin" "110 80 440"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 0 0"
-"guid" "7A95F13B"
-}
-{
 "note" "************************ M14 WALLBUY SPAWNER"
 "targetname" "war_room_volume_spawners"
-"origin" "605 580 440"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 180 0"
-"guid" "7A95F13B"
-}
-{
-"note" "************************ M14 WALLBUY SPAWNER"
-"targetname" "spawn_room_volume_spawners"
 "origin" "605 580 440"
 "script_noteworthy" "riser_location"
 "classname" "script_struct"
@@ -2406,16 +2376,6 @@
 {
 "note" "************************ SPAWN ROOM SPAWNER"
 "targetname" "spawn_room_volume_spawners"
-"origin" "148.1 226.1 440.1"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 90 0"
-"guid" "7A95F13B"
-}
-{
-"note" "************************ SPAWN ROOM SPAWNER"
-"targetname" "war_room_volume_spawners"
 "origin" "148.1 226.1 440.1"
 "script_noteworthy" "riser_location"
 "classname" "script_struct"

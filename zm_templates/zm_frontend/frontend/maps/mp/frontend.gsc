@@ -155,6 +155,10 @@ zombie_init_done()
 
 frontend_zone_init()
 {
+    flag_init( "always_on" );
+    flag_set( "always_on" );
+
+    add_adjacent_zone( "spawn_room_volume", "war_room_volume", "always_on" );
     add_adjacent_zone( "war_room_volume", "power_room_volume", "activate_power_zone" );
 }
 
