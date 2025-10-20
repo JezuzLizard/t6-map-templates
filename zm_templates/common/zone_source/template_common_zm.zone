@@ -195,3 +195,10 @@ xanim,viewmodel_bare_hands_z_death_idle
 xanim,viewmodel_bare_hands_death_by_zomb
 weapon,death_throe_zm
 weapon,death_self_zm
+
+// max ammo fix
+image,~~-gmetal_gold_s-rgb&~-rmetal~39bd028a
+image,zombie_ammo_box_n
+image,~-gzombie_ammo_box_c
+material,mc/mtl_zombie_ammocan
+xmodel,zombie_ammocan
