@@ -82,10 +82,3 @@ xmodel,mlv/p6_zm_nuked_couch_02
 material,mc/mtl_p6_zm_nuked_couch_02
 material,mc/mtl_p_us_couch02
 xmodel,p6_zm_nuked_couch_02
-
-// max ammo fix
-image,~~-gmetal_gold_s-rgb&~-rmetal~39bd028a
-image,zombie_ammo_box_n
-image,~-gzombie_ammo_box_c
-material,mc/mtl_zombie_ammocan
-xmodel,zombie_ammocan
