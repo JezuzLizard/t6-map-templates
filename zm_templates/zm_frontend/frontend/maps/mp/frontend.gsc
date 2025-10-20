@@ -7,6 +7,7 @@
 #include maps\mp\_demo;
 #include maps\mp\zombies\_zm_stats;
 #include maps\mp\zombies\_zm_audio;
+#include maps\mp\zombies\_zm_zonemgr;
 
 // setup autoexec
 #include maps\mp\frontend_fx;
@@ -14,58 +15,60 @@
 
 main()
 {
-	maps\mp\maptypes\_zm_usermap::setup_zombie_defaults();
+    maps\mp\maptypes\_zm_usermap::setup_zombie_defaults();
 
-	func = GetFunction( "maps/mp/zombies/_zm_blockers", "debris_think" );
-	replaceFunc( func, ::frontend_debris_think );
+    func = GetFunction( "maps/mp/zombies/_zm_blockers", "debris_think" );
+    replaceFunc( func, ::frontend_debris_think );
 
-	// you can edit the tables or redirect these calls to your script
-	maps\mp\maptypes\_zm_usermap::include_powerups(); // zm/include_powerups.csv
-	maps\mp\maptypes\_zm_usermap::include_fx(); // zm/include_fx.csv
-	maps\mp\maptypes\_zm_usermap::add_zombie_weapons(); // zm/add_zombie_weapons.csv
+    // you can edit the tables or redirect these calls to your script
+    maps\mp\maptypes\_zm_usermap::include_powerups(); // zm/include_powerups.csv
+    maps\mp\maptypes\_zm_usermap::include_fx(); // zm/include_fx.csv
+    maps\mp\maptypes\_zm_usermap::add_zombie_weapons(); // zm/add_zombie_weapons.csv
 
-	// map specific setup here
-	level.enable_magic = getgametypesetting( "magic" );
-	maps\mp\_sticky_grenade::init();
+    // map specific setup here
+    level.enable_magic = getgametypesetting( "magic" );
+    maps\mp\_sticky_grenade::init();
 
-	level._post_zm_overrides_func = ::frontend_post_zm_init;
-	level.givecustomloadout = ::givecustomloadout;
-	level.zombie_init_done = ::zombie_init_done;
-	onplayerconnect_callback( ::frontend_connected );
-	
-	// perk opt ins
-	level.zombiemode_using_pack_a_punch = 0;
-	level.zombiemode_reusing_pack_a_punch = 0;
-	level.zombiemode_using_tombstone_perk = 0;
-	level.zombiemode_using_revive_perk = 1;
-	level.zombiemode_using_juggernaut_perk = 1;
-	level.zombiemode_using_marathon_perk = 1;
-	level.zombiemode_using_doubletap_perk = 1;
-	level.zombiemode_using_sleightofhand_perk = 1;
+    level._post_zm_overrides_func = ::frontend_post_zm_init;
+    level.givecustomloadout = ::givecustomloadout;
+    level.zombie_init_done = ::zombie_init_done;
+    onplayerconnect_callback( ::frontend_connected );
 
-	// disable loading random tranzit fx
-	level.disable_fx_upgrade_aquired = true;
-	level.fx_exclude_tesla_head_light = true;
-	level.disable_fx_zmb_tranzit_shield_explo = true;
+    // perk opt ins
+    level.zombiemode_using_pack_a_punch = 0;
+    level.zombiemode_reusing_pack_a_punch = 0;
+    level.zombiemode_using_tombstone_perk = 0;
+    level.zombiemode_using_revive_perk = 1;
+    level.zombiemode_using_juggernaut_perk = 1;
+    level.zombiemode_using_marathon_perk = 1;
+    level.zombiemode_using_doubletap_perk = 1;
+    level.zombiemode_using_sleightofhand_perk = 1;
 
-	level.culldist = 5000;
-	setup_characters();
-	level thread electric_switch();
+    // disable loading random tranzit fx
+    level.disable_fx_upgrade_aquired = true;
+    level.fx_exclude_tesla_head_light = true;
+    level.disable_fx_zmb_tranzit_shield_explo = true;
 
-	// adjust these if the map is too small
-	// custom maps must do this before _zm_usermap::start_zombie_mode
-	level.zombie_ai_limit = 18;
+    level.culldist = 5000;
+    setup_characters();
+    level thread electric_switch();
 
-	level.zone_manager_init_func = ::zone_init;
-	init_zones[0] = "war_room_volume";
-	init_zones[1] = "spawn_room_volume";
-	maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
+    // adjust these if the map is too small
+    // custom maps must do this before _zm_usermap::start_zombie_mode
+    level.zombie_ai_limit = 18;
 
-	// stuff that has to be after zm::init
-	frontend_magicbox_init();
-	maps\mp\zombies\_zm_weap_slipgun::init();
-	init_globe();
-	level thread open_junk();
+    // custom zones go here, zm_frontend has two spawn zones to start off with
+    level.zone_manager_init_func = ::frontend_zone_init;
+    level.zones = [];
+    init_zones[0] = "war_room_volume";
+    init_zones[1] = "spawn_room_volume";
+    maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
+
+    // stuff that has to be after zm::init
+    frontend_magicbox_init();
+    maps\mp\zombies\_zm_weap_slipgun::init();
+    init_globe();
+    level thread open_junk();
 }
 
 init_globe()
@@ -150,9 +153,9 @@ zombie_init_done()
 	self setphysparams( 15, 0, 48 );
 }
 
-zone_init()
+frontend_zone_init()
 {
-
+    add_adjacent_zone( "war_room_volume", "power_room_volume", "activate_power_zone" );
 }
 
 setup_characters()

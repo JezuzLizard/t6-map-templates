@@ -2295,6 +2295,34 @@
 }
 
 {
+"model" "*5"
+"origin" "51 868 512"
+"classname" "info_volume"
+"targetname" "power_room_volume"
+"script_noteworthy" "player_volume"
+"target" "power_room_volume_spawners"
+"guid" "509A6583"
+}
+{
+"model" "*5"
+"origin" "335 984 512"
+"classname" "info_volume"
+"targetname" "power_room_volume"
+"script_noteworthy" "player_volume"
+"target" "power_room_volume_spawners"
+"guid" "509A6583"
+}
+{
+"model" "*5"
+"origin" "619 984 512"
+"classname" "info_volume"
+"targetname" "power_room_volume"
+"script_noteworthy" "player_volume"
+"target" "power_room_volume_spawners"
+"guid" "509A6583"
+}
+
+{
 "note" "************************ BOX SPAWNER 1"
 "targetname" "power_room_volume_spawners"
 "origin" "292 865 440"
@@ -2543,7 +2571,7 @@
 "targetname" "zombie_debris"
 "target" "frontend_power_blocker"
 "zombie_cost" "1000"
-"script_flag" "openhouse2_f1_2_openhouse2_f2"
+"script_flag" "activate_power_zone"
 "guid" "0DC11749"
 }
 {
@@ -2596,7 +2624,7 @@
 "targetname" "zombie_debris"
 "target" "frontend_power_blocker"
 "zombie_cost" "1000"
-"script_flag" "openhouse2_f1_2_openhouse2_f2"
+"script_flag" "activate_power_zone"
 "guid" "0DC11749"
 }
 {

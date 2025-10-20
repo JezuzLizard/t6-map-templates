@@ -16,10 +16,10 @@
   - [ ] Humming on the server racks
 
 ## Zones
-- [ ] Add zone volumes
+- [x] Add zone volumes
   - [x] Make war room its own zone
   - [x] Make the spawn room its own zone, with 3 total spawns active
-  - [ ] Make power/box room its own zone
+  - [x] Make power/box room its own zone
 
 - [ ] War Room
   - [ ] Make initial player spawns be next to the hologram table, just like in the campaign
@@ -27,4 +27,4 @@
   - [x] Add a spawner in the corner
   - [x] Fix pathing between the chairs
   - [ ] Make it so you cant get on top of things
-  - [ ] Add wunderfizz, remove all perk machines completely
+  - [ ] Add wunderfizz where jugg is at, remove all perk machines except quick revive
