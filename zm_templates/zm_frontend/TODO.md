@@ -24,7 +24,7 @@
 - [ ] War Room
   - [ ] Make initial player spawns be next to the hologram table, just like in the campaign
   - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
-  - [ ] Add two spawns in the corners
-  - [ ] Fix pathing between the chairs
+  - [x] Add a spawner in the corner
+  - [x] Fix pathing between the chairs
   - [ ] Make it so you cant get on top of things
   - [ ] Add wunderfizz, remove all perk machines completely
