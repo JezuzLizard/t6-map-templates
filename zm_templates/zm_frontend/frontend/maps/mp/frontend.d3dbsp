@@ -3422,3 +3422,11 @@
 "classname" "node_pathnode"
 "origin" "565.886 1060.25 440.125"
 }
+{
+"classname" "node_pathnode"
+"origin" "-38.0192 310.498 440.125"
+}
+{
+"classname" "node_pathnode"
+"origin" "155.201 310.498 440.125"
+}
