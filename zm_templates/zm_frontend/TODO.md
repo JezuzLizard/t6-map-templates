@@ -6,25 +6,26 @@
 - [ ] Add all box weapons
 - [ ] Loadscreen
 - [ ] Music easter egg
-- [ ] Main Menu "Play" button which brings you to zsurvival
 
-## Sound effects
+## Main Menu
+- [ ] Play button, replaces the solo play button
+- [ ] Remove the globe and meteors
+- [ ] Make the background image the loadscreen
+- [ ] Change the background music to the ambient main theme
+
+## Sounds
 - [x] Grenade/EMP sounds
 - [ ] Add frontend ambience
   - [ ] Computers in the main area
   - [ ] Air vents in the backrooms
   - [ ] Humming on the server racks
+- [ ] Add Richtofen powerup quotes
 
 ## Zones
-- [x] Add zone volumes
-  - [x] Make war room its own zone
-  - [x] Make the spawn room its own zone, with 3 total spawns active
-  - [x] Make power/box room its own zone
-
-- [ ] War Room
+- [ ] Spawn Room
   - [ ] Make initial player spawns be next to the hologram table, just like in the campaign
   - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
+
+- [x] War Room
   - [x] Add a spawner in the corner
   - [x] Fix pathing between the chairs
-  - [ ] Make it so you cant get on top of things
-  - [ ] Add wunderfizz where jugg is at, remove all perk machines except quick revive
