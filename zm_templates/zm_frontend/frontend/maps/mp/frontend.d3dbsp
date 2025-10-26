@@ -2388,11 +2388,45 @@
 "note" "************************ PLAYER SPAWN 1"
 "radius" "32"
 "script_noteworthy" "initial_spawn"
-"script_string" "zstandard_frontend"
+"script_string" "zstandard_frontend zclassic_frontend"
 "targetname" "initial_spawn_points"
-"origin" "-48 568 448"
+"origin" "-48 568 440.125"
 "classname" "script_struct"
-"angles" "0 0 0"
+"angles" "0 -44.8 0"
+"script_int" "1"
+"guid" "2B360514"
+}
+{
+"note" "************************ PLAYER SPAWN 2"
+"radius" "32"
+"script_noteworthy" "initial_spawn"
+"script_string" "zstandard_frontend zclassic_frontend"
+"targetname" "initial_spawn_points"
+"origin" "103 568 440.125"
+"classname" "script_struct"
+"angles" "0 -137.9 0"
+"guid" "2B360514"
+}
+{
+"note" "************************ PLAYER SPAWN 3"
+"radius" "32"
+"script_noteworthy" "initial_spawn"
+"script_string" "zstandard_frontend zclassic_frontend"
+"targetname" "initial_spawn_points"
+"origin" "103 415 440.125"
+"classname" "script_struct"
+"angles" "0 124.6 0"
+"guid" "2B360514"
+}
+{
+"note" "************************ PLAYER SPAWN 4"
+"radius" "32"
+"script_noteworthy" "initial_spawn"
+"script_string" "zstandard_frontend zclassic_frontend"
+"targetname" "initial_spawn_points"
+"origin" "-48 415 440.125"
+"classname" "script_struct"
+"angles" "0 36.3 0"
 "guid" "2B360514"
 }
 

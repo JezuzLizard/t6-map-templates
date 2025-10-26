@@ -19,11 +19,10 @@
   - [ ] Computers in the main area
   - [ ] Air vents in the backrooms
   - [ ] Humming on the server racks
-- [ ] Add Richtofen powerup quotes
 
 ## Zones
 - [ ] Spawn Room
-  - [ ] Make initial player spawns be next to the hologram table, just like in the campaign
+  - [x] Make initial player spawns be next to the hologram table, just like in the campaign
   - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
 
 - [x] War Room
