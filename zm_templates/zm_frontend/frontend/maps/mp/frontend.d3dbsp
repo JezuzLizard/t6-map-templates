@@ -695,13 +695,6 @@
 "guid" "02D7F2B0"
 }
 {
-"classname" "script_model"
-"model" "p6_hologram_world_map_globe_glow"
-"targetname" "world_globe_ring"
-"origin" "48 488 544"
-"guid" "EB9954FA"
-}
-{
 "angles" "0 90 0"
 "classname" "script_origin"
 "targetname" "holo_table_floating_left"

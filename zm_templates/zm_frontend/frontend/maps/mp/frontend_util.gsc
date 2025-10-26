@@ -2,12 +2,6 @@
 #include maps\mp\_utility;
 #include maps\mp\zombies\_zm_utility;
 
-#define CLIENT_FLAG_HOLO_RED		14
-#define CLIENT_FLAG_HOLO_VISIBLE	15
-
-#define VEC_SET_Y(__vec, __y) \
-    __vec = (__vec[0], __y, __vec[2]);
-
 // Attaches all the countries to the globe, then hides them.
 build_globe()
 {
@@ -19,92 +13,24 @@ build_globe()
         country LinkTo( globe );
         country Hide();
         country IgnoreCheapEntityFlag( true );
-        //country ClearClientFlag( CLIENT_FLAG_HOLO_RED );
     }
 
     return globe;
 }
 
-process_globe_glow()
-{
-    if ( is_true( self.camera_facing ) )
-        return;
-
-    self.camera_facing = true;
-    self endon( "death" );
-    globe = GetEnt( "world_globe", "targetname" );
-    self.angles = globe.angles;
-
-    while ( true )
-    {
-        self.origin = globe.origin;
-
-        players = get_players();
-
-        cam_pos = players[0] GetPlayerCameraPos();
-        self_to_camera = cam_pos - self.origin;
-        newangles = VectorToAngles( self_to_camera );
-
-        VEC_SET_Y(newangles, newangles[1] + 90 );
-        self RotateTo( newangles, 0.05, 0, 0 );
-        wait_network_frame();
-    }
-}
-
 // Toggles visibility of the globe model.
-show_globe( do_show = true, ambient_spin = false )
+show_globe()
 {	
     globe = GetEnt( "world_globe", "targetname" );
+    globe notify( "kill_globe_marker_fx" );
 
-    if ( !isdefined( globe.glow_ring ) )
-    {
-        globe.glow_ring = GetEnt( "world_globe_ring", "targetname" );
-        //globe.glow_ring thread process_globe_glow();
-    }
-
-    if ( !ambient_spin )
-    {
-        globe notify( "stop_spinning" );
-    }
-    else
-    {
-        globe notify( "kill_globe_marker_fx" );
-        globe thread rotate_indefinitely( 120 );
-    }
-
-    if ( !isdefined( level.m_globe_shown ) )
-        level.m_globe_shown = !do_show;
-
-    if ( do_show != level.m_globe_shown )
-    {
-        if ( do_show )
-        {
-            //globe SetClientFlag( CLIENT_FLAG_HOLO_VISIBLE );
-            globe.glow_ring Show();
-            globe play_fx( "globe_satellite_fx", globe.origin, globe.angles, "kill_globe_satellite_fx", true );
-        }
-        else
-        {
-            globe notify( "kill_globe_satellite_fx" );
-            globe notify( "kill_globe_marker_fx" );
-            //globe ClearClientFlag( CLIENT_FLAG_HOLO_VISIBLE );
-            globe.glow_ring Hide();
-        }
-    }
-
-    level.m_globe_shown = do_show;
+    globe thread rotate_indefinitely( 120 );
+    globe play_fx( "globe_satellite_fx", globe.origin, globe.angles, "kill_globe_satellite_fx", true );
 
     countries = GetEntArray( globe.target, "targetname" );
     foreach ( country in countries )
     {
-        if ( do_show )
-        {
-            country Show();
-        }
-        else
-        {
-            country Hide();
-        }
+        country Show();
     }
 }
 

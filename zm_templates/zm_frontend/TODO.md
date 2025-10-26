@@ -21,9 +21,8 @@
   - [ ] Humming on the server racks
 
 ## Zones
-- [ ] Spawn Room
+- [x] Spawn Room
   - [x] Make initial player spawns be next to the hologram table, just like in the campaign
-  - [ ] Fix globe glow being based off the host's camera position (leftover from SP)
 
 - [x] War Room
   - [x] Add a spawner in the corner

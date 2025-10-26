@@ -79,7 +79,7 @@ init_globe()
 	globe.origin = float_pos.origin;
 
 	wait_network_frame();
-	show_globe( true, true );
+	show_globe();
 }
 
 electric_switch()
@@ -283,7 +283,9 @@ frontend_debris_think()
                         junk[i] thread maps\mp\zombies\_zm_blockers::debris_move( struct );
                     }
                     else
+                    {
                         junk[i] delete();
+                    }
 
                     continue;
                 }
