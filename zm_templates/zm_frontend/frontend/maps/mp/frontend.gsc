@@ -28,6 +28,7 @@ main()
     // map specific setup here
     level.enable_magic = getgametypesetting( "magic" );
     maps\mp\_sticky_grenade::init();
+    level._melee_weapons = []; // since we dont have bowie or tazers, init as empty
 
     level._post_zm_overrides_func = ::frontend_post_zm_init;
     level.givecustomloadout = ::givecustomloadout;
