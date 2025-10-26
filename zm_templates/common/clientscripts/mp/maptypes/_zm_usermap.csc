@@ -186,6 +186,7 @@ assert_include_fx_entry( alias_res, asset_res, override_res )
 	assert( !asset_res.errored );
 	assert( !asset_res.is_null );
 	assert( !override_res.errored );
+	
 	if ( !override_res.value )
 	{
 		assert( !isdefined( level._effect[ alias_res.value ] ) );
@@ -206,6 +207,9 @@ assert_include_fx_entry( alias_res, asset_res, override_res )
 
 include_fx()
 {
+	if ( !isdefined( level._effect ) )
+		level._effect = [];
+	
 	succeeded = set_working_table( "zm/include_fx.csv" );
 	if ( !succeeded )
 	{

@@ -9,9 +9,6 @@
 
 ## Main Menu
 - [ ] Play button, replaces the solo play button
-- [ ] Remove the globe and meteors
-- [ ] Make the background image the loadscreen
-- [ ] Change the background music to the ambient main theme
 
 ## Sounds
 - [x] Grenade/EMP sounds

@@ -122,17 +122,19 @@ assert_zone_spawn_locations_validity( spawn_locations )
 	{
 		loc = spawn_locations[ i ];
 
-		assert( loc.classname == "script_struct" );
 		assert( isdefined( loc.origin ) );
 		assert( isvec( loc.origin ) );
+
 		assert( isdefined( loc.angles ) );
 		assert( isvec( loc.angles ) );
-		assert( isdefined( loc.script_noteworthy ) );
 
+		assert( isdefined( loc.script_noteworthy ) );
 		tokens = strtok( loc.script_noteworthy, " " );
+
 		for ( j = 0; j < tokens.size; j++ )
 		{
 			tok = tokens[ j ];
+
 			switch ( tok )
 			{
 				case "riser_location":
@@ -179,14 +181,16 @@ assert_zone_entities_validity()
 	{
 		volume = zone_volumes[ i ];
 		assert( volume.classname == "info_volume" );
+
 		targetname = volume.targetname;
 		assert( isdefined( targetname ) );
+
 		target = volume.target;
 		assert( isdefined( target ) );
 
-		spawn_locations = getentarray( volume.target, "targetname" );
-		assert( spawn_locations.size );
-		assert_zone_spawn_locations_validity ( spawn_locations );
+		spawn_locations = getstructarray( target, "targetname" );
+		assert( spawn_locations.size > 0 );
+		assert_zone_spawn_locations_validity( spawn_locations );
 	}
 }
 
@@ -194,8 +198,6 @@ assert_spawner_entities_validity()
 {
 	spawners = getspawnerarray();
 	assert( spawners.size > 0 );
-
-	
 }
 
 start_zombie_mode( init_zones )
@@ -301,11 +303,11 @@ enemy_location_override( zombie, enemy )
 
 assert_include_weapon_entry( in_box_res, limit_res )
 {
-	assert( !in_box_res.null );
+	assert( !in_box_res.is_null );
 	assert( !in_box_res.errored );
 	assert( !limit_res.errored );
 
-	success = !in_box_res.null && !in_box_res.errored && !limit_res.errored;
+	success = !in_box_res.is_null && !in_box_res.errored && !limit_res.errored;
 	return success;
 }
 
@@ -495,11 +497,11 @@ assert_add_zombie_weapon_entry( weapon_res, upgrade_name_res, hint_res, cost_res
 	return true;
 }
 
-assert_zm_weapons_table_parse_type_correctness( add_weapon, hint )
+assert_zm_weapons_table_parse_type_correctness( add_weapon )
 {
-	assert( isstring( hint ) );
 	assert( isstring( add_weapon.name ) );
 	assert( !isdefined( add_weapon.upgrade_name ) || isstring( add_weapon.upgrade_name ) );
+	assert( /*!*/isdefined( add_weapon.hint ) /*|| isstring( add_weapon.hint )*/ );
 	assert( isint( add_weapon.cost ) );
 	assert( !isdefined( add_weapon.ammo_cost ) || isint( add_weapon.ammo_cost ) );
 	assert( !isdefined( add_weapon.weapon_voice_over ) || isstring( add_weapon.weapon_voice_over ) );
@@ -626,7 +628,7 @@ add_zombie_weapons()
 		add_weapon.weaponvoresp = weapon_voice_over_response;
 		add_weapon.create_vox = create_vox;
 
-		assert_zm_weapons_table_parse_type_correctness( add_weapon, hint_res );
+		assert_zm_weapons_table_parse_type_correctness( add_weapon );
 		level._usermap_add_weapons[ level._usermap_add_weapons.size ] = add_weapon;
 	}
 
@@ -644,7 +646,7 @@ table_add_weapons()
 	for ( i = 0; i < level._usermap_add_weapons.size; i++ )
 	{
 		weapon = level._usermap_add_weapons[ i ];
-		assert( level.zombie_include_weapons[weapon.name] );
+		assert( isdefined( level.zombie_include_weapons[weapon.name] ) );
 		add_zombie_weapon2( weapon.name, weapon.upgrade_name, weapon.hint, weapon.cost, weapon.weaponvo, weapon.weaponvoresp, weapon.ammo_cost, weapon.create_vox );
 	}
 
