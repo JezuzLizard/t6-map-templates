@@ -1,5 +1,6 @@
 zm_templates.zip
 /zm_templates/oat
+/zm_templates/assets
 /zm_templates/**/*.ff
 /zm_templates/**/zone_out
 **.ff

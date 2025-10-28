@@ -25,7 +25,26 @@ include,packages/weapons/ak74u_zm
 include,packages/weapons/m1911_zm
 include,packages/weapons/m1911_upgraded_zm
 include,packages/weapons/raygun_mark2_zm
+include,packages/weapons/ray_gun_zm
 include,packages/weapons/slipgun_zm
+include,packages/weapons/python_zm
+include,packages/weapons/judge_zm
+include,packages/weapons/kard_zm
+include,packages/weapons/fiveseven_zm
+include,packages/weapons/fivesevendw_zm
+include,packages/weapons/qcw05_zm
+include,packages/weapons/saiga12_zm
+include,packages/weapons/srm1216_zm
+include,packages/weapons/xm8_zm
+include,packages/weapons/type95_zm
+include,packages/weapons/tar21_zm
+include,packages/weapons/galil_zm
+include,packages/weapons/dsr50_zm
+include,packages/weapons/rpd_zm
+include,packages/weapons/hamr_zm
+include,packages/weapons/usrpg_zm
+include,packages/weapons/barretm82_zm
+include,packages/weapons/knife_ballistic_zm
 
 include,packages/player_characters/tranzit_survival_characters
 
@@ -62,13 +81,50 @@ material,mc/mtl_predator
 // for zombie dogs
 rawfile,shock/dog_bite.shock
 
+//
 // frontend specific assets
+//
+
+// required to remove specific "frontend" map check!
+script,maps/mp/zombies/_zm_laststand.gsc
+
 fx,maps/command_center/fx_com_hologram_static_beam
 fx,maps/command_center/fx_com_hologram_static_missile
 fx,maps/command_center/fx_com_hologram_static_ship
 
-// required to remove specific "frontend" map check!
-script,maps/mp/zombies/_zm_laststand.gsc
+rawfile,rumble/lmg_fire
+rawfile,rumble/lmg_fire_h.rmb
+rawfile,rumble/lmg_fire_l.rmb
+
+rawfile,rumble/smg_fire
+rawfile,rumble/smg_fire_h.rmb
+rawfile,rumble/smg_fire_l.rmb
+
+rawfile,rumble/shotgun_fire
+rawfile,rumble/shotgun_fire_h.rmb
+rawfile,rumble/shotgun_fire_l.rmb
+
+rawfile,rumble/heavygun_fire
+rawfile,rumble/heavygun_fire_h.rmb
+rawfile,rumble/heavygun_fire_l.rmb
+
+rawfile,rumble/tank_rumble
+
+rawfile,rumble/defaultweapon_fire
+rawfile,rumble/defaultweapon_fire_h.rmb
+rawfile,rumble/defaultweapon_fire_l.rmb
+
+rawfile,rumble/pistol_fire
+rawfile,rumble/pistol_fire_h.rmb
+rawfile,rumble/pistol_fire_l.rmb
+
+rawfile,rumble/assault_fire
+rawfile,rumble/assault_fire_h.rmb
+rawfile,rumble/assault_fire_l.rmb
+
+rawfile,rumble/damage_heavy
+rawfile,rumble/damage_heavy_h.rmb
+rawfile,rumble/damage_heavy_l.rmb
 
 // debris
 image,p6_zm_nuked_couch_02_n

@@ -9,7 +9,8 @@ MAP_NAME = "frontend"
 CWD = os.path.dirname(os.path.abspath(__file__))
 
 OAT_PATH = os.path.join(CWD, "..", "oat")
-BIN_PATH = os.path.join(CWD, "..", "bin")
+ASSETS_PATH = os.path.join(CWD, "..", "assets")
+ASSETS_SOUND_PATH = os.path.join(ASSETS_PATH, "sound")
 COMMON_PATH = os.path.join(CWD, "..", "common")
 
 SOURCE_PATH = os.path.join(CWD, "zone_source")
@@ -21,19 +22,19 @@ PLUTO_MODS_DIR = os.path.join(LOCALAPPDATA, "Plutonium-staging", "storage", "t6"
 
 ZONE_ALL = "zone\\all"
 REQUIRED_FILES = [
-    f"{BIN_PATH}\\frontend.ff",
+    f"{ASSETS_PATH}\\frontend.ff",
     
-    f"{BIN_PATH}\\frontend_gump_sf_a.ff",
-    f"{BIN_PATH}\\code_post_gfx.ff",
-    f"{BIN_PATH}\\common.ff",
-    f"{BIN_PATH}\\common_zm.ff",
-    f"{BIN_PATH}\\zm_nuked.ff",
-    f"{BIN_PATH}\\zm_highrise.ff",
-    f"{BIN_PATH}\\zm_highrise_patch.ff",
-    f"{BIN_PATH}\\zm_tomb.ff",
-    f"{BIN_PATH}\\zm_transit.ff",
-    f"{BIN_PATH}\\zm_transit_patch.ff",
-    f"{BIN_PATH}\\so_zsurvival_zm_transit.ff",
+    f"{ASSETS_PATH}\\frontend_gump_sf_a.ff",
+    f"{ASSETS_PATH}\\code_post_gfx.ff",
+    f"{ASSETS_PATH}\\common.ff",
+    f"{ASSETS_PATH}\\common_zm.ff",
+    f"{ASSETS_PATH}\\zm_nuked.ff",
+    f"{ASSETS_PATH}\\zm_highrise.ff",
+    f"{ASSETS_PATH}\\zm_highrise_patch.ff",
+    f"{ASSETS_PATH}\\zm_tomb.ff",
+    f"{ASSETS_PATH}\\zm_transit.ff",
+    f"{ASSETS_PATH}\\zm_transit_patch.ff",
+    f"{ASSETS_PATH}\\so_zsurvival_zm_transit.ff",
 ]
 
 def download_oat():
@@ -61,13 +62,20 @@ def has_required_files():
 
     return missing_files
 
-def print_required_files(missing_files):
-    print("You must place the following files in \"zm_templates\\bin\" to compile:\n")
+def print_required_files(missing_files, show_list, sounds_required = False):
+    if show_list:
+        print("You must place the following files in \"zm_templates\\assets\" to compile:\n")
+        
+        for file in missing_files:
+            print(f"- {file.replace(f"{ASSETS_PATH}", f"{ZONE_ALL}")}")
 
-    for file in missing_files:
-        print(f"- {file.replace(f"{BIN_PATH}", f"{ZONE_ALL}")}")
 
-    print("\nYou can obtain them from your game folder on Steam.\n")
+    # typically you will only need tranzit and the common_zm extracted, but it doesn't hurt to have every sound extracted
+    if sounds_required:
+        print("You also will need to use Black Ops II Sound Studio to extract all of the vanilla sound files to \"zm_templates\\assets\\sound\" to compile.")
+        print("It is important that the \"raw\" and \"devraw\" folders go inside of \"sound\".")
+        
+    print("\nYou can obtain all of these files from your game folder on Steam.\n")
     input("Press the Enter key to exit...")
 
 def link_zone(zone_name, zone_deps = []):
@@ -75,6 +83,9 @@ def link_zone(zone_name, zone_deps = []):
         f"{OAT_PATH}\\Linker.exe",
         "--base-folder",            os.path.join(CWD, zone_name),
         "--add-asset-search-path",  os.path.join(CWD, zone_name),
+        "--add-asset-search-path",  f"{ASSETS_PATH}\\sound\\raw",       # for sound files
+        "--add-asset-search-path",  f"{ASSETS_PATH}\\sound\\devraw",    # for sound files
+        "--add-asset-search-path",  f"{ASSETS_PATH}\\sound\\english",   # for sound files
         "--add-asset-search-path",  COMMON_PATH,
         "--add-source-search-path", SOURCE_PATH,
         "--add-source-search-path", SOURCE_PATH_TEMPLATED,
@@ -128,15 +139,22 @@ def main():
         print("Done, continuing with compile.")
     
     # the folder didnt exist so just print everything
-    if not os.path.exists(BIN_PATH):
-        os.mkdir(BIN_PATH)
-        print_required_files(REQUIRED_FILES)
+    if not os.path.exists(ASSETS_PATH):
+        os.mkdir(ASSETS_PATH)
+        os.mkdir(ASSETS_SOUND_PATH)
+        print_required_files(REQUIRED_FILES, True)
+        return
+    
+    # no sounds existed
+    if not os.path.exists(ASSETS_SOUND_PATH):
+        os.mkdir(ASSETS_SOUND_PATH)
+        print_required_files([], False, True)
         return
     
     # it exists so they might be missing a fastfile or two
     missing_files = has_required_files()
     if missing_files:
-        print_required_files(missing_files)
+        print_required_files(missing_files, True)
         return
         
     # remove the old zone_out
@@ -144,7 +162,7 @@ def main():
         shutil.rmtree(ZONE_OUT_PATH)
         
     # frontend.ff, removes the soundbank
-    frontend_zones = [ f"{BIN_PATH}\\frontend.ff" ]
+    frontend_zones = [ f"{ASSETS_PATH}\\frontend.ff" ]
     link_zone("frontend", frontend_zones)
     
     # en_frontend.ff, removes the soundbank
@@ -152,7 +170,7 @@ def main():
     
     # mod.ff
     mod_zones = REQUIRED_FILES
-    mod_zones.remove(f"{BIN_PATH}\\frontend.ff")
+    mod_zones.remove(f"{ASSETS_PATH}\\frontend.ff")
     link_zone("mod", mod_zones)
     
     # we have to override the mapents and pathnodes, otherwise the map doesnt load
