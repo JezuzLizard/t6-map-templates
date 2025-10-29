@@ -2023,7 +2023,7 @@
 "targetname" "amb_radio"
 "script_sound" "amb_radio"
 "script_label" "random"
-"origin" "228.5 -96 539"
+"origin" "213 -178.3 472.125"
 "script_wait_min" "10"
 "script_wait_max" "30"
 "guid" "5A6DD234"
