@@ -2316,6 +2316,15 @@
 }
 
 {
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "77.7 868.8 440.125"
+"targetname" "power_room_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "E4198BC2"
+}
+{
 "note" "************************ BOX SPAWNER 1"
 "targetname" "power_room_volume_spawners"
 "origin" "292 865 440"
@@ -2334,6 +2343,25 @@
 "script_string" "find_flesh"
 "angles" "0 0 0"
 "guid" "7A95F13B"
+}
+
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "379.5 -265.5 440.125"
+"targetname" "war_room_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "E4198BC2"
+}
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "595 -75 440.125"
+"targetname" "war_room_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "E4198BC2"
 }
 {
 "note" "************************ WAR ROOM BACK CORNER SPAWNER"
@@ -2366,6 +2394,15 @@
 "guid" "7A95F13B"
 }
 
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "72.3 223.1 440.125"
+"targetname" "spawn_room_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "E4198BC2"
+}
 {
 "note" "************************ SPAWN ROOM SPAWNER"
 "targetname" "spawn_room_volume_spawners"
@@ -2448,14 +2485,6 @@
 }
 
 {
-"note" "************************ GAME OVER INTERMISSION POINT 2"
-"classname" "script_struct"
-"angles" "0 90 0"
-"origin" "265 300 525"
-"targetname" "auto2390"
-"guid" "0C1213FF"
-}
-{
 "note" "************************ GAME OVER INTERMISSION POINT 1"
 "classname" "script_struct"
 "angles" "0 90 0"
@@ -2465,6 +2494,14 @@
 "targetname" "intermission"
 "script_string" "frontend"
 "guid" "B4315065"
+}
+{
+"note" "************************ GAME OVER INTERMISSION POINT 2"
+"classname" "script_struct"
+"angles" "0 90 0"
+"origin" "265 300 525"
+"targetname" "auto2390"
+"guid" "0C1213FF"
 }
 
 {
