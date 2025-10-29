@@ -16,8 +16,10 @@ include,packages/mystery_box
 
 // templated assets for a custom zombies map
 include,template_common_zm
-
 include,frontend_zombies
+
+// loading screen
+material,loadscreen_frontend_zstandard_frontend
 
 // weapons
 include,packages/weapons/m14_zm

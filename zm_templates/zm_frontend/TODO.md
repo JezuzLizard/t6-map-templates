@@ -4,7 +4,7 @@
 - [x] Add path nodes
 - [x] Add the pre-patch Sliqifier to the box
 - [x] Add all box weapons
-- [ ] Loadscreen
+- [x] Loadscreen
 - [ ] Music easter egg
 
 ## Main Menu

@@ -104,16 +104,19 @@ def create_mod_iwd(files):
     iwd_path = os.path.join(ZONE_OUT_PATH, "mod.iwd")
     
     with zipfile.ZipFile(iwd_path, "w", zipfile.ZIP_DEFLATED) as zip:
-        for file_name, inner_dir in files.items():
-            source_path = os.path.join(CWD, MAP_NAME, inner_dir, f"{file_name}")
-            inner_path  = os.path.join(inner_dir, file_name) # the path inside the iwd itself
-            rel_path    = os.path.relpath(inner_path, CWD)
-            
+        for file_name, file_info in files.items():
+            source_dir = file_info.get("source_dir")
+            inner_dir  = file_info.get("inner_dir")
+
+            source_path = os.path.join(source_dir, file_name)
+            inner_path  = os.path.join(inner_dir, file_name)
+
             if not os.path.exists(source_path):
-                print(f"Warning: file for mod.iwd was not found: \"{file_name}\"")
+                print(f"Warning: file for mod.iwd not found: \"{source_path}\"")
                 continue
-            
-            zip.write(source_path, arcname=rel_path)    
+
+            zip.write(source_path, arcname=inner_path)
+            print(f"Added {source_path} -> {inner_path}")
 
     print(f"Created iwd \"mod\"")
 
@@ -173,10 +176,22 @@ def main():
     mod_zones.remove(f"{ASSETS_PATH}\\frontend.ff")
     link_zone("mod", mod_zones)
     
-    # we have to override the mapents and pathnodes, otherwise the map doesnt load
+    # we have to put certain files in an iwd, otherwise the map just explodes
+    # "source_dir" is the folder that the file resides in, its data will be copied to the iwd
+    # "inner_dir" is the folder structure that will be used for writing the file to the iwd
     create_mod_iwd({
-        "frontend.d3dbsp":          "maps/mp",
-        "frontend.d3dbsp.paths":    "maps/mp",
+        "frontend.d3dbsp": {
+            "source_dir": f"{MAP_NAME}\\maps\\mp",
+            "inner_dir": "maps\\mp"
+        },
+        "frontend.d3dbsp.paths": {
+            "source_dir": f"{MAP_NAME}\\maps\\mp",
+            "inner_dir": "maps\\mp"
+        },
+        "loadscreen_frontend.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
     })
     
     # for convenience purposes, copy it to the mods folder automatically
