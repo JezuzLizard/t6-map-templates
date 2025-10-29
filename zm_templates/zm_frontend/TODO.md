@@ -12,10 +12,7 @@
 
 ## Sounds
 - [x] Grenade/EMP sounds
-- [ ] Add frontend ambience
-  - [ ] Computers in the main area
-  - [ ] Air vents in the backrooms
-  - [ ] Humming on the server racks
+- [x] Add frontend ambience
 
 ## Zones
 - [x] Spawn Room

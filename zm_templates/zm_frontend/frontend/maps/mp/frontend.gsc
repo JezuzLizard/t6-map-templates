@@ -68,6 +68,8 @@ main()
     // stuff that has to be after zm::init
     frontend_magicbox_init();
     maps\mp\zombies\_zm_weap_slipgun::init();
+
+    // the spawn room hologram globe
     init_globe();
     level thread open_junk();
 }
@@ -90,7 +92,7 @@ electric_switch()
     power_trigger waittill( "trigger", user );
 
     power_trigger SetInvisibleToAll();
-    power_trigger PlaySound( "evt_poweron_front" );
+    user PlaySound( "zmb_turn_on" );
 
     level thread maps\mp\zombies\_zm_perks::perk_unpause_all_perks();
     
@@ -135,9 +137,6 @@ frontend_post_zm_init()
 	level.zombie_melee_in_water = true;
 	level.put_timed_out_zombies_back_in_queue = true;
 	level.use_alternate_poi_positioning = true;
-
-    // allow them to buy 5 perks
-    level.perk_purchase_limit = 5;
 }
 
 frontend_connected()

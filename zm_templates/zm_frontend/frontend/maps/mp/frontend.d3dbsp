@@ -2487,7 +2487,7 @@
 }
 {
 "note" "************************ JUGG MACHINE"
-"origin" "347.1 811 440"
+"origin" "347.1 799 440"
 "model" "zombie_vending_jugg"
 "classname" "script_struct"
 "angles" "0 180 0"
@@ -2498,7 +2498,7 @@
 }
 {
 "note" "************************ SPEED COLA MACHINE"
-"origin" "532 1116.3 440"
+"origin" "532 1124.3 440"
 "model" "zombie_vending_sleight"
 "classname" "script_struct"
 "angles" "0 0 5.24537e-008"
@@ -2509,7 +2509,7 @@
 }
 {
 "note" "************************ DOUBLE TAP MACHINE"
-"origin" "86 157 440"
+"origin" "86 164 440"
 "model" "zombie_vending_doubletap2"
 "classname" "script_struct"
 "angles" "0 0 0"
@@ -2713,6 +2713,7 @@
 {
 "note" "************************ ZOMBIE PATH NODES"
 }
+
 {
 "classname" "node_pathnode"
 "origin" "164.138 -64.3714 440.125"
