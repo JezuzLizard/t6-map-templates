@@ -131,6 +131,9 @@ def copy_to_pluto():
     
     # now copy it
     shutil.copytree(ZONE_OUT_PATH, pluto_mod_folder)
+    
+    # mod.json contains information for the Plutonium menu
+    shutil.copyfile(os.path.join(CWD, "mod", "mod.json"), os.path.join(pluto_mod_folder, "mod.json"))
 
 def main():
     print("")
