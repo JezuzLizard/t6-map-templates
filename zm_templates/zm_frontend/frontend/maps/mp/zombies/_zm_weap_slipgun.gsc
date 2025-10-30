@@ -33,19 +33,9 @@ init()
         maps\mp\gametypes_zm\_weaponobjects::createretrievablehint( "slipgun", &"ZM_HIGHRISE_EQUIP_SLIPGUN_PICKUP_HINT_STRING" );
     }
 
-    // 0 and 255 for pre-patch behavior
-    // 6 and 100 for post-patch behavior
-    set_zombie_var_once( "slipgun_reslip_rate", 0 );
-    set_zombie_var_once( "slipgun_max_kill_round", 256 );
-
-    set_zombie_var_once( "slipgun_reslip_max_spots", 8 );
-    set_zombie_var_once( "slipgun_max_kill_chain_depth", 16 );
-    set_zombie_var_once( "slipgun_chain_radius", 120 );
+    set_zombie_var_once( "slipgun_chain_radius", 128 );
     set_zombie_var_once( "slipgun_chain_wait_min", 0.75, 1 );
     set_zombie_var_once( "slipgun_chain_wait_max", 1.5, 1 );
-
-    level.slippery_spot_count = 0;
-    level.sliquifier_distance_checks = 0;
     
     maps\mp\zombies\_zm_spawner::register_zombie_damage_callback( ::slipgun_zombie_damage_response );
     maps\mp\zombies\_zm_spawner::register_zombie_death_animscript_callback( ::slipgun_zombie_death_response );
@@ -66,7 +56,6 @@ wait_init_damage()
         wait 1;
 
     wait 1;
-    level.slipgun_damage = maps\mp\zombies\_zm::ai_zombie_health( 255 );
     level.slipgun_damage_mod = "MOD_PROJECTILE_SPLASH";
 }
 
@@ -106,7 +95,7 @@ slip_bolt( player, upgraded )
     if ( upgraded )
         duration = 36;
 
-    thread add_slippery_spot( position, duration, startpos );
+    //thread add_slippery_spot( position, duration, startpos );
 }
 
 dropslipgun()
@@ -442,220 +431,6 @@ zombie_set_slipping( onoff )
     }
 }
 
-slippery_spot_choke( lifetime )
-{
-    level.sliquifier_distance_checks++;
-
-    if ( level.sliquifier_distance_checks >= 32 )
-    {
-        level.sliquifier_distance_checks = 0;
-        lifetime = lifetime - 0.05;
-        wait 0.05;
-    }
-
-    return lifetime;
-}
-
-add_slippery_spot( origin, duration, startpos )
-{
-    wait 0.5;
-    level.slippery_spot_count++;
-    hit_norm = vectornormalize( startpos - origin );
-    hit_from = 6 * hit_norm;
-    trace_height = 120;
-    trace = bullettrace( origin + hit_from, origin + hit_from + ( 0, 0, trace_height * -1 ), 0, undefined );
-
-    if ( isdefined( trace["entity"] ) )
-    {
-        parent = trace["entity"];
-
-        if ( is_true( parent.can_move ) )
-            return;
-    }
-
-    fxorigin = origin + hit_from;
-/#
-    red = ( 1, 0, 0 );
-    green = ( 0, 1, 0 );
-    dkgreen = vectorscale( ( 0, 1, 0 ), 0.15 );
-    blue = ( 0, 0, 1 );
-    grey = vectorscale( ( 1, 1, 1 ), 0.3 );
-    black = ( 0, 0, 0 );
-    slipgun_debug_line( origin, origin + hit_from, red, duration );
-
-    if ( trace["fraction"] == 1 )
-        slipgun_debug_line( origin + hit_from, origin + hit_from + ( 0, 0, trace_height * -1 ), grey, duration );
-    else
-    {
-        slipgun_debug_line( origin + hit_from, trace["position"], green, duration );
-        slipgun_debug_line( trace["position"], origin + hit_from + ( 0, 0, trace_height * -1 ), dkgreen, duration );
-    }
-#/
-
-    if ( trace["fraction"] == 1 )
-        return;
-
-    moving_parent = undefined;
-    moving_parent_start = ( 0, 0, 0 );
-
-    if ( isdefined( trace["entity"] ) )
-    {
-        parent = trace["entity"];
-
-        if ( is_true( parent.can_move ) )
-            return;
-    }
-
-    origin = trace["position"];
-    thread pool_of_goo( fxorigin, duration );
-
-    if ( !isdefined( level.slippery_spots ) )
-        level.slippery_spots = [];
-
-    level.slippery_spots[level.slippery_spots.size] = origin;
-    radius = 60;
-    height = 48;
-/#
-    thread slipgun_debug_circle( origin, radius, duration, 0, moving_parent, moving_parent_start );
-#/
-    slicked_players = [];
-    slicked_zombies = [];
-    lifetime = duration;
-    radius2 = radius * radius;
-
-    while ( lifetime > 0 )
-    {
-        oldlifetime = lifetime;
-
-        foreach ( player in get_players() )
-        {
-            num = player getentitynumber();
-            morigin = origin;
-
-            if ( isdefined( moving_parent ) )
-                morigin = origin + ( moving_parent.origin - moving_parent_start );
-
-            should_be_slick = distance2dsquared( player.origin, morigin ) < radius2 && abs( player.origin[2] - morigin[2] ) < height;
-            is_slick = isdefined( slicked_players[num] );
-
-            if ( should_be_slick != is_slick )
-            {
-                if ( !isdefined( player.slick_count ) )
-                    player.slick_count = 0;
-
-                if ( should_be_slick )
-                {
-                    player.slick_count++;
-                    slicked_players[num] = player;
-                }
-                else
-                {
-                    player.slick_count--;
-                    assert( player.slick_count >= 0 );
-                    slicked_players[num] = undefined;
-                }
-
-/#
-
-#/
-                player forceslick( player.slick_count );
-            }
-
-            lifetime = slippery_spot_choke( lifetime );
-        }
-
-        zombies = get_round_enemy_array();
-
-        if ( isdefined( zombies ) )
-        {
-            foreach ( zombie in zombies )
-            {
-                if ( isdefined( zombie ) )
-                {
-                    num = zombie getentitynumber();
-                    morigin = origin;
-
-                    if ( isdefined( moving_parent ) )
-                        morigin = origin + ( moving_parent.origin - moving_parent_start );
-
-                    should_be_slick = distance2dsquared( zombie.origin, morigin ) < radius2 && abs( zombie.origin[2] - morigin[2] ) < height;
-
-                    if ( should_be_slick && !zombie zombie_can_slip() )
-                        should_be_slick = 0;
-
-                    is_slick = isdefined( slicked_zombies[num] );
-
-                    if ( should_be_slick != is_slick )
-                    {
-                        if ( !isdefined( zombie.slick_count ) )
-                            zombie.slick_count = 0;
-
-                        if ( should_be_slick )
-                        {
-                            zombie.slick_count++;
-                            slicked_zombies[num] = zombie;
-                        }
-                        else
-                        {
-                            if ( zombie.slick_count > 0 )
-                                zombie.slick_count--;
-
-                            slicked_zombies[num] = undefined;
-                        }
-
-                        zombie zombie_set_slipping( zombie.slick_count > 0 );
-                    }
-
-                    lifetime = slippery_spot_choke( lifetime );
-                }
-            }
-        }
-
-        if ( oldlifetime == lifetime )
-        {
-            lifetime = lifetime - 0.05;
-            wait 0.05;
-        }
-    }
-
-    foreach ( player in slicked_players )
-    {
-        player.slick_count--;
-        assert( player.slick_count >= 0 );
-        player forceslick( player.slick_count );
-    }
-
-    foreach ( zombie in slicked_zombies )
-    {
-        if ( isdefined( zombie ) )
-        {
-            if ( zombie.slick_count > 0 )
-                zombie.slick_count--;
-
-            zombie zombie_set_slipping( zombie.slick_count > 0 );
-        }
-    }
-
-    arrayremovevalue( level.slippery_spots, origin, 0 );
-    level.slippery_spot_count--;
-}
-
-pool_of_goo( origin, duration )
-{
-    effect_life = 24;
-
-    if ( duration > effect_life )
-    {
-        pool_of_goo( origin, duration - effect_life );
-        duration = effect_life;
-    }
-
-    if ( isdefined( level._effect["slipgun_splatter"] ) )
-        playfx( level._effect["slipgun_splatter"], origin );
-
-    wait( duration );
-}
-
 explode_into_goo( player, chain_depth )
 {
     if ( isdefined( self.marked_for_insta_upgraded_death ) )
@@ -686,9 +461,6 @@ explode_into_goo( player, chain_depth )
 
 explode_to_near_zombies( player, origin, radius, chain_depth )
 {
-    if ( level.zombie_vars["slipgun_max_kill_chain_depth"] > 0 && chain_depth > level.zombie_vars["slipgun_max_kill_chain_depth"] )
-        return;
-
     enemies = get_round_enemy_array();
     enemies = get_array_of_closest( origin, enemies );
     minchainwait = level.zombie_vars["slipgun_chain_wait_min"];
@@ -739,17 +511,7 @@ explode_to_near_zombies( player, origin, radius, chain_depth )
                         if ( player maps\mp\zombies\_zm_powerups::is_insta_kill_active() )
                             enemy.health = 1;
 
-                        enemy dodamage( level.slipgun_damage, origin, player, player, "none", level.slipgun_damage_mod, 0, "slip_goo_zm" );
-                    }
-
-                    if ( level.slippery_spot_count < level.zombie_vars["slipgun_reslip_max_spots"] )
-                    {
-                        if ( level.zombie_vars["slipgun_reslip_rate"] > 0 && randomint( level.zombie_vars["slipgun_reslip_rate"] ) == 0 )
-                        {
-                            startpos = origin;
-                            duration = 24;
-                            thread add_slippery_spot( enemy.origin, duration, startpos );
-                        }
+                        enemy dodamage( enemy.health + 1, origin, player, player, "none", level.slipgun_damage_mod, 0, "slip_goo_zm" );
                     }
                 }
             }
@@ -775,7 +537,7 @@ slipgun_zombie_1st_hit_response( upgraded, player )
             if ( player maps\mp\zombies\_zm_powerups::is_insta_kill_active() )
                 self.health = 1;
 
-            self dodamage( level.slipgun_damage, self.origin, player, player, "none", level.slipgun_damage_mod, 0, "slip_goo_zm" );
+            self dodamage( self.health + 1, self.origin, player, player, "none", level.slipgun_damage_mod, 0, "slip_goo_zm" );
         }
     }
 }
@@ -825,5 +587,7 @@ slipgun_play_zombie_hit_vox()
     rand = randomintrange( 0, 101 );
 
     if ( rand >= 20 )
+    {
         self maps\mp\zombies\_zm_audio::create_and_play_dialog( "kill", "human" );
+    }
 }
