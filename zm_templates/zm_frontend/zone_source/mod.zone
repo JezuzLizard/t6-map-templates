@@ -47,6 +47,7 @@ include,packages/weapons/hamr_zm
 include,packages/weapons/usrpg_zm
 include,packages/weapons/barretm82_zm
 include,packages/weapons/knife_ballistic_zm
+include,packages/weapons/cymbal_monkey_zm
 
 include,packages/player_characters/tranzit_survival_characters
 
@@ -62,6 +63,7 @@ rawfile,zm_frontend_zclassic.cfg
 rawfile,zm_frontend_zstandard.cfg
 rawfile,sv_zm_frontend_zclassic.cfg
 rawfile,sv_zm_frontend_zstandard.cfg
+rawfile,zm_frontend_dev.cfg
 rawfile,zm_frontend.cfg
 
 // missing assets used only in SP or MP, but not ZM!

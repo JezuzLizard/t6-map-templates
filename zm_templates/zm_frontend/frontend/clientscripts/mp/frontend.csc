@@ -2,6 +2,7 @@
 #include clientscripts\mp\zombies\_zm_weapons;
 #include clientscripts\mp\zombies\_zm_utility;
 #include clientscripts\mp\zombies\_zm_weap_slipgun;
+#include clientscripts\mp\zombies\_zm_weap_cymbal_monkey;
 
 // setup autoexecs
 #include clientscripts\mp\frontend_fx;
@@ -28,6 +29,11 @@ main()
 	level._override_eye_fx = level._effect[ "blue_eyes" ];
 	
 	clientscripts\mp\maptypes\_zm_usermap::start_zombie_mode();
+
+	// monkeys have to be initialized after _zm:init()
+	level.legacy_cymbal_monkey = 1;
+    clientscripts\mp\zombies\_zm_weap_cymbal_monkey::init();
+
 	thread clientscripts\mp\frontend_amb::main();
 
 	waitforclient( 0 );

@@ -24,3 +24,4 @@ index,weapon_name,upgrade_name,hint,cost,weapon_voice_over,weapon_voice_over_res
 22,ray_gun_zm,,ZOMBIE_WEAPON_RAYGUN,10,wpck_ray,,,,true,,
 23,knife_ballistic_zm,,ZOMBIE_WEAPON_KNIFE_BALLISTIC,10,sickle,,,,true,1,
 24,barretm82_zm,,ZOMBIE_WEAPON_BARRETM82,50,sniper,,,,true,,
+25,cymbal_monkey_zm,,ZOMBIE_WEAPON_SATCHEL_2000,2000,wpck_monkey,,,,true,,
