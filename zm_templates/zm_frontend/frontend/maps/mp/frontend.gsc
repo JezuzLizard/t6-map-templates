@@ -69,6 +69,8 @@ main()
     frontend_magicbox_init();
     maps\mp\zombies\_zm_weap_slipgun::init();
 
+    level thread sndsetupmusiceasteregg();
+
     // the spawn room hologram globe
     init_globe();
     level thread open_junk();
@@ -196,6 +198,56 @@ give_team_characters()
 	self setmovespeedscale( 1 );
 	self setsprintduration( 4 );
 	self setsprintcooldown( 0 );
+}
+
+sndsetupmusiceasteregg()
+{
+    origins = [];
+    origins[0] = ( 193.478, -338.844, 470.201 );
+    origins[1] = ( 504.253, -338.844, 470.201 );
+    origins[2] = ( 653.227, 428.195, 473.454 );
+    level.meteor_counter = 0;
+    level.music_override = 0;
+
+    for ( i = 0; i < origins.size; i++ )
+        level thread sndmusicegg( origins[i] );
+}
+
+sndmusicegg( bear_origin )
+{
+    temp_ent = spawn( "script_origin", bear_origin );
+    temp_ent playloopsound( "zmb_meteor_loop" );
+    temp_ent thread maps\mp\zombies\_zm_sidequests::fake_use( "main_music_egg_hit", ::waitfor_override );
+    temp_ent waittill( "main_music_egg_hit", player );
+    temp_ent stoploopsound( 1 );
+    player playsound( "zmb_meteor_activate" );
+    level.meteor_counter = level.meteor_counter + 1;
+
+    if ( level.meteor_counter == 3 )
+        level thread sndplaymusicegg( player, temp_ent );
+    else
+    {
+        wait 1.5;
+        temp_ent delete();
+    }
+}
+
+waitfor_override()
+{
+    if ( isdefined( level.music_override ) && level.music_override )
+        return false;
+
+    return true;
+}
+
+sndplaymusicegg( player, ent )
+{
+    wait 1;
+    ent playsound( "mus_zmb_secret_song" );
+    level waittill( "end_game" );
+    ent stopsounds();
+    wait 0.05;
+    ent delete();
 }
 
 // edits:

@@ -5,7 +5,7 @@
 - [x] Add the pre-patch Sliqifier to the box
 - [x] Add all box weapons
 - [x] Loadscreen
-- [ ] Music easter egg
+- [x] Music easter egg
 
 ## Main Menu
 - [ ] Play button, replaces the solo play button
