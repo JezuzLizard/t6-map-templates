@@ -180,6 +180,10 @@ def main():
     # "source_dir" is the folder that the file resides in, its data will be copied to the iwd
     # "inner_dir" is the folder structure that will be used for writing the file to the iwd
     create_mod_iwd({
+        "mainlobby.lua": {
+            "source_dir": "mod\\ui\\t6",
+            "inner_dir": "ui\\t6"
+        },
         "frontend.d3dbsp": {
             "source_dir": f"{MAP_NAME}\\maps\\mp",
             "inner_dir": "maps\\mp"
