@@ -192,6 +192,22 @@ def main():
             "source_dir": "mod\\images",
             "inner_dir": "images"
         },
+        "specialty_quickrevive_zombies.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
+        "specialty_juggernaut_zombies.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
+        "specialty_fastreload_zombies.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
+        "specialty_doubletap_zombies.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
     })
     
     # for convenience purposes, copy it to the mods folder automatically
