@@ -20,6 +20,9 @@ include,frontend_zombies
 
 // loading screen
 material,loadscreen_frontend_zstandard_frontend
+material,loadscreen_frontend_zclassic_frontend
+material,loadscreen_frontend_zstandard_
+material,loadscreen_frontend_zclassic_
 
 // weapons
 include,packages/weapons/m14_zm
