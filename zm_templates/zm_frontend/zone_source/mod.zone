@@ -59,9 +59,7 @@ include,packages/perks/doubletap
 include,packages/perks/staminup
 
 // configs to play map easily
-rawfile,zm_frontend_zclassic.cfg
 rawfile,zm_frontend_zstandard.cfg
-rawfile,sv_zm_frontend_zclassic.cfg
 rawfile,sv_zm_frontend_zstandard.cfg
 rawfile,zm_frontend_dev.cfg
 rawfile,zm_frontend.cfg
