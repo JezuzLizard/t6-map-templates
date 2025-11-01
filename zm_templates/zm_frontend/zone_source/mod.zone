@@ -24,6 +24,10 @@ material,loadscreen_frontend_zclassic_frontend
 material,loadscreen_frontend_zstandard_
 material,loadscreen_frontend_zclassic_
 
+localize,zm_frontend
+stringtable,zm/mapstable.csv
+stringtable,zm/gametypestable.csv
+
 // weapons
 include,packages/weapons/m14_zm
 include,packages/weapons/ak74u_zm

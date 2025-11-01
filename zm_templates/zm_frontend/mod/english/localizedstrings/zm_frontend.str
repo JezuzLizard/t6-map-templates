@@ -1,0 +1,13 @@
+VERSION             "1"
+CONFIG              "C:/projects/cod/t6/bin/StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           ZMUI_FRONTEND
+LANG_ENGLISH        "Main Menu"
+
+REFERENCE           ZMUI_FRONTEND_LOC
+LANG_ENGLISH        "FRONTEND"
+
+REFERENCE           ZMUI_FRONTEND_CAPS
+LANG_ENGLISH        "MAIN MENU"
+ENDMARKER
