@@ -2587,7 +2587,7 @@
 "classname" "trigger_use_touch"
 "targetname" "zombie_debris"
 "target" "frontend_power_blocker"
-"zombie_cost" "1000"
+"zombie_cost" "750"
 "script_flag" "activate_power_zone"
 "guid" "0DC11749"
 }
@@ -2640,7 +2640,7 @@
 "classname" "trigger_use_touch"
 "targetname" "zombie_debris"
 "target" "frontend_power_blocker"
-"zombie_cost" "1000"
+"zombie_cost" "750"
 "script_flag" "activate_power_zone"
 "guid" "0DC11749"
 }
