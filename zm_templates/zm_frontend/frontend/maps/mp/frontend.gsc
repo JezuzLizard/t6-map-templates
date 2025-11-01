@@ -53,7 +53,6 @@ main()
 
     level.culldist = 5000;
     setup_characters();
-    level thread electric_switch();
 
     // adjust these if the map is too small
     // custom maps must do this before _zm_usermap::start_zombie_mode
@@ -85,23 +84,6 @@ init_globe()
 
 	wait_network_frame();
 	show_globe();
-}
-
-electric_switch()
-{
-    power_trigger = GetEnt( "use_elec_switch", "targetname" );
-    power_trigger SetHintString( &"ZOMBIE_ELECTRIC_SWITCH" );
-    power_trigger SetVisibleToAll();
-    power_trigger waittill( "trigger", user );
-
-    power_trigger SetInvisibleToAll();
-    user PlaySound( "zmb_turn_on" );
-
-    level thread maps\mp\zombies\_zm_perks::perk_unpause_all_perks();
-    
-	level notify( "electric_door" );
-    ClientNotify( "power_on" );
-    flag_set( "power_on" );
 }
 
 // once open is opened, open the rest
@@ -144,6 +126,25 @@ frontend_post_zm_init()
     // monkey bombs
     level.legacy_cymbal_monkey = 1;
     maps\mp\zombies\_zm_weap_cymbal_monkey::init();
+
+    // removed power, turn them on by default
+    turn_on_perks();
+}
+
+turn_on_perks()
+{
+    flag_wait( "start_zombie_round_logic" );
+    wait 1;
+
+    level notify( "revive_on" );
+    wait_network_frame();
+    level notify( "doubletap_on" );
+    wait_network_frame();
+    level notify( "marathon_on" );
+    wait_network_frame();
+    level notify( "juggernog_on" );
+    wait_network_frame();
+    level notify( "sleight_on" );
 }
 
 frontend_connected()
@@ -208,14 +209,16 @@ give_team_characters()
 sndsetupmusiceasteregg()
 {
     origins = [];
-    origins[0] = ( 193.478, -338.844, 470.201 );
-    origins[1] = ( 504.253, -338.844, 470.201 );
-    origins[2] = ( 653.227, 428.195, 473.454 );
+    origins[0] = ( 653.227, 428.195, 473.454 );
+    origins[1] = ( 193.478, -338.844, 470.201 );
+    origins[2] = ( 671, 992, 439 );
     level.meteor_counter = 0;
     level.music_override = 0;
 
     for ( i = 0; i < origins.size; i++ )
+    {
         level thread sndmusicegg( origins[i] );
+    }
 }
 
 sndmusicegg( bear_origin )
@@ -250,6 +253,7 @@ sndplaymusicegg( player, ent )
     wait 1;
     ent playsound( "mus_zmb_secret_song" );
     ent thread waittill_song_over();
+
     level waittill( "end_game" );
     ent stopsounds();
     wait 0.05;
