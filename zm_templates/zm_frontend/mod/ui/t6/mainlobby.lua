@@ -435,8 +435,8 @@ CoD.MainLobby.PopulateButtons_Multiplayer = function (MainLobbyButtonPane)
 end
 
 CoD.MainLobby.PopulateButtons_Zombie = function (MainLobbyButtonPane)
-	MainLobbyButtonPane.body.playFrontendButton = MainLobbyButtonPane.body.buttonList:addButton(Engine.Localize("PLAY FRONTEND"), nil, 1)
-	MainLobbyButtonPane.body.playFrontendButton.hintText = "The undead have taken over the main menu..."
+	MainLobbyButtonPane.body.playFrontendButton = MainLobbyButtonPane.body.buttonList:addButton(Engine.Localize("PLAY MAIN MENU"), nil, 1)
+	MainLobbyButtonPane.body.playFrontendButton.hintText = "The undead have reached the campaign..."
 	MainLobbyButtonPane.body.playFrontendButton:setActionEventName("play_zm_frontend")
 
 	MainLobbyButtonPane.body.serverBrowserButton = MainLobbyButtonPane.body.buttonList:addButton(Engine.Localize("SERVER BROWSER"), nil, 2)
