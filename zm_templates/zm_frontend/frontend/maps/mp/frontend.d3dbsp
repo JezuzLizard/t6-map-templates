@@ -2636,7 +2636,7 @@
 {
 "note" "************************ BACKROOMS DEBRIS 2 TRIGGER"
 "model" "*46"
-"origin" "180 700 440"
+"origin" "190 700 440"
 "classname" "trigger_use_touch"
 "targetname" "zombie_debris"
 "target" "frontend_power_blocker"
