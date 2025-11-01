@@ -249,10 +249,20 @@ sndplaymusicegg( player, ent )
 {
     wait 1;
     ent playsound( "mus_zmb_secret_song" );
+    ent thread waittill_song_over();
     level waittill( "end_game" );
     ent stopsounds();
     wait 0.05;
     ent delete();
+}
+
+waittill_song_over()
+{
+    level endon( "end_game" );
+
+    level.music_override = 1;
+    wait 120;
+    level.music_override = 0;
 }
 
 // edits:
