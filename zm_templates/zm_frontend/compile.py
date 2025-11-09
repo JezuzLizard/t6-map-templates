@@ -81,6 +81,7 @@ def print_required_files(missing_files, show_list, sounds_required = False):
 def link_zone(zone_name, zone_deps = []):
     oat_command = [
         f"{OAT_PATH}\\Linker.exe",
+        
         "--base-folder",            os.path.join(CWD, zone_name),
         "--add-asset-search-path",  os.path.join(CWD, zone_name),
         "--add-asset-search-path",  f"{ASSETS_PATH}\\sound\\raw",       # for sound files
@@ -90,6 +91,7 @@ def link_zone(zone_name, zone_deps = []):
         "--add-source-search-path", SOURCE_PATH,
         "--add-source-search-path", SOURCE_PATH_TEMPLATED,
         "--output-folder",          ZONE_OUT_PATH,
+        
         zone_name
     ]
     

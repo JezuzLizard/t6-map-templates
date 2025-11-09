@@ -1,0 +1,13 @@
+VERSION             "1"
+CONFIG              "C:/projects/cod/t6/bin/StringEd.cfg"
+FILENOTES           ""
+
+REFERENCE           ZMUI_KARMA
+LANG_ENGLISH        "Karma"
+
+REFERENCE           ZMUI_KARMA_LOC
+LANG_ENGLISH        "COLOSSUS, CAYMAN ISLANDS"
+
+REFERENCE           ZMUI_KARMA_CAPS
+LANG_ENGLISH        "KARMA"
+ENDMARKER

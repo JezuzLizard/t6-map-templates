@@ -11,16 +11,20 @@ main()
 {
 	maps\mp\maptypes\_zm_usermap::setup_zombie_defaults();
 
-	// you can edit the tables or redirect these calls to your script
-	maps\mp\maptypes\_zm_usermap::include_powerups(); // zm/include_powerups.csv
-	maps\mp\maptypes\_zm_usermap::include_fx(); // zm/include_fx.csv
-	maps\mp\maptypes\_zm_usermap::add_zombie_weapons(); // zm/add_zombie_weapons.csv
+    // you can edit the tables or redirect these calls to your script
+    maps\mp\maptypes\_zm_usermap::include_powerups(); // zm/include_powerups.csv
+    maps\mp\maptypes\_zm_usermap::include_fx(); // zm/include_fx.csv
+    maps\mp\maptypes\_zm_usermap::add_zombie_weapons(); // zm/add_zombie_weapons.csv
 
 	// map specific setup here
-	maps\mp\_sticky_grenade::init();
-	level.givecustomloadout = ::givecustomloadout;
-	level.zombie_init_done = ::zombie_init_done;
+    // map specific setup here
+    level.enable_magic = getgametypesetting( "magic" );
+    maps\mp\_sticky_grenade::init();
+    level._melee_weapons = []; // since we dont have bowie or tazers, init as empty
 
+    level._post_zm_overrides_func = ::karma_post_zm_init;
+    level.givecustomloadout = ::givecustomloadout;
+    level.zombie_init_done = ::zombie_init_done;
 	onplayerconnect_callback( ::karma_connected );
 	
 	// perk opt ins
@@ -33,32 +37,70 @@ main()
 	level.zombiemode_using_sleightofhand_perk = 1;
 	level.zombiemode_using_tombstone_perk = 1;
 
-	// disable loading "maps/zombie/fx_zmb_tanzit_upgrade" fx
-	level.disable_fx_upgrade_aquired = true;
-	// disable loading "maps/zombie/fx_zombie_tesla_neck_spurt"
-	level.fx_exclude_tesla_head_light = true;
-	// disable loading "maps/zombie/fx_zmb_tranzit_shield_explo"
-	level.disable_fx_zmb_tranzit_shield_explo = true;
+    // disable loading random tranzit fx
+    level.disable_fx_upgrade_aquired = true;
+    level.fx_exclude_tesla_head_light = true;
+    level.disable_fx_zmb_tranzit_shield_explo = true;
 
 	level.culldist = 5000;
-
 	setup_characters();
 
-	level.zone_manager_init_func = ::zone_init;
+	level.zone_manager_init_func = ::karma_zone_init;
+    level.zones = [];
 
-	volumes = getentarray( "player_volume", "script_noteworthy" );
-	foreach ( vol in volumes )
+	//init_zones[0] = "checkin_room_volume";       // spawn room
+
+	//init_zones[1] = "construction_start_volume"; // teleport construction room
+	//init_zones[2] = "construction_rooms_volume"; // rooms with desks and computers
+	//init_zones[3] = "construction_desk_volume";  // the "system unavailable" desk area
+
+	//init_zones[4] = "construction_crc_volume";   // the security room
+	
+	temp_zones[0] = "construction_covergroup1";
+	maps\mp\maptypes\_zm_usermap::start_zombie_mode( temp_zones );
+}
+
+karma_magicbox_init()
+{
+    chest = GetStruct( "karma_crc_chest", "script_noteworthy" );
+
+	// since the map is in development, the box doesnt exist yet
+	if ( !IsDefined( chest ) )
 	{
-		vol.target = "zm_karma_zone"; // just for now
+		return;
 	}
 
-	maps\mp\maptypes\_zm_usermap::start_zombie_mode( "vol_scanner" );
+    level.chests = [];
+    level.chests[level.chests.size] = chest;
+	
+    maps\mp\zombies\_zm_magicbox::treasure_chest_init( "karma_crc_chest" );
+}
+
+karma_post_zm_init()
+{
+	level.player_out_of_playable_area_monitor = false;
+	level.player_too_many_weapons_monitor = true;
+	level._use_choke_weapon_hints = true;
+	level._use_choke_blockers = true;
+	level.calc_closest_player_using_paths = false;
+	level.zombie_melee_in_water = true;
+	level.put_timed_out_zombies_back_in_queue = true;
+	level.use_alternate_poi_positioning = true;
+
+	// monkey bombs
+    level.legacy_cymbal_monkey = 1;
+    maps\mp\zombies\_zm_weap_cymbal_monkey::init();
+
+    karma_magicbox_init();
+
+	// init thundergun
+
+	// setup the music easter egg
 }
 
 karma_connected()
 {
 	self setclientdvars( "r_lodbiasskinned", "-1000", "r_lodbiasrigid", "-1000" );
-	
 }
 
 givecustomloadout( takeallweapons, alreadyspawned )
@@ -73,7 +115,7 @@ zombie_init_done()
 	self setphysparams( 15, 0, 48 );
 }
 
-zone_init()
+karma_zone_init()
 {
 
 }

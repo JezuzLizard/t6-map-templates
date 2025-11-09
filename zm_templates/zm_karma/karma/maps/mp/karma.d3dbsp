@@ -12930,7 +12930,18 @@
 "classname" "info_volume"
 "script_noteworthy" "player_volume"
 "targetname" "construction_covergroup1"
+"target" "construction_zone_spawners"
 "guid" "D2CA4E5B"
+}
+{
+"note" "************************ TEST SPAWNER"
+"targetname" "construction_zone_spawners"
+"origin" "4637 -6352 -3499"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "7A95F13B"
 }
 {
 "script_color_allies_old" "o1"

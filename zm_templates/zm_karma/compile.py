@@ -18,7 +18,7 @@ ZONE_OUT_PATH = os.path.join(CWD, "zone_out")
 SOURCE_PATH_TEMPLATED = os.path.join(COMMON_PATH, "zone_source")
 
 LOCALAPPDATA = os.environ.get("LOCALAPPDATA") or ""
-PLUTO_MODS_DIR = os.path.join(LOCALAPPDATA, "Plutonium", "storage", "t6", "mods")
+PLUTO_MODS_DIR = os.path.join(LOCALAPPDATA, "Plutonium-staging", "storage", "t6", "mods")
 
 ZONE_ALL = "zone\\all"
 REQUIRED_FILES = [
@@ -27,6 +27,7 @@ REQUIRED_FILES = [
     f"{ASSETS_PATH}\\code_post_gfx.ff",
     f"{ASSETS_PATH}\\common.ff",
     f"{ASSETS_PATH}\\common_zm.ff",
+    f"{ASSETS_PATH}\\zm_nuked.ff",
     f"{ASSETS_PATH}\\zm_tomb.ff",
     f"{ASSETS_PATH}\\zm_transit.ff",
     f"{ASSETS_PATH}\\zm_transit_patch.ff",
@@ -77,6 +78,7 @@ def print_required_files(missing_files, show_list, sounds_required = False):
 def link_zone(zone_name, zone_deps = []):
     oat_command = [
         f"{OAT_PATH}\\Linker.exe",
+        
         "--base-folder",            os.path.join(CWD, zone_name),
         "--add-asset-search-path",  os.path.join(CWD, zone_name),
         "--add-asset-search-path",  f"{ASSETS_PATH}\\sound\\raw",       # for sound files
@@ -86,6 +88,7 @@ def link_zone(zone_name, zone_deps = []):
         "--add-source-search-path", SOURCE_PATH,
         "--add-source-search-path", SOURCE_PATH_TEMPLATED,
         "--output-folder",          ZONE_OUT_PATH,
+        
         zone_name
     ]
     
@@ -100,16 +103,19 @@ def create_mod_iwd(files):
     iwd_path = os.path.join(ZONE_OUT_PATH, "mod.iwd")
     
     with zipfile.ZipFile(iwd_path, "w", zipfile.ZIP_DEFLATED) as zip:
-        for file_name, inner_dir in files.items():
-            source_path = os.path.join(CWD, MAP_NAME, inner_dir, f"{file_name}")
-            inner_path  = os.path.join(inner_dir, file_name) # the path inside the iwd itself
-            rel_path    = os.path.relpath(inner_path, CWD)
-            
+        for file_name, file_info in files.items():
+            source_dir = file_info.get("source_dir")
+            inner_dir  = file_info.get("inner_dir")
+
+            source_path = os.path.join(source_dir, file_name)
+            inner_path  = os.path.join(inner_dir, file_name)
+
             if not os.path.exists(source_path):
-                print(f"Warning: file for mod.iwd was not found: \"{file_name}\"")
+                print(f"Warning: file for mod.iwd not found: \"{source_path}\"")
                 continue
-            
-            zip.write(source_path, arcname=rel_path)    
+
+            zip.write(source_path, arcname=inner_path)
+            print(f"Added {source_path} -> {inner_path}")
 
     print(f"Created iwd \"mod\"")
 
@@ -124,6 +130,9 @@ def copy_to_pluto():
     
     # now copy it
     shutil.copytree(ZONE_OUT_PATH, pluto_mod_folder)
+    
+    # mod.json contains information for the Plutonium menu
+    shutil.copyfile(os.path.join(CWD, "mod", "mod.json"), os.path.join(pluto_mod_folder, "mod.json"))
 
 def main():
     print("")
@@ -169,10 +178,42 @@ def main():
     mod_zones.remove(f"{ASSETS_PATH}\\karma.ff")
     link_zone("mod", mod_zones)
     
-    # we have to override the mapents and pathnodes, otherwise the map doesnt load
+    # we have to put certain files in an iwd, otherwise the map just explodes
+    # "source_dir" is the folder that the file resides in, its data will be copied to the iwd
+    # "inner_dir" is the folder structure that will be used for writing the file to the iwd
     create_mod_iwd({
-        "karma.d3dbsp":          "maps/mp",
-        "karma.d3dbsp.paths":    "maps/mp",
+        "mainlobby.lua": {
+            "source_dir": "mod\\ui\\t6",
+            "inner_dir": "ui\\t6"
+        },
+        "karma.d3dbsp": {
+            "source_dir": f"{MAP_NAME}\\maps\\mp",
+            "inner_dir": "maps\\mp"
+        },
+        "karma.d3dbsp.paths": {
+            "source_dir": f"{MAP_NAME}\\maps\\mp",
+            "inner_dir": "maps\\mp"
+        },
+        "loadscreen_karma.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
+        "specialty_quickrevive_zombies.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
+        "specialty_juggernaut_zombies.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
+        "specialty_fastreload_zombies.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
+        "specialty_doubletap_zombies.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
     })
     
     # for convenience purposes, copy it to the mods folder automatically

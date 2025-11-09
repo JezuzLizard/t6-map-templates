@@ -8,14 +8,50 @@
 >level.ipak_read,zm
 >level.ipak_read,patch_zm
 
+// sounds
+soundbank,zm_karma.all
+
 // templated assets for a custom zombies map
 include,template_common_zm
+include,karma_zombies
 
-include,packages/aitypes/tranzit_zombies
+// loading screen
+material,loadscreen_karma_zstandard_karma
+material,loadscreen_karma_zclassic_karma
+material,loadscreen_karma_zstandard_
+material,loadscreen_karma_zclassic_
 
+localize,zm_karma
+stringtable,zm/mapstable.csv
+stringtable,zm/gametypestable.csv
+
+// weapons
 include,packages/weapons/m14_zm
+include,packages/weapons/ak74u_zm
 include,packages/weapons/m1911_zm
+include,packages/weapons/m1911_upgraded_zm
 include,packages/weapons/raygun_mark2_zm
+include,packages/weapons/ray_gun_zm
+// add the thundergun here later
+include,packages/weapons/python_zm
+include,packages/weapons/judge_zm
+include,packages/weapons/kard_zm
+include,packages/weapons/fiveseven_zm
+include,packages/weapons/fivesevendw_zm
+include,packages/weapons/qcw05_zm
+include,packages/weapons/saiga12_zm
+include,packages/weapons/srm1216_zm
+include,packages/weapons/xm8_zm
+include,packages/weapons/type95_zm
+include,packages/weapons/tar21_zm
+include,packages/weapons/galil_zm
+include,packages/weapons/dsr50_zm
+include,packages/weapons/rpd_zm
+include,packages/weapons/hamr_zm
+include,packages/weapons/usrpg_zm
+include,packages/weapons/barretm82_zm
+include,packages/weapons/knife_ballistic_zm
+include,packages/weapons/cymbal_monkey_zm
 
 include,packages/player_characters/tranzit_survival_characters
 
