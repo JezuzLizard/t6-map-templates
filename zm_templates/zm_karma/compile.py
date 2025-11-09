@@ -221,7 +221,6 @@ def main():
 
     print(f"\nCopied \"zone_out\" to \"{PLUTO_MODS_DIR}\\{MOD_NAME}\".")
     print("Finished compiling!")
-    input("Press the Enter key to exit...")
 
 if __name__ == "__main__":
     main()
