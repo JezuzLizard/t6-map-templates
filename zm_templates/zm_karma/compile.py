@@ -189,7 +189,6 @@ def main():
     # we have to put certain files in an iwd, otherwise the map just explodes
     # "source_dir" is the folder that the file resides in, its data will be copied to the iwd
     # "inner_dir" is the folder structure that will be used for writing the file to the iwd
-    
     create_mod_iwd({
         "mainlobby.lua": {
             "source_dir": "mod\\ui\\t6",
