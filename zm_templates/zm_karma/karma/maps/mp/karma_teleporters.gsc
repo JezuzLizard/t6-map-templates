@@ -14,7 +14,7 @@ spawn_teleporter()
     level endon( "end_game" );
 
     trigger = GetEnt( "use_spawn_teleporter", "targetname" );
-    trigger SetHintString( &"KARMA_SPAWN_ELEVATOR" );
+    trigger SetHintString( &"KARMA_TELEPORTER" );
     trigger SetVisibleToAll();
     
     trigger waittill( "trigger", user );
@@ -28,12 +28,21 @@ pap_teleporter()
 {
     level endon( "end_game" );
 
+    trigger = GetEnt( "use_pap_teleporter", "targetname" );
+    trigger SetHintString( &"KARMA_TELEPORTER" );
 
+    while ( true )
+    {
+        trigger SetVisibleToAll();
+        trigger waittill( "trigger", user );
+        trigger SetInvisibleToAll();
+        
+        teleport_all_players_to_location( "karma_pap_teleport" );
+    }
 }
 
 teleport_all_players_to_location( location )
 {
-    // TODO: teleporter screen
     level notify( location );
     clientnotify( location );
 
@@ -63,18 +72,9 @@ teleport_all_players_to_location( location )
             }
         }
 
+        // wait a minute and then teleport back to spawn
         wait 60;
-        level notify( location );
-
-        for ( i = 0; i < players.size; i++ )
-        {
-            player = players[i];
-
-            if ( i == 0 )
-            {
-                player teleport_player( ( 4580.8, -6080.03, -3575.88 ), ( 0, -90, 0 ) );
-            }
-        }
+        teleport_all_players_to_location( "karma_spawn_teleport" );
     }
 }
 

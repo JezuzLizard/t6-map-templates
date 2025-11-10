@@ -77,6 +77,7 @@ karma_post_zm_init()
 
 	// init mystery box, teleporters, and the music easter egg
     karma_magicbox_init();
+	maps\mp\karma_amb::main();
 	maps\mp\karma_teleporters::init();
 	maps\mp\karma_music_egg::init();
 

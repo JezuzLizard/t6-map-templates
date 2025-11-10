@@ -7798,14 +7798,6 @@
 "guid" "C7831881"
 }
 {
-"model" "*186"
-"origin" "4572 -9653 988"
-"classname" "script_brushmodel"
-"targetname" "clip_scanner_blocker"
-"script_noteworthy" "cleanup_checkin"
-"guid" "98B323C0"
-}
-{
 "classname" "node_pathnode"
 "origin" "4567 -8546 940"
 "guid" "0F7C0423"
@@ -8900,14 +8892,6 @@
 "script_flag_set" "trig_enter_scanner"
 "script_noteworthy" "cleanup_checkin"
 "guid" "07237472"
-}
-{
-"model" "*188"
-"origin" "4573 -9207 988"
-"classname" "script_brushmodel"
-"targetname" "clip_scanner_blocker_2"
-"script_noteworthy" "cleanup_checkin"
-"guid" "E3DFEA3C"
 }
 {
 "origin" "5536 -4024 -2976"
@@ -16868,13 +16852,6 @@
 "guid" "7B18B49E"
 }
 {
-"model" "*253"
-"origin" "4500 -6019 -5008"
-"classname" "script_brushmodel"
-"targetname" "sick_girls_clip"
-"guid" "D20CE984"
-}
-{
 "origin" "4892 -4116 -5064"
 "targetname" "club_line_male_vo"
 "classname" "script_struct"
@@ -23098,13 +23075,6 @@
 "guid" "32BD8008"
 }
 {
-"model" "*267"
-"origin" "5217 -6361 -5068"
-"classname" "script_brushmodel"
-"targetname" "dance_floor_clip"
-"guid" "B8317540"
-}
-{
 "script_string" "makeinvulnerable"
 "classname" "script_struct"
 "targetname" "player_physpulses1"
@@ -23668,5 +23638,13 @@
 "classname" "trigger_use_touch"
 "targetname" "use_spawn_teleporter"
 "origin" "4498.37 -7215.85 896.125"
+"guid" "187254A6"
+}
+{
+"note" "************************ PACK A PUNCH TELEPORTER TRIGGER"
+"model" "*8"
+"classname" "trigger_use_touch"
+"targetname" "use_pap_teleporter"
+"origin" "3462.71 -4298 -3655.88"
 "guid" "187254A6"
 }

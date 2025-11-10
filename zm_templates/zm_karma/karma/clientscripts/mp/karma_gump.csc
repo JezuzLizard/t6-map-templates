@@ -24,7 +24,6 @@ construction_gump_think()
     {
         level waittill( "karma_spawn_teleport" );
         load_gump_for_all_players( "karma_gump_construction" );
-        break;
     }
 }
 
@@ -35,7 +34,7 @@ pap_gump_think()
         level waittill( "karma_pap_teleport" ); // teleporting to pack-a-punch
         load_gump_for_all_players( "karma_gump_club" );
 
-        level waittill( "karma_pap_teleport_2" ); // going back to main area
+        level waittill( "karma_spawn_teleport" ); // going back to main area
         load_gump_for_all_players( "karma_gump_construction" );
     }
 }
