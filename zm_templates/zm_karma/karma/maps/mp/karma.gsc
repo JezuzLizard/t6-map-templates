@@ -9,6 +9,7 @@
 
 main()
 {
+	level.uses_gumps = 1;
 	maps\mp\maptypes\_zm_usermap::setup_zombie_defaults();
 
     // you can edit the tables or redirect these calls to your script
@@ -16,7 +17,6 @@ main()
     maps\mp\maptypes\_zm_usermap::include_fx(); // zm/include_fx.csv
     maps\mp\maptypes\_zm_usermap::add_zombie_weapons(); // zm/add_zombie_weapons.csv
 
-	// map specific setup here
     // map specific setup here
     level.enable_magic = getgametypesetting( "magic" );
     maps\mp\_sticky_grenade::init();
@@ -27,15 +27,15 @@ main()
     level.zombie_init_done = ::zombie_init_done;
 	onplayerconnect_callback( ::karma_connected );
 	
-	// perk opt ins
-	level.zombiemode_using_pack_a_punch = 1;
-	level.zombiemode_reusing_pack_a_punch = 1;
-	level.zombiemode_using_doubletap_perk = 1;
-	level.zombiemode_using_juggernaut_perk = 1;
-	level.zombiemode_using_marathon_perk = 1;
-	level.zombiemode_using_revive_perk = 1;
-	level.zombiemode_using_sleightofhand_perk = 1;
-	level.zombiemode_using_tombstone_perk = 1;
+    // perk opt ins
+    level.zombiemode_using_pack_a_punch = 1;
+    level.zombiemode_reusing_pack_a_punch = 1;
+    level.zombiemode_using_revive_perk = 1;
+    level.zombiemode_using_juggernaut_perk = 1;
+    level.zombiemode_using_marathon_perk = 1;
+    level.zombiemode_using_doubletap_perk = 1;
+    level.zombiemode_using_sleightofhand_perk = 1;
+    level.zombiemode_using_tombstone_perk = 0;
 
     // disable loading random tranzit fx
     level.disable_fx_upgrade_aquired = true;
@@ -60,22 +60,6 @@ main()
 	maps\mp\maptypes\_zm_usermap::start_zombie_mode( temp_zones );
 }
 
-karma_magicbox_init()
-{
-    chest = GetStruct( "karma_crc_chest", "script_noteworthy" );
-
-	// since the map is in development, the box doesnt exist yet
-	if ( !IsDefined( chest ) )
-	{
-		return;
-	}
-
-    level.chests = [];
-    level.chests[level.chests.size] = chest;
-	
-    maps\mp\zombies\_zm_magicbox::treasure_chest_init( "karma_crc_chest" );
-}
-
 karma_post_zm_init()
 {
 	level.player_out_of_playable_area_monitor = false;
@@ -91,11 +75,12 @@ karma_post_zm_init()
     level.legacy_cymbal_monkey = 1;
     maps\mp\zombies\_zm_weap_cymbal_monkey::init();
 
+	// init mystery box, teleporters, and the music easter egg
     karma_magicbox_init();
+	maps\mp\karma_teleporters::init();
+	maps\mp\karma_music_egg::init();
 
 	// init thundergun
-
-	// setup the music easter egg
 }
 
 karma_connected()
@@ -118,6 +103,22 @@ zombie_init_done()
 karma_zone_init()
 {
 
+}
+
+karma_magicbox_init()
+{
+    chest = GetStruct( "karma_crc_chest", "script_noteworthy" );
+
+	// since the map is in development, the box doesnt exist yet
+	if ( !IsDefined( chest ) )
+	{
+		return;
+	}
+
+    level.chests = [];
+    level.chests[level.chests.size] = chest;
+	
+    maps\mp\zombies\_zm_magicbox::treasure_chest_init( "karma_crc_chest" );
 }
 
 setup_characters()

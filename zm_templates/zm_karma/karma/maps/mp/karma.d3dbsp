@@ -1071,7 +1071,7 @@
 {
 "classname" "script_model"
 "model" "p6_karma_elevator_door_left"
-"origin" "4383 -5978.75 -3584"
+"origin" "4441 -5978.75 -3584"
 "angles" "0 3.18772e-006 0"
 "targetname" "elevator_door_left"
 "script_noteworthy" "cleanup_construction"
@@ -1080,11 +1080,19 @@
 {
 "classname" "script_model"
 "model" "p6_karma_elevator_door_right"
-"origin" "4615 -5978.75 -3584"
+"origin" "4557 -5978.75 -3584"
 "angles" "0 3.18772e-006 0"
 "targetname" "elevator_door_right"
 "script_noteworthy" "cleanup_construction"
 "guid" "209A5780"
+}
+{
+"model" "*186"
+"origin" "4498 -5978.75 -3584"
+"classname" "script_brushmodel"
+"targetname" "construction_elevator_blocker"
+"script_noteworthy" "cleanup_construction"
+"guid" "98B323C0"
 }
 {
 "angles" "0 90 0"
@@ -7308,15 +7316,6 @@
 "targetname" "audio_bump_trigger"
 "script_sound" "fly_bump_pipe"
 "guid" "AC5C40AB"
-}
-{
-"model" "*155"
-"origin" "5080 -6457 -3564"
-"classname" "trigger_multiple"
-"spawnflags" "128"
-"targetname" "audio_bump_trigger"
-"script_sound" "fly_bump_table_scoot"
-"guid" "E74607E7"
 }
 {
 "model" "*156"
@@ -17332,29 +17331,11 @@
 }
 {
 "classname" "trigger_radius"
-"height" "96"
-"origin" "4466 -5769 -4908"
-"targetname" "trig_club_hallway"
-"radius" "96"
-"target" "trig_spawn_club_actors"
-"guid" "29B3EC8A"
-}
-{
-"classname" "trigger_radius"
 "radius" "64"
 "height" "128"
 "targetname" "trig_enter_defalco"
 "origin" "5568 -6631 -5124"
 "guid" "59AE74E6"
-}
-{
-"height" "96"
-"radius" "96"
-"classname" "trigger_radius"
-"origin" "4464 -6197 -5096"
-"targetname" "trig_spawn_club_actors"
-"target" "trig_club_react_c"
-"guid" "E7DB9828"
 }
 {
 "classname" "node_pathnode"
@@ -21585,18 +21566,6 @@
 "guid" "1B5C45D3"
 }
 {
-"script_flag_set" "entered_inner_club"
-"targetname" "t_lounge_door_close"
-"origin" "4502 -5564 -4900"
-"angles" "0 0 0"
-"height" "72.000000"
-"length" "600.000000"
-"width" "400.000000"
-"classname" "trigger_box"
-"target" "trig_spawn_club_actors"
-"guid" "8A66B16D"
-}
-{
 "script_string" "sp_karma_club_entrance"
 "targetname" "vision_trigger"
 "origin" "4906 -5575 -4876"
@@ -23674,36 +23643,6 @@
 }
 
 {
-"note" "************************ FOUNTAIN SPAWNER"
-"targetname" "zm_karma_zone"
-"origin" "5020 -7605 895"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 -120 0"
-"guid" "7A95F13B"
-}
-
-{
-"note" "************************ FOUNTAIN SPAWNER 2"
-"targetname" "zm_karma_zone"
-"origin" "4305 -7605 895"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 -50 0"
-"guid" "7A95F13B"
-}
-
-{
-"note" "************************ GAME OVER INTERMISSION POINT 2"
-"classname" "script_struct"
-"angles" "0 90 0"
-"origin" "265 300 525"
-"targetname" "auto2390"
-"guid" "0C1213FF"
-}
-{
 "note" "************************ GAME OVER INTERMISSION POINT 1"
 "classname" "script_struct"
 "angles" "0 90 0"
@@ -23713,4 +23652,21 @@
 "targetname" "intermission"
 "script_string" "karma"
 "guid" "B4315065"
+}
+{
+"note" "************************ GAME OVER INTERMISSION POINT 2"
+"classname" "script_struct"
+"angles" "0 90 0"
+"origin" "265 300 525"
+"targetname" "auto2390"
+"guid" "0C1213FF"
+}
+
+{
+"note" "************************ SPAWN TELEPORTER TRIGGER"
+"model" "*8"
+"classname" "trigger_use_touch"
+"targetname" "use_spawn_teleporter"
+"origin" "4498.37 -7215.85 896.125"
+"guid" "187254A6"
 }

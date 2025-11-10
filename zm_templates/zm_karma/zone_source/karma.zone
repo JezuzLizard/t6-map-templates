@@ -17,11 +17,14 @@ include,optimized_karma_assets
 
 // custom map scripts
 script,clientscripts/mp/karma.csc
+script,clientscripts/mp/karma_gump.csc
 script,clientscripts/mp/karma_amb.csc
 script,clientscripts/mp/karma_fx.csc
 script,clientscripts/mp/createfx/karma_fx.csc
 
 script,maps/mp/karma.gsc
+script,maps/mp/karma_teleporters.gsc
+script,maps/mp/karma_music_egg.gsc
 script,maps/mp/karma_amb.gsc
 script,maps/mp/karma_fx.gsc
 script,maps/mp/createfx/karma_fx.gsc

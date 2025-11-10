@@ -55,6 +55,9 @@ include,packages/weapons/cymbal_monkey_zm
 
 include,packages/player_characters/tranzit_survival_characters
 
+// teleporting fx
+include,packages/fx/origins_player_teleport
+
 // configs to play map easily
 rawfile,zm_karma_zstandard.cfg
 rawfile,sv_zm_karma_zstandard.cfg

@@ -26,11 +26,8 @@ main()
 	
 	clientscripts\mp\maptypes\_zm_usermap::start_zombie_mode();
 	thread clientscripts\mp\karma_amb::main();
+	thread clientscripts\mp\karma_gump::karma_gump_init();
 
 	waitforclient( 0 );
 	println( "*** Client : '" + level.script + "' map running..." );
-
-	clientscripts\mp\zombies\_zm_gump::load_gump_for_player( 0, "karma_gump_checkin" );
-	//clientscripts\mp\zombies\_zm_gump::load_gump_for_player( 0, "karma_gump_club" );
-	//clientscripts\mp\zombies\_zm_gump::load_gump_for_player( 0, "karma_gump_construction" );
 }

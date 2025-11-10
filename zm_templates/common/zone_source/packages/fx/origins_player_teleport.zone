@@ -1,0 +1,4 @@
+material,,gfx_fxt_light_ray_solid
+material,,gfx_fxt_debris_clump_dirt
+material,,gfx_fxt_light_flare2_eo2
+fx,maps/zombie_tomb/fx_tomb_teleport_3p
