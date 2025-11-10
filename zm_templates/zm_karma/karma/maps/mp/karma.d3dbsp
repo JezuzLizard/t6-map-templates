@@ -3341,20 +3341,6 @@
 }
 {
 "script_noteworthy" "cleanup_spiderbot"
-"animation" "p_karma_4_8_it_manager_eyescan_spiderbot"
-"script_animname" "spiderbot"
-"script_animscripted" "1"
-"angles" "0 350 0"
-"targetname" "spiderbot"
-"spawnflags" "3"
-"origin" "5324 -7117 -3575.3"
-"model" "veh_t6_spider_large"
-"vehicletype" "spiderbot_large"
-"classname" "script_vehicle"
-"guid" "7E477249"
-}
-{
-"script_noteworthy" "cleanup_spiderbot"
 "spawnflags" "24"
 "script_flag_set" "near_bug_zapper"
 "origin" "5694 -7386 -3308"
@@ -3642,15 +3628,6 @@
 "guid" "35CB9CC0"
 }
 {
-"model" "*85"
-"origin" "6560 -6274 -3543"
-"classname" "trigger_use"
-"targetname" "trespasser_reward_interact_trigger"
-"spawnflags" "1024"
-"script_noteworthy" "cleanup_construction"
-"guid" "2B5E3575"
-}
-{
 "classname" "script_struct"
 "targetname" "struct_obj_crc_door"
 "origin" "5338 -6598 -3514"
@@ -3661,15 +3638,6 @@
 "classname" "node_pathnode"
 "origin" "5298 -6542 -3552"
 "guid" "D6C28E0F"
-}
-{
-"model" "*86"
-"origin" "6450 -7094 -3560"
-"classname" "trigger_use"
-"targetname" "destroyed_spider_bot_trigger"
-"spawnflags" "1024"
-"script_noteworthy" "cleanup_construction"
-"guid" "C6BAD819"
 }
 {
 "classname" "script_model"
