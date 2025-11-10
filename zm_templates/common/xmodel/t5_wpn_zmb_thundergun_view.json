@@ -1,0 +1,17 @@
+{
+    "_type": "xmodel",
+    "_version": 1,
+    "flags": 2621440,
+    "lightingOriginOffset": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.5
+    },
+    "lightingOriginRange": 0.5,
+    "lods": [
+        {
+            "distance": 3289.255859375,
+            "file": "model_import/t5_wpn_zmb_thundergun_view_lod0.glb"
+        }
+    ]
+}

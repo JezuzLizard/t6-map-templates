@@ -1,0 +1,95 @@
+// Others
+image,sw_radiant_default
+
+// Camo file
+camo,camo_thundergun
+
+// Thundergun Materials
+material,gfx_fxt_light_flare_halogen_vm
+material,gfx_fxt_thundergun_view_glow
+material,hud_thundergun
+material,mc/mtl_t5_wpn_zmb_thundergun
+material,mc/mtl_t5_wpn_zmb_thundergun_camo1
+material,mc/mtl_t5_wpn_zmb_thundergun_camo2
+material,mc/mtl_t5_wpn_zmb_thundergun_chamber_glass
+material,mc/mtl_t5_wpn_zmb_thundergun_chamber_main
+material,mc/mtl_t5_wpn_zmb_thundergun_control
+material,mc/mtl_t5_wpn_zmb_thundergun_control_camo1
+material,mc/mtl_t5_wpn_zmb_thundergun_control_meter
+material,mc/mtl_t5_wpn_zmb_thundergun_control_thermal
+material,mc/mtl_t5_wpn_zmb_thundergun_mesh
+material,mc/mtl_t5_wpn_zmb_thundergun_mesh_thermal
+material,mc/mtl_t5_wpn_zmb_thundergun_thermal
+
+// Pap
+image,,camo_zombies_nml
+image,,t6_camo_mtp_solid
+image,,~-gcamo_code_spc
+image,,camo_code_nml
+image,,~~-gcamo_zombies_spc-rgb&~-rc~9a2e3000
+image,,~-gcamo_zombies_col
+material,,mc/mtl_weapon_camo_zombies
+material,,mc/mtl_weapon_camo_3layer
+material,,mc/mtl_weapon_camo_3layer_1
+material,,mc/mtl_weapon_camo_3layer_2
+material,,mc/mtl_weapon_camo_3layer_3
+image,,camo_zmb_dlc4_alt_nml
+image,,~~-gcamo_zmb_dlc4_alt_spc-rgb~fc3ae34a
+image,,~-gcamo_zmb_dlc4_alt_col
+material,,mc/mtl_weapon_camo_zmb_dlc4_alt
+material,,mc/mtl_weapon_camo_zmb_dlc4_alt_1
+image,,camo_zmb_dlc2_ember
+image,,camo_zmb_dlc2_nml
+image,,camo_zmb_dlc2_reveal
+image,,~~-gcamo_zmb_dlc2_spc-rgb&~-r~471adc2c
+image,,~-gcamo_zmb_dlc2_col
+image,,camo_zmb_dlc2_heat
+material,,mc/mtl_weapon_camo_zmb_dlc2
+image,,camo_zmb_dlc2_alt_nml
+image,,~~-gcamo_zmb_dlc2_alt_spc-rgb~805ae131
+image,,~-gcamo_zmb_dlc2_alt_col
+material,,mc/mtl_weapon_camo_zmb_dlc2_alt
+material,mc/mtl_t5_camo_zmb_packapunch
+
+// Thundergun XMODELs
+xmodel,t5_wpn_zmb_thundergun_view
+xmodel,t5_wpn_zmb_thundergun_world
+
+// Flamethrower reticle
+image,hud_flamethrower_reticle
+material,hud_flamethrower_reticle
+techniqueset,mc_sw4_3d_glass_cheaper_e6z4196u
+
+// Subwoofer wind
+image,fxt_fx_thundergun_ring
+material,gfx_fxt_fx_thundergun_ring
+image,fxt_fx_distortion_ring_warp
+material,gfx_fxt_fx_distortion_ring_warp
+
+// Zombie XANIMs
+xanim,ai_zombie_thundergun_getup
+xanim,ai_zombie_thundergun_getup_a
+xanim,ai_zombie_thundergun_getup_b
+xanim,ai_zombie_thundergun_getup_c
+xanim,ai_zombie_thundergun_getup_quick_a
+xanim,ai_zombie_thundergun_getup_quick_b
+xanim,ai_zombie_thundergun_getup_quick_c
+xanim,ai_zombie_thundergun_hit
+xanim,ai_zombie_thundergun_hit_armslegsforward
+xanim,ai_zombie_thundergun_hit_deadfallknee
+xanim,ai_zombie_thundergun_hit_doublebounce
+xanim,ai_zombie_thundergun_hit_faceplant
+xanim,ai_zombie_thundergun_hit_flatonback
+xanim,ai_zombie_thundergun_hit_forwardtoface
+xanim,ai_zombie_thundergun_hit_jackiespin_left
+xanim,ai_zombie_thundergun_hit_jackiespin_right
+xanim,ai_zombie_thundergun_hit_legsout_left
+xanim,ai_zombie_thundergun_hit_legsout_right
+xanim,ai_zombie_thundergun_hit_stumblefall
+xanim,ai_zombie_thundergun_hit_upontoback
+xanim,ai_zombie_thundergun_sprinter_getup_a
+xanim,ai_zombie_thundergun_sprinter_getup_b
+xanim,ai_zombie_thundergun_sprinter_getup_c
+
+localize,thundergun
+//soundbank,thundergun.all

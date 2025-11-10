@@ -10,7 +10,8 @@ CWD = os.path.dirname(os.path.abspath(__file__))
 
 OAT_PATH = os.path.join(CWD, "..", "oat")
 ASSETS_PATH = os.path.join(CWD, "..", "assets")
-ASSETS_SOUND_PATH = os.path.join(ASSETS_PATH, "sound")
+SOUND_PATH = os.path.join(ASSETS_PATH, "sound")
+ZONE_PATH = os.path.join(ASSETS_PATH, "zone")
 COMMON_PATH = os.path.join(CWD, "..", "common")
 
 SOURCE_PATH = os.path.join(CWD, "zone_source")
@@ -22,19 +23,19 @@ PLUTO_MODS_DIR = os.path.join(LOCALAPPDATA, "Plutonium", "storage", "t6", "mods"
 
 ZONE_ALL = "zone\\all"
 REQUIRED_FILES = [
-    f"{ASSETS_PATH}\\frontend.ff",
+    f"{ZONE_PATH}\\frontend.ff",
     
-    f"{ASSETS_PATH}\\frontend_gump_sf_a.ff",
-    f"{ASSETS_PATH}\\code_post_gfx.ff",
-    f"{ASSETS_PATH}\\common.ff",
-    f"{ASSETS_PATH}\\common_zm.ff",
-    f"{ASSETS_PATH}\\zm_nuked.ff",
-    f"{ASSETS_PATH}\\zm_highrise.ff",
-    f"{ASSETS_PATH}\\zm_highrise_patch.ff",
-    f"{ASSETS_PATH}\\zm_tomb.ff",
-    f"{ASSETS_PATH}\\zm_transit.ff",
-    f"{ASSETS_PATH}\\zm_transit_patch.ff",
-    f"{ASSETS_PATH}\\so_zsurvival_zm_transit.ff",
+    f"{ZONE_PATH}\\frontend_gump_sf_a.ff",
+    f"{ZONE_PATH}\\code_post_gfx.ff",
+    f"{ZONE_PATH}\\common.ff",
+    f"{ZONE_PATH}\\common_zm.ff",
+    f"{ZONE_PATH}\\zm_nuked.ff",
+    f"{ZONE_PATH}\\zm_highrise.ff",
+    f"{ZONE_PATH}\\zm_highrise_patch.ff",
+    f"{ZONE_PATH}\\zm_tomb.ff",
+    f"{ZONE_PATH}\\zm_transit.ff",
+    f"{ZONE_PATH}\\zm_transit_patch.ff",
+    f"{ZONE_PATH}\\so_zsurvival_zm_transit.ff",
 ]
 
 def download_oat():
@@ -64,10 +65,10 @@ def has_required_files():
 
 def print_required_files(missing_files, show_list, sounds_required = False):
     if show_list:
-        print("You must place the following files in \"zm_templates\\assets\" to compile:\n")
+        print("You must place the following files in \"zm_templates\\assets\\zone\" to compile:\n")
         
         for file in missing_files:
-            print(f"- {file.replace(f"{ASSETS_PATH}", f"{ZONE_ALL}")}")
+            print(f"- {file.replace(f"{ZONE_PATH}", f"{ZONE_ALL}")}")
 
 
     # typically you will only need tranzit and the common_zm extracted, but it doesn't hurt to have every sound extracted
@@ -149,13 +150,14 @@ def main():
     # the folder didnt exist so just print everything
     if not os.path.exists(ASSETS_PATH):
         os.mkdir(ASSETS_PATH)
-        os.mkdir(ASSETS_SOUND_PATH)
+        os.mkdir(ZONE_PATH)
+        os.mkdir(SOUND_PATH)
         print_required_files(REQUIRED_FILES, True)
         return
     
     # no sounds existed
-    if not os.path.exists(ASSETS_SOUND_PATH):
-        os.mkdir(ASSETS_SOUND_PATH)
+    if not os.path.exists(SOUND_PATH):
+        os.mkdir(SOUND_PATH)
         print_required_files([], False, True)
         return
     
@@ -170,7 +172,7 @@ def main():
         shutil.rmtree(ZONE_OUT_PATH)
         
     # frontend.ff, removes the soundbank
-    frontend_zones = [ f"{ASSETS_PATH}\\frontend.ff" ]
+    frontend_zones = [ f"{ZONE_PATH}\\frontend.ff" ]
     link_zone("frontend", frontend_zones)
     
     # en_frontend.ff, removes the soundbank
@@ -178,7 +180,7 @@ def main():
     
     # mod.ff
     mod_zones = REQUIRED_FILES
-    mod_zones.remove(f"{ASSETS_PATH}\\frontend.ff")
+    mod_zones.remove(f"{ZONE_PATH}\\frontend.ff")
     link_zone("mod", mod_zones)
     
     # we have to put certain files in an iwd, otherwise the map just explodes

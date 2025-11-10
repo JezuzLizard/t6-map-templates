@@ -81,6 +81,8 @@ karma_post_zm_init()
 	maps\mp\karma_music_egg::init();
 
 	// init thundergun
+	maps\mp\zombies\_zm_weap_thundergun::init();
+	maps\mp\zombies\_zm_spawner::register_zombie_death_animscript_callback( maps\mp\zombies\_zm_weap_thundergun::enemy_killed_by_thundergun );
 }
 
 karma_connected()

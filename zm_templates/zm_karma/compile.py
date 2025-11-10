@@ -10,7 +10,8 @@ CWD = os.path.dirname(os.path.abspath(__file__))
 
 OAT_PATH = os.path.join(CWD, "..", "oat")
 ASSETS_PATH = os.path.join(CWD, "..", "assets")
-ASSETS_SOUND_PATH = os.path.join(ASSETS_PATH, "sound")
+SOUND_PATH = os.path.join(ASSETS_PATH, "sound")
+ZONE_PATH = os.path.join(ASSETS_PATH, "zone")
 COMMON_PATH = os.path.join(CWD, "..", "common")
 
 SOURCE_PATH = os.path.join(CWD, "zone_source")
@@ -22,16 +23,22 @@ PLUTO_MODS_DIR = os.path.join(LOCALAPPDATA, "Plutonium-staging", "storage", "t6"
 
 ZONE_ALL = "zone\\all"
 REQUIRED_FILES = [
-    f"{ASSETS_PATH}\\karma.ff",
+    f"{ZONE_PATH}\\karma.ff",
     
-    f"{ASSETS_PATH}\\code_post_gfx.ff",
-    f"{ASSETS_PATH}\\common.ff",
-    f"{ASSETS_PATH}\\common_zm.ff",
-    f"{ASSETS_PATH}\\zm_nuked.ff",
-    f"{ASSETS_PATH}\\zm_tomb.ff",
-    f"{ASSETS_PATH}\\zm_transit.ff",
-    f"{ASSETS_PATH}\\zm_transit_patch.ff",
-    f"{ASSETS_PATH}\\so_zsurvival_zm_transit.ff",
+    f"{ZONE_PATH}\\code_post_gfx.ff",
+    f"{ZONE_PATH}\\common.ff",
+    f"{ZONE_PATH}\\common_zm.ff",
+    f"{ZONE_PATH}\\zm_nuked.ff",
+    f"{ZONE_PATH}\\zm_tomb.ff",
+    f"{ZONE_PATH}\\zm_tomb_patch.ff",
+    f"{ZONE_PATH}\\zm_buried.ff",
+    f"{ZONE_PATH}\\zm_buried_patch.ff",
+    f"{ZONE_PATH}\\zm_transit.ff",
+    f"{ZONE_PATH}\\zm_transit_patch.ff",
+    f"{ZONE_PATH}\\zm_prison.ff",
+    f"{ZONE_PATH}\\zm_highrise.ff",
+    f"{ZONE_PATH}\\so_zsurvival_zm_transit.ff",
+    f"{ZONE_PATH}\\so_zencounter_zm_prison.ff",
 ]
 
 def download_oat():
@@ -61,10 +68,10 @@ def has_required_files():
 
 def print_required_files(missing_files, show_list, sounds_required = False):
     if show_list:
-        print("You must place the following files in \"zm_templates\\assets\" to compile:\n")
+        print("You must place the following files in \"zm_templates\\assets\\zone\" to compile:\n")
         
         for file in missing_files:
-            print(f"- {file.replace(f"{ASSETS_PATH}", f"{ZONE_ALL}")}")
+            print(f"- {file.replace(f"{ZONE_PATH}", f"{ZONE_ALL}")}")
 
 
     # typically you will only need tranzit and the common_zm extracted, but it doesn't hurt to have every sound extracted
@@ -81,9 +88,9 @@ def link_zone(zone_name, zone_deps = []):
         
         "--base-folder",            os.path.join(CWD, zone_name),
         "--add-asset-search-path",  os.path.join(CWD, zone_name),
-        "--add-asset-search-path",  f"{ASSETS_PATH}\\sound\\raw",       # for sound files
-        "--add-asset-search-path",  f"{ASSETS_PATH}\\sound\\devraw",    # for sound files
-        "--add-asset-search-path",  f"{ASSETS_PATH}\\sound\\english",   # for sound files
+        "--add-asset-search-path",  f"{SOUND_PATH}\\raw",       # for sound files
+        "--add-asset-search-path",  f"{SOUND_PATH}\\devraw",    # for sound files
+        "--add-asset-search-path",  f"{SOUND_PATH}\\english",   # for sound files
         "--add-asset-search-path",  COMMON_PATH,
         "--add-source-search-path", SOURCE_PATH,
         "--add-source-search-path", SOURCE_PATH_TEMPLATED,
@@ -146,13 +153,14 @@ def main():
     # the folder didnt exist so just print everything
     if not os.path.exists(ASSETS_PATH):
         os.mkdir(ASSETS_PATH)
-        os.mkdir(ASSETS_SOUND_PATH)
+        os.mkdir(ZONE_PATH)
+        os.mkdir(SOUND_PATH)
         print_required_files(REQUIRED_FILES, True)
         return
     
     # no sounds existed
-    if not os.path.exists(ASSETS_SOUND_PATH):
-        os.mkdir(ASSETS_SOUND_PATH)
+    if not os.path.exists(SOUND_PATH):
+        os.mkdir(SOUND_PATH)
         print_required_files([], False, True)
         return
     
@@ -167,7 +175,7 @@ def main():
         shutil.rmtree(ZONE_OUT_PATH)
         
     # karma.ff, removes the soundbank
-    karma_zones = [ f"{ASSETS_PATH}\\karma.ff" ]
+    karma_zones = [ f"{ZONE_PATH}\\karma.ff" ]
     link_zone("karma", karma_zones)
     
     # en_karma.ff, removes the soundbank
@@ -175,12 +183,13 @@ def main():
     
     # mod.ff
     mod_zones = REQUIRED_FILES
-    mod_zones.remove(f"{ASSETS_PATH}\\karma.ff")
+    mod_zones.remove(f"{ZONE_PATH}\\karma.ff")
     link_zone("mod", mod_zones)
     
     # we have to put certain files in an iwd, otherwise the map just explodes
     # "source_dir" is the folder that the file resides in, its data will be copied to the iwd
     # "inner_dir" is the folder structure that will be used for writing the file to the iwd
+    
     create_mod_iwd({
         "mainlobby.lua": {
             "source_dir": "mod\\ui\\t6",
@@ -213,6 +222,310 @@ def main():
         "specialty_doubletap_zombies.iwi": {
             "source_dir": "mod\\images",
             "inner_dir": "images"
+        },
+        
+        # thundergun files
+        "thundergun_zm": {
+            "source_dir": f"{COMMON_PATH}\\weapons\\zm",
+            "inner_dir": "weapons\\zm"
+        },
+        "thundergun_upgraded_zm": {
+            "source_dir": f"{COMMON_PATH}\\weapons\\zm",
+            "inner_dir": "weapons\\zm"
+        },
+        "fxt_fx_distortion_ring_warp.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "fxt_fx_thundergun_ring.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "fxt_zombie_thundergun_view_glow.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "hud_thundergun.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "mtl_t5_camo_zmb_packapunch_test_nml.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "mtl_t5_wpn_zmb_thundergun_control_nml.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "mtl_t5_wpn_zmb_thundergun_mesh_nml.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "mtl_t5_wpn_zmb_thundergun_nml.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "sw_radiant_default.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "t5_fxt_light_flare_halogen.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~-gmtl_t5_camo_zmb_packapunch_col.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~-gmtl_t5_wpn_zmb_thundergun_chamber_glass_col.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~-gmtl_t5_wpn_zmb_thundergun_chamber_main_col.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~-gmtl_t5_wpn_zmb_thundergun_col.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~-gmtl_t5_wpn_zmb_thundergun_control_col.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~-gmtl_t5_wpn_zmb_thundergun_control_meter_col.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~-gmtl_t5_wpn_zmb_thundergun_mesh_col.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~mtl_t5_camo_zmb_packapunch_env.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~mtl_t5_wpn_zmb_thundergun_ao~12c9c97d.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~mtl_t5_wpn_zmb_thundergun_control_ir~a8034edf.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~mtl_t5_wpn_zmb_thundergun_ir~66319465.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~mtl_t5_wpn_zmb_thundergun_mesh_ir~935388e2.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~~-gmtl_t5_camo_zmb_packapunch_spc.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~~-gmtl_t5_wpn_zmb_thundergun_chamber_glass_spc~cdf07f01.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~~-gmtl_t5_wpn_zmb_thundergun_control_meter_spc~bcbe31aa.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        "~~-gmtl_t5_wpn_zmb_thundergun_spc~3382cf4c.iwi": {
+            "source_dir": f"{COMMON_PATH}\\images",
+            "inner_dir": "images"
+        },
+        
+        "fx_thundergun_view.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\muzzleflashes",
+            "inner_dir": "fx\\weapon\\muzzleflashes"
+        },
+        "fx_thundergun_view_ug.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\muzzleflashes",
+            "inner_dir": "fx\\weapon\\muzzleflashes"
+        },
+        "fx_thundergun_world.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\muzzleflashes",
+            "inner_dir": "fx\\weapon\\muzzleflashes"
+        },
+        "fx_thundergun_world_ug.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\muzzleflashes",
+            "inner_dir": "fx\\weapon\\muzzleflashes"
+        },
+        "fx_thundergun_exp.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_exp.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_geotrail.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_gib_dissolve.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_impact.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_knockback_ground.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_power_cell_view.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_power_cell_view1.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_power_cell_view2.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_power_cell_view3.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_smoke_cloud.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_steam_view.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_steam_view2.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_steam_view_top.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        "fx_thundergun_trail_emit.efx": {
+            "source_dir": f"{COMMON_PATH}\\fx\\weapon\\thunder_gun",
+            "inner_dir": "fx\\weapon\\thunder_gun"
+        },
+        
+        "viewmodel_thundergun_ads_down": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_ads_up": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_d2p_in": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_d2p_loop": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_d2p_out": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_empty_d2p_in": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_empty_d2p_loop": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_empty_d2p_out": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_empty_idle": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_fire": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_first_raise": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_idle": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_last_fire": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_pullout": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_pullout_empty": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_pullout_quick": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_pullout_quick_empty": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_putaway": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_putaway_empty": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_putaway_quick": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_putaway_quick_empty": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_reload_empty": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_sprint_empty_intro": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_sprint_empty_loop": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_sprint_empty_outro": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_sprint_intro": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_sprint_loop": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
+        },
+        "viewmodel_thundergun_sprint_outro": {
+            "source_dir": f"{COMMON_PATH}\\xanim",
+            "inner_dir": "xanim"
         },
     })
     
