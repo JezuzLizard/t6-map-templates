@@ -9,10 +9,10 @@
 #include maps\mp\zombies\_zm_audio;
 #include maps\mp\zombies\_zm_zonemgr;
 #include maps\mp\zombies\_zm_weap_cymbal_monkey;
+#include maps\mp\frontend_util;
 
 // setup autoexec
 #include maps\mp\frontend_fx;
-#include maps\mp\frontend_util;
 
 main()
 {

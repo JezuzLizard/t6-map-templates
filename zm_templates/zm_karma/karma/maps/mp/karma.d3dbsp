@@ -4255,15 +4255,6 @@
 "guid" "BA1021A7"
 }
 {
-"model" "*87"
-"origin" "6148 -6890 -3484"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"targetname" "crc_covergroup"
-"target" "karma_checkin_volume_spawners"
-"guid" "AE9631D9"
-}
-{
 "angles" "0 135 0"
 "targetname" "skipto_crc"
 "origin" "5234 -7002 -3539"
@@ -12874,25 +12865,6 @@
 "origin" "4903.5 -6553 -3552"
 "targetname" "pf1776_auto47"
 "guid" "5A19B422"
-}
-{
-"model" "*195"
-"origin" "4637 -6352 -3499"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"targetname" "construction_covergroup1"
-"target" "construction_zone_spawners"
-"guid" "D2CA4E5B"
-}
-{
-"note" "************************ TEST SPAWNER"
-"targetname" "construction_zone_spawners"
-"origin" "4637 -6352 -3499"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 90 0"
-"guid" "7A95F13B"
 }
 {
 "script_color_allies_old" "o1"
@@ -23567,7 +23539,6 @@
 "targetname" "bounce_light_brush"
 "guid" "4DBC4E09"
 }
-
 {
 "note" "************************ PLAYER SPAWN"
 "radius" "32"
@@ -23579,7 +23550,6 @@
 "angles" "0 120 0"
 "guid" "2B360514"
 }
-
 {
 "note" "************************ GAME OVER INTERMISSION POINT 1"
 "classname" "script_struct"
@@ -23599,7 +23569,6 @@
 "targetname" "auto2390"
 "guid" "0C1213FF"
 }
-
 {
 "note" "************************ SPAWN TELEPORTER TRIGGER"
 "model" "*8"
@@ -23615,4 +23584,247 @@
 "targetname" "use_pap_teleporter"
 "origin" "3462.71 -4298 -3655.88"
 "guid" "187254A6"
+}
+{
+"note" "************************ MASTER SPAWNER"
+"angles" "0 5.39998 0"
+"classname" "actor_zm_karma_basic_01"
+"model" "char_ger_honorgd_fullbody"
+"export" "2"
+"spawnflags" "3"
+"script_noteworthy" "zombie_spawner"
+"script_disable_bleeder" "1"
+"origin" "32 0 0"
+"script_forcespawn" "1"
+"count" "9999"
+"guid" "77CC8ADD"
+}
+{
+"note" "************************ MASTER SPAWNER"
+"angles" "0 5.39998 0"
+"classname" "actor_zm_karma_basic_05"
+"model" "char_ger_honorgd_fullbody"
+"export" "3"
+"spawnflags" "3"
+"script_noteworthy" "zombie_spawner"
+"script_disable_bleeder" "1"
+"origin" "64 0 0"
+"script_forcespawn" "1"
+"count" "9999"
+"guid" "85683628"
+}
+{
+"note" "************************ MASTER SPAWNER"
+"angles" "0 5.39998 0"
+"classname" "actor_zm_karma_basic_08"
+"model" "char_ger_honorgd_fullbody"
+"export" "4"
+"spawnflags" "3"
+"script_noteworthy" "zombie_spawner"
+"script_disable_bleeder" "1"
+"origin" "96 0 0"
+"script_forcespawn" "1"
+"count" "9999"
+"guid" "5E227319"
+}
+{
+"note" "************************ SPAWN ROOM ZONE"
+"model" "*267"
+"origin" "4670 -7535 965"
+"classname" "info_volume"
+"targetname" "checkin_room_volume"
+"script_noteworthy" "player_volume"
+"target" "checkin_room_volume_spawners"
+"guid" "509A6581"
+}
+{
+"note" "************************ SPAWN ROOM ZONE"
+"model" "*267"
+"origin" "3546 -7535 965"
+"classname" "info_volume"
+"targetname" "checkin_room_volume"
+"script_noteworthy" "player_volume"
+"target" "checkin_room_volume_spawners"
+"guid" "509A6581"
+}
+{
+"note" "************************ SPAWN ROOM ZONE"
+"model" "*267"
+"origin" "5794 -7535 965"
+"classname" "info_volume"
+"targetname" "checkin_room_volume"
+"script_noteworthy" "player_volume"
+"target" "checkin_room_volume_spawners"
+"guid" "509A6581"
+}
+{
+"note" "************************ SPAWN ROOM SPAWNER"
+"targetname" "checkin_room_volume_spawners"
+"origin" "5156.4 -7402.17 896.125"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ SPAWN ROOM SPAWNER"
+"targetname" "checkin_room_volume_spawners"
+"origin" "4858.55 -7769.6 896.125"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ SPAWN ROOM SPAWNER"
+"targetname" "checkin_room_volume_spawners"
+"origin" "4196.07 -7751.97 896.125"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ SPAWN ROOM SPAWNER"
+"targetname" "checkin_room_volume_spawners"
+"origin" "4190.65 -7404.58 896.125"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ SPAWN ROOM SPAWNER"
+"targetname" "checkin_room_volume_spawners"
+"origin" "4298.56 -7592.09 895.875"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ CONSTRUCTION ROOM ZONE"
+"model" "*195"
+"origin" "4572 -6352 -3499"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "construction_start_volume"
+"target" "construction_start_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ CONSTRUCTION ROOM ZONE"
+"model" "*195"
+"origin" "4527 -7155 -3499"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "construction_start_volume"
+"target" "construction_start_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ CONSTRUCTION ROOM ZONE"
+"model" "*195"
+"origin" "5000 -6352 -3499"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "construction_start_volume"
+"target" "construction_start_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ CONSTRUCTION ROOM ZONE"
+"model" "*195"
+"origin" "5000 -6792 -3499"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "construction_start_volume"
+"target" "construction_start_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ CONSTRUCTION ROOM SPAWNER"
+"targetname" "construction_start_volume_spawners"
+"origin" "5151.83 -7034.78 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 118 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ CONSTRUCTION ROOM SPAWNER"
+"targetname" "construction_start_volume_spawners"
+"origin" "4385.14 -6874.64 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ CONSTRUCTION ROOM SPAWNER"
+"targetname" "construction_start_volume_spawners"
+"origin" "4401.55 -6384.31 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 -125 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ CONSTRUCTION ROOM SPAWNER"
+"targetname" "construction_start_volume_spawners"
+"origin" "4875.66 -6477.66 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 -180 0"
+"guid" "7A95F13B"
+}
+
+{
+"note" "************************ SECURITY ROOM ZONE"
+"model" "*195"
+"origin" "5685 -6802 -3499"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "construction_crc_volume"
+"target" "construction_crc_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ SECURITY ROOM ZONE"
+"model" "*195"
+"origin" "5685 -7002 -3499"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "construction_crc_volume"
+"target" "construction_crc_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ SECURITY ROOM ZONE"
+"model" "*87"
+"origin" "6569 -6924 -3499"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "construction_crc_volume"
+"target" "construction_crc_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ SECURITY ROOM ZONE"
+"model" "*195"
+"origin" "6651 -6103 -3499"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "construction_crc_volume"
+"target" "construction_crc_volume_spawners"
+"guid" "D2CA4E5B"
 }

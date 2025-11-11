@@ -26,14 +26,12 @@ stringtable,zm/mapstable.csv
 stringtable,zm/gametypestable.csv
 
 // weapons
-include,packages/weapons/m14_zm
 include,packages/weapons/ak74u_zm
 include,packages/weapons/m1911_zm
 include,packages/weapons/m1911_upgraded_zm
 include,packages/weapons/raygun_mark2_zm
 include,packages/weapons/ray_gun_zm
-// add the thundergun here later
-include,packages/weapons/python_zm
+include,packages/weapons/thundergun
 include,packages/weapons/judge_zm
 include,packages/weapons/kard_zm
 include,packages/weapons/fiveseven_zm
@@ -52,7 +50,6 @@ include,packages/weapons/usrpg_zm
 include,packages/weapons/barretm82_zm
 include,packages/weapons/knife_ballistic_zm
 include,packages/weapons/cymbal_monkey_zm
-include,packages/weapons/thundergun
 
 include,packages/player_characters/tranzit_survival_characters
 

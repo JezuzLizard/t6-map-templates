@@ -44,6 +44,6 @@ load_gump_for_all_players( gump_name )
     players = getlocalplayers();
     for ( i = 0; i < players.size; i++ )
     {
-        clientscripts\mp\zombies\_zm_gump::load_gump_for_player( i, gump_name );
+        thread clientscripts\mp\zombies\_zm_gump::load_gump_for_player( i, gump_name );
     }
 }

@@ -3,6 +3,12 @@
 #include maps\mp\gametypes_zm\_zm_gametype;
 #include maps\mp\zombies\_zm_utility;
 #include maps\mp\zombies\_zm_weapons;
+#include maps\mp\zombies\_zm_score;
+#include maps\mp\_demo;
+#include maps\mp\zombies\_zm_stats;
+#include maps\mp\zombies\_zm_audio;
+#include maps\mp\zombies\_zm_zonemgr;
+#include maps\mp\zombies\_zm_weap_cymbal_monkey;
 
 // setup autoexec
 #include maps\mp\karma_fx;
@@ -48,7 +54,7 @@ main()
 	level.zone_manager_init_func = ::karma_zone_init;
     level.zones = [];
 
-	//init_zones[0] = "checkin_room_volume";       // spawn room
+	init_zones[0] = "checkin_room_volume";       // spawn room
 
 	//init_zones[1] = "construction_start_volume"; // teleport construction room
 	//init_zones[2] = "construction_rooms_volume"; // rooms with desks and computers
@@ -56,8 +62,7 @@ main()
 
 	//init_zones[4] = "construction_crc_volume";   // the security room
 	
-	temp_zones[0] = "construction_covergroup1";
-	maps\mp\maptypes\_zm_usermap::start_zombie_mode( temp_zones );
+	maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
 }
 
 karma_post_zm_init()
@@ -105,7 +110,10 @@ zombie_init_done()
 
 karma_zone_init()
 {
+    flag_init( "always_on" );
+    flag_set( "always_on" );
 
+    add_adjacent_zone( "construction_start_volume", "construction_crc_volume", "activate_crc_zone" );
 }
 
 karma_magicbox_init()

@@ -25,6 +25,7 @@ script,clientscripts/mp/createfx/karma_fx.csc
 script,maps/mp/karma.gsc
 script,maps/mp/karma_fx.gsc
 script,maps/mp/karma_amb.gsc
+script,maps/mp/karma_util.gsc
 script,maps/mp/karma_teleporters.gsc
 script,maps/mp/karma_music_egg.gsc
 script,maps/mp/createfx/karma_fx.gsc
