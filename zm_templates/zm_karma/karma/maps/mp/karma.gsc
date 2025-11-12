@@ -92,6 +92,9 @@ karma_post_zm_init()
 	
 	// turn them on by default
 	turn_on_perks();
+
+	// this is originally at -1000, this map's playable areas are lower than that
+	set_zombie_var( "below_world_check", -4000 );
 }
 
 karma_zone_init()
