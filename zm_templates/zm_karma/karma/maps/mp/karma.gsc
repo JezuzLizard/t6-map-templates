@@ -54,13 +54,11 @@ main()
 	level.zone_manager_init_func = ::karma_zone_init;
     level.zones = [];
 
-	init_zones[0] = "checkin_room_volume";       // spawn room
+	init_zones[0] = "construction_start_volume";   // spawn room
 
-	//init_zones[1] = "construction_start_volume"; // teleport construction room
-	//init_zones[2] = "construction_rooms_volume"; // rooms with desks and computers
-	//init_zones[3] = "construction_desk_volume";  // the "system unavailable" desk area
-
-	//init_zones[4] = "construction_crc_volume";   // the security room
+	//init_zones[1] = "construction_rooms_volume"; // rooms with desks and computers
+	//init_zones[2] = "construction_lobby_volume"; // the "system unavailable" desk area
+	//init_zones[3] = "construction_crc_volume";   // the security room
 	
 	maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
 }
@@ -83,7 +81,7 @@ karma_post_zm_init()
 	// init mystery box, teleporters, and the music easter egg
     karma_magicbox_init();
 	maps\mp\karma_amb::main();
-	maps\mp\karma_teleporters::init();
+	//maps\mp\karma_teleporters::init();
 	maps\mp\karma_music_egg::init();
 
 	// init thundergun

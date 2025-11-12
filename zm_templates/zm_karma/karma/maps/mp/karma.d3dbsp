@@ -23539,17 +23539,19 @@
 "targetname" "bounce_light_brush"
 "guid" "4DBC4E09"
 }
+
 {
 "note" "************************ PLAYER SPAWN"
 "radius" "32"
 "script_noteworthy" "initial_spawn"
 "script_string" "zstandard_karma"
 "targetname" "initial_spawn_points"
-"origin" "5155 -7975 895"
+"origin" "4580.8 -6080.03 -3575.88"
 "classname" "script_struct"
-"angles" "0 120 0"
+"angles" "0 -90 0"
 "guid" "2B360514"
 }
+
 {
 "note" "************************ GAME OVER INTERMISSION POINT 1"
 "classname" "script_struct"
@@ -23569,22 +23571,7 @@
 "targetname" "auto2390"
 "guid" "0C1213FF"
 }
-{
-"note" "************************ SPAWN TELEPORTER TRIGGER"
-"model" "*8"
-"classname" "trigger_use_touch"
-"targetname" "use_spawn_teleporter"
-"origin" "4498.37 -7215.85 896.125"
-"guid" "187254A6"
-}
-{
-"note" "************************ PACK A PUNCH TELEPORTER TRIGGER"
-"model" "*8"
-"classname" "trigger_use_touch"
-"targetname" "use_pap_teleporter"
-"origin" "3462.71 -4298 -3655.88"
-"guid" "187254A6"
-}
+
 {
 "note" "************************ MASTER SPAWNER"
 "angles" "0 5.39998 0"
@@ -23627,86 +23614,7 @@
 "count" "9999"
 "guid" "5E227319"
 }
-{
-"note" "************************ SPAWN ROOM ZONE"
-"model" "*267"
-"origin" "4670 -7535 965"
-"classname" "info_volume"
-"targetname" "checkin_room_volume"
-"script_noteworthy" "player_volume"
-"target" "checkin_room_volume_spawners"
-"guid" "509A6581"
-}
-{
-"note" "************************ SPAWN ROOM ZONE"
-"model" "*267"
-"origin" "3546 -7535 965"
-"classname" "info_volume"
-"targetname" "checkin_room_volume"
-"script_noteworthy" "player_volume"
-"target" "checkin_room_volume_spawners"
-"guid" "509A6581"
-}
-{
-"note" "************************ SPAWN ROOM ZONE"
-"model" "*267"
-"origin" "5794 -7535 965"
-"classname" "info_volume"
-"targetname" "checkin_room_volume"
-"script_noteworthy" "player_volume"
-"target" "checkin_room_volume_spawners"
-"guid" "509A6581"
-}
-{
-"note" "************************ SPAWN ROOM SPAWNER"
-"targetname" "checkin_room_volume_spawners"
-"origin" "5156.4 -7402.17 896.125"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 90 0"
-"guid" "7A95F13B"
-}
-{
-"note" "************************ SPAWN ROOM SPAWNER"
-"targetname" "checkin_room_volume_spawners"
-"origin" "4858.55 -7769.6 896.125"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 90 0"
-"guid" "7A95F13B"
-}
-{
-"note" "************************ SPAWN ROOM SPAWNER"
-"targetname" "checkin_room_volume_spawners"
-"origin" "4196.07 -7751.97 896.125"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 90 0"
-"guid" "7A95F13B"
-}
-{
-"note" "************************ SPAWN ROOM SPAWNER"
-"targetname" "checkin_room_volume_spawners"
-"origin" "4190.65 -7404.58 896.125"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 90 0"
-"guid" "7A95F13B"
-}
-{
-"note" "************************ SPAWN ROOM SPAWNER"
-"targetname" "checkin_room_volume_spawners"
-"origin" "4298.56 -7592.09 895.875"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "0 90 0"
-"guid" "7A95F13B"
-}
+
 {
 "note" "************************ CONSTRUCTION ROOM ZONE"
 "model" "*195"
