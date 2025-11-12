@@ -10105,15 +10105,6 @@
 "guid" "93412FCC"
 }
 {
-"model" "*190"
-"origin" "4521 -9396 992"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"targetname" "vol_scanner"
-"script_noteworthy" "cleanup_checkin"
-"guid" "3B3C1944"
-}
-{
 "classname" "script_model"
 "model" "p6_anim_duffle_bag_karma"
 "origin" "4968 -11184 -3264"
@@ -12946,14 +12937,6 @@
 "guid" "703C381B"
 }
 {
-"model" "*196"
-"origin" "3540 -6512 -3488"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"targetname" "construction_covergroup2"
-"guid" "853746BB"
-}
-{
 "origin" "3852 -6527.5 -3547.5"
 "angles" "0 2.50448e-006 0"
 "classname" "node_cover_left"
@@ -13449,22 +13432,6 @@
 "guid" "C2C009E0"
 }
 {
-"model" "*197"
-"origin" "3540 -6072 -3488"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"targetname" "construction_covergroup3"
-"guid" "66AC0E47"
-}
-{
-"model" "*198"
-"origin" "3540 -5668 -3488"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"targetname" "construction_covergroup4"
-"guid" "3314EC24"
-}
-{
 "classname" "node_cover_right"
 "angles" "0 270 0"
 "origin" "3778 -5166 -3628"
@@ -13476,14 +13443,6 @@
 "origin" "3298 -5166 -3628"
 "spawnflags" "20"
 "guid" "CD87999D"
-}
-{
-"model" "*199"
-"origin" "3532 -5020 -3568"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"targetname" "construction_covergroup5"
-"guid" "33EC0F2B"
 }
 {
 "angles" "0 180 0"
@@ -13897,14 +13856,6 @@
 "targetname" "align_hallway2"
 "script_noteworthy" "cleanup_construction"
 "guid" "57902E3F"
-}
-{
-"model" "*212"
-"origin" "3540 -5588 -3468"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"targetname" "construction_hallway_covergroup"
-"guid" "81C74DB5"
 }
 {
 "origin" "4217.5 -6438 -3548"
@@ -19114,14 +19065,6 @@
 "guid" "BC4C133B"
 }
 {
-"model" "*255"
-"origin" "5784 -7255 -5084"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"targetname" "info_club_se"
-"guid" "D22F006C"
-}
-{
 "classname" "node_pathnode"
 "origin" "5762 -6353 -4924"
 "guid" "66733E75"
@@ -19165,30 +19108,6 @@
 "origin" "5778 -7633 -5052.9"
 "classname" "node_pathnode"
 "guid" "C1EAD377"
-}
-{
-"model" "*256"
-"origin" "5784 -6187 -5084"
-"targetname" "info_club_ne"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"guid" "BD01726C"
-}
-{
-"model" "*257"
-"origin" "5067 -7255 -5084"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"targetname" "info_club_sw"
-"guid" "BE84BAFF"
-}
-{
-"model" "*258"
-"origin" "5067 -6187 -5084"
-"targetname" "info_club_nw"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"guid" "505C8538"
 }
 {
 "origin" "5312 -5867 -5052.2"
@@ -21492,14 +21411,6 @@
 "width" "220.000000"
 "classname" "trigger_box"
 "guid" "DAA0C0EB"
-}
-{
-"model" "*266"
-"origin" "5436 -6732 -5020"
-"classname" "info_volume"
-"script_noteworthy" "player_volume"
-"targetname" "vol_club"
-"guid" "AA6B73F8"
 }
 {
 "origin" "5569 -7143 -5084"
