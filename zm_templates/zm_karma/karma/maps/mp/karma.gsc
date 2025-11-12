@@ -87,6 +87,25 @@ karma_post_zm_init()
 	// init thundergun
 	maps\mp\zombies\_zm_weap_thundergun::init();
 	maps\mp\zombies\_zm_spawner::register_zombie_death_animscript_callback( maps\mp\zombies\_zm_weap_thundergun::enemy_killed_by_thundergun );
+	
+	// turn them on by default
+	turn_on_perks();
+}
+
+turn_on_perks()
+{
+    flag_wait( "start_zombie_round_logic" );
+    wait 1;
+
+    level notify( "revive_on" );
+    wait_network_frame();
+    level notify( "doubletap_on" );
+    wait_network_frame();
+    level notify( "marathon_on" );
+    wait_network_frame();
+    level notify( "juggernog_on" );
+    wait_network_frame();
+    level notify( "sleight_on" );
 }
 
 karma_connected()
