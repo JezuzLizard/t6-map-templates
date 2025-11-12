@@ -106,6 +106,8 @@ turn_on_perks()
     level notify( "juggernog_on" );
     wait_network_frame();
     level notify( "sleight_on" );
+    wait_network_frame();
+    level notify( "Pack_A_Punch_on" );
 }
 
 karma_connected()
