@@ -23532,8 +23532,8 @@
 "origin" "4572 -6352 -3499"
 "classname" "info_volume"
 "script_noteworthy" "player_volume"
-"targetname" "construction_start_volume"
-"target" "construction_start_volume_spawners"
+"targetname" "construction_volume"
+"target" "construction_volume_spawners"
 "guid" "D2CA4E5B"
 }
 {
@@ -23542,8 +23542,8 @@
 "origin" "4527 -7155 -3499"
 "classname" "info_volume"
 "script_noteworthy" "player_volume"
-"targetname" "construction_start_volume"
-"target" "construction_start_volume_spawners"
+"targetname" "construction_volume"
+"target" "construction_volume_spawners"
 "guid" "D2CA4E5B"
 }
 {
@@ -23552,8 +23552,8 @@
 "origin" "5000 -6352 -3499"
 "classname" "info_volume"
 "script_noteworthy" "player_volume"
-"targetname" "construction_start_volume"
-"target" "construction_start_volume_spawners"
+"targetname" "construction_volume"
+"target" "construction_volume_spawners"
 "guid" "D2CA4E5B"
 }
 {
@@ -23562,13 +23562,13 @@
 "origin" "5000 -6792 -3499"
 "classname" "info_volume"
 "script_noteworthy" "player_volume"
-"targetname" "construction_start_volume"
-"target" "construction_start_volume_spawners"
+"targetname" "construction_volume"
+"target" "construction_volume_spawners"
 "guid" "D2CA4E5B"
 }
 {
 "note" "************************ CONSTRUCTION ROOM SPAWNER"
-"targetname" "construction_start_volume_spawners"
+"targetname" "construction_volume_spawners"
 "origin" "5151.83 -7034.78 -3575.88"
 "script_noteworthy" "riser_location"
 "classname" "script_struct"
@@ -23578,7 +23578,7 @@
 }
 {
 "note" "************************ CONSTRUCTION ROOM SPAWNER"
-"targetname" "construction_start_volume_spawners"
+"targetname" "construction_volume_spawners"
 "origin" "4385.14 -6874.64 -3575.88"
 "script_noteworthy" "riser_location"
 "classname" "script_struct"
@@ -23588,7 +23588,7 @@
 }
 {
 "note" "************************ CONSTRUCTION ROOM SPAWNER"
-"targetname" "construction_start_volume_spawners"
+"targetname" "construction_volume_spawners"
 "origin" "4401.55 -6384.31 -3575.88"
 "script_noteworthy" "riser_location"
 "classname" "script_struct"
@@ -23598,7 +23598,7 @@
 }
 {
 "note" "************************ CONSTRUCTION ROOM SPAWNER"
-"targetname" "construction_start_volume_spawners"
+"targetname" "construction_volume_spawners"
 "origin" "4875.66 -6477.66 -3575.88"
 "script_noteworthy" "riser_location"
 "classname" "script_struct"
@@ -23613,8 +23613,8 @@
 "origin" "5685 -6802 -3499"
 "classname" "info_volume"
 "script_noteworthy" "player_volume"
-"targetname" "construction_crc_volume"
-"target" "construction_crc_volume_spawners"
+"targetname" "security_volume"
+"target" "security_volume_spawners"
 "guid" "D2CA4E5B"
 }
 {
@@ -23623,8 +23623,8 @@
 "origin" "5685 -7002 -3499"
 "classname" "info_volume"
 "script_noteworthy" "player_volume"
-"targetname" "construction_crc_volume"
-"target" "construction_crc_volume_spawners"
+"targetname" "security_volume"
+"target" "security_volume_spawners"
 "guid" "D2CA4E5B"
 }
 {
@@ -23633,8 +23633,8 @@
 "origin" "6569 -6924 -3499"
 "classname" "info_volume"
 "script_noteworthy" "player_volume"
-"targetname" "construction_crc_volume"
-"target" "construction_crc_volume_spawners"
+"targetname" "security_volume"
+"target" "security_volume_spawners"
 "guid" "D2CA4E5B"
 }
 {
@@ -23643,7 +23643,7 @@
 "origin" "6651 -6103 -3499"
 "classname" "info_volume"
 "script_noteworthy" "player_volume"
-"targetname" "construction_crc_volume"
-"target" "construction_crc_volume_spawners"
+"targetname" "security_volume"
+"target" "security_volume_spawners"
 "guid" "D2CA4E5B"
 }

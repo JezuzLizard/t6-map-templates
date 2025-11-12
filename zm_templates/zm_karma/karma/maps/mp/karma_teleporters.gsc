@@ -48,11 +48,11 @@ teleport_all_players_to_location( location )
 
     if ( location == "karma_spawn_teleport" )
     {
-        spawn_zone = level.zones["checkin_room_volume"];
+        spawn_zone = level.zones["checkin_volume"];
         if ( isdefined( spawn_zone ) && spawn_zone.is_enabled )
         {
-            maps\mp\karma_util::disable_zone( "checkin_room_volume", true );
-            maps\mp\zombies\_zm_zonemgr::enable_zone( "construction_start_volume" );
+            maps\mp\karma_util::disable_zone( "checkin_volume", true );
+            maps\mp\zombies\_zm_zonemgr::enable_zone( "construction_volume" );
         }
 
         players = GetPlayers();

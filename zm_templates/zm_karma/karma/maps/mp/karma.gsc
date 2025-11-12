@@ -51,15 +51,17 @@ main()
 	level.culldist = 5000;
 	setup_characters();
 
+	karma_setup_zones();
+}
+
+karma_setup_zones()
+{
+	// init zone manager
 	level.zone_manager_init_func = ::karma_zone_init;
     level.zones = [];
 
-	init_zones[0] = "construction_start_volume";   // spawn room
-
-	//init_zones[1] = "construction_rooms_volume"; // rooms with desks and computers
-	//init_zones[2] = "construction_lobby_volume"; // the "system unavailable" desk area
-	//init_zones[3] = "construction_crc_volume";   // the security room
-	
+	// init spawn zone
+	init_zones[0] = "construction_volume";
 	maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
 }
 
@@ -90,6 +92,21 @@ karma_post_zm_init()
 	
 	// turn them on by default
 	turn_on_perks();
+}
+
+karma_zone_init()
+{
+	// rooms with desks and computers
+	//add_adjacent_zone( "construction_volume", "security_volume", "activate_security_zone" );
+
+	// rooms with desks and computers
+	//add_adjacent_zone( "construction_volume", "lounge_volume", "activate_lounge_zone" );
+
+	// the "system unavailable" desk area
+	//add_adjacent_zone( "lounge_volume", "lobby_volume", "activate_lobby_zone" );
+
+	// the "system unavailable" desk area
+	//add_adjacent_zone( "lobby_volume", "elevators_volume", "activate_elevators_zone" );
 }
 
 turn_on_perks()
@@ -127,17 +144,9 @@ zombie_init_done()
 	self setphysparams( 15, 0, 48 );
 }
 
-karma_zone_init()
-{
-    flag_init( "always_on" );
-    flag_set( "always_on" );
-
-    add_adjacent_zone( "construction_start_volume", "construction_crc_volume", "activate_crc_zone" );
-}
-
 karma_magicbox_init()
 {
-    chest = GetStruct( "karma_crc_chest", "script_noteworthy" );
+    chest = GetStruct( "karma_security_chest", "script_noteworthy" );
 
 	// since the map is in development, the box doesnt exist yet
 	if ( !IsDefined( chest ) )
@@ -148,7 +157,7 @@ karma_magicbox_init()
     level.chests = [];
     level.chests[level.chests.size] = chest;
 	
-    maps\mp\zombies\_zm_magicbox::treasure_chest_init( "karma_crc_chest" );
+    maps\mp\zombies\_zm_magicbox::treasure_chest_init( "karma_security_chest" );
 }
 
 setup_characters()
