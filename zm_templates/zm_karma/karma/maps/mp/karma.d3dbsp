@@ -1382,25 +1382,6 @@
 "guid" "542B07B3"
 }
 {
-"model" "*29"
-"origin" "5342 -6542 -3525"
-"classname" "script_brushmodel"
-"spawnflags" "1"
-"targetname" "pf5_auto1"
-"guid" "3ED0F743"
-}
-{
-"script_noteworthy" "script_doors"
-"target" "pf5_auto1"
-"targetname" "crc_door"
-"spawnflags" "1"
-"origin" "5346 -6542 -3576"
-"angles" "0 90 0"
-"model" "p6_karma_sliding_door"
-"classname" "script_model"
-"guid" "0D62BB99"
-}
-{
 "angles" "0 90 0"
 "classname" "script_struct"
 "targetname" "align_tbone"
@@ -4533,24 +4514,6 @@
 "origin" "5439 -6542 -3552"
 "classname" "node_pathnode"
 "guid" "D65EC296"
-}
-{
-"model" "*88"
-"origin" "4238 -6454 -3518"
-"classname" "script_brushmodel"
-"spawnflags" "1"
-"targetname" "escalator_door_right"
-"script_noteworthy" "cleanup_construction"
-"guid" "C2DB8864"
-}
-{
-"model" "*89"
-"origin" "4238 -6550 -3518"
-"classname" "script_brushmodel"
-"spawnflags" "1"
-"targetname" "escalator_door_left"
-"script_noteworthy" "cleanup_construction"
-"guid" "E5F04EF1"
 }
 {
 "model" "*90"
@@ -11667,20 +11630,6 @@
 "classname" "script_struct"
 "script_noteworthy" "cleanup_construction"
 "guid" "C7AA8CE3"
-}
-{
-"classname" "script_struct"
-"targetname" "escalator_door_right_open"
-"origin" "4238 -6434 -3524"
-"script_noteworthy" "cleanup_construction"
-"guid" "90A9A74E"
-}
-{
-"classname" "script_struct"
-"targetname" "escalator_door_left_open"
-"origin" "4238 -6570 -3524"
-"script_noteworthy" "cleanup_construction"
-"guid" "5E98B009"
 }
 {
 "classname" "node_cover_right"
@@ -23647,6 +23596,40 @@
 "target" "security_volume_spawners"
 "guid" "D2CA4E5B"
 }
+{
+"note" "************************ SECURITY DOOR TRIGGER"
+"model" "*29"
+"origin" "5342 -6540.25 -3544.2"
+"zombie_cost" "750"
+"targetname" "zombie_door"
+"classname" "trigger_use"
+"script_flag" "activate_security_zone"
+"target" "crc_door"
+"guid" "7DB5BF88"
+}
+{
+"note" "************************ SECURITY DOOR CLIP"
+"model" "*29"
+"origin" "5342 -6542 -3525"
+"classname" "script_brushmodel"
+"spawnflags" "1"
+"targetname" "crc_door"
+"script_noteworthy" "clip"
+"guid" "3ED0F743"
+}
+{
+"note" "************************ SECURITY DOOR"
+"classname" "script_model"
+"model" "p6_karma_sliding_door"
+"origin" "5346 -6542 -3576"
+"angles" "0 90 0"
+"targetname" "crc_door"
+"spawnflags" "1"
+"script_string" "move"
+"script_vector" "0 63 0"
+"script_transition_time" "1.5"
+"guid" "0D62BB99"
+}
 
 {
 "note" "************************ OUTER HOUSING ZONE"
@@ -23678,6 +23661,41 @@
 "target" "outer_housing_volume_spawners"
 "guid" "D2CA4E5B"
 }
+{
+"note" "************************ HOUSING DOOR TRIGGER"
+"model" "*29"
+"origin" "4249 -6499 -3544.2"
+"zombie_cost" "1250"
+"targetname" "zombie_door"
+"classname" "trigger_use"
+"script_flag" "activate_housing_zone"
+"target" "housing_door"
+}
+{
+"note" "************************ HOUSING RIGHT DOOR"
+"model" "*88"
+"origin" "4238 -6454 -3518"
+"classname" "script_brushmodel"
+"targetname" "housing_door"
+"spawnflags" "1"
+"script_string" "rotate"
+"script_angles" "0 140 0"
+"script_transition_time" "0.5"
+"guid" "C2DB8864"
+}
+{
+"note" "************************ HOUSING LEFT DOOR"
+"model" "*89"
+"origin" "4238 -6550 -3518"
+"classname" "script_brushmodel"
+"targetname" "housing_door"
+"spawnflags" "1"
+"script_string" "rotate"
+"script_angles" "0 -120 0"
+"script_transition_time" "0.5"
+"guid" "E5F04EF1"
+}
+
 {
 "note" "************************ OUTER HOUSING SPAWNER"
 "targetname" "outer_housing_volume_spawners"
