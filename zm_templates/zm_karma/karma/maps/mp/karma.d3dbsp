@@ -23555,8 +23555,8 @@
 {
 "note" "************************ GAME OVER INTERMISSION POINT 1"
 "classname" "script_struct"
-"angles" "0 90 0"
-"origin" "265 -250 525"
+"angles" "0 -90 0"
+"origin" "3538.19 -4586.91 -3485.5"
 "target" "auto2390"
 "speed" "30"
 "targetname" "intermission"
@@ -23566,8 +23566,8 @@
 {
 "note" "************************ GAME OVER INTERMISSION POINT 2"
 "classname" "script_struct"
-"angles" "0 90 0"
-"origin" "265 300 525"
+"angles" "0 -90 0"
+"origin" "3538.19 -6727.15 -3485.5"
 "targetname" "auto2390"
 "guid" "0C1213FF"
 }
