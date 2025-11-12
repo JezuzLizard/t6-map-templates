@@ -36,11 +36,8 @@ disable_zone( zone_name, respawn_zombies )
     zombies = getaiarray( level.zombie_team );
     foreach ( zombie in zombies )
     {
-        if ( zombie istouching( level.zones[zone_name] ) )
-        {
-            zombie dodamage( zombie.health + 100, ( 0, 0, 0 ) );
-            level.zombie_total++;
-            level.zombie_total_subtract++;
-        }
+        zombie dodamage( zombie.health + 100, ( 0, 0, 0 ) );
+        level.zombie_total++;
+        level.zombie_total_subtract++;
     }
 }
