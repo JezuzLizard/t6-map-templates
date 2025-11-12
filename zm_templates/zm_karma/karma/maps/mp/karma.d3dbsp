@@ -23647,3 +23647,201 @@
 "target" "security_volume_spawners"
 "guid" "D2CA4E5B"
 }
+
+{
+"note" "************************ OUTER HOUSING ZONE"
+"model" "*195"
+"origin" "3887 -6352 -3499"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "outer_housing_volume"
+"target" "outer_housing_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ OUTER HOUSING ZONE"
+"model" "*195"
+"origin" "3202 -6352 -3499"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "outer_housing_volume"
+"target" "outer_housing_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ OUTER HOUSING ZONE"
+"model" "*195"
+"origin" "3546 -6768 -3575"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "outer_housing_volume"
+"target" "outer_housing_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ OUTER HOUSING SPAWNER"
+"targetname" "outer_housing_volume_spawners"
+"origin" "3637.68 -6557.48 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ OUTER HOUSING SPAWNER"
+"targetname" "outer_housing_volume_spawners"
+"origin" "3213.95 -6701.92 -3575.63"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ OUTER HOUSING SPAWNER"
+"targetname" "outer_housing_volume_spawners"
+"origin" "3408.9 -6602.63 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 180 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ OUTER HOUSING SPAWNER"
+"targetname" "outer_housing_volume_spawners"
+"origin" "3226.83 -6223.74 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "7A95F13B"
+}
+
+{
+"note" "************************ HOUSING ZONE"
+"model" "*195"
+"origin" "3202 -5756 -3499"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "housing_volume"
+"target" "housing_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ HOUSING ZONE"
+"model" "*195"
+"origin" "3887 -5756 -3499"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "housing_volume"
+"target" "housing_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ HOUSING SPAWNER"
+"targetname" "housing_volume_spawners"
+"origin" "3178.31 -5933.89 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ HOUSING SPAWNER"
+"targetname" "housing_volume_spawners"
+"origin" "3172.33 -5659.23 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 18 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ HOUSING SPAWNER"
+"targetname" "housing_volume_spawners"
+"origin" "3717.74 -5772.41 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 180 0"
+"guid" "7A95F13B"
+}
+
+{
+"note" "************************ LOBBY ZONE"
+"model" "*195"
+"origin" "3537 -5012 -3585"
+"angles" "0 90 0"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "lobby_volume"
+"target" "lobby_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ LOBBY ZONE"
+"model" "*195"
+"origin" "3537 -5012 -3480"
+"angles" "0 90 0"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "lobby_volume"
+"target" "lobby_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ LOBBY SPAWNER"
+"targetname" "lobby_volume_spawners"
+"origin" "3729.94 -4761.12 -3655.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 180 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ LOBBY SPAWNER"
+"targetname" "lobby_volume_spawners"
+"origin" "3350.71 -4773.93 -3655.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 -20 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ LOBBY SPAWNER"
+"targetname" "lobby_volume_spawners"
+"origin" "3549.14 -5062.23 -3655.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "7A95F13B"
+}
+
+{
+"note" "************************ ELEVATORS ZONE"
+"model" "*195"
+"origin" "3526 -4267 -3585"
+"angles" "0 0 0"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "elevators_volume"
+"target" "elevators_volume_spawners"
+"guid" "D2CA4E5B"
+}
+{
+"note" "************************ ELEVATORS ZONE"
+"model" "*195"
+"origin" "3526 -4267 -3480"
+"angles" "0 0 0"
+"classname" "info_volume"
+"script_noteworthy" "player_volume"
+"targetname" "elevators_volume"
+"target" "elevators_volume_spawners"
+"guid" "D2CA4E5B"
+}

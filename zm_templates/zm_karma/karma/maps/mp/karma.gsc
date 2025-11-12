@@ -99,17 +99,20 @@ karma_post_zm_init()
 
 karma_zone_init()
 {
-	// rooms with desks and computers
-	//add_adjacent_zone( "construction_volume", "security_volume", "activate_security_zone" );
+	// security room
+	add_adjacent_zone( "construction_volume", "security_volume", "activate_security_zone" );
 
-	// rooms with desks and computers
-	//add_adjacent_zone( "construction_volume", "lounge_volume", "activate_lounge_zone" );
+	// outside the housing
+	add_adjacent_zone( "construction_volume", "outer_housing_volume", "activate_housing_zone" );
+
+	// the housing areas
+	add_adjacent_zone( "outer_housing_volume", "housing_volume", "activate_housing_zone" );
 
 	// the "system unavailable" desk area
-	//add_adjacent_zone( "lounge_volume", "lobby_volume", "activate_lobby_zone" );
+	add_adjacent_zone( "housing_volume", "lobby_volume", "activate_lobby_zone" );
 
-	// the "system unavailable" desk area
-	//add_adjacent_zone( "lobby_volume", "elevators_volume", "activate_elevators_zone" );
+	// the elevators hallway
+	add_adjacent_zone( "lobby_volume", "elevators_volume", "activate_elevators_zone" );
 }
 
 turn_on_perks()
