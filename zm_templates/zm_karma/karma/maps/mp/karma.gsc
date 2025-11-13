@@ -35,7 +35,7 @@ main()
 	
     // perk opt ins
     level.zombiemode_using_pack_a_punch = 1;
-    level.zombiemode_reusing_pack_a_punch = 1;
+    level.zombiemode_reusing_pack_a_punch = 0;
     level.zombiemode_using_revive_perk = 1;
     level.zombiemode_using_juggernaut_perk = 1;
     level.zombiemode_using_marathon_perk = 1;

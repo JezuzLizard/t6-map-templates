@@ -14,12 +14,14 @@ main()
 	clientscripts\mp\maptypes\_zm_usermap::include_powerups(); // zm/include_powerups.csv
 	clientscripts\mp\maptypes\_zm_usermap::include_fx(); // zm/include_fx.csv
 
-	level.zombiemode_using_doubletap_perk = 1;
-	level.zombiemode_using_juggernaut_perk = 1;
-	level.zombiemode_using_marathon_perk = 1;
-	level.zombiemode_using_revive_perk = 1;
-	level.zombiemode_using_sleightofhand_perk = 1;
-	level.zombiemode_using_tombstone_perk = 0;
+    level.zombiemode_using_pack_a_punch = 1;
+    level.zombiemode_reusing_pack_a_punch = 0;
+    level.zombiemode_using_revive_perk = 1;
+    level.zombiemode_using_juggernaut_perk = 1;
+    level.zombiemode_using_marathon_perk = 1;
+    level.zombiemode_using_doubletap_perk = 1;
+    level.zombiemode_using_sleightofhand_perk = 1;
+    level.zombiemode_using_tombstone_perk = 0;
 
 	clientscripts\mp\zombies\_zm_weap_thundergun::init();
 
