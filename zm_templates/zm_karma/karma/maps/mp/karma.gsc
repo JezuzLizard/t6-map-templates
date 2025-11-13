@@ -109,7 +109,7 @@ karma_zone_init()
 	add_adjacent_zone( "outer_housing_volume", "housing_volume", "activate_housing_zone" );
 
 	// the "system unavailable" desk area
-	add_adjacent_zone( "housing_volume", "lobby_volume", "activate_lobby_zone" );
+	add_adjacent_zone( "housing_volume", "lobby_volume", "activate_housing_zone" );
 
 	// the elevators hallway
 	add_adjacent_zone( "lobby_volume", "elevators_volume", "activate_elevators_zone" );
@@ -152,18 +152,21 @@ zombie_init_done()
 
 karma_magicbox_init()
 {
-    chest = GetStruct( "karma_security_chest", "script_noteworthy" );
-
-	// since the map is in development, the box doesnt exist yet
-	if ( !IsDefined( chest ) )
-	{
-		return;
-	}
+	start_chest_name = "security_chest";
+    construction_chest_1 = GetStruct( "construction_chest_1", "script_noteworthy" );
+    construction_chest_2 = GetStruct( "construction_chest_2", "script_noteworthy" );
+    security_chest = GetStruct( start_chest_name, "script_noteworthy" );
+    lobby_chest_1 = GetStruct( "lobby_chest_1", "script_noteworthy" );
+    lobby_chest_2 = GetStruct( "lobby_chest_2", "script_noteworthy" );
 
     level.chests = [];
-    level.chests[level.chests.size] = chest;
+    level.chests[level.chests.size] = construction_chest_1;
+    level.chests[level.chests.size] = construction_chest_2;
+    level.chests[level.chests.size] = security_chest;
+    level.chests[level.chests.size] = lobby_chest_1;
+    level.chests[level.chests.size] = lobby_chest_2;
 	
-    maps\mp\zombies\_zm_magicbox::treasure_chest_init( "karma_security_chest" );
+    maps\mp\zombies\_zm_magicbox::treasure_chest_init( start_chest_name );
 }
 
 setup_characters()

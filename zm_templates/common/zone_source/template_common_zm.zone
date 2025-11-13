@@ -202,3 +202,8 @@ image,zombie_ammo_box_n
 image,~-gzombie_ammo_box_c
 material,mc/mtl_zombie_ammocan
 xmodel,zombie_ammocan
+
+// firesale
+xmodel,zombie_firesale
+image,specialty_firesale_zombies
+material,specialty_firesale_zombies
