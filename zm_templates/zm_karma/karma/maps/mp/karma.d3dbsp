@@ -23881,7 +23881,7 @@
 {
 "note" "************************ MYSTERY BOX CLIP"
 "model" "*29"
-"origin" "3826.5 -4925.97 -3626.88"
+"origin" "3828.5 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
 "spawnflags" "1"
@@ -23890,7 +23890,7 @@
 {
 "note" "************************ MYSTERY BOX CLIP"
 "model" "*29"
-"origin" "3826.5 -4925.97 -3591.88"
+"origin" "3828.5 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
 "spawnflags" "1"
@@ -23974,7 +23974,7 @@
 {
 "note" "************************ MYSTERY BOX CLIP"
 "model" "*29"
-"origin" "3250.64 -4925.97 -3626.88"
+"origin" "3248.64 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
 "spawnflags" "1"
@@ -23983,7 +23983,7 @@
 {
 "note" "************************ MYSTERY BOX CLIP"
 "model" "*29"
-"origin" "3250.64 -4925.97 -3591.88"
+"origin" "3248.64 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
 "spawnflags" "1"
@@ -24150,7 +24150,7 @@
 {
 "note" "************************ MYSTERY BOX CLIP"
 "model" "*29"
-"origin" "3159.46 -6403.76 -3546.88"
+"origin" "3160.46 -6403.76 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
 "spawnflags" "1"
@@ -24239,23 +24239,77 @@
 "spawnflags" "1"
 "guid" "3ED0F743"
 }
+
 {
-"note" "************************ MYSTERY BOX CLIP"
-"model" "*29"
-"origin" "4654.99 -6067.64 -3546.88"
-"angles" "0 -90 90"
-"classname" "script_brushmodel"
-"spawnflags" "1"
-"guid" "3ED0F743"
+"note" "************************ M14 WALLBUY"
+"require_look_from" "1"
+"origin" "5184.7 -6387.97 -3517"
+"angles" "0 90 0"
+"model" "t6_wpn_ar_m14_world"
+"classname" "script_struct"
+"targetname" "pf1897_auto37"
+"target" "pf1897_auto37"
+"guid" "7004ED06"
 }
 {
-"note" "************************ MYSTERY BOX CLIP"
-"model" "*29"
-"origin" "4654.99 -6072.64 -3546.88"
-"angles" "0 -90 90"
-"classname" "script_brushmodel"
-"spawnflags" "1"
-"guid" "3ED0F743"
+"note" "************************ M14 WALLBUY"
+"require_look_from" "1"
+"script_width" "40"
+"origin" "5184.7 -6387.97 -3517"
+"angles" "0 90 0"
+"classname" "script_struct"
+"zombie_weapon_upgrade" "m14_zm"
+"targetname" "weapon_upgrade"
+"target" "pf1897_auto37"
+"guid" "C15AD568"
+}
+
+{
+"note" "************************ OLYMPIA WALLBUY"
+"require_look_from" "1"
+"origin" "5042.2 -6756.12 -3517"
+"angles" "0 -90 0"
+"model" "t6_wpn_shotty_olympia_world"
+"classname" "script_struct"
+"targetname" "pf1897_auto38"
+"target" "pf1897_auto38"
+"guid" "7004ED06"
+}
+{
+"note" "************************ OLYMPIA WALLBUY"
+"require_look_from" "1"
+"script_width" "40"
+"origin" "5042.2 -6756.12 -3517"
+"angles" "0 -90 0"
+"classname" "script_struct"
+"zombie_weapon_upgrade" "rottweil72_zm"
+"targetname" "weapon_upgrade"
+"target" "pf1897_auto38"
+"guid" "C15AD568"
+}
+
+{
+"note" "************************ AK74U WALLBUY"
+"require_look_from" "1"
+"origin" "3953.9 -6340.88 -3517"
+"angles" "0 90 0"
+"model" "t6_wpn_smg_ak74u_world"
+"classname" "script_struct"
+"targetname" "pf1897_auto39"
+"target" "pf1897_auto39"
+"guid" "7004ED06"
+}
+{
+"note" "************************ AK74U WALLBUY"
+"require_look_from" "1"
+"script_width" "40"
+"origin" "3953.9 -6340.88 -3517"
+"angles" "0 90 0"
+"classname" "script_struct"
+"zombie_weapon_upgrade" "ak74u_zm"
+"targetname" "weapon_upgrade"
+"target" "pf1897_auto39"
+"guid" "C15AD568"
 }
 
 {
