@@ -23597,6 +23597,46 @@
 "guid" "D2CA4E5B"
 }
 {
+"note" "************************ SECURITY ROOM SPAWNER"
+"targetname" "security_volume_spawners"
+"origin" "5999.82 -6575.92 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "-90 0 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ SECURITY ROOM SPAWNER"
+"targetname" "security_volume_spawners"
+"origin" "6527.57 -6602.79 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ SECURITY ROOM SPAWNER"
+"targetname" "security_volume_spawners"
+"origin" "6360 -7285.3 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 135 0"
+"guid" "7A95F13B"
+}
+{
+"note" "************************ SECURITY ROOM SPAWNER"
+"targetname" "security_volume_spawners"
+"origin" "5752.74 -7276.89 -3575.88"
+"script_noteworthy" "riser_location"
+"classname" "script_struct"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "7A95F13B"
+}
+{
 "note" "************************ SECURITY DOOR TRIGGER"
 "model" "*29"
 "origin" "5342 -6540.25 -3544.2"
