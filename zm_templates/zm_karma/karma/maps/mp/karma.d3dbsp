@@ -24374,3 +24374,59 @@
 "target" "elevators_volume_spawners"
 "guid" "D2CA4E5B"
 }
+
+{
+"note" "************************ QUICK REVIVE MACHINE"
+"origin" "4561.78 -6694.36 -3575.88"
+"model" "zombie_vending_revive"
+"classname" "script_struct"
+"angles" "0 180 0"
+"script_noteworthy" "specialty_quickrevive"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_karma zclassic_perks_karma"
+"guid" "5FD9D5E9"
+}
+{
+"note" "************************ JUGG MACHINE"
+"origin" "6711.36 -6794.6 -3575.88"
+"model" "zombie_vending_jugg"
+"classname" "script_struct"
+"angles" "0 -90 0"
+"script_noteworthy" "specialty_armorvest"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_karma zclassic_perks_karma"
+"guid" "5FD9D5E3"
+}
+{
+"note" "************************ SPEED COLA MACHINE"
+"origin" "3223.64 -5432.79 -3575.88"
+"model" "zombie_vending_sleight"
+"classname" "script_struct"
+"angles" "0 90 0"
+"script_noteworthy" "specialty_fastreload"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_karma zclassic_perks_karma"
+"guid" "5FD9D5E1"
+}
+{
+"note" "************************ DOUBLE TAP MACHINE"
+"origin" "3906.51 -6700.36 -3575.88"
+"model" "zombie_vending_doubletap2"
+"classname" "script_struct"
+"angles" "0 180 0"
+"script_noteworthy" "specialty_rof"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_karma zclassic_perks_karma"
+"guid" "5FD9D5E1"
+}
+{
+"note" "************************ STAMINUP MACHINE"
+"origin" "3676.94 -4677.64 -3655.88"
+"model" "zombie_vending_marathon"
+"classname" "script_struct"
+"angles" "0 0 0"
+"script_noteworthy" "specialty_longersprint"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_karma zclassic_perks_karma"
+"guid" "5FD9D5E5"
+}
