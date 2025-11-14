@@ -43,6 +43,9 @@ main()
     level.zombiemode_using_sleightofhand_perk = 1;
     level.zombiemode_using_tombstone_perk = 0;
 
+	// allow players to buy 5 perks at once
+	level.perk_purchase_limit = 5;
+
     // disable loading random tranzit fx
     level.disable_fx_upgrade_aquired = true;
     level.fx_exclude_tesla_head_light = true;
@@ -50,7 +53,6 @@ main()
 
 	level.culldist = 5000;
 	setup_characters();
-
 	karma_setup_zones();
 }
 
