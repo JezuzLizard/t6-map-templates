@@ -97,6 +97,15 @@ karma_post_zm_init()
 
 	// this is originally at -1000, this map's playable areas are lower than that
 	set_zombie_var( "below_world_check", -4000 );
+
+	// for testing
+	if ( GetDvarInt( "zombie_unlock_all" ) > 0 )
+	{
+		level.round_number = 100;
+		level.first_round = 0;
+		level.zombie_vars["zombie_spawn_delay"] = 0.08;
+		level.zombie_move_speed = 130;
+	}
 }
 
 karma_zone_init()
@@ -139,6 +148,7 @@ karma_connected()
 {
 	self setclientdvars( "r_lodbiasskinned", "-1000", "r_lodbiasrigid", "-1000" );
 
+	// for testing
 	if ( GetDvarInt( "zombie_unlock_all" ) > 0 )
 	{
 		self.score = 500000;
