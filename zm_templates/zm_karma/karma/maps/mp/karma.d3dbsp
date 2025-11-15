@@ -24383,7 +24383,7 @@
 "angles" "0 180 0"
 "script_noteworthy" "specialty_quickrevive"
 "targetname" "zm_perk_machine"
-"script_string" "zstandard_perks_karma zclassic_perks_karma"
+"script_string" "zstandard_perks_karma zclassic_perks_karma zsurvival_perks_karma"
 "guid" "5FD9D5E9"
 }
 {
@@ -24394,7 +24394,7 @@
 "angles" "0 -90 0"
 "script_noteworthy" "specialty_armorvest"
 "targetname" "zm_perk_machine"
-"script_string" "zstandard_perks_karma zclassic_perks_karma"
+"script_string" "zstandard_perks_karma zclassic_perks_karma zsurvival_perks_karma"
 "guid" "5FD9D5E3"
 }
 {
@@ -24405,7 +24405,7 @@
 "angles" "0 90 0"
 "script_noteworthy" "specialty_fastreload"
 "targetname" "zm_perk_machine"
-"script_string" "zstandard_perks_karma zclassic_perks_karma"
+"script_string" "zstandard_perks_karma zclassic_perks_karma zsurvival_perks_karma"
 "guid" "5FD9D5E1"
 }
 {
@@ -24416,7 +24416,7 @@
 "angles" "0 180 0"
 "script_noteworthy" "specialty_rof"
 "targetname" "zm_perk_machine"
-"script_string" "zstandard_perks_karma zclassic_perks_karma"
+"script_string" "zstandard_perks_karma zclassic_perks_karma zsurvival_perks_karma"
 "guid" "5FD9D5E1"
 }
 {
@@ -24427,6 +24427,29 @@
 "angles" "0 0 0"
 "script_noteworthy" "specialty_longersprint"
 "targetname" "zm_perk_machine"
-"script_string" "zstandard_perks_karma zclassic_perks_karma"
+"script_string" "zstandard_perks_karma zclassic_perks_karma zsurvival_perks_karma"
 "guid" "5FD9D5E5"
+}
+
+{
+"note" "************************ PAP MACHINE"
+"origin" "3540.35 -3971.91 -3655.88"
+"model" "p6_anim_zm_buildable_pap"
+"classname" "script_struct"
+"angles" "0 0 0"
+"target" "karma_pap_machine"
+"script_noteworthy" "specialty_weapupgrade"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_karma zclassic_perks_karma zsurvival_perks_karma"
+"guid" "4C900751"
+}
+{
+"note" "************************ PAP MACHINE FLAG"
+"script_string" "zstandard_perks_karma zclassic_perks_karma zsurvival_perks_karma"
+"classname" "script_struct"
+"model" "zombie_sign_please_wait"
+"angles" "0 90 -180"
+"origin" "3516.39 -3982.127 -3603.679"
+"targetname" "karma_pap_machine"
+"guid" "284B1301"
 }

@@ -43,9 +43,6 @@ main()
     level.zombiemode_using_sleightofhand_perk = 1;
     level.zombiemode_using_tombstone_perk = 0;
 
-	// allow players to buy 5 perks at once
-	level.perk_purchase_limit = 5;
-
     // disable loading random tranzit fx
     level.disable_fx_upgrade_aquired = true;
     level.fx_exclude_tesla_head_light = true;
@@ -77,6 +74,9 @@ karma_post_zm_init()
 	level.zombie_melee_in_water = true;
 	level.put_timed_out_zombies_back_in_queue = true;
 	level.use_alternate_poi_positioning = true;
+
+	// allow players to buy 5 perks at once
+	level.perk_purchase_limit = 5;
 
 	// monkey bombs
     level.legacy_cymbal_monkey = 1;
@@ -114,7 +114,7 @@ karma_zone_init()
 	add_adjacent_zone( "housing_volume", "lobby_volume", "activate_housing_zone" );
 
 	// the elevators hallway
-	add_adjacent_zone( "lobby_volume", "elevators_volume", "activate_elevators_zone" );
+	add_adjacent_zone( "lobby_volume", "elevators_volume", "activate_housing_zone" );
 }
 
 turn_on_perks()
@@ -138,6 +138,11 @@ turn_on_perks()
 karma_connected()
 {
 	self setclientdvars( "r_lodbiasskinned", "-1000", "r_lodbiasrigid", "-1000" );
+
+	if ( GetDvarInt( "zombie_unlock_all" ) > 0 )
+	{
+		self.score = 500000;
+	}
 }
 
 givecustomloadout( takeallweapons, alreadyspawned )
