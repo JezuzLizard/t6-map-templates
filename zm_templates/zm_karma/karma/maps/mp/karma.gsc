@@ -169,21 +169,18 @@ zombie_init_done()
 
 karma_magicbox_init()
 {
-	start_chest_name = "security_chest";
-    construction_chest_1 = GetStruct( "construction_chest_1", "script_noteworthy" );
-    construction_chest_2 = GetStruct( "construction_chest_2", "script_noteworthy" );
-    security_chest = GetStruct( start_chest_name, "script_noteworthy" );
+    housing_chest = GetStruct( "housing_chest", "script_noteworthy" );
+    security_chest = GetStruct( "security_chest", "script_noteworthy" );
     lobby_chest_1 = GetStruct( "lobby_chest_1", "script_noteworthy" );
     lobby_chest_2 = GetStruct( "lobby_chest_2", "script_noteworthy" );
 
     level.chests = [];
-    level.chests[level.chests.size] = construction_chest_1;
-    level.chests[level.chests.size] = construction_chest_2;
+    level.chests[level.chests.size] = housing_chest;
     level.chests[level.chests.size] = security_chest;
     level.chests[level.chests.size] = lobby_chest_1;
     level.chests[level.chests.size] = lobby_chest_2;
-	
-    maps\mp\zombies\_zm_magicbox::treasure_chest_init( start_chest_name );
+
+    maps\mp\zombies\_zm_magicbox::treasure_chest_init( "security_chest" );
 }
 
 setup_characters()
