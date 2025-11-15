@@ -223,6 +223,11 @@ def main():
             "inner_dir": "images"
         },
         
+        "_zm_perks.gsc": {
+            "source_dir": "mod\\maps\\mp\\zombies",
+            "inner_dir": "maps\\mp\\zombies"
+        },
+        
         # thundergun files
         "thundergun_zm": {
             "source_dir": f"{COMMON_PATH}\\weapons\\zm",
