@@ -2,7 +2,6 @@ init()
 {
     level waittill( "connected", player );
 
-    // create the zone utility list, we will use this for drawing
     level._debug_zones = [];
     level._current_zone = undefined;
 
