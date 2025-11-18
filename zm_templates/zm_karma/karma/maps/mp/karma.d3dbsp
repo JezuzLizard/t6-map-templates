@@ -18394,3 +18394,339 @@
 "targetname" "karma_pap_machine"
 "guid" "284B1301"
 }
+
+{
+"note" "PATH NODES"
+}
+{
+"classname" "node_pathnode"
+"origin" "4456 -6240.38 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4425.58 -6123.69 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4503.02 -6040.82 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4586.53 -6159.65 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4609.84 -6215.24 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4608.26 -6089.73 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4690.21 -6080.3 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4842.85 -6080.06 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4905.88 -6080.37 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4840.57 -6021.9 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4793.86 -6085.98 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4749.06 -6131.46 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4677.54 -6174.49 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4534.42 -6223.64 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4417.99 -6186.96 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4533.07 -6106.74 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4782.98 -6218.65 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4841.4 -6183.87 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4921.35 -6196.17 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4891.27 -6255.65 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4787.11 -6295.48 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4880.9 -6344.66 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5002.67 -6339.12 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4938.65 -6338.73 -3572.96"
+}
+{
+"classname" "node_pathnode"
+"origin" "5018.83 -6249.46 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5109.28 -6360.76 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5157.09 -6418.67 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5161.28 -6503.7 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5305.2 -6474.48 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5282.9 -6543.79 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5307.42 -6608.83 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5212.82 -6601.64 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5217.93 -6522.15 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5103.5 -6626.49 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5006.82 -6624.25 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4924.87 -6616.39 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4825.6 -6600.36 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4747.44 -6606.27 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4797.21 -6645.67 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4776.93 -6501.75 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4670.6 -6403.82 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4603.92 -6622.38 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4585.07 -6553.23 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4567.53 -6412.28 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4510.41 -6345.7 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4791.41 -6412.82 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4870.11 -6545.3 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4865.96 -6455.64 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4723.11 -6341.19 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4871.31 -6407.07 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4820.84 -6360 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4713.72 -6456.38 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4571.88 -6472.4 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4524.43 -6637.05 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4386.33 -6663.38 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4383.83 -6778.24 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4383.88 -6890.72 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4298.87 -6876.03 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4237.33 -6902.72 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4345.75 -6537.37 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4281.58 -6561.17 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4303.47 -6467.83 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4378.36 -6395.44 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4420.28 -6344.09 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4376.3 -6506.12 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4458.52 -6582.96 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4527.39 -6545.5 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4435.58 -6652.32 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4384.84 -6583.88 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5106.82 -6742.64 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5100.84 -6845.24 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5108.68 -6920.07 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5133.81 -7014.95 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5231.12 -7083.59 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5216.62 -6968 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5174.98 -6916.41 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5172.74 -7062.35 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5068.6 -6923.58 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5069.94 -6994.36 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4994.17 -6530.46 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4994.22 -6443.56 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "5089.7 -6306.19 -3575.88"
+}
+{
+"classname" "node_pathnode"
+"origin" "4691.34 -6214.99 -3575.88"
+}

@@ -31,9 +31,9 @@ init()
         
         if ( player meleebuttonpressed() )
         {
-            player iprintlnbold( "Total Nodes: " + level.nodes.size );
             level.nodes[ level.nodes.size ] = player.origin;
-            
+            player iprintlnbold( "Total Nodes: " + level.nodes.size );
+
             while ( isdefined( player ) && player meleebuttonpressed() )
             {
                 wait 0.05;
