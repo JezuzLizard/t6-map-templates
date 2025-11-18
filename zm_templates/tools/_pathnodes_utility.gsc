@@ -1,7 +1,9 @@
 init()
 {
     level waittill( "connected", player );
-    
+
+    SetDvar( "node_utility", 1 );
+
     level.nodes = [];
     nodes = getallnodes();
     
@@ -22,6 +24,11 @@ init()
         foreach ( node in level.nodes )
         {
             print3d( node, "*" );
+        }
+
+        if ( getdvarint( "node_utility" ) == 0 )
+        {
+            continue;
         }
         
         if ( !player usebuttonpressed() && !player meleebuttonpressed() )
