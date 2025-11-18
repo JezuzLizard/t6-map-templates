@@ -24,6 +24,7 @@ main()
     maps\mp\maptypes\_zm_usermap::add_zombie_weapons(); // zm/add_zombie_weapons.csv
 
     // map specific setup here
+    maps\mp\zombies\_zm_ai_dogs::init();
     level.enable_magic = getgametypesetting( "magic" );
     maps\mp\_sticky_grenade::init();
     level._melee_weapons = []; // since we dont have bowie or tazers, init as empty
@@ -98,10 +99,14 @@ karma_post_zm_init()
 	// this is originally at -1000, this map's playable areas are lower than that
 	set_zombie_var( "below_world_check", -4000 );
 
+	// dog rounds
+	maps\mp\zombies\_zm_ai_dogs::enable_dog_rounds();
+
 	// for testing
 	if ( GetDvarInt( "zombie_unlock_all" ) > 0 )
 	{
 		level.round_number = 100;
+		level.next_dog_round = 101;
 		level.first_round = 0;
 		level.zombie_vars["zombie_spawn_delay"] = 0.08;
 		level.zombie_move_speed = 130;

@@ -131,3 +131,5 @@ rawfile,rumble/assault_fire_l.rmb
 rawfile,rumble/damage_heavy
 rawfile,rumble/damage_heavy_h.rmb
 rawfile,rumble/damage_heavy_l.rmb
+
+include,packages/aitypes/hellhounds

@@ -23474,6 +23474,15 @@
 "count" "9999"
 "guid" "5E227319"
 }
+{
+"classname" "actor_zombie_dog"
+"model" "zombie_wolf"
+"export" "1"
+"spawnflags" "17"
+"origin" "0 0 0"
+"script_noteworthy" "zombie_dog_spawner"
+"guid" "10894F27"
+}
 
 {
 "note" "************************ CONSTRUCTION ROOM ZONE"
@@ -23555,6 +23564,33 @@
 "angles" "0 -180 0"
 "guid" "7A95F13B"
 }
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "4384.96 -6784.8 -3575.88"
+"targetname" "construction_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "E4198BC2"
+}
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "4825.16 -6122.55 -3575.88"
+"targetname" "construction_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 -101.5 0"
+"guid" "E4198BC2"
+}
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "4993.56 -6491.98 -3575.88"
+"targetname" "construction_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "E4198BC2"
+}
 
 {
 "note" "************************ SECURITY ROOM ZONE"
@@ -23599,16 +23635,6 @@
 {
 "note" "************************ SECURITY ROOM SPAWNER"
 "targetname" "security_volume_spawners"
-"origin" "5999.82 -6575.92 -3575.88"
-"script_noteworthy" "riser_location"
-"classname" "script_struct"
-"script_string" "find_flesh"
-"angles" "-90 0 0"
-"guid" "7A95F13B"
-}
-{
-"note" "************************ SECURITY ROOM SPAWNER"
-"targetname" "security_volume_spawners"
 "origin" "6527.57 -6602.79 -3575.88"
 "script_noteworthy" "riser_location"
 "classname" "script_struct"
@@ -23647,6 +23673,34 @@
 "target" "crc_door"
 "guid" "7DB5BF88"
 }
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "6646.67 -7247.74 -3575.88"
+"targetname" "security_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 180 0"
+"guid" "E4198BC2"
+}
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "5867.52 -7180.09 -3575.88"
+"targetname" "security_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 59 0"
+"guid" "E4198BC2"
+}
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "6332.25 -6569.34 -3575.88"
+"targetname" "security_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 180 0"
+"guid" "E4198BC2"
+}
+
 {
 "note" "************************ SECURITY DOOR CLIP"
 "model" "*29"
@@ -23700,6 +23754,24 @@
 "targetname" "outer_housing_volume"
 "target" "outer_housing_volume_spawners"
 "guid" "D2CA4E5B"
+}
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "3636.83 -6613.38 -3575.88"
+"targetname" "outer_housing_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "E4198BC2"
+}
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "3393.64 -6187 -3575.88"
+"targetname" "outer_housing_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "E4198BC2"
 }
 {
 "note" "************************ HOUSING DOOR TRIGGER"
@@ -23798,6 +23870,33 @@
 "guid" "D2CA4E5B"
 }
 {
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "3393.64 -6187 -3575.88"
+"targetname" "housing_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 90 0"
+"guid" "E4198BC2"
+}
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "3804.23 -5408.14 -3575.88"
+"targetname" "housing_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 -180 0"
+"guid" "E4198BC2"
+}
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "3339.85 -5423 -3575.88"
+"targetname" "housing_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 0 0"
+"guid" "E4198BC2"
+}
+{
 "note" "************************ HOUSING SPAWNER"
 "targetname" "housing_volume_spawners"
 "origin" "3178.31 -5933.89 -3575.88"
@@ -23849,6 +23948,24 @@
 "targetname" "lobby_volume"
 "target" "lobby_volume_spawners"
 "guid" "D2CA4E5B"
+}
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "3719.63 -5082.1 -3655.88"
+"targetname" "lobby_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 150 0"
+"guid" "E4198BC2"
+}
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "3365.37 -5058.76 -3655.88"
+"targetname" "lobby_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 50 0"
+"guid" "E4198BC2"
 }
 {
 "note" "************************ LOBBY SPAWNER"
@@ -23924,7 +24041,6 @@
 "origin" "3828.5 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -23933,7 +24049,6 @@
 "origin" "3828.5 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -23942,7 +24057,6 @@
 "origin" "3847.5 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -23951,7 +24065,6 @@
 "origin" "3847.5 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -23960,7 +24073,6 @@
 "origin" "3837.5 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -23969,7 +24081,6 @@
 "origin" "3837.5 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 
@@ -24017,7 +24128,6 @@
 "origin" "3248.64 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -24026,7 +24136,6 @@
 "origin" "3248.64 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -24035,7 +24144,6 @@
 "origin" "3226.64 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -24044,7 +24152,6 @@
 "origin" "3226.64 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -24053,7 +24160,6 @@
 "origin" "3242.64 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -24062,7 +24168,6 @@
 "origin" "3242.64 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 
@@ -24110,7 +24215,6 @@
 "origin" "5560 -6863.53 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -24157,7 +24261,6 @@
 "origin" "3139.46 -6403.76 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -24166,7 +24269,6 @@
 "origin" "3144.46 -6403.76 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -24175,7 +24277,6 @@
 "origin" "3149.46 -6403.76 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -24184,7 +24285,6 @@
 "origin" "3154.46 -6403.76 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 {
@@ -24193,7 +24293,6 @@
 "origin" "3160.46 -6403.76 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"spawnflags" "1"
 "guid" "3ED0F743"
 }
 
@@ -24290,6 +24389,15 @@
 "targetname" "elevators_volume"
 "target" "elevators_volume_spawners"
 "guid" "D2CA4E5B"
+}
+{
+"classname" "script_struct"
+"script_noteworthy" "dog_location"
+"origin" "3542.91 -4265.31 -3655.88"
+"targetname" "elevators_volume_spawners"
+"script_string" "find_flesh"
+"angles" "0 -90 0"
+"guid" "E4198BC2"
 }
 
 {
