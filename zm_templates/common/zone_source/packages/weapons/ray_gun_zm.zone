@@ -54,3 +54,9 @@ rawfile,rumble/defaultweapon_fire
 rawfile,rumble/defaultweapon_fire_h.rmb
 rawfile,rumble/defaultweapon_fire_l.rmb
 weapon,ray_gun_zm
+fx,weapon/muzzleflashes/fx_raygun_ug_view
+fx,weapon/muzzleflashes/fx_raygun_ug_world
+fx,misc/fx_exp_raygun_ug_impact
+fx,misc/fx_trail_raygun_ug_ring_emit
+fx,misc/fx_trail_raygun_ug_geotrail
+weapon,ray_gun_upgraded_zm
