@@ -28,17 +28,17 @@ REQUIRED_FILES = [
     f"{ZONE_PATH}\\code_post_gfx.ff",
     f"{ZONE_PATH}\\common.ff",
     f"{ZONE_PATH}\\common_zm.ff",
-    f"{ZONE_PATH}\\zm_nuked.ff",
-    f"{ZONE_PATH}\\zm_tomb.ff",
-    f"{ZONE_PATH}\\zm_tomb_patch.ff",
+    
+    # contains many various thundergun assets
     f"{ZONE_PATH}\\zm_buried.ff",
     f"{ZONE_PATH}\\zm_buried_patch.ff",
+    f"{ZONE_PATH}\\so_zencounter_zm_buried.ff",
+    f"{ZONE_PATH}\\zm_tomb.ff",
+    
+    # override whatever assets got loaded from the other maps
     f"{ZONE_PATH}\\zm_transit.ff",
     f"{ZONE_PATH}\\zm_transit_patch.ff",
-    f"{ZONE_PATH}\\zm_prison.ff",
-    f"{ZONE_PATH}\\zm_highrise.ff",
-    f"{ZONE_PATH}\\so_zsurvival_zm_transit.ff",
-    f"{ZONE_PATH}\\so_zencounter_zm_prison.ff",
+    f"{ZONE_PATH}\\so_zsurvival_zm_transit.ff"
 ]
 
 def download_oat():
