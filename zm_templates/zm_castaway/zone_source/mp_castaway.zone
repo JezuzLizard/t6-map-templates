@@ -1,0 +1,39 @@
+// Call Of Duty: Black Ops II
+>game,T6
+
+>level.@00012d3c,0
+>level.ipak_read,mp_castaway
+>level.ipak_read,base
+>level.ipak_read,lowmip
+>level.ipak_read,code_post_gfx
+>level.ipak_read,common_mp
+>level.ipak_write,mp_castaway
+>level.@00031d1f,0.75
+
+// original reduced map's assets
+include,optimized_castaway_assets
+
+// add new stuff here
+
+// custom map scripts
+script,clientscripts/mp/mp_castaway.csc
+script,clientscripts/mp/mp_castaway_amb.csc
+script,clientscripts/mp/mp_castaway_fx.csc
+script,clientscripts/mp/createfx/mp_castaway_fx.csc
+
+script,maps/mp/mp_castaway.gsc
+script,maps/mp/mp_castaway_fx.gsc
+script,maps/mp/mp_castaway_amb.gsc
+script,maps/mp/mp_castaway_music_egg.gsc
+script,maps/mp/createfx/mp_castaway_fx.gsc
+script,maps/mp/createart/mp_castaway_art.gsc
+
+// vision
+rawfile,vision/mp_castaway.vision
+
+// precache tables
+stringtable,zm/zm_weapons.csv
+stringtable,zm/include_fx.csv
+stringtable,zm/include_powerups.csv
+
+rawfile,mp_castaway

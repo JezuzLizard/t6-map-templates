@@ -1,0 +1,85 @@
+>game,T6
+>name,mod
+
+>level.ipak_read,mp
+>level.ipak_read,so
+>level.ipak_read,patch
+
+>level.ipak_read,zm
+>level.ipak_read,patch_zm
+
+// sounds
+//soundbank,mp_castaway.all
+
+// mystery box
+include,packages/mystery_box
+
+// templated assets for a custom zombies map
+include,template_common_zm
+include,castaway_zombies
+
+// weapons
+include,packages/weapons/m1911_zm
+include,packages/weapons/m1911_upgraded_zm
+include,packages/weapons/raygun_mark2_zm
+include,packages/weapons/ray_gun_zm
+include,packages/weapons/m14_zm
+include,packages/weapons/rottweil72_zm
+include,packages/weapons/ak74u_zm
+include,packages/weapons/python_zm
+include,packages/weapons/judge_zm
+include,packages/weapons/kard_zm
+include,packages/weapons/fiveseven_zm
+include,packages/weapons/fivesevendw_zm
+include,packages/weapons/qcw05_zm
+include,packages/weapons/saiga12_zm
+include,packages/weapons/srm1216_zm
+include,packages/weapons/xm8_zm
+include,packages/weapons/type95_zm
+include,packages/weapons/tar21_zm
+include,packages/weapons/galil_zm
+include,packages/weapons/dsr50_zm
+include,packages/weapons/rpd_zm
+include,packages/weapons/hamr_zm
+include,packages/weapons/usrpg_zm
+include,packages/weapons/barretm82_zm
+include,packages/weapons/knife_ballistic_zm
+include,packages/weapons/cymbal_monkey_zm
+
+// perks
+include,packages/perks/revive
+include,packages/perks/jugg
+include,packages/perks/speed
+include,packages/perks/doubletap
+include,packages/perks/staminup
+include,packages/perks/pack_a_punch
+
+include,packages/player_characters/tranzit_survival_characters
+
+// teleporting fx
+include,packages/fx/origins_player_teleport
+
+// configs to play map easily
+rawfile,zm_castaway_zstandard.cfg
+rawfile,sv_zm_castaway_zstandard.cfg
+rawfile,zm_castaway.cfg
+
+// missing assets used only in SP or MP, but not ZM!
+image,$lineargray
+image,$blacktransparent
+
+techniqueset,mc_lit_sm_r0c0d0n0s0_qwq4q449
+image,~~-gdecal_thickrope1_s-rgb&~-~c0aef9f0
+image,decal_thickrope1_n
+image,~-gdecal_thickrope1_c
+image,peleliu_misc_cloth_rope_n
+material,mc/rope
+
+techniqueset,hdr_bloom_apply_thermal_jew216zq
+material,bloom_apply_thermal
+techniqueset,mc_sw4_3d_predator_3w0e16w8
+material,mc/mtl_predator
+
+// dog rounds
+rawfile,shock/dog_bite.shock
+include,packages/aitypes/hellhounds
