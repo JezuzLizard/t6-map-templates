@@ -1,7 +1,6 @@
 #include clientscripts\mp\_utility;
 #include clientscripts\mp\zombies\_zm_weapons;
 #include clientscripts\mp\zombies\_zm_utility;
-#include clientscripts\mp\zombies\_zm_weap_thundergun;
 #include clientscripts\mp\zombies\_zm_weap_cymbal_monkey;
 
 // setup autoexecs
@@ -33,7 +32,6 @@ main()
 	// monkeys have to be initialized after _zm:init()
 	level.legacy_cymbal_monkey = 1;
 	clientscripts\mp\zombies\_zm_weap_cymbal_monkey::init();
-	clientscripts\mp\zombies\_zm_weap_thundergun::init();
 
 	thread clientscripts\mp\mp_castaway_amb::main();
 
