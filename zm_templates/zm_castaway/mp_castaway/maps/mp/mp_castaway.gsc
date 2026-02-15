@@ -15,7 +15,6 @@
 
 main()
 {
-	level.uses_gumps = 1;
 	maps\mp\maptypes\_zm_usermap::setup_zombie_defaults();
 
     // you can edit the tables or redirect these calls to your script
@@ -52,6 +51,7 @@ main()
 	level.culldist = 5000;
 	setup_characters();
 	castaway_setup_zones();
+	determine_team_characters();
 }
 
 castaway_setup_zones()
@@ -172,31 +172,83 @@ castaway_magicbox_init()
 
 setup_characters()
 {
-	level.should_use_cia = 1;
-
 	level.precachecustomcharacters = ::precache_team_characters;
 	level.givecustomcharacters = ::give_team_characters;
 }
 
 precache_team_characters()
 {
-	precachemodel( "c_zom_player_cia_fb" );
-	precachemodel( "c_zom_suit_viewhands" );
+    precachemodel( "c_zom_player_cdc_fb" );
+    precachemodel( "c_zom_hazmat_viewhands" );
+    precachemodel( "c_zom_player_cia_fb" );
+    precachemodel( "c_zom_suit_viewhands" );
+}
+
+determine_team_characters()
+{
+    level.should_use_cia = 0;
+
+    if ( randomint( 100 ) >= 50 )
+	{
+        level.should_use_cia = 1;
+	}
 }
 
 give_team_characters()
 {
 	if ( isdefined( level.hotjoin_player_setup ) && [[ level.hotjoin_player_setup ]]( "c_zom_suit_viewhands" ) )
+	{
 		return;
+	}
 
 	self detachall();
-	self set_player_is_female( 0 );
-	
-	self setmodel( "c_zom_player_cia_fb" );
-	self setviewmodel( "c_zom_suit_viewhands" );
-	self.characterindex = 0;
-	self.voice = "american";
-	self.skeleton = "base";
+    self set_player_is_female( 0 );
+
+    if ( isdefined( level.should_use_cia ) )
+    {
+        if ( level.should_use_cia )
+        {
+            self setmodel( "c_zom_player_cia_fb" );
+            self setviewmodel( "c_zom_suit_viewhands" );
+            self.characterindex = 0;
+        }
+        else
+        {
+            self setmodel( "c_zom_player_cdc_fb" );
+            self setviewmodel( "c_zom_hazmat_viewhands" );
+            self.characterindex = 1;
+        }
+    }
+    else
+    {
+        if ( !isdefined( self.characterindex ) )
+        {
+            self.characterindex = 1;
+
+            if ( self.team == "axis" )
+                self.characterindex = 0;
+        }
+
+        switch ( self.characterindex )
+        {
+            case 0:
+            case 2:
+                self setmodel( "c_zom_player_cia_fb" );
+                self.voice = "american";
+                self.skeleton = "base";
+                self setviewmodel( "c_zom_suit_viewhands" );
+                self.characterindex = 0;
+                break;
+            case 1:
+            case 3:
+                self setmodel( "c_zom_player_cdc_fb" );
+                self.voice = "american";
+                self.skeleton = "base";
+                self setviewmodel( "c_zom_hazmat_viewhands" );
+                self.characterindex = 1;
+                break;
+        }
+    }
 
 	self setmovespeedscale( 1 );
 	self setsprintduration( 4 );
