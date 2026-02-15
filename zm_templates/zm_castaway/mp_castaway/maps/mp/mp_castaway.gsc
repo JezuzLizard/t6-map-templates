@@ -77,15 +77,13 @@ castaway_post_zm_init()
 	level.use_alternate_poi_positioning = true;
 
 	// monkey bombs
-    //level.legacy_cymbal_monkey = 1;
-    //maps\mp\zombies\_zm_weap_cymbal_monkey::init();
+    level.legacy_cymbal_monkey = 1;
+    maps\mp\zombies\_zm_weap_cymbal_monkey::init();
 
 	// init mystery box, teleporters, and the music easter egg
     castaway_magicbox_init();
 	maps\mp\mp_castaway_amb::main();
 	maps\mp\mp_castaway_music_egg::init();
-
-	// init thundergun
 	
 	// turn them on by default
 	turn_on_perks();
