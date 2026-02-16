@@ -76,6 +76,7 @@ include,packages/fx/origins_player_teleport
 // configs to play map easily
 rawfile,zm_karma_zstandard.cfg
 rawfile,sv_zm_karma_zstandard.cfg
+rawfile,zm_karma_dev.cfg
 rawfile,zm_karma.cfg
 
 // missing assets used only in SP or MP, but not ZM!
