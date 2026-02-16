@@ -9621,8 +9621,64 @@
 }
 
 {
+"note" "************************ QUICK REVIVE MACHINE"
+"origin" "-913.5 1718.7 166.456"
+"model" "zombie_vending_revive"
+"classname" "script_struct"
+"angles" "0 1950.69 6"
+"script_noteworthy" "specialty_quickrevive"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_mp_castaway zclassic_perks_mp_castaway zsurvival_perks_mp_castaway"
+"guid" "5FD9D5E9"
+}
+{
+"note" "************************ JUGG MACHINE"
+"origin" "198.036 -910.534 70.4654"
+"model" "zombie_vending_jugg"
+"classname" "script_struct"
+"angles" "0 -53.305 2"
+"script_noteworthy" "specialty_armorvest"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_mp_castaway zclassic_perks_mp_castaway zsurvival_perks_mp_castaway"
+"guid" "5FD9D5E3"
+}
+{
+"note" "************************ STAMINUP MACHINE"
+"origin" "1088.82 1514.17 113.877"
+"model" "zombie_vending_marathon"
+"classname" "script_struct"
+"angles" "-8 169 -2"
+"script_noteworthy" "specialty_longersprint"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_mp_castaway zclassic_perks_mp_castaway zsurvival_perks_mp_castaway"
+"guid" "5FD9D5E5"
+}
+{
+"note" "************************ SPEED COLA MACHINE"
+"origin" "-419.577 1049.56 249.125"
+"model" "zombie_vending_sleight"
+"classname" "script_struct"
+"angles" "0 119.701 0"
+"script_noteworthy" "specialty_fastreload"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_mp_castaway zclassic_perks_mp_castaway zsurvival_perks_mp_castaway"
+"guid" "5FD9D5E1"
+}
+{
+"note" "************************ DOUBLE TAP MACHINE"
+"origin" "-940.719 624.555 197.905"
+"model" "zombie_vending_doubletap2"
+"classname" "script_struct"
+"angles" "0 290 0"
+"script_noteworthy" "specialty_rof"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_mp_castaway zclassic_perks_mp_castaway zsurvival_perks_mp_castaway"
+"guid" "5FD9D5E1"
+}
+
+{
 "note" "************************ START ROOM ZONE"
-"model" "*57"
+"model" "*37"
 "origin" "-637.099 2678.28 59.0693"
 "classname" "info_volume"
 "script_noteworthy" "player_volume"

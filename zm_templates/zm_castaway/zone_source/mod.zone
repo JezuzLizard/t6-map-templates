@@ -52,12 +52,8 @@ include,packages/perks/jugg
 include,packages/perks/speed
 include,packages/perks/doubletap
 include,packages/perks/staminup
-include,packages/perks/pack_a_punch
 
 include,packages/player_characters/tranzit_survival_characters
-
-// teleporting fx
-include,packages/fx/origins_player_teleport
 
 // configs to play map easily
 rawfile,zm_castaway_zstandard.cfg
