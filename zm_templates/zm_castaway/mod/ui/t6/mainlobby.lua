@@ -834,7 +834,7 @@ CoD.MainLobby.OpenIMGUIServerBrowser = function(MainLobbyWidget, ClientInstance)
 end
 
 CoD.MainLobby.PlayCove = function(MainLobbyWidget, ClientInstance)
-	Engine.Exec(ClientInstance.controller, "exec zm_castaway")
+	Engine.Exec(ClientInstance.controller, "exec zm_castaway_dev")
 end
 
 CoD.MainLobby.OpenModsList = function(MainLobbyWidget, ClientInstance)

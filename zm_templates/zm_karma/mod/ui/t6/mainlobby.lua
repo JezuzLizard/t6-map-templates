@@ -834,7 +834,7 @@ CoD.MainLobby.OpenIMGUIServerBrowser = function(MainLobbyWidget, ClientInstance)
 end
 
 CoD.MainLobby.PlayKarma = function(MainLobbyWidget, ClientInstance)
-	Engine.Exec(ClientInstance.controller, "exec zm_karma")
+	Engine.Exec(ClientInstance.controller, "exec zm_karma_dev")
 end
 
 CoD.MainLobby.OpenModsList = function(MainLobbyWidget, ClientInstance)
