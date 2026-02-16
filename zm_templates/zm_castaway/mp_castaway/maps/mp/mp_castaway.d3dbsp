@@ -9576,9 +9576,54 @@
 }
 
 {
+"note" "************************ PLAYER SPAWN"
+"radius" "32"
+"script_noteworthy" "initial_spawn"
+"script_string" "zstandard_mp_castaway"
+"targetname" "initial_spawn_points"
+"origin" "-637.099 2678.28 59.0693"
+"classname" "script_struct"
+"angles" "0 -85.3691 0"
+"guid" "2B360514"
+}
+{
+"note" "************************ PLAYER SPAWN"
+"radius" "32"
+"script_noteworthy" "initial_spawn"
+"script_string" "zstandard_mp_castaway"
+"targetname" "initial_spawn_points"
+"origin" "-396.649 2419.9 75.1318"
+"classname" "script_struct"
+"angles" "0 -85.3691 0"
+"guid" "2B360514"
+}
+{
+"note" "************************ PLAYER SPAWN"
+"radius" "32"
+"script_noteworthy" "initial_spawn"
+"script_string" "zstandard_mp_castaway"
+"targetname" "initial_spawn_points"
+"origin" "-437.922 2715.11 53.4787"
+"classname" "script_struct"
+"angles" "0 -85.3691 0"
+"guid" "2B360514"
+}
+{
+"note" "************************ PLAYER SPAWN"
+"radius" "32"
+"script_noteworthy" "initial_spawn"
+"script_string" "zstandard_mp_castaway"
+"targetname" "initial_spawn_points"
+"origin" "-437.099 2678.28 59.0693"
+"classname" "script_struct"
+"angles" "0 -85.3691 0"
+"guid" "2B360514"
+}
+
+{
 "note" "************************ START ROOM ZONE"
-"model" "*195"
-"origin" "4572 -6352 -3499"
+"model" "*57"
+"origin" "-637.099 2678.28 59.0693"
 "classname" "info_volume"
 "script_noteworthy" "player_volume"
 "targetname" "start_volume"
