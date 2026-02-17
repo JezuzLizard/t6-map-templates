@@ -1,0 +1,40 @@
+// 2d Icon
+image,specialty_divetonuke_zombies
+material,specialty_divetonuke_zombies
+
+material,gfx_fxt_debris_clump_rocks
+material,,gfx_flamethrower_smoke
+image,,fxt_smk_flamethrower
+material,gfx_flamethrower_smoke_add_z100
+material,,mc/gfx_crater_dirt
+material,,wc/gfx_crater_dirt
+material,,gfx_fxt_env_dust_mote_pcloud_blend
+image,,fxt_smk_def_2
+material,gfx_fxt_smk_def_2_z200
+material,,gfx_fxt_smk_puff_z120
+material,,gfx_fxt_distortion_ring_thin
+fx,maps/zombie/fx_zmb_phdflopper_exp
+rawfile,vision/zombie_cosmodrome_divetonuke.vision
+
+// Scripts
+script,maps/mp/zombies/_zm_perk_divetonuke.gsc
+script,clientscripts/mp/zombies/_zm_perk_divetonuke.csc
+
+// Perk Bottle
+image,~-gmtl_t6_zmb_perk_bottle_nuke_col
+material,mc/mtl_t6_wpn_zmb_perk_bottle_nuke
+material,mc/mtl_t6_wpn_zmb_perk_bottle_nuke_alpha
+xmodel,t6_wpn_zmb_perk_bottle_nuke_view
+xmodel,t6_wpn_zmb_perk_bottle_nuke_world
+weapon,zombie_perk_bottle_nuke
+
+// Powered On Machine
+image,p6_zm_al_vending_fx_sparkles
+image,p6_zm_al_vending_nuke_m
+image,p6_zm_al_vending_fx_fritz
+image,~~-gp6_zm_al_vending_nuke_s-r~29e938e3
+image,p6_zm_al_vending_nuke_n
+image,~-gp6_zm_al_vending_nuke_c
+material,mc/mtl_p6_zm_al_vending_nuke_on
+xmodel,p6_zm_al_vending_nuke_on
+xmodel,p6_zm_al_vending_nuke
