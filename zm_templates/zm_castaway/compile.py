@@ -32,9 +32,11 @@ REQUIRED_FILES = [
     # override whatever assets got loaded from the other maps
     f"{ZONE_PATH}\\zm_nuked.ff",
     f"{ZONE_PATH}\\zm_tomb.ff",
+    f"{ZONE_PATH}\\so_zsurvival_zm_transit.ff",
     f"{ZONE_PATH}\\zm_transit.ff",
     f"{ZONE_PATH}\\zm_transit_patch.ff",
-    f"{ZONE_PATH}\\so_zsurvival_zm_transit.ff"
+    f"{ZONE_PATH}\\so_zencounter_zm_prison.ff", # phd
+    f"{ZONE_PATH}\\zm_prison.ff", # phd
 ]
 
 def download_oat():
@@ -208,6 +210,12 @@ def main():
             "inner_dir": "images"
         },
         "specialty_doubletap_zombies.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
+
+        # mob's phd machine looked wrong, so we use the original that i dug up from the files
+        "~-gp6_zm_al_vending_nuke_c.iwi": {
             "source_dir": "mod\\images",
             "inner_dir": "images"
         },

@@ -23,9 +23,13 @@ main()
     level.zombiemode_using_doubletap_perk = 1;
     level.zombiemode_using_sleightofhand_perk = 1;
     level.zombiemode_using_tombstone_perk = 0;
+	level.zombiemode_using_divetonuke_perk = 1;
+
+	clientscripts\mp\zombies\_zm_perk_divetonuke::enable_divetonuke_perk_for_level();
+	replacefunc( clientscripts\mp\zombies\_zm_perk_divetonuke::init_divetonuke, ::noop );
 
 	// blue
-	level._override_eye_fx = level._effect["blue_eyes"];
+	level._override_eye_fx = level._effect["eye_glow"];
 	
 	clientscripts\mp\maptypes\_zm_usermap::start_zombie_mode();
 
@@ -37,4 +41,8 @@ main()
 
 	waitforclient( 0 );
 	println( "*** Client : '" + level.script + "' map running..." );
+}
+
+noop()
+{
 }

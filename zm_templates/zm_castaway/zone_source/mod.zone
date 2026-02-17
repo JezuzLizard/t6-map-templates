@@ -52,6 +52,7 @@ include,packages/perks/jugg
 include,packages/perks/speed
 include,packages/perks/doubletap
 include,packages/perks/staminup
+include,packages/perks/phd_flopper
 
 include,packages/player_characters/tranzit_survival_characters
 

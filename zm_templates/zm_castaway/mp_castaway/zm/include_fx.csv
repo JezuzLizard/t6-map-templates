@@ -5,6 +5,6 @@ index,fx_name,asset_name,override
 3,bloodspurt,misc/fx_zombie_bloodspurt,TRUE
 4,animscript_gib_fx,weapon/bullet/fx_flesh_gib_fatal_01,
 5,animscript_gibtrail_fx,trail/fx_trail_blood_streak,
-6,blue_eyes,maps/zombie/fx_zombie_eye_single_blue,
-7,lght_marker,maps/zombie/fx_zmb_tranzit_marker,
-8,lght_marker_flare,maps/zombie/fx_zmb_tranzit_marker_fl,
+6,lght_marker,maps/zombie/fx_zmb_tranzit_marker,
+7,lght_marker_flare,maps/zombie/fx_zmb_tranzit_marker_fl,
+8,divetonuke_groundhit,maps/zombie/fx_zmb_phdflopper_exp,

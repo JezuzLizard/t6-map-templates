@@ -9675,6 +9675,17 @@
 "script_string" "zstandard_perks_mp_castaway zclassic_perks_mp_castaway zsurvival_perks_mp_castaway"
 "guid" "5FD9D5E1"
 }
+{
+"note" "************************ PHD FLOPPER MACHINE"
+"origin" "1235.07 -442.568 106.958"
+"model" "zombie_vending_flakjacket"
+"classname" "script_struct"
+"angles" "0 100 0"
+"script_noteworthy" "specialty_flakjacket"
+"targetname" "zm_perk_machine"
+"script_string" "zstandard_perks_mp_castaway zclassic_perks_mp_castaway zsurvival_perks_mp_castaway"
+"guid" "5FD9D5E1"
+}
 
 {
 "note" "************************ START ROOM ZONE"
