@@ -333,14 +333,11 @@ custom_vending_precaching()
 
     if ( isdefined( level.zombiemode_using_divetonuke_perk ) && level.zombiemode_using_divetonuke_perk )
     {
-        precacheitem( "zombie_perk_bottle_nuke" );
-        precacheshader( "specialty_divetonuke_zombies" );
-        precachemodel( "p6_zm_al_vending_nuke_on" );
-        precachestring( &"ZOMBIE_PERK_DIVETONUKE" );
-        level._effect["divetonuke_light"] = loadfx( "maps/zombie_alcatraz/fx_alcatraz_perk_smk" );
+        level._custom_perks[ "specialty_flakjacket" ].precache_func = ::castaway_divetonuke_precache;
+        level._effect["divetonuke_light"] = loadfx( "misc/fx_zombie_cola_dtap_on" );
         level.machine_assets["divetonuke"] = spawnstruct();
         level.machine_assets["divetonuke"].weapon = "zombie_perk_bottle_nuke";
-        level.machine_assets["divetonuke"].off_model = "p6_zm_al_vending_nuke_on";
+        level.machine_assets["divetonuke"].off_model = "p6_zm_al_vending_nuke";
         level.machine_assets["divetonuke"].on_model = "p6_zm_al_vending_nuke_on";
     }
 
@@ -455,4 +452,13 @@ custom_vending_precaching()
                 level [[ level._custom_perks[a_keys[i]].precache_func ]]();
         }
     }
+}
+
+castaway_divetonuke_precache()
+{
+    precacheitem( "zombie_perk_bottle_nuke" );
+    precacheshader( "specialty_divetonuke_zombies" );
+    precachemodel( "p6_zm_al_vending_nuke" );
+    precachemodel( "p6_zm_al_vending_nuke_on" );
+    precachestring( &"ZOMBIE_PERK_DIVETONUKE" );
 }
