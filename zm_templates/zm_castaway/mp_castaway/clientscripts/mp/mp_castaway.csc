@@ -26,7 +26,7 @@ main()
 	level.zombiemode_using_divetonuke_perk = 1;
 
 	clientscripts\mp\zombies\_zm_perk_divetonuke::enable_divetonuke_perk_for_level();
-	replacefunc( clientscripts\mp\zombies\_zm_perk_divetonuke::init_divetonuke, ::noop );
+	replacefunc( clientscripts\mp\zombies\_zm_perk_divetonuke::init_divetonuke, ::init_divetonuke );
 
 	// blue
 	level._override_eye_fx = level._effect["eye_glow"];
@@ -43,6 +43,7 @@ main()
 	println( "*** Client : '" + level.script + "' map running..." );
 }
 
-noop()
+init_divetonuke()
 {
+	level._effect["divetonuke_groundhit"] = loadfx( "maps/zombie/fx_zmb_phdflopper_exp" );
 }

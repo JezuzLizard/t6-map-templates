@@ -45,7 +45,9 @@ main()
     level.zombiemode_using_divetonuke_perk = 1;
 
     maps\mp\zombies\_zm_perk_divetonuke::enable_divetonuke_perk_for_level();
-    replacefunc( maps\mp\zombies\_zm_perk_divetonuke::init_divetonuke, ::noop );
+
+    // the vision looks really ugly on phd, so remove it
+    replacefunc( maps\mp\zombies\_zm_perk_divetonuke::init_divetonuke, ::init_divetonuke );
 
     level.custom_vending_precaching = ::custom_vending_precaching;
 
@@ -261,8 +263,28 @@ give_team_characters()
 	self setsprintcooldown( 0 );
 }
 
-noop()
+init_divetonuke()
 {
+    level.zombiemode_divetonuke_perk_func = ::divetonuke_explode;
+    level._effect["divetonuke_groundhit"] = loadfx( "maps/zombie/fx_zmb_phdflopper_exp" );
+    set_zombie_var( "zombie_perk_divetonuke_radius", 300 );
+    set_zombie_var( "zombie_perk_divetonuke_min_damage", 1000 );
+    set_zombie_var( "zombie_perk_divetonuke_max_damage", 5000 );
+}
+
+divetonuke_explode( attacker, origin )
+{
+    radius = level.zombie_vars["zombie_perk_divetonuke_radius"];
+    min_damage = level.zombie_vars["zombie_perk_divetonuke_min_damage"];
+    max_damage = level.zombie_vars["zombie_perk_divetonuke_max_damage"];
+
+    if ( isdefined( level.flopper_network_optimized ) && level.flopper_network_optimized )
+        attacker thread divetonuke_explode_network_optimized( origin, radius, max_damage, min_damage, "MOD_GRENADE_SPLASH" );
+    else
+        radiusdamage( origin, radius, max_damage, min_damage, attacker, "MOD_GRENADE_SPLASH" );
+
+    playfx( level._effect["divetonuke_groundhit"], origin );
+    attacker playsound( "zmb_phdflop_explo" );
 }
 
 custom_vending_precaching()
