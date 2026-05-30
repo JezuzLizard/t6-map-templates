@@ -141,7 +141,20 @@ turn_on_perks()
 
 castaway_connected()
 {
-    self SetClientDvars( "r_lightTweakSunLight", "10", "r_lodbiasskinned", "-1000", "r_lodbiasrigid", "-1000" );
+    self SetClientDvars(
+        "r_lightTweakSunLight", "18",
+        "r_lightTweakSunColor", "0.15 0.464 0.62",
+        "r_exposureTweak", "1",
+        "r_exposureValue", "4.0",
+        "r_skyTransition", "0.85",
+        "r_sky_intensity_factor0", "0.1",
+        "r_sky_intensity_factor1", "0.1",
+        "r_sky_intensity_angle0", "-86",
+        "r_sky_intensity_angle1", "-86",
+        "r_fogTweak", "1",
+        "r_fogColor", "0.3 1.42 2.51",
+        "r_skyColorTemp", "25000"
+    );
 
 	// for testing
 	if ( GetDvarInt( "zombie_unlock_all" ) > 0 )
