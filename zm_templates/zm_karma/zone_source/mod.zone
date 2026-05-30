@@ -65,6 +65,7 @@ include,packages/perks/doubletap
 include,packages/perks/staminup
 include,packages/perks/pack_a_punch
 
+// characters
 include,packages/player_characters/tranzit_survival_characters
 
 // thundergun changes
