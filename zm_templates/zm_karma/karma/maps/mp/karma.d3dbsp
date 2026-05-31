@@ -18241,23 +18241,21 @@
 "require_look_from" "1"
 "origin" "5042.2 -6756.12 -3517"
 "angles" "0 -90 0"
-"model" "t6_wpn_shotty_olympia_world"
+"model" "t6_wpn_sniper_ballista_world"
 "classname" "script_struct"
-"targetname" "pf1897_auto38"
-"target" "pf1897_auto38"
-"guid" "7004ED06"
+"targetname" "pf2211_auto37"
+"guid" "A92D07CF"
 }
 {
 "note" "************************ OLYMPIA WALLBUY"
-"require_look_from" "1"
 "script_width" "40"
 "origin" "5042.2 -6756.12 -3517"
 "angles" "0 -90 0"
 "classname" "script_struct"
-"zombie_weapon_upgrade" "rottweil72_zm"
+"zombie_weapon_upgrade" "ballista_zm"
 "targetname" "weapon_upgrade"
-"target" "pf1897_auto38"
-"guid" "C15AD568"
+"target" "pf2211_auto37"
+"guid" "1A88F438"
 }
 
 {

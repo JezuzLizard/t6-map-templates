@@ -2,7 +2,7 @@ index,weapon_name,upgrade_name,hint,cost,weapon_voice_over,weapon_voice_over_res
 0,m1911_zm,m1911_upgraded_zm,ZOMBIE_WEAPON_M1911,50,,,,,false,,
 1,m1911_upgraded_zm,,ZOMBIE_WEAPON_M1911,50,,,,,false,,
 2,m14_zm,,ZOMBIE_WEAPON_M14,500,rifle,,250,,false,,
-3,rottweil72_zm,,ZOMBIE_WEAPON_ROTTWEIL72,500,shotgun,,250,,false,,
+3,ballista_zm,,ZMWEAPON_BALLISTA_WALLBUY,500,wpck_snipe,,250,,false,,
 4,ak74u_zm,,ZOMBIE_WEAPON_AK74U,1200,smg,,500,,false,,
 5,raygun_mark2_zm,raygun_mark2_upgraded_zm,ZOMBIE_WEAPON_RAYGUN_MARK2,10000,raygun_mark2,,,,true,1,
 6,frag_grenade_zm,,ZOMBIE_WEAPON_FRAG_GRENADE,250,grenade,,,,false,,
