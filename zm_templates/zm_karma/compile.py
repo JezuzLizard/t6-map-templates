@@ -221,9 +221,16 @@ def main():
             "inner_dir": "images"
         },
         
+        # overridden vanilla scripts
         "_zm_perks.gsc": {
             "source_dir": "mod\\maps\\mp\\zombies",
             "inner_dir": "maps\\mp\\zombies"
+        },
+
+        # buffed ballista
+        "ballista_zm": {
+            "source_dir": "zm_karma\\mod\\weapons\\zm",
+            "inner_dir": "weapons\\zm"
         },
         
         # thundergun files
