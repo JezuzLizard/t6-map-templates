@@ -229,7 +229,7 @@ def main():
 
         # buffed ballista
         "ballista_zm": {
-            "source_dir": "zm_karma\\mod\\weapons\\zm",
+            "source_dir": "zm_karma\\mod\\weapons",
             "inner_dir": "weapons\\zm"
         },
         

@@ -52,7 +52,7 @@ include,packages/weapons/galil_zm
 include,packages/weapons/dsr50_zm
 include,packages/weapons/rpd_zm
 include,packages/weapons/hamr_zm
-include,packages/weapons/usrpg_zm
+include,packages/weapons/m32_zm
 include,packages/weapons/barretm82_zm
 include,packages/weapons/knife_ballistic_zm
 include,packages/weapons/cymbal_monkey_zm
@@ -70,9 +70,6 @@ include,packages/player_characters/tranzit_survival_characters
 
 // thundergun changes
 script,maps/mp/zombies/_zm_weap_thundergun.gsc
-
-// teleporting fx
-include,packages/fx/origins_player_teleport
 
 // configs to play map easily
 rawfile,zm_karma_zstandard.cfg
