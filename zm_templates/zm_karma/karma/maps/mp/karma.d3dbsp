@@ -18226,7 +18226,6 @@
 {
 "note" "************************ M14 WALLBUY"
 "require_look_from" "1"
-"script_width" "40"
 "origin" "4661.31 -6032.44 -3517"
 "angles" "0 -180 0"
 "classname" "script_struct"
@@ -18248,7 +18247,6 @@
 }
 {
 "note" "************************ OLYMPIA WALLBUY"
-"script_width" "40"
 "origin" "5042.2 -6756.12 -3517"
 "angles" "0 -90 0"
 "classname" "script_struct"
@@ -18272,13 +18270,35 @@
 {
 "note" "************************ AK74U WALLBUY"
 "require_look_from" "1"
-"script_width" "40"
 "origin" "3953.9 -6340.88 -3517"
 "angles" "0 90 0"
 "classname" "script_struct"
 "zombie_weapon_upgrade" "ak74u_zm"
 "targetname" "weapon_upgrade"
 "target" "pf1897_auto39"
+"guid" "C15AD568"
+}
+
+{
+"note" "************************ M16 WALLBUY"
+"require_look_from" "1"
+"origin" "3322 -4671 -3598"
+"angles" "0 -180 0"
+"model" "t6_wpn_ar_m16a2_world"
+"classname" "script_struct"
+"targetname" "pf1895_auto39"
+"target" "pf1895_auto39"
+"guid" "7004ED06"
+}
+{
+"note" "************************ M16 WALLBUY"
+"require_look_from" "1"
+"origin" "3322 -4671 -3598"
+"angles" "0 -180 0"
+"classname" "script_struct"
+"zombie_weapon_upgrade" "m16_zm"
+"targetname" "weapon_upgrade"
+"target" "pf1895_auto39"
 "guid" "C15AD568"
 }
 

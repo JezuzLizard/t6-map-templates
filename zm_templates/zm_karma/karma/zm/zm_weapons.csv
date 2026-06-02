@@ -29,3 +29,4 @@ index,weapon_name,upgrade_name,hint,cost,weapon_voice_over,weapon_voice_over_res
 27,cymbal_monkey_zm,,ZOMBIE_WEAPON_SATCHEL_2000,2000,wpck_monkey,,,,true,,
 28,ray_gun_upgraded_zm,,ZOMBIE_WEAPON_RAYGUN,10,wpck_ray,,,,false,,
 29,raygun_mark2_upgraded_zm,,ZOMBIE_WEAPON_RAYGUN_MARK2,10000,raygun_mark2,,,,false,,
+30,m16_zm,m16_gl_upgraded_zm,ZOMBIE_WEAPON_M16,1200,burstrifle,,600,,false,,
