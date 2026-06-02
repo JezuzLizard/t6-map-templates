@@ -1088,7 +1088,7 @@
 }
 {
 "model" "*186"
-"origin" "4498 -5978.75 -3584"
+"origin" "4498 -5978.75 -3529"
 "classname" "script_brushmodel"
 "targetname" "construction_elevator_blocker"
 "script_noteworthy" "cleanup_construction"
