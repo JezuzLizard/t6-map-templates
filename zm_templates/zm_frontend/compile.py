@@ -219,6 +219,10 @@ def main():
             "source_dir": "mod\\images",
             "inner_dir": "images"
         },
+        "specialty_marathon_zombies.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
     })
     
     # for convenience purposes, copy it to the mods folder automatically

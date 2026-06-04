@@ -220,6 +220,10 @@ def main():
             "source_dir": "mod\\images",
             "inner_dir": "images"
         },
+        "specialty_marathon_zombies.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
         
         # overridden vanilla scripts
         "_zm_perks.gsc": {

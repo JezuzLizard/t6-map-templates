@@ -213,14 +213,16 @@ def main():
             "source_dir": "mod\\images",
             "inner_dir": "images"
         },
-
-        # higher quality version of the extra perks' icons
-        "specialty_divetonuke_zombies.iwi": {
+        "specialty_marathon_zombies.iwi": {
             "source_dir": "mod\\images",
             "inner_dir": "images"
         },
 
-        # mob's phd machine looked wrong, so we use the original that i dug up from the files
+        # phd flopper
+        "specialty_divetonuke_zombies.iwi": {
+            "source_dir": "mod\\images",
+            "inner_dir": "images"
+        },
         "~-gp6_zm_al_vending_nuke_c.iwi": {
             "source_dir": "mod\\images",
             "inner_dir": "images"
