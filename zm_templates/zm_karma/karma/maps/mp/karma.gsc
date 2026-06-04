@@ -15,6 +15,12 @@
 
 main()
 {
+    health_func = getFunction( "maps/mp/zombies/_zm", "ai_calculate_health" );
+    if ( isdefined( health_func ) )
+    {
+        replaceFunc( health_func, ::karma_ai_calculate_health );
+    }
+
 	level.uses_gumps = 1;
 	maps\mp\maptypes\_zm_usermap::setup_zombie_defaults();
 
@@ -50,9 +56,33 @@ main()
     level.disable_fx_zmb_tranzit_shield_explo = true;
 
 	level.culldist = 5000;
+    level.insta_kill_rounds = array( 163, 165, 167, 169, 171, 173, 175, 177, 179, 181, 183, 185, 188, 189, 191, 194, 196, 197, 199, 202, 204, 205, 207, 210, 211, 214, 216, 217, 219, 222, 224, 225, 228, 229, 231, 234, 236, 237, 239, 242, 243, 246, 248, 249, 252, 253, 255 );
+
 	karma_setup_zones();
 	setup_characters();
-	determine_team_characters();
+}
+
+givecustomloadout( takeallweapons, alreadyspawned )
+{
+	self giveweapon( "knife_zm" );
+	self give_start_weapon( 1 );
+}
+
+zombie_init_done()
+{
+	self.allowpain = 0;
+	self setphysparams( 15, 0, 48 );
+}
+
+karma_connected()
+{
+	self setclientdvars( "r_lodbiasskinned", "-1000", "r_lodbiasrigid", "-1000" );
+
+	// for testing
+	if ( GetDvarInt( "zombie_unlock_all" ) > 0 )
+	{
+		self.score = 500000;
+	}
 }
 
 karma_setup_zones()
@@ -64,6 +94,40 @@ karma_setup_zones()
 	// init spawn zone
 	init_zones[0] = "construction_volume";
 	maps\mp\maptypes\_zm_usermap::start_zombie_mode( init_zones );
+}
+
+karma_zone_init()
+{
+	// security room
+	add_adjacent_zone( "construction_volume", "security_volume", "activate_security_zone" );
+
+	// outside the housing
+	add_adjacent_zone( "construction_volume", "outer_housing_volume", "activate_housing_zone" );
+
+	// the housing areas
+	add_adjacent_zone( "outer_housing_volume", "housing_volume", "activate_housing_zone" );
+
+	// the "system unavailable" desk area
+	add_adjacent_zone( "housing_volume", "lobby_volume", "activate_housing_zone" );
+
+	// the elevators hallway
+	add_adjacent_zone( "lobby_volume", "elevators_volume", "activate_housing_zone" );
+}
+
+karma_magicbox_init()
+{
+    housing_chest = GetStruct( "housing_chest", "script_noteworthy" );
+    security_chest = GetStruct( "security_chest", "script_noteworthy" );
+    lobby_chest_1 = GetStruct( "lobby_chest_1", "script_noteworthy" );
+    lobby_chest_2 = GetStruct( "lobby_chest_2", "script_noteworthy" );
+
+    level.chests = [];
+    level.chests[level.chests.size] = housing_chest;
+    level.chests[level.chests.size] = security_chest;
+    level.chests[level.chests.size] = lobby_chest_1;
+    level.chests[level.chests.size] = lobby_chest_2;
+
+    maps\mp\zombies\_zm_magicbox::treasure_chest_init( "security_chest" );
 }
 
 karma_post_zm_init()
@@ -106,30 +170,12 @@ karma_post_zm_init()
 	// for testing
 	if ( GetDvarInt( "zombie_unlock_all" ) > 0 )
 	{
-		level.round_number = 100;
-		level.next_dog_round = 101;
+		level.round_number = 164;
+		level.next_dog_round = 166;
 		level.first_round = 0;
 		level.zombie_vars["zombie_spawn_delay"] = 0.08;
 		level.zombie_move_speed = 130;
 	}
-}
-
-karma_zone_init()
-{
-	// security room
-	add_adjacent_zone( "construction_volume", "security_volume", "activate_security_zone" );
-
-	// outside the housing
-	add_adjacent_zone( "construction_volume", "outer_housing_volume", "activate_housing_zone" );
-
-	// the housing areas
-	add_adjacent_zone( "outer_housing_volume", "housing_volume", "activate_housing_zone" );
-
-	// the "system unavailable" desk area
-	add_adjacent_zone( "housing_volume", "lobby_volume", "activate_housing_zone" );
-
-	// the elevators hallway
-	add_adjacent_zone( "lobby_volume", "elevators_volume", "activate_housing_zone" );
 }
 
 turn_on_perks()
@@ -150,57 +196,53 @@ turn_on_perks()
     level notify( "Pack_A_Punch_on" );
 }
 
-karma_connected()
+is_insta_round( round_number )
 {
-	self setclientdvars( "r_lodbiasskinned", "-1000", "r_lodbiasrigid", "-1000" );
+    for ( i = 0; i < level.insta_kill_rounds.size; i++ )
+    {
+        if ( round_number == level.insta_kill_rounds[i] )
+        {
+            return true;
+        }
+    }
 
-	// for testing
-	if ( GetDvarInt( "zombie_unlock_all" ) > 0 )
-	{
-		self.score = 500000;
-	}
+    return false;
 }
 
-givecustomloadout( takeallweapons, alreadyspawned )
+karma_ai_calculate_health( round_number )
 {
-	self giveweapon( "knife_zm" );
-	self give_start_weapon( 1 );
-}
+    level.zombie_health = level.zombie_vars["zombie_health_start"];
 
-zombie_init_done()
-{
-	self.allowpain = 0;
-	self setphysparams( 15, 0, 48 );
-}
+    // change: t5 instas
+    if ( is_insta_round( round_number ) )
+    {
+        return;
+    }
 
-karma_magicbox_init()
-{
-    housing_chest = GetStruct( "housing_chest", "script_noteworthy" );
-    security_chest = GetStruct( "security_chest", "script_noteworthy" );
-    lobby_chest_1 = GetStruct( "lobby_chest_1", "script_noteworthy" );
-    lobby_chest_2 = GetStruct( "lobby_chest_2", "script_noteworthy" );
+    for ( i = 2; i <= round_number; i++ )
+    {
+        if ( i >= 10 )
+        {
+            old_health = level.zombie_health;
+            level.zombie_health = level.zombie_health + int( level.zombie_health * level.zombie_vars["zombie_health_increase_multiplier"] );
 
-    level.chests = [];
-    level.chests[level.chests.size] = housing_chest;
-    level.chests[level.chests.size] = security_chest;
-    level.chests[level.chests.size] = lobby_chest_1;
-    level.chests[level.chests.size] = lobby_chest_2;
-
-    maps\mp\zombies\_zm_magicbox::treasure_chest_init( "security_chest" );
+            if ( level.zombie_health < old_health )
+            {
+                level.zombie_health = old_health;
+                return;
+            }
+        }
+        else
+            level.zombie_health = int( level.zombie_health + level.zombie_vars["zombie_health_increase"] );
+    }
 }
 
 setup_characters()
 {
 	level.precachecustomcharacters = ::precache_team_characters;
 	level.givecustomcharacters = ::give_team_characters;
-}
 
-precache_team_characters()
-{
-    precachemodel( "c_zom_player_cdc_fb" );
-    precachemodel( "c_zom_hazmat_viewhands" );
-    precachemodel( "c_zom_player_cia_fb" );
-    precachemodel( "c_zom_suit_viewhands" );
+    determine_team_characters();
 }
 
 determine_team_characters()
@@ -211,6 +253,14 @@ determine_team_characters()
 	{
         level.should_use_cia = 1;
 	}
+}
+
+precache_team_characters()
+{
+    precachemodel( "c_zom_player_cdc_fb" );
+    precachemodel( "c_zom_hazmat_viewhands" );
+    precachemodel( "c_zom_player_cia_fb" );
+    precachemodel( "c_zom_suit_viewhands" );
 }
 
 give_team_characters()
