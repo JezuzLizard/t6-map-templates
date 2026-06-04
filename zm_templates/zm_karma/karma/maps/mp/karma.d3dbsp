@@ -18414,6 +18414,15 @@
 }
 
 {
+"note" "SPAWN ROOM OOB FIX"
+"model" "*195"
+"origin" "5527.36 -5978.15 -3500.88"
+"angles" "0 -90 0"
+"classname" "script_brushmodel"
+"guid" "3ED0F743"
+}
+
+{
 "note" "PATH NODES"
 }
 {
