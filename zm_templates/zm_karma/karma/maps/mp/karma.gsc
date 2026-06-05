@@ -76,7 +76,11 @@ zombie_init_done()
 
 karma_connected()
 {
-	self setclientdvars( "r_lodbiasskinned", "-1000", "r_lodbiasrigid", "-1000" );
+	self setclientdvars(
+        "r_lodbiasskinned", "-1000",
+        "r_lodbiasrigid", "-1000",
+        "ragdoll_enable", "0"
+    );
 
 	// for testing
 	if ( GetDvarInt( "zombie_unlock_all" ) > 0 )
