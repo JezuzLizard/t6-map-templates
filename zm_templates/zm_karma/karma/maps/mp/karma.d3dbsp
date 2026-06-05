@@ -2551,13 +2551,6 @@
 "guid" "FA0A0EDD"
 }
 {
-"model" "*69"
-"origin" "5608 -4613 -5036"
-"classname" "script_brushmodel"
-"script_noteworthy" "dancers"
-"guid" "A3FEEAC8"
-}
-{
 "angles" "0 172.6 0"
 "classname" "script_struct"
 "targetname" "candle_flame"
@@ -2607,34 +2600,6 @@
 "guid" "83DDDE85"
 }
 {
-"model" "*70"
-"origin" "5240 -4613 -5036"
-"classname" "script_brushmodel"
-"script_noteworthy" "dancers"
-"guid" "A3FEEAC8"
-}
-{
-"model" "*71"
-"origin" "4279 -6576 -5028"
-"classname" "script_brushmodel"
-"script_noteworthy" "dancers"
-"guid" "A3FEEAC8"
-}
-{
-"model" "*72"
-"origin" "4610 -6208 -5028"
-"classname" "script_brushmodel"
-"script_noteworthy" "dancers"
-"guid" "A3FEEAC8"
-}
-{
-"model" "*73"
-"origin" "4613 -6585 -5028"
-"classname" "script_brushmodel"
-"script_noteworthy" "dancers"
-"guid" "A3FEEAC8"
-}
-{
 "angles" "0 22.4 0"
 "classname" "script_struct"
 "targetname" "candle_flame"
@@ -2682,13 +2647,6 @@
 "targetname" "ashtray_smoke"
 "origin" "4381.97 -6554.34 -5081.7"
 "guid" "AE507CDF"
-}
-{
-"model" "*74"
-"origin" "4279 -6208 -5028"
-"classname" "script_brushmodel"
-"script_noteworthy" "dancers"
-"guid" "A3FEEAC8"
 }
 {
 "classname" "script_struct"
@@ -13422,78 +13380,6 @@
 "guid" "A0BBF6FB"
 }
 {
-"angles" "0 235 0"
-"classname" "script_model"
-"origin" "5656.45 -6536.96 -5136"
-"model" "c_mul_civ_club_group1"
-"targetname" "m_civ_club_group1"
-"guid" "63F31F5E"
-}
-{
-"angles" "0 275 0"
-"classname" "script_model"
-"origin" "5340.83 -6591.51 -5136"
-"model" "c_mul_civ_club_group1"
-"targetname" "m_civ_club_group1"
-"guid" "63F31F5E"
-}
-{
-"angles" "0 160 0"
-"classname" "script_model"
-"origin" "5182.88 -6678.18 -5136"
-"model" "c_mul_civ_club_group1"
-"targetname" "m_civ_club_group1"
-"guid" "63F31F5E"
-}
-{
-"angles" "0 225 0"
-"classname" "script_model"
-"origin" "5155.21 -6792.79 -5136"
-"model" "c_mul_civ_club_group1"
-"targetname" "m_civ_club_group1"
-"guid" "63F31F5E"
-}
-{
-"angles" "0 70 0"
-"classname" "script_model"
-"origin" "5267.02 -6826.68 -5136"
-"model" "c_mul_civ_club_group1"
-"targetname" "m_civ_club_group1"
-"guid" "63F31F5E"
-}
-{
-"angles" "0 105 0"
-"classname" "script_model"
-"origin" "5378.82 -6742.53 -5136"
-"model" "c_mul_civ_club_group1"
-"targetname" "m_civ_club_group1"
-"guid" "63F31F5E"
-}
-{
-"angles" "0 310 0"
-"classname" "script_model"
-"origin" "5526.31 -6964.57 -5136"
-"model" "c_mul_civ_club_group1"
-"targetname" "m_civ_club_group1"
-"guid" "63F31F5E"
-}
-{
-"angles" "0 30 0"
-"classname" "script_model"
-"origin" "5404.37 -6919.3 -5136"
-"model" "c_mul_civ_club_group1"
-"targetname" "m_civ_club_group1"
-"guid" "63F31F5E"
-}
-{
-"angles" "0 125 0"
-"classname" "script_model"
-"origin" "5265.45 -6957.44 -5136"
-"model" "c_mul_civ_club_group1"
-"targetname" "m_civ_club_group1"
-"guid" "63F31F5E"
-}
-{
 "_color" "1 0.501961 1"
 "dr_animation" "girl_dance1"
 "targetname" "static_club_dancers"
@@ -17408,7 +17294,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "construction_volume"
 "target" "construction_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "06F48A23"
 }
 {
 "note" "************************ CONSTRUCTION ROOM ZONE"
@@ -17418,7 +17304,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "construction_volume"
 "target" "construction_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "350BCD84"
 }
 {
 "note" "************************ CONSTRUCTION ROOM ZONE"
@@ -17428,7 +17314,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "construction_volume"
 "target" "construction_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "C01727C5"
 }
 {
 "note" "************************ CONSTRUCTION ROOM ZONE"
@@ -17438,7 +17324,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "construction_volume"
 "target" "construction_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "3D6294D3"
 }
 {
 "note" "************************ CONSTRUCTION ROOM SPAWNER"
@@ -17448,7 +17334,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 118 0"
-"guid" "7A95F13B"
+"guid" "974DFEDD"
 }
 {
 "note" "************************ CONSTRUCTION ROOM SPAWNER"
@@ -17458,7 +17344,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 90 0"
-"guid" "7A95F13B"
+"guid" "7A20BE25"
 }
 {
 "note" "************************ CONSTRUCTION ROOM SPAWNER"
@@ -17468,7 +17354,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 -125 0"
-"guid" "7A95F13B"
+"guid" "EF92F694"
 }
 {
 "note" "************************ CONSTRUCTION ROOM SPAWNER"
@@ -17478,7 +17364,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 -180 0"
-"guid" "7A95F13B"
+"guid" "CD7C8478"
 }
 {
 "classname" "script_struct"
@@ -17487,7 +17373,7 @@
 "targetname" "construction_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 90 0"
-"guid" "E4198BC2"
+"guid" "82359315"
 }
 {
 "classname" "script_struct"
@@ -17496,7 +17382,7 @@
 "targetname" "construction_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 -101.5 0"
-"guid" "E4198BC2"
+"guid" "A7B02C31"
 }
 {
 "classname" "script_struct"
@@ -17505,7 +17391,7 @@
 "targetname" "construction_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 90 0"
-"guid" "E4198BC2"
+"guid" "E905E555"
 }
 
 {
@@ -17516,7 +17402,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "security_volume"
 "target" "security_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "5EFD49C8"
 }
 {
 "note" "************************ SECURITY ROOM ZONE"
@@ -17526,7 +17412,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "security_volume"
 "target" "security_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "CE839CD7"
 }
 {
 "note" "************************ SECURITY ROOM ZONE"
@@ -17536,7 +17422,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "security_volume"
 "target" "security_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "E38E2726"
 }
 {
 "note" "************************ SECURITY ROOM ZONE"
@@ -17546,7 +17432,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "security_volume"
 "target" "security_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "0D9C1204"
 }
 {
 "note" "************************ SECURITY ROOM SPAWNER"
@@ -17556,7 +17442,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 0 0"
-"guid" "7A95F13B"
+"guid" "234CB539"
 }
 {
 "note" "************************ SECURITY ROOM SPAWNER"
@@ -17566,7 +17452,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 135 0"
-"guid" "7A95F13B"
+"guid" "3CDFF496"
 }
 {
 "note" "************************ SECURITY ROOM SPAWNER"
@@ -17576,7 +17462,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 90 0"
-"guid" "7A95F13B"
+"guid" "9EA467DB"
 }
 {
 "note" "************************ SECURITY DOOR TRIGGER"
@@ -17596,7 +17482,7 @@
 "targetname" "security_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 180 0"
-"guid" "E4198BC2"
+"guid" "0F112BB3"
 }
 {
 "classname" "script_struct"
@@ -17605,7 +17491,7 @@
 "targetname" "security_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 59 0"
-"guid" "E4198BC2"
+"guid" "AD2DB43E"
 }
 {
 "classname" "script_struct"
@@ -17614,7 +17500,7 @@
 "targetname" "security_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 180 0"
-"guid" "E4198BC2"
+"guid" "8A1DEE5E"
 }
 
 {
@@ -17625,7 +17511,7 @@
 "spawnflags" "1"
 "targetname" "crc_door"
 "script_noteworthy" "clip"
-"guid" "3ED0F743"
+"guid" "E723E165"
 }
 {
 "note" "************************ SECURITY DOOR"
@@ -17649,7 +17535,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "outer_housing_volume"
 "target" "outer_housing_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "E92C7DA2"
 }
 {
 "note" "************************ OUTER HOUSING ZONE"
@@ -17659,7 +17545,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "outer_housing_volume"
 "target" "outer_housing_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "0E586FA0"
 }
 {
 "note" "************************ OUTER HOUSING ZONE"
@@ -17669,7 +17555,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "outer_housing_volume"
 "target" "outer_housing_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "0790C234"
 }
 {
 "classname" "script_struct"
@@ -17678,7 +17564,7 @@
 "targetname" "outer_housing_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 90 0"
-"guid" "E4198BC2"
+"guid" "7C5D4667"
 }
 {
 "classname" "script_struct"
@@ -17687,7 +17573,7 @@
 "targetname" "outer_housing_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 90 0"
-"guid" "E4198BC2"
+"guid" "520ABAC6"
 }
 {
 "note" "************************ HOUSING DOOR TRIGGER"
@@ -17732,7 +17618,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 90 0"
-"guid" "7A95F13B"
+"guid" "13BF3088"
 }
 {
 "note" "************************ OUTER HOUSING SPAWNER"
@@ -17742,7 +17628,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 90 0"
-"guid" "7A95F13B"
+"guid" "70EA9A80"
 }
 {
 "note" "************************ OUTER HOUSING SPAWNER"
@@ -17752,7 +17638,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 180 0"
-"guid" "7A95F13B"
+"guid" "55276915"
 }
 {
 "note" "************************ OUTER HOUSING SPAWNER"
@@ -17762,7 +17648,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 0 0"
-"guid" "7A95F13B"
+"guid" "F9BB8BF6"
 }
 
 {
@@ -17773,7 +17659,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "housing_volume"
 "target" "housing_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "F27B8B7C"
 }
 {
 "note" "************************ HOUSING ZONE"
@@ -17783,7 +17669,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "housing_volume"
 "target" "housing_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "8F1CE54C"
 }
 {
 "classname" "script_struct"
@@ -17792,7 +17678,7 @@
 "targetname" "housing_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 90 0"
-"guid" "E4198BC2"
+"guid" "2AE770AE"
 }
 {
 "classname" "script_struct"
@@ -17801,7 +17687,7 @@
 "targetname" "housing_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 -180 0"
-"guid" "E4198BC2"
+"guid" "35362AA4"
 }
 {
 "classname" "script_struct"
@@ -17810,7 +17696,7 @@
 "targetname" "housing_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 0 0"
-"guid" "E4198BC2"
+"guid" "E7B95ADE"
 }
 {
 "note" "************************ HOUSING SPAWNER"
@@ -17820,7 +17706,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 0 0"
-"guid" "7A95F13B"
+"guid" "5A15B1F0"
 }
 {
 "note" "************************ HOUSING SPAWNER"
@@ -17830,7 +17716,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 18 0"
-"guid" "7A95F13B"
+"guid" "E57263FC"
 }
 {
 "note" "************************ HOUSING SPAWNER"
@@ -17840,7 +17726,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 180 0"
-"guid" "7A95F13B"
+"guid" "760C7180"
 }
 
 {
@@ -17852,7 +17738,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "lobby_volume"
 "target" "lobby_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "6F569400"
 }
 {
 "note" "************************ LOBBY ZONE"
@@ -17863,7 +17749,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "lobby_volume"
 "target" "lobby_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "A16E7804"
 }
 {
 "classname" "script_struct"
@@ -17872,7 +17758,7 @@
 "targetname" "lobby_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 150 0"
-"guid" "E4198BC2"
+"guid" "EAB6B990"
 }
 {
 "classname" "script_struct"
@@ -17881,7 +17767,7 @@
 "targetname" "lobby_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 50 0"
-"guid" "E4198BC2"
+"guid" "D93950D3"
 }
 {
 "note" "************************ LOBBY SPAWNER"
@@ -17891,7 +17777,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 180 0"
-"guid" "7A95F13B"
+"guid" "B3E11B08"
 }
 {
 "note" "************************ LOBBY SPAWNER"
@@ -17901,7 +17787,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 -20 0"
-"guid" "7A95F13B"
+"guid" "118D0349"
 }
 {
 "note" "************************ LOBBY SPAWNER"
@@ -17911,7 +17797,7 @@
 "classname" "script_struct"
 "script_string" "find_flesh"
 "angles" "0 0 0"
-"guid" "7A95F13B"
+"guid" "2B6F9898"
 }
 {
 "note" "************************ MYSTERY BOX MODEL"
@@ -17957,7 +17843,7 @@
 "origin" "3828.5 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "C250B9E8"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -17965,7 +17851,7 @@
 "origin" "3828.5 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "7250ED21"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -17973,7 +17859,7 @@
 "origin" "3847.5 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "16767CBF"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -17981,7 +17867,7 @@
 "origin" "3847.5 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "9E8B020F"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -17989,7 +17875,7 @@
 "origin" "3837.5 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "2C2570DA"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -17997,7 +17883,7 @@
 "origin" "3837.5 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "AA738BFB"
 }
 
 {
@@ -18044,7 +17930,7 @@
 "origin" "3248.64 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "0138791A"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -18052,7 +17938,7 @@
 "origin" "3248.64 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "ABABCE63"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -18060,7 +17946,7 @@
 "origin" "3226.64 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "39A8487C"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -18068,7 +17954,7 @@
 "origin" "3226.64 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "533EA9DF"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -18076,7 +17962,7 @@
 "origin" "3242.64 -4925.97 -3626.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "6973A24C"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -18084,7 +17970,7 @@
 "origin" "3242.64 -4925.97 -3591.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "66972F6A"
 }
 
 {
@@ -18131,7 +18017,7 @@
 "origin" "5560 -6863.53 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "EE80AA02"
 }
 {
 "note" "************************ MYSTERY BOX MODEL"
@@ -18177,7 +18063,7 @@
 "origin" "3139.46 -6403.76 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "6824AF3E"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -18185,7 +18071,7 @@
 "origin" "3144.46 -6403.76 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "BE25A11F"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -18193,7 +18079,7 @@
 "origin" "3149.46 -6403.76 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "A6FDE524"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -18201,7 +18087,7 @@
 "origin" "3154.46 -6403.76 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "6E127A03"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -18209,7 +18095,7 @@
 "origin" "3160.46 -6403.76 -3546.88"
 "angles" "0 0 90"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "6D54F619"
 }
 
 {
@@ -18311,7 +18197,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "elevators_volume"
 "target" "elevators_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "4B4507BE"
 }
 {
 "note" "************************ ELEVATORS ZONE"
@@ -18322,7 +18208,7 @@
 "script_noteworthy" "player_volume"
 "targetname" "elevators_volume"
 "target" "elevators_volume_spawners"
-"guid" "D2CA4E5B"
+"guid" "1B8CE6DE"
 }
 {
 "classname" "script_struct"
@@ -18331,7 +18217,7 @@
 "targetname" "elevators_volume_spawners"
 "script_string" "find_flesh"
 "angles" "0 -90 0"
-"guid" "E4198BC2"
+"guid" "8D8B213C"
 }
 
 {
@@ -18419,7 +18305,7 @@
 "origin" "5527.36 -5978.15 -3500.88"
 "angles" "0 -90 0"
 "classname" "script_brushmodel"
-"guid" "3ED0F743"
+"guid" "9600AD72"
 }
 
 {
