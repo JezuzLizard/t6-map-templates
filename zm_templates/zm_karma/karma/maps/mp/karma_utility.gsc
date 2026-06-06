@@ -50,3 +50,39 @@ spawn_perk_collision( origin, angles )
     collision.script_noteworthy = "clip";
     collision disconnectpaths();
 }
+
+is_insta_round( round_number )
+{
+    if ( !isdefined( level.insta_kill_rounds ) )
+    {
+        level.insta_kill_rounds = array( 163, 165, 167, 169, 171, 173, 175, 177, 179, 181, 183, 185, 188, 189, 191, 194, 196, 197, 199, 202, 204, 205, 207, 210, 211, 214, 216, 217, 219, 222, 224, 225, 228, 229, 231, 234, 236, 237, 239, 242, 243, 246, 248, 249, 252, 253, 255 );
+    }
+
+    for ( i = 0; i < level.insta_kill_rounds.size; i++ )
+    {
+        if ( round_number == level.insta_kill_rounds[i] )
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+turn_on_perks()
+{
+    flag_wait( "start_zombie_round_logic" );
+    wait 1;
+
+    level notify( "revive_on" );
+    wait_network_frame();
+    level notify( "doubletap_on" );
+    wait_network_frame();
+    level notify( "marathon_on" );
+    wait_network_frame();
+    level notify( "juggernog_on" );
+    wait_network_frame();
+    level notify( "sleight_on" );
+    wait_network_frame();
+    level notify( "Pack_A_Punch_on" );
+}

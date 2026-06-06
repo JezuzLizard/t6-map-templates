@@ -17825,7 +17825,7 @@
 "type" "zmcore_MagicBox"
 "origin" "3843.5 -4925.97 -3655.88"
 "script_noteworthy" "lobby_chest_1_zbarrier"
-"guid" "C82823B0"
+"guid" "0DEC0D53"
 }
 {
 "note" "************************ MYSTERY BOX TRIGGER"
@@ -17835,7 +17835,7 @@
 "targetname" "treasure_chest_use"
 "angles" "0 0 0"
 "origin" "3843.5 -4951.97 -3655.88"
-"guid" "0B2ECA3D"
+"guid" "5F20C6B4"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -17912,7 +17912,7 @@
 "type" "zmcore_MagicBox"
 "origin" "3232.64 -4925.97 -3655.88"
 "script_noteworthy" "lobby_chest_2_zbarrier"
-"guid" "C82823B0"
+"guid" "D8569734"
 }
 {
 "note" "************************ MYSTERY BOX TRIGGER"
@@ -17922,7 +17922,7 @@
 "targetname" "treasure_chest_use"
 "angles" "0 0 0"
 "origin" "3232.64 -4949.97 -3655.88"
-"guid" "0B2ECA3D"
+"guid" "50C82314"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -17999,7 +17999,7 @@
 "type" "zmcore_MagicBox"
 "origin" "5550 -6863.53 -3575.88"
 "script_noteworthy" "security_chest_zbarrier"
-"guid" "C82823B0"
+"guid" "AAAB5553"
 }
 {
 "note" "************************ MYSTERY BOX TRIGGER"
@@ -18009,7 +18009,7 @@
 "targetname" "treasure_chest_use"
 "angles" "0 0 0"
 "origin" "5550 -6888.53 -3575.88"
-"guid" "0B2ECA3D"
+"guid" "3E0502A1"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"
@@ -18045,7 +18045,7 @@
 "type" "zmcore_MagicBox"
 "origin" "3146.46 -6403.76 -3575.88"
 "script_noteworthy" "housing_chest_zbarrier"
-"guid" "C82823B0"
+"guid" "A167D8CA"
 }
 {
 "note" "************************ MYSTERY BOX TRIGGER"
@@ -18055,7 +18055,7 @@
 "targetname" "treasure_chest_use"
 "angles" "0 0 0"
 "origin" "3146.46 -6426.76 -3575.88"
-"guid" "0B2ECA3D"
+"guid" "72CD91C5"
 }
 {
 "note" "************************ MYSTERY BOX CLIP"

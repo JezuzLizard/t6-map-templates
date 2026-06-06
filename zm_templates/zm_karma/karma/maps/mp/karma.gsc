@@ -36,6 +36,7 @@ main()
     level._melee_weapons = []; // since we dont have bowie or tazers, init as empty
 
     level._post_zm_overrides_func = ::karma_post_zm_init;
+    level.special_weapon_magicbox_check = ::karma_special_weapon_magicbox_check;
     level.givecustomloadout = ::givecustomloadout;
     level.zombie_init_done = ::zombie_init_done;
 	onplayerconnect_callback( ::karma_connected );
@@ -56,7 +57,6 @@ main()
     level.disable_fx_zmb_tranzit_shield_explo = true;
 
 	level.culldist = 5000;
-    level.insta_kill_rounds = array( 163, 165, 167, 169, 171, 173, 175, 177, 179, 181, 183, 185, 188, 189, 191, 194, 196, 197, 199, 202, 204, 205, 207, 210, 211, 214, 216, 217, 219, 222, 224, 225, 228, 229, 231, 234, 236, 237, 239, 242, 243, 246, 248, 249, 252, 253, 255 );
 
 	karma_setup_zones();
 	setup_characters();
@@ -72,6 +72,93 @@ zombie_init_done()
 {
 	self.allowpain = 0;
 	self setphysparams( 15, 0, 48 );
+}
+
+setup_characters()
+{
+	level.precachecustomcharacters = ::precache_team_characters;
+	level.givecustomcharacters = ::give_team_characters;
+
+    determine_team_characters();
+}
+
+determine_team_characters()
+{
+    level.should_use_cia = 0;
+
+    if ( randomint( 100 ) >= 50 )
+	{
+        level.should_use_cia = 1;
+	}
+}
+
+precache_team_characters()
+{
+    precachemodel( "c_zom_player_cdc_fb" );
+    precachemodel( "c_zom_hazmat_viewhands" );
+    precachemodel( "c_zom_player_cia_fb" );
+    precachemodel( "c_zom_suit_viewhands" );
+}
+
+give_team_characters()
+{
+	if ( isdefined( level.hotjoin_player_setup ) && [[ level.hotjoin_player_setup ]]( "c_zom_suit_viewhands" ) )
+	{
+		return;
+	}
+
+	self detachall();
+    self set_player_is_female( 0 );
+
+    if ( isdefined( level.should_use_cia ) )
+    {
+        if ( level.should_use_cia )
+        {
+            self setmodel( "c_zom_player_cia_fb" );
+            self setviewmodel( "c_zom_suit_viewhands" );
+            self.characterindex = 0;
+        }
+        else
+        {
+            self setmodel( "c_zom_player_cdc_fb" );
+            self setviewmodel( "c_zom_hazmat_viewhands" );
+            self.characterindex = 1;
+        }
+    }
+    else
+    {
+        if ( !isdefined( self.characterindex ) )
+        {
+            self.characterindex = 1;
+
+            if ( self.team == "axis" )
+                self.characterindex = 0;
+        }
+
+        switch ( self.characterindex )
+        {
+            case 0:
+            case 2:
+                self setmodel( "c_zom_player_cia_fb" );
+                self.voice = "american";
+                self.skeleton = "base";
+                self setviewmodel( "c_zom_suit_viewhands" );
+                self.characterindex = 0;
+                break;
+            case 1:
+            case 3:
+                self setmodel( "c_zom_player_cdc_fb" );
+                self.voice = "american";
+                self.skeleton = "base";
+                self setviewmodel( "c_zom_hazmat_viewhands" );
+                self.characterindex = 1;
+                break;
+        }
+    }
+
+	self setmovespeedscale( 1 );
+	self setsprintduration( 4 );
+	self setsprintcooldown( 0 );
 }
 
 karma_connected()
@@ -163,7 +250,7 @@ karma_post_zm_init()
 	maps\mp\zombies\_zm_spawner::register_zombie_death_animscript_callback( maps\mp\zombies\_zm_weap_thundergun::enemy_killed_by_thundergun );
 	
 	// turn them on by default
-	turn_on_perks();
+	maps\mp\karma_utility::turn_on_perks();
 
 	// this is originally at -1000, this map's playable areas are lower than that
 	set_zombie_var( "below_world_check", -4000 );
@@ -171,7 +258,7 @@ karma_post_zm_init()
 	// dog rounds
 	maps\mp\zombies\_zm_ai_dogs::enable_dog_rounds();
 
-    fix_glitch_spots();
+    karma_fix_glitch_spots();
 
 	// for testing
 	if ( GetDvarInt( "zombie_unlock_all" ) > 0 )
@@ -184,7 +271,7 @@ karma_post_zm_init()
 	}
 }
 
-fix_glitch_spots()
+karma_fix_glitch_spots()
 {
     // spawn room
     maps\mp\karma_utility::spawn_perk_collision( ( 4495.56, -6456.13, -3527.88 ), ( 0, 0, 0 ) ); // flour pile
@@ -209,43 +296,12 @@ fix_glitch_spots()
     maps\mp\karma_utility::spawn_perk_collision( ( 3292.56, -5207.13, -3552.88 ), ( 0, 90, 0 ) );
 }
 
-turn_on_perks()
-{
-    flag_wait( "start_zombie_round_logic" );
-    wait 1;
-
-    level notify( "revive_on" );
-    wait_network_frame();
-    level notify( "doubletap_on" );
-    wait_network_frame();
-    level notify( "marathon_on" );
-    wait_network_frame();
-    level notify( "juggernog_on" );
-    wait_network_frame();
-    level notify( "sleight_on" );
-    wait_network_frame();
-    level notify( "Pack_A_Punch_on" );
-}
-
-is_insta_round( round_number )
-{
-    for ( i = 0; i < level.insta_kill_rounds.size; i++ )
-    {
-        if ( round_number == level.insta_kill_rounds[i] )
-        {
-            return true;
-        }
-    }
-
-    return false;
-}
-
 karma_ai_calculate_health( round_number )
 {
     level.zombie_health = level.zombie_vars["zombie_health_start"];
 
     // change: t5 instas
-    if ( is_insta_round( round_number ) )
+    if ( maps\mp\karma_utility::is_insta_round( round_number ) )
     {
         return;
     }
@@ -268,89 +324,22 @@ karma_ai_calculate_health( round_number )
     }
 }
 
-setup_characters()
+karma_special_weapon_magicbox_check( weapon )
 {
-	level.precachecustomcharacters = ::precache_team_characters;
-	level.givecustomcharacters = ::give_team_characters;
-
-    determine_team_characters();
-}
-
-determine_team_characters()
-{
-    level.should_use_cia = 0;
-
-    if ( randomint( 100 ) >= 50 )
+	if ( isdefined( level.raygun2_included ) && level.raygun2_included )
 	{
-        level.should_use_cia = 1;
-	}
-}
+		if ( weapon == "ray_gun_zm" )
+		{
+			if ( self has_weapon_or_upgrade( "raygun_mark2_zm" ) )
+				return false;
+		}
 
-precache_team_characters()
-{
-    precachemodel( "c_zom_player_cdc_fb" );
-    precachemodel( "c_zom_hazmat_viewhands" );
-    precachemodel( "c_zom_player_cia_fb" );
-    precachemodel( "c_zom_suit_viewhands" );
-}
-
-give_team_characters()
-{
-	if ( isdefined( level.hotjoin_player_setup ) && [[ level.hotjoin_player_setup ]]( "c_zom_suit_viewhands" ) )
-	{
-		return;
+		if ( weapon == "raygun_mark2_zm" )
+		{
+			if ( self has_weapon_or_upgrade( "ray_gun_zm" ) )
+				return false;
+		}
 	}
 
-	self detachall();
-    self set_player_is_female( 0 );
-
-    if ( isdefined( level.should_use_cia ) )
-    {
-        if ( level.should_use_cia )
-        {
-            self setmodel( "c_zom_player_cia_fb" );
-            self setviewmodel( "c_zom_suit_viewhands" );
-            self.characterindex = 0;
-        }
-        else
-        {
-            self setmodel( "c_zom_player_cdc_fb" );
-            self setviewmodel( "c_zom_hazmat_viewhands" );
-            self.characterindex = 1;
-        }
-    }
-    else
-    {
-        if ( !isdefined( self.characterindex ) )
-        {
-            self.characterindex = 1;
-
-            if ( self.team == "axis" )
-                self.characterindex = 0;
-        }
-
-        switch ( self.characterindex )
-        {
-            case 0:
-            case 2:
-                self setmodel( "c_zom_player_cia_fb" );
-                self.voice = "american";
-                self.skeleton = "base";
-                self setviewmodel( "c_zom_suit_viewhands" );
-                self.characterindex = 0;
-                break;
-            case 1:
-            case 3:
-                self setmodel( "c_zom_player_cdc_fb" );
-                self.voice = "american";
-                self.skeleton = "base";
-                self setviewmodel( "c_zom_hazmat_viewhands" );
-                self.characterindex = 1;
-                break;
-        }
-    }
-
-	self setmovespeedscale( 1 );
-	self setsprintduration( 4 );
-	self setsprintcooldown( 0 );
+	return true;
 }
