@@ -171,15 +171,42 @@ karma_post_zm_init()
 	// dog rounds
 	maps\mp\zombies\_zm_ai_dogs::enable_dog_rounds();
 
+    fix_glitch_spots();
+
 	// for testing
 	if ( GetDvarInt( "zombie_unlock_all" ) > 0 )
 	{
-		level.round_number = 164;
-		level.next_dog_round = 166;
+		level.round_number = 100;
+		level.next_dog_round = 101;
 		level.first_round = 0;
 		level.zombie_vars["zombie_spawn_delay"] = 0.08;
 		level.zombie_move_speed = 130;
 	}
+}
+
+fix_glitch_spots()
+{
+    // spawn room
+    maps\mp\karma_utility::spawn_perk_collision( ( 4495.56, -6456.13, -3527.88 ), ( 0, 0, 0 ) ); // flour pile
+    maps\mp\karma_utility::spawn_perk_collision( ( 4626.56, -6316.13, -3527.88 ), ( 0, 0, 0 ) ); // pallet stack
+    maps\mp\karma_utility::spawn_perk_collision( ( 5156.56, -6305.13, -3552.88 ), ( 0, 0, 0 ) ); // corner stack
+    maps\mp\karma_utility::spawn_perk_collision( ( 5096.56, -6180.13, -3552.88 ), ( 0, 120, 0 ) );
+
+    // housing
+    maps\mp\karma_utility::spawn_perk_collision( ( 3777.56, -6555.13, -3462.88 ), ( 0, 120, 0 ) );
+
+    // lobby
+    maps\mp\karma_utility::spawn_perk_collision( ( 3787.56, -5340.13, -3512.88 ), ( 90, 0, 0 ) ); // right flower pot
+    maps\mp\karma_utility::spawn_perk_collision( ( 3777.56, -5325.13, -3552.88 ), ( 0, 90, 0 ) );
+    maps\mp\karma_utility::spawn_perk_collision( ( 3777.56, -5275.13, -3552.88 ), ( 0, 90, 0 ) );
+    maps\mp\karma_utility::spawn_perk_collision( ( 3777.56, -5225.13, -3552.88 ), ( 0, 90, 0 ) );
+    maps\mp\karma_utility::spawn_perk_collision( ( 3777.56, -5207.13, -3552.88 ), ( 0, 90, 0 ) );
+
+    maps\mp\karma_utility::spawn_perk_collision( ( 3082.56, -5340.13, -3512.88 ), ( 90, 0, 0 ) ); // left flower pot
+    maps\mp\karma_utility::spawn_perk_collision( ( 3292.56, -5325.13, -3552.88 ), ( 0, 90, 0 ) );
+    maps\mp\karma_utility::spawn_perk_collision( ( 3292.56, -5275.13, -3552.88 ), ( 0, 90, 0 ) );
+    maps\mp\karma_utility::spawn_perk_collision( ( 3292.56, -5225.13, -3552.88 ), ( 0, 90, 0 ) );
+    maps\mp\karma_utility::spawn_perk_collision( ( 3292.56, -5207.13, -3552.88 ), ( 0, 90, 0 ) );
 }
 
 turn_on_perks()

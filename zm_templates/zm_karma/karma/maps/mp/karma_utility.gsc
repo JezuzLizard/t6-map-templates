@@ -41,3 +41,12 @@ disable_zone( zone_name, respawn_zombies )
         level.zombie_total_subtract++;
     }
 }
+
+spawn_perk_collision( origin, angles )
+{
+    collision = spawn( "script_model", origin, 1 );
+    collision.angles = angles;
+    collision setmodel( "zm_collision_perks1" );
+    collision.script_noteworthy = "clip";
+    collision disconnectpaths();
+}
