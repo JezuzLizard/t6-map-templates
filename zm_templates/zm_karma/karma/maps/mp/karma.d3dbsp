@@ -18143,23 +18143,23 @@
 }
 
 {
-"note" "************************ AK74U WALLBUY"
+"note" "************************ MP5 WALLBUY"
 "require_look_from" "1"
-"origin" "3953.9 -6340.88 -3517"
+"origin" "3953.9 -6337.88 -3517"
 "angles" "0 90 0"
-"model" "t6_wpn_smg_ak74u_world"
+"model" "t6_wpn_smg_mp5_world"
 "classname" "script_struct"
 "targetname" "pf1897_auto39"
 "target" "pf1897_auto39"
 "guid" "7004ED06"
 }
 {
-"note" "************************ AK74U WALLBUY"
+"note" "************************ MP5 WALLBUY"
 "require_look_from" "1"
-"origin" "3953.9 -6340.88 -3517"
+"origin" "3953.9 -6337.88 -3517"
 "angles" "0 90 0"
 "classname" "script_struct"
-"zombie_weapon_upgrade" "ak74u_zm"
+"zombie_weapon_upgrade" "mp5k_zm"
 "targetname" "weapon_upgrade"
 "target" "pf1897_auto39"
 "guid" "C15AD568"

@@ -36,7 +36,7 @@ include,packages/weapons/ray_gun_zm
 include,packages/weapons/thundergun
 include,packages/weapons/m14_zm
 include,packages/weapons/ballista_zm
-include,packages/weapons/ak74u_zm
+include,packages/weapons/mp5k_zm
 include,packages/weapons/python_zm
 include,packages/weapons/judge_zm
 include,packages/weapons/kard_zm
