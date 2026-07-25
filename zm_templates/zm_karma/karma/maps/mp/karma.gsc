@@ -232,9 +232,6 @@ karma_post_zm_init()
 	level.put_timed_out_zombies_back_in_queue = true;
 	level.use_alternate_poi_positioning = true;
 
-	// allow players to buy 5 perks at once
-	level.perk_purchase_limit = 5;
-
 	// monkey bombs
     level.legacy_cymbal_monkey = 1;
     maps\mp\zombies\_zm_weap_cymbal_monkey::init();
