@@ -18143,6 +18143,24 @@
 }
 
 {
+"angles" "0 90 0"
+"origin" "5185.56 -6410 -3517"
+"classname" "script_struct"
+"zombie_weapon_upgrade" "sticky_grenade_zm"
+"targetname" "weapon_upgrade"
+"target" "pf1894_auto37"
+"guid" "CD6140BB"
+}
+{
+"angles" "0 90 0"
+"origin" "5185.56 -6410 -3517"
+"classname" "script_struct"
+"model" "semtex_bag"
+"targetname" "pf1894_auto37"
+"guid" "C6DDEDA5"
+}
+
+{
 "note" "************************ MP5 WALLBUY"
 "require_look_from" "1"
 "origin" "3953.9 -6337.88 -3517"

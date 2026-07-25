@@ -28,3 +28,4 @@ index,weapon_name,upgrade_name,hint,cost,weapon_voice_over,weapon_voice_over_res
 26,m32_zm,,ZOMBIE_WEAPON_M32,10,wpck_m32,,,,true,,
 27,knife_ballistic_zm,,ZOMBIE_WEAPON_KNIFE_BALLISTIC,10,sickle,,,,true,1,
 28,barretm82_zm,,ZOMBIE_WEAPON_BARRETM82,50,sniper,,,,true,,
+29,sticky_grenade_zm,,ZOMBIE_WEAPON_STICKY_GRENADE,250,grenade,,,,false,,

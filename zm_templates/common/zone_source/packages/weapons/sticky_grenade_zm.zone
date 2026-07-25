@@ -1,0 +1,14 @@
+image,~~-gmtl_t6_wpn_grenade_semtex~c700925e
+image,mtl_t6_wpn_grenade_semtex_nml
+image,~-gmtl_t6_wpn_grenade_semtex_col
+material,mc/mtl_t6_wpn_grenade_semtex
+xmodel,t6_wpn_grenade_semtex_view
+xmodel,t6_wpn_grenade_semtex_world
+xmodel,t6_wpn_grenade_semtex_projectile
+image,hud_sticky_grenade_32
+material,hud_icon_sticky_grenade
+weapon,sticky_grenade_zm
+image,grenade_pouch_nml
+image,~~-gsemtex_pouch_clr-rgb&~-rg~85b721be
+material,mc/mtl_semtex_pouch
+xmodel,semtex_bag

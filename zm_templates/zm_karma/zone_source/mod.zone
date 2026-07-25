@@ -60,6 +60,7 @@ include,packages/weapons/barretm82_zm
 include,packages/weapons/knife_ballistic_zm
 include,packages/weapons/cymbal_monkey_zm
 include,packages/weapons/m16_zm
+include,packages/weapons/sticky_grenade_zm
 
 // perks
 include,packages/perks/revive

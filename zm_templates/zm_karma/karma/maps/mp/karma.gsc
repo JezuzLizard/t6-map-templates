@@ -32,9 +32,11 @@ main()
     // map specific setup here
     maps\mp\zombies\_zm_ai_dogs::init();
     level.enable_magic = getgametypesetting( "magic" );
+    level._uses_sticky_grenades = 1;
     maps\mp\_sticky_grenade::init();
     level._melee_weapons = []; // since we dont have bowie or tazers, init as empty
 
+    level.register_offhand_weapons_for_level_defaults_override = ::karma_offhand_weapon_overrride;
     level._post_zm_overrides_func = ::karma_post_zm_init;
     level.special_weapon_magicbox_check = ::karma_special_weapon_magicbox_check;
     level.givecustomloadout = ::givecustomloadout;
@@ -339,4 +341,19 @@ karma_special_weapon_magicbox_check( weapon )
 	}
 
 	return true;
+}
+
+karma_offhand_weapon_overrride()
+{
+    register_lethal_grenade_for_level( "frag_grenade_zm" );
+    level.zombie_lethal_grenade_player_init = "frag_grenade_zm";
+    register_lethal_grenade_for_level( "sticky_grenade_zm" );
+
+    register_tactical_grenade_for_level( "cymbal_monkey_zm" );
+    level.zombie_tactical_grenade_player_init = undefined;
+    
+    register_melee_weapon_for_level( "knife_zm" );
+    
+    level.zombie_melee_weapon_player_init = "knife_zm";
+    level.zombie_equipment_player_init = undefined;
 }
