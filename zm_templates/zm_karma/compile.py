@@ -226,7 +226,15 @@ def main():
         },
         
         # overridden vanilla scripts
+        "_zm.gsc": {
+            "source_dir": "mod\\maps\\mp\\zombies",
+            "inner_dir": "maps\\mp\\zombies"
+        },
         "_zm_perks.gsc": {
+            "source_dir": "mod\\maps\\mp\\zombies",
+            "inner_dir": "maps\\mp\\zombies"
+        },
+        "_zm_ai_dogs.gsc": {
             "source_dir": "mod\\maps\\mp\\zombies",
             "inner_dir": "maps\\mp\\zombies"
         },

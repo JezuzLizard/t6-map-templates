@@ -11,6 +11,9 @@
 // sounds
 soundbank,zm_karma.all
 
+// perk powerup
+xmodel,zombie_pickup_perk_bottle
+
 // mystery box
 include,packages/mystery_box
 
