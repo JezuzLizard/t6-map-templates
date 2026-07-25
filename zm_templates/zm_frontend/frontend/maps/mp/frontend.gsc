@@ -32,6 +32,7 @@ main()
     level._melee_weapons = []; // since we dont have bowie or tazers, init as empty
 
     level._post_zm_overrides_func = ::frontend_post_zm_init;
+    level.special_weapon_magicbox_check = ::frontend_special_weapon_magicbox_check;
     level.givecustomloadout = ::givecustomloadout;
     level.zombie_init_done = ::zombie_init_done;
     onplayerconnect_callback( ::frontend_connected );
@@ -431,4 +432,24 @@ frontend_debris_think()
             break;
         }
     }
+}
+
+frontend_special_weapon_magicbox_check( weapon )
+{
+	if ( isdefined( level.raygun2_included ) && level.raygun2_included )
+	{
+		if ( weapon == "ray_gun_zm" )
+		{
+			if ( self has_weapon_or_upgrade( "raygun_mark2_zm" ) )
+				return false;
+		}
+
+		if ( weapon == "raygun_mark2_zm" )
+		{
+			if ( self has_weapon_or_upgrade( "ray_gun_zm" ) )
+				return false;
+		}
+	}
+
+	return true;
 }
