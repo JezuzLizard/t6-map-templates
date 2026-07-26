@@ -238,6 +238,10 @@ def main():
             "source_dir": "mod\\maps\\mp\\zombies",
             "inner_dir": "maps\\mp\\zombies"
         },
+        "_zm_weap_thundergun.gsc": {
+            "source_dir": "mod\\maps\\mp\\zombies",
+            "inner_dir": "maps\\mp\\zombies"
+        },
 
         # buffed ballista
         "ballista_zm": {

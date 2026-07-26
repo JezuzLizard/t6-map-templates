@@ -225,7 +225,7 @@ karma_magicbox_init()
 
 karma_post_zm_init()
 {
-	level.player_out_of_playable_area_monitor = false;
+	level.player_out_of_playable_area_monitor = true;
 	level.player_too_many_weapons_monitor = true;
 	level._use_choke_weapon_hints = true;
 	level._use_choke_blockers = true;
