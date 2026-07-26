@@ -2055,6 +2055,7 @@
 "guid" "AD71457D"
 }
 {
+"note" "************************ RANDOM OSPREY OUTSIDE THE MAP"
 "classname" "script_struct"
 "targetname" "amb_osprey_3d"
 "script_sound" "amb_osprey_3d"
